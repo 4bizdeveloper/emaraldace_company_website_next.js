@@ -3,7 +3,7 @@
 import React from 'react';
 
 const QuickContactButtons = () => {
-  const phoneNumber = "971527925100";
+  const phoneNumber = "+971588600578";
   const formattedCallNumber = `+${phoneNumber}`;
   const whatsappMessage = encodeURIComponent("Hello! I am contacting from your website and would like to inquire about your IT services.");
 
