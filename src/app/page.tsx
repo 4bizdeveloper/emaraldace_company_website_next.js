@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { 
   ArrowRight, ShieldCheck, Wrench, Building2, HardHat, CheckCircle2, 
   ChevronRight, Phone, Mail, Award, ThumbsUp, Sparkles, HelpCircle, ChevronDown,
-  ChevronLeft, CallOutlined
+  ChevronLeft
 } from 'lucide-react';
 
 export default function Home() {
@@ -90,87 +90,100 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full text-slate-900 bg-white selection:bg-[#0b63c5] selection:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <div className="w-full text-slate-900 bg-white selection:bg-[#0b63c5] selection:text-white transform-gpu" style={{ fontFamily: 'Poppins, sans-serif' }}>
       
-      {/* 1. ULTRA MODERN HERO SECTION WITH VIDEO BACKGROUND & FALLBACK */}
-      <section className="relative min-h-screen w-full flex items-center justify-center bg-slate-950 py-20 text-white overflow-hidden">
-        {/* Background Video with Image Fallback Poster */}
+      {/* 1. FULL SCREEN HERO SECTION WITH ULTRA MODERN VIDEO BACKGROUND */}
+      <section className="relative h-screen w-full min-h-[100dvh] flex items-center justify-center bg-slate-950 text-white overflow-hidden">
+        
+        {/* Background Full-Screen Video */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=90"
-          className="absolute inset-0 w-full h-full object-cover object-center z-0 filter brightness-90"
+          className="absolute inset-0 w-full h-full object-cover object-center z-0 will-change-transform"
         >
           <source src="/bg-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
-        {/* Video Overlay Layer */}
-        <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-[2px] z-0" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/75 to-slate-900/60 z-0" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/60 z-0" />
+        {/* Dynamic Light Overlay Gradient for Maximum Clarity and Contrast */}
+        <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px] z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-slate-950/40 z-0" />
 
-        {/* Hero Content Area */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full my-auto">
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
-            <div className="inline-flex items-center space-x-2.5 bg-[#0b63c5]/30 border border-[#0b63c5]/50 backdrop-blur-md rounded-full px-4 py-2">
-              <span className="w-2 h-2 rounded-full bg-[#FF6A00] animate-ping"></span>
-              <span className="text-xs font-bold text-blue-200 uppercase tracking-widest">ISO Certified | ICV Certified | UAE Licensed Contractor</span>
-            </div>
-            
-            {/* Main Hero Title Kept In Hero Section */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] text-white">
-              Engineering Value. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-[#0b63c5] to-indigo-300">
-                Optimizing Assets.
-              </span>
-            </h1>
-            
-            <p className="text-base sm:text-xl text-slate-200 max-w-xl font-normal leading-relaxed">
-              Welcome to Emrald Ace General Contracting & Electromechanical L.L.C. We deliver reliable facility management, maintenance, and robust engineering setups across the UAE footprint since 2014.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href="/services" className="px-8 py-4 bg-[#0b63c5] hover:bg-blue-600 text-white font-bold rounded-xl shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center space-x-2 transform hover:-translate-y-0.5 group">
-                <span>Explore Enterprise Solutions</span>
-                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link href="/contact" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-xl backdrop-blur-md transition-all text-center">
-                Request Engineering Callback
-              </Link>
-            </div>
+        {/* Hero Central Overlay Content */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center w-full my-auto space-y-6 sm:space-y-8 pt-16">
+          <div className="inline-flex items-center space-x-2.5 bg-slate-900/80 border border-blue-400/40 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#FF6A00] animate-ping"></span>
+            <span className="text-xs sm:text-sm font-bold text-blue-100 uppercase tracking-widest">
+              ISO Certified | ICV Certified | UAE Licensed Contractor
+            </span>
           </div>
+          
+          {/* Main Hero Headline */}
+          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black tracking-tight leading-[1.08] text-white max-w-5xl mx-auto drop-shadow-2xl">
+            Engineering Value. <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-400 to-indigo-300">
+              Optimizing Assets.
+            </span>
+          </h1>
+        </div>
+      </section>
 
-          {/* Metrics Panel */}
-          <div className="lg:col-span-5 relative">
-            <div className="absolute inset-0 bg-[#0b63c5] rounded-3xl opacity-20 blur-3xl transform rotate-6 scale-95 pointer-events-none"></div>
-            <div className="w-full max-w-md mx-auto p-8 bg-slate-900/85 border border-slate-700/80 rounded-2xl shadow-2xl backdrop-blur-xl space-y-6 relative border-t-2 border-t-[#0b63c5]">
-              <div className="flex justify-between items-center border-b border-slate-800 pb-4">
-                <span className="font-extrabold text-blue-400 text-xs tracking-widest uppercase block">Operational Statistics</span>
-                <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full border border-emerald-500/20">Active Coverage</span>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { metric: "2014", label: "Established Market Footprint" },
-                  { metric: "22+", label: "Completed Major Infrastructures" },
-                  { metric: "2023", label: "FM Division Expansion Year" },
-                  { metric: "100%", label: "UAE Regional Fulfillment" }
-                ].map((stat, sIdx) => (
-                  <div key={sIdx} className="p-4 bg-slate-950/60 rounded-xl border border-slate-800 transform hover:scale-[1.02] transition-transform">
-                    <span className="block text-3xl font-black text-white tracking-tight">{stat.metric}</span>
-                    <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-tight mt-1 block leading-tight">{stat.label}</span>
-                  </div>
-                ))}
+      {/* 2. HERO SUB-CONTENTS SECTION (Positioned Directly Below Fullscreen Hero) */}
+      <section className="bg-slate-950 text-white border-b border-slate-800 py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Description & Call to Actions */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">About Emrald Ace</span>
+              <p className="text-lg sm:text-2xl text-slate-200 font-normal leading-relaxed">
+                Welcome to Emrald Ace General Contracting & Electromechanical L.L.C. We deliver reliable facility management, maintenance, and robust engineering setups across the UAE footprint since 2014.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link href="/services" className="px-8 py-4 bg-[#0b63c5] hover:bg-blue-600 text-white font-bold rounded-xl shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center space-x-2 transform hover:-translate-y-0.5 group">
+                  <span>Explore Enterprise Solutions</span>
+                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link href="/contact" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-xl backdrop-blur-md transition-all text-center">
+                  Request Engineering Callback
+                </Link>
               </div>
             </div>
+
+            {/* Metrics Statistics Panel */}
+            <div className="lg:col-span-5 relative">
+              <div className="absolute inset-0 bg-[#0b63c5] rounded-3xl opacity-20 blur-3xl transform rotate-6 scale-95 pointer-events-none"></div>
+              <div className="w-full max-w-md mx-auto p-8 bg-slate-900/90 border border-slate-800 rounded-2xl shadow-2xl backdrop-blur-xl space-y-6 relative border-t-2 border-t-[#0b63c5]">
+                <div className="flex justify-between items-center border-b border-slate-800 pb-4">
+                  <span className="font-extrabold text-blue-400 text-xs tracking-widest uppercase block">Operational Statistics</span>
+                  <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full border border-emerald-500/20">Active Coverage</span>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { metric: "2014", label: "Established Market Footprint" },
+                    { metric: "22+", label: "Completed Major Infrastructures" },
+                    { metric: "2023", label: "FM Division Expansion Year" },
+                    { metric: "100%", label: "UAE Regional Fulfillment" }
+                  ].map((stat, sIdx) => (
+                    <div key={sIdx} className="p-4 bg-slate-950/60 rounded-xl border border-slate-800 transform hover:scale-[1.02] transition-transform">
+                      <span className="block text-3xl font-black text-white tracking-tight">{stat.metric}</span>
+                      <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-tight mt-1 block leading-tight">{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* 2. CORPORATE CORE COMPLIANCE BADGES SECTION */}
+      {/* 3. CORPORATE CORE COMPLIANCE BADGES SECTION */}
       <section className="bg-slate-50 border-b border-slate-200 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
@@ -199,7 +212,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. EXECUTIVE INTRODUCTORY SECTION */}
+      {/* 4. EXECUTIVE INTRODUCTORY SECTION */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -243,7 +256,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. OPTIMIZED SERVICES SECTION */}
+      {/* 5. OPTIMIZED SERVICES SECTION */}
       <section className="py-24 bg-slate-50 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -292,7 +305,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. SECTOR DIVERSIFICATION FOOTPRINT GRID */}
+      {/* 6. HIGH-CONVERTING CTA SECTION */}
+      <section className="py-16 bg-gradient-to-r from-slate-900 via-[#0b63c5] to-slate-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-slate-950/20" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="bg-slate-950/40 border border-white/10 backdrop-blur-xl rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="space-y-4 text-center lg:text-left max-w-2xl">
+              <span className="text-xs font-bold text-amber-400 uppercase tracking-widest inline-flex items-center gap-2">
+                <Sparkles className="w-4 h-4" /> 24/7 Rapid Emergency Response
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white leading-tight">
+                Ready to Upgrade Your Facility Management & MEP Operations?
+              </h2>
+              <p className="text-slate-200 text-xs sm:text-sm font-normal">
+                Speak directly with our technical dispatch engineers now for consultations, emergency support, or AMC inquiries.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto shrink-0">
+              <a 
+                href="tel:+97126282868" 
+                className="w-full sm:w-auto px-6 py-4 bg-white hover:bg-slate-100 text-slate-950 font-black rounded-xl shadow-xl transition-all flex items-center justify-center space-x-3 text-sm tracking-wide group"
+              >
+                <div className="w-8 h-8 rounded-full bg-[#0b63c5]/10 flex items-center justify-center text-[#0b63c5]">
+                  <Phone className="w-4 h-4 text-[#0b63c5] animate-bounce" />
+                </div>
+                <span>Call +971 2 628 2868</span>
+              </a>
+
+              <Link 
+                href="/contact" 
+                className="w-full sm:w-auto px-6 py-4 bg-transparent hover:bg-white/10 border border-white/30 text-white font-bold rounded-xl transition-all text-center text-sm"
+              >
+                Request Quotation
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. SECTOR DIVERSIFICATION FOOTPRINT GRID */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -334,7 +386,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. TRUSTED BY INDUSTRY LEADERS */}
+      {/* 8. TRUSTED BY INDUSTRY LEADERS */}
       <section className="py-20 bg-slate-950 text-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-10">
@@ -386,47 +438,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. HIGH-CONVERTING CTA SECTION WITH CLICKABLE PHONE NUMBER */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 via-[#0b63c5] to-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-slate-950/20" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-slate-950/40 border border-white/10 backdrop-blur-xl rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="space-y-4 text-center lg:text-left max-w-2xl">
-              <span className="text-xs font-bold text-amber-400 uppercase tracking-widest inline-flex items-center gap-2">
-                <Sparkles className="w-4 h-4" /> 24/7 Rapid Emergency Response
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white leading-tight">
-                Ready to Upgrade Your Facility Management & MEP Operations?
-              </h2>
-              <p className="text-slate-200 text-xs sm:text-sm font-normal">
-                Speak directly with our technical dispatch engineers now for consultations, emergency support, or AMC inquiries.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto shrink-0">
-              {/* Clickable Phone Number CTA */}
-              <a 
-                href="tel:+97126282868" 
-                className="w-full sm:w-auto px-6 py-4 bg-white hover:bg-slate-100 text-slate-950 font-black rounded-xl shadow-xl transition-all flex items-center justify-center space-x-3 text-sm tracking-wide group"
-              >
-                <div className="w-8 h-8 rounded-full bg-[#0b63c5]/10 flex items-center justify-center text-[#0b63c5]">
-                  <Phone className="w-4 h-4 text-[#0b63c5] animate-bounce" />
-                </div>
-                <span>Call +971 2 628 2868</span>
-              </a>
-
-              <Link 
-                href="/contact" 
-                className="w-full sm:w-auto px-6 py-4 bg-transparent hover:bg-white/10 border border-white/30 text-white font-bold rounded-xl transition-all text-center text-sm"
-              >
-                Request Quotation
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. FAQ SECTION */}
+      {/* 9. FAQ SECTION */}
       <section className="py-24 bg-slate-50 border-t border-slate-200 scroll-mt-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
@@ -478,18 +490,33 @@ export default function Home() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": faqs.map(faq => ({
-                "@type": "Question",
-                "name": faq.q,
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": faq.a
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Emrald Ace General Contracting & Electromechanical L.L.C",
+                "url": "https://emraldace.com",
+                "logo": "https://emraldace.com/logo.png",
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+97126282868",
+                  "contactType": "customer service",
+                  "areaServed": "AE"
                 }
-              }))
-            })
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": faqs.map(faq => ({
+                  "@type": "Question",
+                  "name": faq.q,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.a
+                  }
+                }))
+              }
+            ])
           }}
         />
       </section>

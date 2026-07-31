@@ -1,109 +1,287 @@
-'use client';
+"use client";
 
 import React from 'react';
-import { Phone } from 'lucide-react';
 
-export default function FloatingActionButtons() {
-  const phoneNumber = '+971528976025';
-  const whatsappNumber = '971528976025';
-  const whatsappMessage = encodeURIComponent(
-    'Hello Emrald Ace, I reviewed your corporate engineering solutions and would like to schedule an asset optimization consultation.'
-  );
+const QuickContactButtons = () => {
+  const phoneNumber = "971527925100";
+  const formattedCallNumber = `+${phoneNumber}`;
+  const whatsappMessage = encodeURIComponent("Hello! I am contacting from your website and would like to inquire about your IT services.");
 
   return (
     <>
-      {/* Enhanced Ultra-Modern Energy Pulse Keyframes */}
-      <style jsx global>{`
-        @keyframes energyPulse {
-          0% {
-            transform: scale(0.9);
-            opacity: 0.95;
-            box-shadow: 0 0 12px var(--pulse-color);
-          }
-          70% {
-            transform: scale(1.6);
-            opacity: 0;
-            box-shadow: 0 0 24px var(--pulse-color);
-          }
-          100% {
-            transform: scale(1.6);
-            opacity: 0;
-          }
-        }
-        .animate-energy-pulse-1 {
-          animation: energyPulse 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-        }
-        .animate-energy-pulse-2 {
-          animation: energyPulse 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s infinite;
-        }
-      `}</style>
-
-      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[9999] flex flex-col items-center gap-3 sm:gap-4 pointer-events-none print:hidden">
+      {/* =========================================================================
+          UNIFIED RESPONSIVE FLOATING CONTAINER
+          Handles absolute positioning flawlessly without layout shifts.
+          ========================================================================= */}
+      <div
+        className="fixed z-[999999] flex flex-col items-end gap-[10px] pointer-events-none transform-gpu bottom-[10px] right-[10px] md:bottom-[20px] md:right-[20px]"
+        style={{ overflow: 'visible' }}
+      >
         
-        {/* 1. CALL BUTTON (TOP) */}
-        <div className="relative group pointer-events-auto">
-          {/* Vibrant Energy Radiation Layers (High visibility on light backgrounds) */}
-          <div 
-            className="absolute inset-0 rounded-full border-2 border-blue-500/80 bg-blue-500/20 animate-energy-pulse-1 pointer-events-none"
-            style={{ '--pulse-color': 'rgba(37, 99, 235, 0.6)' } as React.CSSProperties}
-          />
-          <div 
-            className="absolute inset-0 rounded-full border border-cyan-400/70 bg-cyan-400/15 animate-energy-pulse-2 pointer-events-none"
-            style={{ '--pulse-color': 'rgba(6, 182, 212, 0.5)' } as React.CSSProperties}
-          />
-
-          {/* Accessible Device Tooltip */}
-          <span className="absolute right-14 sm:right-16 top-1/2 -translate-y-1/2 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 bg-slate-900/90 backdrop-blur-md text-white font-semibold text-[10px] sm:text-[11px] uppercase tracking-wider px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-slate-700/50 shadow-xl pointer-events-none whitespace-nowrap">
-            Call Engineering Desk
-          </span>
-
-          {/* Core Interactive Node with Modern Blue Gradient */}
+        {/* =========================================================================
+            1. CALL BUTTON (CLEAN & SATURATED TECH ORANGE)
+            ========================================================================= */}
+        <div className="flex flex-row-reverse items-center pointer-events-none group transform-gpu">
           <a
-            href={`tel:${phoneNumber}`}
-            aria-label="Initiate direct voice call connection with Emrald Ace"
-            className="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-tr from-[#024393] via-[#0b63c5] to-[#2563eb] text-white rounded-full shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-500/50 transition-all duration-300 transform hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+            href={`tel:${formattedCallNumber}`}
+            className="call-modern-orb pointer-events-auto will-change-transform relative flex items-center justify-center w-[52px] h-[52px] md:w-[52px] md:h-[52px]"
+            aria-label="Call Us Now"
           >
-            <Phone className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:rotate-12" />
-          </a>
-        </div>
+            {/* Ultra-Modern Hyper-Bright Luminous Laser Pulse Sequences (Orange Aura) */}
+            <span className="call-radiation-wave call-wave-1" />
+            <span className="call-radiation-wave call-wave-2" />
+            <span className="call-radiation-wave call-wave-3" />
 
-        {/* 2. OFFICIAL WHATSAPP BUTTON (BOTTOM) */}
-        <div className="relative group pointer-events-auto">
-          {/* Vibrant Energy Radiation Layers (High visibility on light backgrounds) */}
-          <div 
-            className="absolute inset-0 rounded-full border-2 border-emerald-500/80 bg-emerald-500/20 animate-energy-pulse-1 pointer-events-none"
-            style={{ '--pulse-color': 'rgba(16, 185, 129, 0.6)' } as React.CSSProperties}
-          />
-          <div 
-            className="absolute inset-0 rounded-full border border-teal-400/70 bg-teal-400/15 animate-energy-pulse-2 pointer-events-none"
-            style={{ '--pulse-color': 'rgba(45, 212, 191, 0.5)' } as React.CSSProperties}
-          />
+            {/* Core Structure: Clean & Saturated Symmetrical Tech Orange Base */}
+            <span className="call-cyber-core" />
 
-          {/* Accessible Device Tooltip */}
-          <span className="absolute right-14 sm:right-16 top-1/2 -translate-y-1/2 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 bg-slate-900/90 backdrop-blur-md text-white font-semibold text-[10px] sm:text-[11px] uppercase tracking-wider px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-slate-700/50 shadow-xl pointer-events-none whitespace-nowrap">
-            WhatsApp Chat Pipeline
-          </span>
+            {/* Internal Volumetric Energy Glow */}
+            <span className="call-cyber-glow" />
 
-          {/* Core Interactive Node with Modern Emerald Gradient */}
-          <a
-            href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open secure digital communication link with Emrald Ace on WhatsApp"
-            className="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-tr from-[#128C7E] via-[#25D366] to-[#34D399] text-white rounded-full shadow-lg shadow-emerald-600/30 hover:shadow-xl hover:shadow-emerald-500/50 transition-all duration-300 transform hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2"
-          >
-            {/* Official WhatsApp Brand Vector Icon */}
-            <svg
-              className="w-5 h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 fill-current"
+            {/* Premium Glass Specular Shard Overlay */}
+            <span style={{
+              position: 'absolute', inset: 0, borderRadius: '50%',
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.15) 45%, transparent 60%)',
+              zIndex: 10, pointerEvents: 'none',
+            }} />
+
+            {/* Modern Phone Call Icon */}
+            <svg 
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.67-1.622-.918-2.214-.242-.577-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.029 6.987 2.894A9.825 9.825 0 0121.892 12c0 5.45-4.436 9.885-9.841 9.885M12 0C5.373 0 0 5.373 0 12c0 2.115.55 4.175 1.597 5.996L0 24l6.183-1.622C7.902 23.385 9.92 24 12 24c6.627 0 12-5.373 12-12C24 5.373 18.627 0 12 0z" />
+              style={{ 
+                width: 22, 
+                height: 22, 
+                fill: 'none',
+                stroke: '#ffffff',
+                strokeWidth: '2.5',
+                strokeLinecap: 'round',
+                strokeLinejoin: 'round',
+                position: 'relative', 
+                zIndex: 20, 
+                flexShrink: 0, 
+                transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                filter: 'drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.4))'
+              }}
+              className="group-hover:scale-110 group-hover:rotate-12 icon-scale">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
           </a>
+
+          {/* Premium Cyber Tooltip — Call Button */}
+          <div className="hidden lg:flex items-center mr-4 px-4 py-2 bg-[#1c0a01]/95 backdrop-blur-xl border border-[#ff5500]/[0.45] rounded-xl text-white text-[10px] font-bold uppercase tracking-[0.32em] opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 ease-out pointer-events-none whitespace-nowrap"
+            style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.3), 0 0 24px rgba(255,85,0,0.25)' }}>
+            <span className="relative flex h-2 w-2 mr-3 flex-shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: '#ff5500' }}></span>
+              <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#ea580c' }}></span>
+            </span>
+            Instant Phone Call
+          </div>
+        </div>
+
+        {/* =========================================================================
+            2. WHATSAPP BUTTON (DEEPENED RICH TECH GREEN)
+            ========================================================================= */}
+        <div className="flex flex-row-reverse items-center pointer-events-none group transform-gpu">
+          <a
+            href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="wa-modern-orb pointer-events-auto will-change-transform relative flex items-center justify-center w-[52px] h-[52px] md:w-[52px] md:h-[52px]"
+            aria-label="Contact on WhatsApp"
+          >
+            {/* Ultra-Modern Hyper-Bright Luminous Laser Pulse Sequences (Green Aura) */}
+            <span className="wa-radiation-wave wave-1" />
+            <span className="wa-radiation-wave wave-2" />
+            <span className="wa-radiation-wave wave-3" />
+
+            {/* Core Structure: Symmetrical Saturated Deep Tech Green Base */}
+            <span className="wa-cyber-core" />
+
+            {/* Internal Volumetric Energy Glow */}
+            <span className="wa-cyber-glow" />
+
+            {/* Premium Glass Specular Shard Overlay */}
+            <span style={{
+              position: 'absolute', inset: 0, borderRadius: '50%',
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.15) 45%, transparent 60%)',
+              zIndex: 10, pointerEvents: 'none',
+            }} />
+
+            {/* Original WhatsApp Icon */}
+            <svg viewBox="0 0 32 32"
+              style={{ 
+                width: 26, 
+                height: 26, 
+                fill: '#ffffff', 
+                position: 'relative', 
+                zIndex: 20, 
+                flexShrink: 0, 
+                transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                filter: 'drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.4))'
+              }}
+              className="group-hover:scale-110 group-hover:rotate-6 icon-scale">
+              <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.48 2.025 7.78l-2.025 7.395 7.58-1.99c2.35 1.4 5.08 2.215 8.02 2.215 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.355c-2.585 0-4.99-.745-7.035-2.035l-.505-.315-4.485 1.175 1.2-4.385-.35-.555c-1.425-2.275-2.18-4.91-2.18-7.64 0-7.72 6.28-14 14-14s14 6.28 14 14-6.28 14-14 14zM22.9 19.33c-.385-.195-2.275-1.12-2.625-1.245s-.605-.195-.855.195-.975 1.245-1.195 1.5-.445.285-.83.09c-.385-.195-1.63-.6-3.105-1.915-1.145-1.025-1.92-2.29-2.145-2.675s-.025-.595.17-.79c.175-.175.385-.45.58-.675.19-.22.255-.385.385-.64s.065-.48-.035-.675-.855-2.065-1.17-2.825c-.305-.745-.615-.645-.855-.655s-.485-.015-.745-.015-.675.1-1.03.495c-.35.395-1.345 1.315-1.345 3.205s1.375 3.715 1.57 3.975c.195.255 2.705 4.13 6.55 5.79.915.39 1.63.625 2.185.8 1.015.32 1.935.275 2.665.165.815-.12 2.275-.93 2.59-1.83.315-.895.315-1.66.22-1.825-.095-.175-.35-.275-.735-.47z"/>
+            </svg>
+          </a>
+
+          {/* Premium Cyber Tooltip — WhatsApp Button */}
+          <div className="hidden lg:flex items-center mr-4 px-4 py-2 bg-[#011c15]/95 backdrop-blur-xl border border-[#10b981]/[0.45] rounded-xl text-white text-[10px] font-bold uppercase tracking-[0.32em] opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 ease-out pointer-events-none whitespace-nowrap"
+            style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.3), 0 0 24px rgba(16,185,129,0.25)' }}>
+            <span className="relative flex h-2 w-2 mr-3 flex-shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: '#10b981' }}></span>
+              <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#10b981' }}></span>
+            </span>
+            Instant IT Support
+          </div>
         </div>
 
       </div>
+
+      {/* =========================================================================
+          3. SCOPED ENGINE STYLING (Preserved Animations & Isolation Proofing)
+          ========================================================================= */}
+      <style jsx global>{`
+        /* ----------------------------------------------------
+           CALL BUTTON (ORANGE) ENGINE
+        ---------------------------------------------------- */
+        .call-modern-orb {
+          border-radius: 50%;
+          cursor: pointer;
+          transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .call-modern-orb:hover { 
+          transform: scale(1.12) translateY(-2px); 
+        }
+
+        .call-cyber-core {
+          position: absolute; inset: 0; border-radius: 50%; z-index: 1;
+          background: linear-gradient(135deg, #ff6a14 0%, #ea580c 100%);
+          border: 1px solid rgba(234, 88, 12, 0.2);
+          box-shadow:
+            0 12px 32px rgba(234, 88, 12, 0.45),
+            0 4px 12px rgba(0, 0, 0, 0.25),
+            0 0 0 1px rgba(255, 255, 255, 0.08),
+            inset 0 3px 4px rgba(255, 255, 255, 0.8),
+            inset 0 -3px 5px rgba(0, 0, 0, 0.3);
+          transition: filter 0.3s ease, box-shadow 0.3s ease;
+        }
+        .call-modern-orb:hover .call-cyber-core {
+          filter: brightness(1.08);
+          box-shadow:
+            0 16px 36px rgba(234, 88, 12, 0.55),
+            0 6px 16px rgba(0, 0, 0, 0.3),
+            inset 0 3px 4px rgba(255, 255, 255, 0.9),
+            inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .call-cyber-glow {
+          position: absolute; inset: 2px; border-radius: 50%; z-index: 5; pointer-events: none;
+          background: radial-gradient(circle at 35% 25%, rgba(255,255,255,0.5) 0%, rgba(255,140,65,0.3) 50%, transparent 80%);
+          animation: call-cyber-ambient 2.5s ease-in-out infinite alternate;
+        }
+        @keyframes call-cyber-ambient {
+          0%   { opacity: 0.7; transform: scale(0.96); }
+          100% { opacity: 1;   transform: scale(1.01); }
+        }
+
+        .call-radiation-wave {
+          position: absolute;
+          top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%;
+          pointer-events: none; z-index: 0; opacity: 0;
+          border: 1px solid rgba(255, 110, 30, 0.45);
+          background: radial-gradient(circle, rgba(255, 85, 0, 0.1) 0%, transparent 70%);
+          will-change: transform, opacity;
+        }
+          
+        .call-wave-1 { animation: call-radiation-pulse 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
+        .call-wave-2 { animation: call-radiation-pulse 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite 1s; }
+        .call-wave-3 { animation: call-radiation-pulse 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite 2s; }
+
+        @keyframes call-radiation-pulse {
+          0% { transform: scale(0.95); opacity: 0; }
+          10% { opacity: 1; box-shadow: 0 0 16px 2px rgba(255, 85, 0, 0.4); }
+          60% { opacity: 0.25; }
+          100% { transform: scale(2.2); opacity: 0; }
+        }
+
+        /* ----------------------------------------------------
+           WHATSAPP BUTTON (GREEN) ENGINE
+        ---------------------------------------------------- */
+        .wa-modern-orb {
+          border-radius: 50%;
+          cursor: pointer;
+          transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .wa-modern-orb:hover { 
+          transform: scale(1.12) translateY(-2px); 
+        }
+
+        .wa-cyber-core {
+          position: absolute; inset: 0; border-radius: 50%; z-index: 1;
+          background: linear-gradient(135deg, #12a14b 0%, #0b662f 100%);
+          border: 1px solid rgba(11, 102, 47, 0.2);
+          box-shadow:
+            0 12px 32px rgba(18, 161, 75, 0.45),
+            0 4px 12px rgba(0, 0, 0, 0.25),
+            0 0 0 1px rgba(255, 255, 255, 0.08),
+            inset 0 3px 4px rgba(255, 255, 255, 0.8),
+            inset 0 -3px 5px rgba(0, 0, 0, 0.35);
+          transition: filter 0.3s ease, box-shadow 0.3s ease;
+        }
+        .wa-modern-orb:hover .wa-cyber-core {
+          filter: brightness(1.08);
+          box-shadow:
+            0 16px 36px rgba(18, 161, 75, 0.55),
+            0 6px 16px rgba(0, 0, 0, 0.3),
+            inset 0 3px 4px rgba(255, 255, 255, 0.9),
+            inset 0 -2px 5px rgba(0, 0, 0, 0.25);
+        }
+
+        .wa-cyber-glow {
+          position: absolute; inset: 2px; border-radius: 50%; z-index: 5; pointer-events: none;
+          background: radial-gradient(circle at 35% 25%, rgba(255,255,255,0.45) 0%, rgba(74,222,128,0.25) 50%, transparent 80%);
+          animation: cyber-ambient 2.5s ease-in-out infinite alternate;
+        }
+        @keyframes cyber-ambient {
+          0%   { opacity: 0.7; transform: scale(0.96); }
+          100% { opacity: 1;   transform: scale(1.01); }
+        }
+
+        .wa-radiation-wave {
+          position: absolute;
+          top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%;
+          pointer-events: none; z-index: 0; opacity: 0;
+          border: 1px solid rgba(74, 222, 128, 0.45);
+          background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+          will-change: transform, opacity;
+        }
+          
+        .wave-1 { animation: radiation-pulse 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
+        .wave-2 { animation: radiation-pulse 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite 1s; }
+        .wave-3 { animation: radiation-pulse 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite 2s; }
+
+        @keyframes radiation-pulse {
+          0% { transform: scale(0.95); opacity: 0; }
+          10% { opacity: 1; box-shadow: 0 0 16px 2px rgba(18, 161, 75, 0.4); }
+          60% { opacity: 0.25; }
+          100% { transform: scale(2.2); opacity: 0; }
+        }
+
+        /* ----------------------------------------------------
+           RESPONSIVE LAWS & PERFORMANCE PROOFING
+        ---------------------------------------------------- */
+        @media (max-width: 768px) {
+          .call-modern-orb, .wa-modern-orb {
+            width: 46px !important;
+            height: 46px !important;
+          }
+          .icon-scale {
+            transform: scale(0.88);
+          }
+        }
+      `}</style>
     </>
   );
-}
+};
+
+export default QuickContactButtons;
