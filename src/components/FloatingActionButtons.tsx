@@ -11,59 +11,99 @@ export default function FloatingActionButtons() {
   );
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-center gap-5 pointer-events-none print:hidden">
-      
-      {/* 1. FIXED PHONE CALL HUB BUTTON (TOP Position) */}
-      <div className="relative group pointer-events-auto">
-        {/* Pulsing Energy Rings */}
-        <div className="absolute inset-0 bg-[#0b63c5] rounded-full opacity-40 animate-energyRing pointer-events-none" />
-        <div className="absolute inset-0 bg-[#0b63c5] rounded-full opacity-20 animate-energyRing [animation-delay:0.8s] pointer-events-none" />
+    <>
+      {/* Enhanced Ultra-Modern Energy Pulse Keyframes */}
+      <style jsx global>{`
+        @keyframes energyPulse {
+          0% {
+            transform: scale(0.9);
+            opacity: 0.95;
+            box-shadow: 0 0 12px var(--pulse-color);
+          }
+          70% {
+            transform: scale(1.6);
+            opacity: 0;
+            box-shadow: 0 0 24px var(--pulse-color);
+          }
+          100% {
+            transform: scale(1.6);
+            opacity: 0;
+          }
+        }
+        .animate-energy-pulse-1 {
+          animation: energyPulse 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+        }
+        .animate-energy-pulse-2 {
+          animation: energyPulse 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s infinite;
+        }
+      `}</style>
+
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[9999] flex flex-col items-center gap-3 sm:gap-4 pointer-events-none print:hidden">
         
-        {/* Accessible Device Tooltip */}
-        <span className="absolute right-16 top-1/2 -translate-y-1/2 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 bg-slate-900 text-white font-bold text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-lg border border-slate-800 shadow-xl pointer-events-none whitespace-nowrap">
-          Call Engineering Desk
-        </span>
+        {/* 1. CALL BUTTON (TOP) */}
+        <div className="relative group pointer-events-auto">
+          {/* Vibrant Energy Radiation Layers (High visibility on light backgrounds) */}
+          <div 
+            className="absolute inset-0 rounded-full border-2 border-blue-500/80 bg-blue-500/20 animate-energy-pulse-1 pointer-events-none"
+            style={{ '--pulse-color': 'rgba(37, 99, 235, 0.6)' } as React.CSSProperties}
+          />
+          <div 
+            className="absolute inset-0 rounded-full border border-cyan-400/70 bg-cyan-400/15 animate-energy-pulse-2 pointer-events-none"
+            style={{ '--pulse-color': 'rgba(6, 182, 212, 0.5)' } as React.CSSProperties}
+          />
 
-        {/* Core Button Interactive Node */}
-        <a
-          href={`tel:${phoneNumber}`}
-          aria-label="Initiate direct voice call connection with Emrald Ace"
-          className="relative flex items-center justify-center w-14 h-14 bg-[#0b63c5] text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 hover:bg-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-300"
-        >
-          <Phone className="w-5 h-5 animate-[wiggle_2s_infinite_ease-in-out]" />
-        </a>
-      </div>
+          {/* Accessible Device Tooltip */}
+          <span className="absolute right-14 sm:right-16 top-1/2 -translate-y-1/2 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 bg-slate-900/90 backdrop-blur-md text-white font-semibold text-[10px] sm:text-[11px] uppercase tracking-wider px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-slate-700/50 shadow-xl pointer-events-none whitespace-nowrap">
+            Call Engineering Desk
+          </span>
 
-      {/* 2. WHATSAPP ENGINE CONNECTIVITY BUTTON (BOTTOM Position) */}
-      <div className="relative group pointer-events-auto">
-        {/* Pulsing Energy Rings */}
-        <div className="absolute inset-0 bg-[#25D366] rounded-full opacity-40 animate-energyRing [animation-delay:0.4s] pointer-events-none" />
-        <div className="absolute inset-0 bg-[#25D366] rounded-full opacity-20 animate-energyRing [animation-delay:1.2s] pointer-events-none" />
-        
-        {/* Accessible Device Tooltip */}
-        <span className="absolute right-16 top-1/2 -translate-y-1/2 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 bg-slate-900 text-white font-bold text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-lg border border-slate-800 shadow-xl pointer-events-none whitespace-nowrap">
-          WhatsApp Chat Pipeline
-        </span>
-
-        {/* Core Button Interactive Node */}
-        <a
-          href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open secure digital communication link with Emrald Ace on WhatsApp"
-          className="relative flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 hover:bg-[#20ba5a] focus:outline-hidden focus:ring-4 focus:ring-emerald-300"
-        >
-          {/* Custom Modern Vector WhatsApp Asset Graphic */}
-          <svg 
-            className="w-6 h-6 fill-current" 
-            viewBox="0 0 24 24" 
-            xmlns="http://www.w3.org/2000/svg"
+          {/* Core Interactive Node with Modern Blue Gradient */}
+          <a
+            href={`tel:${phoneNumber}`}
+            aria-label="Initiate direct voice call connection with Emrald Ace"
+            className="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-tr from-[#024393] via-[#0b63c5] to-[#2563eb] text-white rounded-full shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-500/50 transition-all duration-300 transform hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
           >
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.413 9.863-9.847.001-2.63-1.019-5.101-2.871-6.957C16.548 1.951 14.074.933 11.46.933c-5.443 0-9.865 4.412-9.867 9.846-.001 1.814.497 3.591 1.442 5.184l-.999 3.646 3.732-.975zm13.116-7.399c-.3-.149-1.777-.874-2.053-.974-.276-.102-.476-.151-.675.151-.199.302-.77.974-.944 1.176-.175.203-.35.228-.65.077-.3-.15-1.267-.467-2.414-1.492-.893-.797-1.496-1.782-1.671-2.083-.176-.302-.019-.465.131-.615.136-.134.301-.352.451-.528.15-.177.2-.303.3-.504.1-.202.05-.378-.025-.529-.075-.151-.675-1.628-.925-2.229-.244-.588-.493-.508-.675-.517-.174-.009-.374-.01-.574-.01-.2 0-.526.075-.802.376-.276.301-1.052 1.029-1.052 2.512 0 1.484 1.077 2.918 1.228 3.12.15.201 2.118 3.235 5.132 4.537.717.31 1.277.494 1.714.633.721.23 1.377.198 1.896.121.578-.088 1.777-.726 2.027-1.43.25-.704.25-1.307.175-1.43-.075-.124-.275-.199-.575-.349z"/>
-          </svg>
-        </a>
-      </div>
+            <Phone className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:rotate-12" />
+          </a>
+        </div>
 
-    </div>
+        {/* 2. OFFICIAL WHATSAPP BUTTON (BOTTOM) */}
+        <div className="relative group pointer-events-auto">
+          {/* Vibrant Energy Radiation Layers (High visibility on light backgrounds) */}
+          <div 
+            className="absolute inset-0 rounded-full border-2 border-emerald-500/80 bg-emerald-500/20 animate-energy-pulse-1 pointer-events-none"
+            style={{ '--pulse-color': 'rgba(16, 185, 129, 0.6)' } as React.CSSProperties}
+          />
+          <div 
+            className="absolute inset-0 rounded-full border border-teal-400/70 bg-teal-400/15 animate-energy-pulse-2 pointer-events-none"
+            style={{ '--pulse-color': 'rgba(45, 212, 191, 0.5)' } as React.CSSProperties}
+          />
+
+          {/* Accessible Device Tooltip */}
+          <span className="absolute right-14 sm:right-16 top-1/2 -translate-y-1/2 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 bg-slate-900/90 backdrop-blur-md text-white font-semibold text-[10px] sm:text-[11px] uppercase tracking-wider px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-slate-700/50 shadow-xl pointer-events-none whitespace-nowrap">
+            WhatsApp Chat Pipeline
+          </span>
+
+          {/* Core Interactive Node with Modern Emerald Gradient */}
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open secure digital communication link with Emrald Ace on WhatsApp"
+            className="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-gradient-to-tr from-[#128C7E] via-[#25D366] to-[#34D399] text-white rounded-full shadow-lg shadow-emerald-600/30 hover:shadow-xl hover:shadow-emerald-500/50 transition-all duration-300 transform hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2"
+          >
+            {/* Official WhatsApp Brand Vector Icon */}
+            <svg
+              className="w-5 h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 fill-current"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.67-1.622-.918-2.214-.242-.577-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.029 6.987 2.894A9.825 9.825 0 0121.892 12c0 5.45-4.436 9.885-9.841 9.885M12 0C5.373 0 0 5.373 0 12c0 2.115.55 4.175 1.597 5.996L0 24l6.183-1.622C7.902 23.385 9.92 24 12 24c6.627 0 12-5.373 12-12C24 5.373 18.627 0 12 0z" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </>
   );
 }
