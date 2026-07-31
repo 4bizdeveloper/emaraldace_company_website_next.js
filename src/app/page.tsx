@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { 
   ArrowRight, ShieldCheck, Wrench, Building2, HardHat, CheckCircle2, 
   ChevronRight, Phone, Mail, Award, ThumbsUp, Sparkles, HelpCircle, ChevronDown,
-  ChevronLeft
+  ChevronLeft, CallOutlined
 } from 'lucide-react';
 
 export default function Home() {
@@ -92,53 +92,62 @@ export default function Home() {
   return (
     <div className="w-full text-slate-900 bg-white selection:bg-[#0b63c5] selection:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
       
-      {/* 1. ULTRA MODERN HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center bg-slate-950 py-24 text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-40 mix-blend-luminosity">
-          <Image 
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=90"
-            alt="Emrald Ace Advanced Engineering Site Construction Abu Dhabi"
-            fill
-            priority
-            className="object-cover object-center scale-105 motion-safe:animate-[pulse_8s_ease-in-out_infinite]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-        </div>
+      {/* 1. ULTRA MODERN HERO SECTION WITH VIDEO BACKGROUND & FALLBACK */}
+      <section className="relative min-h-screen w-full flex items-center justify-center bg-slate-950 py-20 text-white overflow-hidden">
+        {/* Background Video with Image Fallback Poster */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=90"
+          className="absolute inset-0 w-full h-full object-cover object-center z-0 filter brightness-90"
+        >
+          <source src="/bg-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full">
-          <div className="lg:col-span-7 space-y-8 text-left">
-            <div className="inline-flex items-center space-x-2.5 bg-[#0b63c5]/20 border border-[#0b63c5]/40 backdrop-blur-md rounded-full px-4 py-2">
+        {/* Video Overlay Layer */}
+        <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-[2px] z-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/75 to-slate-900/60 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/60 z-0" />
+
+        {/* Hero Content Area */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full my-auto">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
+            <div className="inline-flex items-center space-x-2.5 bg-[#0b63c5]/30 border border-[#0b63c5]/50 backdrop-blur-md rounded-full px-4 py-2">
               <span className="w-2 h-2 rounded-full bg-[#FF6A00] animate-ping"></span>
               <span className="text-xs font-bold text-blue-200 uppercase tracking-widest">ISO Certified | ICV Certified | UAE Licensed Contractor</span>
             </div>
             
-            <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-[1.05] text-white">
+            {/* Main Hero Title Kept In Hero Section */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] text-white">
               Engineering Value. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-[#0b63c5] to-indigo-300">
                 Optimizing Assets.
               </span>
             </h1>
             
-            <p className="text-base sm:text-xl text-slate-300 max-w-xl font-normal leading-relaxed">
+            <p className="text-base sm:text-xl text-slate-200 max-w-xl font-normal leading-relaxed">
               Welcome to Emrald Ace General Contracting & Electromechanical L.L.C. We deliver reliable facility management, maintenance, and robust engineering setups across the UAE footprint since 2014.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href="/services" className="px-8 py-4 bg-[#0b63c5] hover:bg-blue-600 text-white font-bold rounded-xl shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center space-x-2 transform hover:-translate-y-0.5 group">
+              <Link href="/services" className="px-8 py-4 bg-[#0b63c5] hover:bg-blue-600 text-white font-bold rounded-xl shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center space-x-2 transform hover:-translate-y-0.5 group">
                 <span>Explore Enterprise Solutions</span>
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link href="/contact" className="px-8 py-4 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold rounded-xl backdrop-blur-xs transition-all text-center">
+              <Link href="/contact" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-xl backdrop-blur-md transition-all text-center">
                 Request Engineering Callback
               </Link>
             </div>
           </div>
 
-          {/* Quick Metrics Panel */}
+          {/* Metrics Panel */}
           <div className="lg:col-span-5 relative">
-            <div className="absolute inset-0 bg-[#0b63c5] rounded-3xl opacity-10 blur-3xl transform rotate-6 scale-95 pointer-events-none"></div>
-            <div className="w-full max-w-md mx-auto p-8 bg-slate-900/80 border border-slate-800 rounded-2xl shadow-2xl backdrop-blur-lg space-y-6 relative border-t-2 border-t-[#0b63c5]">
+            <div className="absolute inset-0 bg-[#0b63c5] rounded-3xl opacity-20 blur-3xl transform rotate-6 scale-95 pointer-events-none"></div>
+            <div className="w-full max-w-md mx-auto p-8 bg-slate-900/85 border border-slate-700/80 rounded-2xl shadow-2xl backdrop-blur-xl space-y-6 relative border-t-2 border-t-[#0b63c5]">
               <div className="flex justify-between items-center border-b border-slate-800 pb-4">
                 <span className="font-extrabold text-blue-400 text-xs tracking-widest uppercase block">Operational Statistics</span>
                 <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full border border-emerald-500/20">Active Coverage</span>
@@ -150,7 +159,7 @@ export default function Home() {
                   { metric: "2023", label: "FM Division Expansion Year" },
                   { metric: "100%", label: "UAE Regional Fulfillment" }
                 ].map((stat, sIdx) => (
-                  <div key={sIdx} className="p-4 bg-slate-950/50 rounded-xl border border-slate-850 transform hover:scale-[1.02] transition-transform">
+                  <div key={sIdx} className="p-4 bg-slate-950/60 rounded-xl border border-slate-800 transform hover:scale-[1.02] transition-transform">
                     <span className="block text-3xl font-black text-white tracking-tight">{stat.metric}</span>
                     <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-tight mt-1 block leading-tight">{stat.label}</span>
                   </div>
@@ -234,7 +243,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. OPTIMIZED SERVICES SECTION - CLEAN & HIGH-READABILITY LAYOUT */}
+      {/* 4. OPTIMIZED SERVICES SECTION */}
       <section className="py-24 bg-slate-50 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -249,7 +258,6 @@ export default function Home() {
                 key={index} 
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group transform hover:-translate-y-1"
               >
-                {/* Image Container with high contrast title overlay */}
                 <div className="relative h-[220px] w-full overflow-hidden">
                   <Image 
                     src={service.image} 
@@ -258,10 +266,8 @@ export default function Home() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105" 
                   />
-                  {/* Soft high-contrast bottom shadow gradient for pristine title readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
                   
-                  {/* Clean image overlay title without heavy boxes */}
                   <div className="absolute bottom-4 left-5 right-5 z-10">
                     <h3 className="text-lg font-bold text-white tracking-tight drop-shadow-md leading-snug">
                       {service.title}
@@ -269,7 +275,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Service description placed neatly below the image */}
                 <div className="p-6 flex-1 flex flex-col justify-between space-y-4 bg-white">
                   <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
                     {service.desc}
@@ -329,7 +334,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. TRUSTED BY INDUSTRY LEADERS - AUTO-SLIDING MARQUEE WITH MANUAL ARROWS */}
+      {/* 6. TRUSTED BY INDUSTRY LEADERS */}
       <section className="py-20 bg-slate-950 text-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-10">
@@ -338,26 +343,24 @@ export default function Home() {
               <p className="text-xl sm:text-2xl font-bold text-white tracking-tight mt-1">Strategic Partners Across the Last 5 Years</p>
             </div>
             
-            {/* Slide Navigation Arrows */}
             <div className="flex items-center space-x-2">
               <button 
                 onClick={() => handleScroll('left')} 
                 aria-label="Previous Slide" 
-                className="w-10 h-10 rounded-full bg-slate-800 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-colors border border-slate-700"
+                className="w-10 h-10 rounded-full bg-slate-800 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-colors border border-slate-700 cursor-pointer"
               >
                 <ChevronLeft size={20} />
               </button>
               <button 
                 onClick={() => handleScroll('right')} 
                 aria-label="Next Slide" 
-                className="w-10 h-10 rounded-full bg-slate-800 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-colors border border-slate-700"
+                className="w-10 h-10 rounded-full bg-slate-800 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-colors border border-slate-700 cursor-pointer"
               >
                 <ChevronRight size={20} />
               </button>
             </div>
           </div>
 
-          {/* Horizontal Scrolling Track */}
           <div 
             ref={scrollRef} 
             className="flex items-center space-x-8 overflow-x-auto scrollbar-none scroll-smooth py-4 no-scrollbar"
@@ -383,7 +386,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. FAQ SECTION - READABILITY OPTIMIZED */}
+      {/* 7. HIGH-CONVERTING CTA SECTION WITH CLICKABLE PHONE NUMBER */}
+      <section className="py-16 bg-gradient-to-r from-slate-900 via-[#0b63c5] to-slate-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-slate-950/20" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="bg-slate-950/40 border border-white/10 backdrop-blur-xl rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="space-y-4 text-center lg:text-left max-w-2xl">
+              <span className="text-xs font-bold text-amber-400 uppercase tracking-widest inline-flex items-center gap-2">
+                <Sparkles className="w-4 h-4" /> 24/7 Rapid Emergency Response
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white leading-tight">
+                Ready to Upgrade Your Facility Management & MEP Operations?
+              </h2>
+              <p className="text-slate-200 text-xs sm:text-sm font-normal">
+                Speak directly with our technical dispatch engineers now for consultations, emergency support, or AMC inquiries.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto shrink-0">
+              {/* Clickable Phone Number CTA */}
+              <a 
+                href="tel:+97126282868" 
+                className="w-full sm:w-auto px-6 py-4 bg-white hover:bg-slate-100 text-slate-950 font-black rounded-xl shadow-xl transition-all flex items-center justify-center space-x-3 text-sm tracking-wide group"
+              >
+                <div className="w-8 h-8 rounded-full bg-[#0b63c5]/10 flex items-center justify-center text-[#0b63c5]">
+                  <Phone className="w-4 h-4 text-[#0b63c5] animate-bounce" />
+                </div>
+                <span>Call +971 2 628 2868</span>
+              </a>
+
+              <Link 
+                href="/contact" 
+                className="w-full sm:w-auto px-6 py-4 bg-transparent hover:bg-white/10 border border-white/30 text-white font-bold rounded-xl transition-all text-center text-sm"
+              >
+                Request Quotation
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. FAQ SECTION */}
       <section className="py-24 bg-slate-50 border-t border-slate-200 scroll-mt-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
@@ -402,10 +445,9 @@ export default function Home() {
                 >
                   <button
                     onClick={() => toggleFaq(fIdx)}
-                    className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 focus:outline-hidden group hover:bg-slate-50/60 transition-colors"
+                    className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 focus:outline-hidden group hover:bg-slate-50/60 transition-colors cursor-pointer"
                     aria-expanded={isOpen}
                   >
-                    {/* Readability fix: reduced text weight from heavy/thick font-black to semi-bold */}
                     <h3 className="text-sm sm:text-base font-semibold text-slate-800 flex items-start gap-3.5 pr-2 leading-snug">
                       <HelpCircle className="w-5 h-5 text-[#0b63c5] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                       <span>{faq.q}</span>
@@ -432,7 +474,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Structural Artificial Intelligence Content Optimization Injection */}
+        {/* Structural Artificial Intelligence & Search Engine Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
