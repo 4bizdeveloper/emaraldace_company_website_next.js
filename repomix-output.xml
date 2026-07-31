@@ -44,6 +44,12 @@ public/
   logo.png
 src/
   app/
+    about/
+      page.tsx
+    contact/
+      page.tsx
+    services/
+      page.tsx
     globals.css
     icon.png
     layout.tsx
@@ -66,42 +72,305 @@ tsconfig.json
 <files>
 This section contains the contents of the repository's files.
 
+<file path="src/app/about/page.tsx">
+import React from 'react';
+import Image from 'next/image';
+import { Compass, Layers, ShieldCheck, Award, Building, HardHat } from 'lucide-react';
+
+export default function About() {
+  return (
+    <div className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Head Block Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-20">
+          <h1 className="text-xs uppercase tracking-widest font-extrabold text-[#FF6A00]">Corporate Identity</h1>
+          <p className="text-4xl font-black text-slate-900 tracking-tight">About Emrald Ace</p>
+          <div className="w-12 h-1 bg-[#0B63C5] mx-auto rounded-full"></div>
+        </div>
+
+        {/* Chairman's Section Block Template */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24 bg-slate-50 p-8 sm:p-12 rounded-2xl border border-slate-150">
+          <div className="lg:col-span-4 flex flex-col items-center text-center space-y-4">
+            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-[#0B63C5] shadow-lg">
+              <Image 
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" 
+                alt="Drew Feig Chairman Placeholder Image Target"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+            <div>
+              <h3 className="text-lg font-black text-slate-950">Drew Feig</h3>
+              <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Chairman Statement Lead</p>
+            </div>
+          </div>
+          <div className="lg:col-span-8 space-y-4">
+            <h4 className="text-xl font-bold text-slate-900">Chairman's Message: Building Lasting Partnerships Through Excellence</h4>
+            <p className="text-sm text-slate-600 leading-relaxed font-medium">
+              Welcome to Emrald Ace General Contracting & Electromechanical L.L.C., where engineering expertise meets operational excellence. Since our establishment, we have built our reputation by delivering reliable facility management, maintenance, and engineering solutions that create long-term value for our clients. Today, our organization has evolved into a trusted provider of Integrated Facility Management, Annual Maintenance Contracts, and Interior Fit-Out, supported by strong MEP Engineering and General Contracting capabilities across the UAE.
+            </p>
+            <p className="text-sm text-slate-600 leading-relaxed font-medium">
+              We understand that modern facilities demand more than routine maintenance—they require intelligent planning, technical expertise, proactive management, and a commitment to continuous improvement. Our experienced team works closely with clients to provide customized solutions that improve operational efficiency, extend asset life, and create safe, productive environments.
+            </p>
+          </div>
+        </div>
+
+        {/* Strategic Identity Parameters Row Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mb-20">
+          <div className="p-8 bg-[#0B63C5]/5 border border-[#0B63C5]/10 rounded-2xl space-y-4">
+            <div className="w-12 h-12 bg-[#0B63C5] rounded-xl flex items-center justify-center text-white">
+              <Compass className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold text-slate-900">Our Vision</h3>
+            <p className="text-sm text-slate-600 leading-relaxed font-medium">
+              To become one of the UAE's most trusted providers of integrated facility management solutions by delivering excellence, innovation, sustainability, and customer satisfaction metrics.
+            </p>
+          </div>
+
+          <div className="p-8 bg-orange-50/50 border border-orange-100 rounded-2xl space-y-4">
+            <div className="w-12 h-12 bg-[#FF6A00] rounded-xl flex items-center justify-center text-white">
+              <Layers className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold text-slate-900">Our Mission</h3>
+            <p className="text-sm text-slate-600 leading-relaxed font-medium">
+              To provide reliable, cost-effective, and innovative facility management solutions that maximize asset performance while creating safe, productive, and sustainable environments through engineering excellence and continuous improvement.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/app/contact/page.tsx">
+import React from 'react';
+import { Phone, Mail, MapPin, Clock, Shield } from 'lucide-react';
+
+export default function Contact() {
+  return (
+    <div className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-20">
+          <h1 className="text-xs uppercase tracking-widest font-extrabold text-[#FF6A00]">Gateway Portal</h1>
+          <p className="text-4xl font-black text-slate-900 tracking-tight">Connect With Our Technical Experts</p>
+          <div className="w-12 h-1 bg-[#0B63C5] mx-auto rounded-full"></div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
+          {/* Card Contact Modules Row Layout */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="bg-slate-50 border border-slate-200 p-6 rounded-xl flex items-start space-x-4">
+              <div className="p-3 bg-[#0B63C5] text-white rounded-lg"><Phone size={24} /></div>
+              <div>
+                <span className="block text-[10px] uppercase font-bold text-slate-400 tracking-wider">Call Regional Office</span>
+                <a href="tel:+971528976025" className="text-base font-black text-slate-900 hover:text-[#0B63C5] transition-colors">+971 52 897 6025</a>
+              </div>
+            </div>
+
+            <div className="bg-slate-50 border border-slate-200 p-6 rounded-xl flex items-start space-x-4">
+              <div className="p-3 bg-[#FF6A00] text-white rounded-lg"><Mail size={24} /></div>
+              <div>
+                <span className="block text-[10px] uppercase font-bold text-slate-400 tracking-wider">Email Global Sales</span>
+                <a href="mailto:sales1@emraldace.com" className="text-base font-black text-slate-900 hover:text-[#0B63C5] transition-colors">sales1@emraldace.com</a>
+              </div>
+            </div>
+
+            <div className="bg-slate-50 border border-slate-200 p-6 rounded-xl flex items-start space-x-4">
+              <div className="p-3 bg-slate-900 text-white rounded-lg"><MapPin size={24} /></div>
+              <div>
+                <span className="block text-[10px] uppercase font-bold text-slate-400 tracking-wider">Base Coordinates</span>
+                <p className="text-sm font-bold text-slate-800 leading-relaxed">Musaffah M-14, Abu Dhabi, United Arab Emirates</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Compliance Info Frame */}
+          <div className="lg:col-span-7 bg-slate-950 text-white p-8 rounded-2xl border border-slate-900 space-y-6 shadow-xl">
+            <h3 className="text-xl font-black tracking-tight text-white flex items-center gap-2">
+              <Shield className="text-[#FF6A00]" />
+              <span>Certifications & Compliance Information</span>
+            </h3>
+            <p className="text-xs text-slate-400 leading-relaxed font-medium">
+              Emrald Ace Engineering & Facilities Management LLC is a fully licensed enterprise alignment entity officially recognized throughout the UAE jurisdiction grid matrix.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-slate-800 pt-6">
+              <div className="p-4 bg-slate-900 rounded-xl border border-slate-850"><span className="text-xs font-bold text-slate-300 block mb-1">ISO Quality Alignment</span><span className="text-[11px] font-bold text-orange-400 uppercase">Certified System</span></div>
+              <div className="p-4 bg-slate-900 rounded-xl border border-slate-850"><span className="text-xs font-bold text-slate-300 block mb-1">ICV Value Addition</span><span className="text-[11px] font-bold text-orange-400 uppercase">Certified Alignment</span></div>
+              <div className="p-4 bg-slate-900 rounded-xl border border-slate-850"><span className="text-xs font-bold text-slate-300 block mb-1">UAE Corporate License</span><span className="text-[11px] font-bold text-orange-400 uppercase">Licensed Contractor</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/app/services/page.tsx">
+import React from 'react';
+import { Wrench, ShieldCheck, Building, Paintbrush, Cpu, HardHat, CheckCircle2 } from 'lucide-react';
+
+export default function Services() {
+  const serviceBlocks = [
+    {
+      title: "Integrated Facility Management",
+      icon: <Building className="w-6 h-6 text-white" />,
+      bg: "bg-[#0B63C5]",
+      desc: "Smarter Facilities. Better Performance. Our integrated model brings every essential service together under one accountable team, giving clients a single point of contact, faster response times, and measurable long-term value.",
+      subCategories: [
+        { name: "Hard Facility Management", items: ["Mechanical Systems (HVAC equipment, chillers, pumps, AHUs, FCUs)", "Electrical Systems (LV/MV systems, switchgear, UPS, generators, lighting)", "Plumbing & Water Systems", "HVAC Services (preventive maintenance, air quality, energy efficiency)", "Civil & Building Fabric Maintenance (masonry, painting, waterproofing, façade)", "Fire & Life Safety Systems (alarms, suppression, compliance testing)", "Building Management Systems/BMS (monitoring, automation, energy optimization)"] },
+        { name: "Soft Facility Management", items: ["Housekeeping & Commercial Cleaning", "Glass & Façade Cleaning", "Landscaping & Grounds Maintenance", "Waste Management", "Pest Management", "Concierge, Reception & Porter Services"] },
+        { name: "Specialized Facility Management", items: ["Energy Management", "Asset Management", "Smart FM (CAFM, IoT, Building Automation)", "24/7 Helpdesk & Emergency Response"] }
+      ]
+    },
+    {
+      title: "Annual Maintenance Contracts (AMC)",
+      icon: <Wrench className="w-6 h-6 text-white" />,
+      bg: "bg-[#FF6A00]",
+      desc: "Protecting Your Assets Every Day. We tailor every AMC to the specific needs of the facility, whether residential, commercial, or industrial, combining planned servicing with rapid-response support.",
+      subCategories: [
+        { name: "What's Included", items: ["Scheduled Preventive Maintenance", "Corrective & Emergency Maintenance", "Routine Equipment Inspections", "24/7 Emergency Support", "Spare Parts Coordination", "Monthly Performance Reporting", "Dedicated Service Team", "Compliance & Safety Checks"] },
+        { name: "Key Benefits", items: ["Reduced Downtime", "Lower Long-Term Maintenance Costs", "Extended Equipment Life", "Predictable Annual Budgeting", "Faster Response Times", "Single Point of Accountability"] }
+      ]
+    },
+    {
+      title: "Interior Fit-Out Solutions",
+      icon: <Paintbrush className="w-6 h-6 text-white" />,
+      bg: "bg-slate-900",
+      desc: "Creating Inspiring Interior Spaces. We design and deliver functional, modern, and aesthetically pleasing interior environments tailored to business and residential requirements.",
+      subCategories: [
+        { name: "Our Core Fit-Out Capabilities", items: ["Office Fit-Out & Retail Fit-out", "Commercial & Residential Interiors", "Partitions & False Ceilings", "Flooring, Painting & Joinery", "Carpentry, Glass & Aluminium Works"] }
+      ]
+    },
+    {
+      title: "MEP Engineering Services",
+      icon: <Cpu className="w-6 h-6 text-white" />,
+      bg: "bg-[#0B63C5]",
+      desc: "Integrated Mechanical, Electrical & Plumbing Solutions.",
+      subCategories: [
+        { name: "Engineering Capabilities", items: ["Electrical Installation & Mechanical Works", "HVAC System Architecture", "Plumbing & Drainage Networks", "Fire Fighting & Fire Alarm Systems", "ELV Systems & Building Automation", "Testing & Commissioning Lifecycle"] }
+      ]
+    },
+    {
+      title: "General Contracting & Specialized Civil",
+      icon: <HardHat className="w-6 h-6 text-white" />,
+      bg: "bg-[#FF6A00]",
+      desc: "Comprehensive Civil Construction, Renovation & Building Solutions.",
+      subCategories: [
+        { name: "Civil & Extension Focus", items: ["Civil Construction & Structural Repairs", "Extensions & Renovations", "General Building Development", "Planning & Design Delivery Support"] },
+        { name: "Smart Access & Automation", items: ["Parking Access Control & Automatic Gates", "Remote Control Gates & CCTV Systems", "Artificial Turf Installation & Landscaping", "Waterproofing, Epoxy Flooring & Smart Building Solutions"] }
+      ]
+    }
+  ];
+
+  return (
+    <div className="py-20 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-20">
+          <h1 className="text-xs uppercase tracking-widest font-extrabold text-[#0B63C5]">Service Matrix</h1>
+          <p className="text-4xl font-black text-slate-900 tracking-tight">Core Business Offerings</p>
+          <p className="text-sm text-slate-500 font-medium">Reliable maintenance, skilled engineering, and dependable service – under one roof.</p>
+        </div>
+
+        <div className="space-y-16">
+          {serviceBlocks.map((block, index) => (
+            <div key={index} className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+              <div className={`p-6 sm:p-8 ${block.bg} text-white space-y-2`}>
+                <div className="flex items-center space-x-3">
+                  <div className="p-2.5 bg-white/10 rounded-xl">{block.icon}</div>
+                  <h2 className="text-2xl font-black tracking-tight">{block.title}</h2>
+                </div>
+                <p className="text-sm text-slate-100 max-w-4xl opacity-90 font-medium pt-2">{block.desc}</p>
+              </div>
+
+              <div className="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {block.subCategories.map((sub, sIdx) => (
+                  <div key={sIdx} className="space-y-4">
+                    <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wider border-b border-slate-100 pb-2">
+                      {sub.name}
+                    </h3>
+                    <ul className="space-y-2.5">
+                      {sub.items.map((item, iIdx) => (
+                        <li key={iIdx} className="text-xs font-semibold text-slate-600 flex items-start gap-2 leading-relaxed">
+                          <CheckCircle2 className="w-4 h-4 text-[#0B63C5] shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  );
+}
+</file>
+
 <file path="src/components/Footer.tsx">
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   const activeYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-slate-950 text-slate-400 text-xs py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-900 font-medium tracking-wide">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start border-b border-slate-900 pb-8 mb-8">
+    <footer className="w-full bg-slate-950 text-slate-400 text-xs pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t-4 border-[#FF6A00] font-medium tracking-wide">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-slate-900 pb-12 mb-8">
         
-        {/* Brand Column */}
-        <div className="space-y-3">
-          <span className="text-lg font-black tracking-tight text-white block">
-            EMRALD <span className="text-orange-500">ACE</span>
-          </span>
+        {/* Brand Target Layer */}
+        <div className="space-y-4">
+          <div className="flex items-center space-x-3">
+            <div className="relative w-10 h-10 bg-white rounded-md p-0.5 flex items-center justify-center">
+              <Image src="/logo.png" alt="Emrald Ace Logo" width={40} height={40} className="object-contain" />
+            </div>
+            <span className="text-lg font-black tracking-tight text-white block">
+              EMRALD <span className="text-[#FF6A00]">ACE</span>
+            </span>
+          </div>
           <p className="text-slate-500 leading-relaxed text-[11px] max-w-xs">
-            Integrated engineering expertise, corporate facilities solutions management models, and mechanical construction optimizations across the UAE territory.
+            Integrated engineering expertise, facilities management operations models, and electro-mechanical contracting optimization implementations across the UAE territory since 2014.
           </p>
         </div>
 
+        {/* Navigation Map links */}
+        <div className="space-y-3">
+          <span className="font-bold text-white uppercase text-[10px] tracking-widest block">Quick Links</span>
+          <ul className="space-y-2 text-[11px] text-slate-400 font-semibold">
+            <li><Link href="/" className="hover:text-white transition-colors">Home Base</Link></li>
+            <li><Link href="/about" className="hover:text-white transition-colors">About Scope</Link></li>
+            <li><Link href="/services" className="hover:text-white transition-colors">Service Modules</Link></li>
+            <li><Link href="/contact" className="hover:text-white transition-colors">Support Gateway</Link></li>
+          </ul>
+        </div>
+
         {/* Structural Address Layout Pillar */}
-        <div className="space-y-2">
-          <span className="font-bold text-white uppercase text-[10px] tracking-widest block text-slate-300">Headquarters Base</span>
-          <p className="leading-relaxed text-slate-500 text-[11px]">
-            Musaffah M-14, Abu Dhabi,<br />
-            United Arab Emirates
+        <div className="space-y-3">
+          <span className="font-bold text-white uppercase text-[10px] tracking-widest block">Headquarters Base</span>
+          <p className="leading-relaxed text-slate-500 text-[11px] flex items-start gap-2">
+            <MapPin className="w-3.5 h-3.5 text-[#FF6A00] shrink-0 mt-0.5" />
+            <span>Musaffah M-14, Abu Dhabi,<br />United Arab Emirates</span>
           </p>
         </div>
 
         {/* Compliance Pillar */}
-        <div className="space-y-2">
-          <span className="font-bold text-white uppercase text-[10px] tracking-widest block text-slate-300">Licensing & Standards</span>
-          <p className="leading-relaxed text-slate-500 text-[11px]">
-            ISO Standard Certified System<br />
-            ICV Certified Enterprise Alignment<br />
-            Official UAE Trade License Jurisdiction
+        <div className="space-y-3">
+          <span className="font-bold text-white uppercase text-[10px] tracking-widest block">Licensing Standards</span>
+          <p className="leading-relaxed text-slate-500 text-[11px] space-y-1">
+            <span className="block">• ISO Certified Systems Platform</span>
+            <span className="block">• ICV Certified Enterprise Alignment</span>
+            <span className="block">• Official UAE Licensed Contractor</span>
           </p>
         </div>
 
@@ -109,11 +378,9 @@ export default function Footer() {
 
       {/* Absolute Legal Footer Layer */}
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-600 text-[11px]">
-        <span>&copy; {activeYear} Emrald Ace Engineering & Facilities Management LLC. All Rights Reserved.</span>
+        <span>&copy; {activeYear} Emrald Ace Engineering & Facilities Management LLC. All structural rights preserved.</span>
         <div className="flex space-x-4">
-          <a href="#about" className="hover:text-slate-400 transition-colors">Corporate Scope</a>
-          <a href="#services" className="hover:text-slate-400 transition-colors">Service Modules</a>
-          <a href="#contact" className="hover:text-slate-400 transition-colors">Support Gateway</a>
+          <a href="https://www.emraldace.com" className="hover:text-slate-400 transition-colors">www.emraldace.com</a>
         </div>
       </div>
     </footer>
@@ -125,69 +392,115 @@ export default function Footer() {
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Contact', href: '/contact' },
+  ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
-      {/* Top Bar Contact */}
-      <div className="bg-blue-900 text-white text-xs py-2 px-4 sm:px-6 lg:px-8 transition-all">
+    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs transition-all duration-300">
+      {/* Top Contact Segment Bar */}
+      <div className="bg-[#0B63C5] text-white text-[11px] sm:text-xs py-2.5 px-4 sm:px-6 lg:px-8 font-medium">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          <span className="font-medium tracking-wide">ISO Certified | ICV Certified | UAE Licensed Contractor</span>
+          <span className="tracking-wide">ISO Certified | ICV Certified | UAE Licensed Contractor</span>
           <div className="flex items-center space-x-4">
-            <a href="tel:+971528976025" className="flex items-center space-x-1 hover:text-orange-400 transition-colors">
+            <a href="tel:+971528976025" className="flex items-center space-x-1.5 hover:text-orange-400 transition-colors">
               <Phone className="w-3.5 h-3.5" /> <span>+971 52 897 6025</span>
             </a>
-            <a href="mailto:sales1@emraldace.com" className="flex items-center space-x-1 hover:text-orange-400 transition-colors">
+            <a href="mailto:sales1@emraldace.com" className="flex items-center space-x-1.5 hover:text-orange-400 transition-colors">
               <Mail className="w-3.5 h-3.5" /> <span>sales1@emraldace.com</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* Main Nav Container */}
+      {/* Primary Navigation Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Brand Representation Logo */}
-        <div className="flex flex-col justify-center select-none">
-          <span className="text-xl font-black tracking-tighter text-blue-900 sm:text-2xl">
-            EMRALD <span className="text-orange-600">ACE</span>
-          </span>
-          <span className="text-[9px] uppercase tracking-widest text-slate-500 font-bold -mt-1 hidden sm:block">
-            General Contracting & Electromechanical
-          </span>
-        </div>
+        {/* Genuine Public Folder Logo Image Target Container */}
+        <Link href="/" className="flex items-center space-x-3 group focus:outline-hidden">
+          <div className="relative w-14 h-14 bg-slate-50 rounded-lg overflow-hidden flex items-center justify-center p-1">
+            <Image 
+              src="/logo.png" 
+              alt="Emrald Ace Logo" 
+              width={56} 
+              height={56} 
+              className="object-contain"
+              priority
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-xl font-black tracking-tight text-[#0B63C5] leading-none">
+              EMRALD ACE
+            </span>
+            <span className="text-[9px] uppercase tracking-widest text-slate-500 font-bold mt-1 block">
+              General Contracting & Electromechanical
+            </span>
+          </div>
+        </Link>
 
-        {/* Desktop Interface */}
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide text-slate-700">
-          <a href="#about" className="hover:text-blue-700 transition-colors">About</a>
-          <a href="#services" className="hover:text-blue-700 transition-colors">Core Business</a>
-          <a href="#why-choose-us" className="hover:text-blue-700 transition-colors">Why Us</a>
-          <a href="#projects" className="hover:text-blue-700 transition-colors">Featured Projects</a>
-          <a href="#contact" className="inline-flex items-center justify-center bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-orange-600 transition-all duration-300 shadow-sm shadow-blue-700/20">
+        {/* Desktop Interface Menu Options */}
+        <nav className="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wide text-slate-700">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`transition-colors py-2 relative ${
+                  isActive ? 'text-[#0B63C5]' : 'hover:text-[#0B63C5] text-slate-600'
+                }`}
+              >
+                {link.name}
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6A00] rounded-full animate-fadeIn" />
+                )}
+              </Link>
+            );
+          })}
+          <Link 
+            href="/contact" 
+            className="inline-flex items-center justify-center bg-[#0B63C5] text-white px-5 py-2.5 rounded-lg font-bold hover:bg-orange-600 transition-all duration-300 shadow-sm shadow-blue-700/20"
+          >
             Consultation
-          </a>
+          </Link>
         </nav>
 
-        {/* Mobile Interface Toggle */}
+        {/* Mobile Interface Toggle Menu Button */}
         <button 
           onClick={() => setIsOpen(!isOpen)} 
-          className="md:hidden p-2 text-slate-700 hover:text-blue-700 focus:outline-none transition-colors"
+          className="md:hidden p-2 text-slate-700 hover:text-[#0B63C5] focus:outline-hidden transition-colors"
           aria-label="Toggle navigation interface"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Drawer Menu Layer */}
+      {/* Mobile Bar View Overlay Drawer Menu */}
       {isOpen && (
-        <div className="md:hidden absolute w-full left-0 bg-white border-b border-slate-200 py-4 px-6 space-y-3 shadow-xl transition-all animate-fadeIn">
-          <a href="#about" onClick={() => setIsOpen(false)} className="block py-2 text-base font-semibold text-slate-800 hover:text-blue-700">About</a>
-          <a href="#services" onClick={() => setIsOpen(false)} className="block py-2 text-base font-semibold text-slate-800 hover:text-blue-700">Core Business</a>
-          <a href="#why-choose-us" onClick={() => setIsOpen(false)} className="block py-2 text-base font-semibold text-slate-800 hover:text-blue-700">Why Us</a>
-          <a href="#projects" onClick={() => setIsOpen(false)} className="block py-2 text-base font-semibold text-slate-800 hover:text-blue-700">Featured Projects</a>
-          <a href="#contact" onClick={() => setIsOpen(false)} className="block text-center bg-blue-700 text-white py-3 rounded-lg font-semibold">Get Consultation</a>
+        <div className="md:hidden absolute w-full top-full left-0 bg-white border-b border-slate-200 py-4 px-6 space-y-3 shadow-xl transition-all animate-fadeIn z-50">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className={`block py-2.5 text-base font-bold border-b border-slate-50 ${
+                pathname === link.href ? 'text-[#0B63C5]' : 'text-slate-800 hover:text-[#0B63C5]'
+              }`}
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
       )}
     </header>
@@ -449,508 +762,6 @@ export default function MainContent() {
 }
 </file>
 
-<file path="src/app/globals.css">
-@import "tailwindcss";
-
-@layer base {
-  html {
-    scroll-behavior: smooth;
-    -webkit-tap-highlight-color: transparent;
-  }
-  body {
-    @apply bg-white text-slate-800 antialiased overflow-x-hidden;
-  }
-}
-
-/* Optimization for seamless image/card scaling transitions without layout jumps */
-.will-change-transform {
-  will-change: transform;
-}
-</file>
-
-<file path="src/app/layout.tsx">
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-
-const inter = Inter({ 
-  subsets: ['latin'],
-  display: 'swap', 
-});
-
-export const metadata: Metadata = {
-  title: 'Emrald Ace | Integrated Facility Management & Electromechanical Services UAE',
-  description: 'Since 2014, Emrald Ace provides high-performance Integrated Facility Management, MEP Engineering, Interior Fit-Out, and General Contracting services across Abu Dhabi and the UAE.',
-  keywords: ['Facility Management Abu Dhabi', 'MEP Engineering UAE', 'General Contracting', 'Interior Fit-Out', 'Annual Maintenance Contracts UAE', 'Emrald Ace'],
-  authors: [{ name: 'Emrald Ace Engineering' }],
-  robots: 'index, follow',
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
-        {children}
-      </body>
-    </html>
-  );
-}
-</file>
-
-<file path="src/app/page.tsx">
-import React from 'react';
-import { 
-  Building2, 
-  Wrench, 
-  ShieldCheck, 
-  Clock, 
-  Compass, 
-  Layers, 
-  CheckCircle2, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  ArrowRight,
-  HardHat,
-  Paintbrush,
-  Cpu
-} from 'lucide-react';
-
-export default function Home() {
-  return (
-    <div className="min-h-screen flex flex-col antialiased">
-      
-      {/* HEADER NAVBAR */}
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <div className="flex flex-col">
-            <span className="text-xl font-black tracking-tight text-[#0B63C5]">
-              EMRALD ACE
-            </span>
-            <span className="text-[9px] font-bold tracking-widest text-[#FF6A00] -mt-1 uppercase">
-              Engineering & Facilities Management
-            </span>
-          </div>
-          
-          <nav className="hidden md:flex space-x-8 text-sm font-semibold text-gray-600">
-            <a href="#about" className="hover:text-[#0B63C5] transition-colors">About</a>
-            <a href="#services" className="hover:text-[#0B63C5] transition-colors">Services</a>
-            <a href="#why-choose-us" className="hover:text-[#0B63C5] transition-colors">Why Choose Us</a>
-            <a href="#projects" className="hover:text-[#0B63C5] transition-colors">Projects</a>
-          </nav>
-
-          <a 
-            href="#contact" 
-            className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold rounded-lg bg-[#0B63C5] text-white hover:bg-[#0045A3] transition-all transform hover:-translate-y-0.5"
-          >
-            Get Consultation
-          </a>
-        </div>
-      </header>
-
-      {/* HERO SECTION */}
-      <section className="relative bg-gradient-to-br from-gray-50 via-white to-gray-50 pt-24 pb-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center space-x-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span>
-                <span className="text-xs font-bold text-[#0B63C5] uppercase tracking-wider">Since 2014 • ISO & ICV Certified</span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 leading-[1.1]">
-                Building Lasting Partnerships Through <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0B63C5] to-[#0045A3]">Excellence</span>
-              </h1>
-              <p className="text-lg text-gray-600 max-w-2xl font-normal leading-relaxed">
-                Welcome to Emrald Ace General Contracting & Electromechanical L.L.C., where engineering expertise meets operational excellence across the UAE.
-              </p>
-              <div className="flex flex-wrap gap-4 pt-2">
-                <a href="#services" className="px-6 py-3.5 bg-gradient-to-r from-[#0B63C5] to-[#0045A3] text-white font-bold rounded-xl shadow-lg shadow-blue-600/20 hover:shadow-xl transition-all flex items-center space-x-2">
-                  <span>Explore Our Solutions</span>
-                  <ArrowRight size={18} />
-                </a>
-                <a href="#contact" className="px-6 py-3.5 bg-white border-2 border-gray-200 text-gray-700 font-bold rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all">
-                  Contact Specialist
-                </a>
-              </div>
-            </div>
-            
-            {/* Visual Abstract Panel representing engineering capability */}
-            <div className="lg:col-span-5 relative">
-              <div className="w-full aspect-square bg-gradient-to-tr from-[#0B63C5]/10 to-[#FF6A00]/10 rounded-3xl p-8 flex flex-col justify-between border border-gray-100 relative shadow-2xl">
-                <div className="absolute top-0 right-0 w-48 h-48 bg-[#FF6A00]/5 blur-3xl rounded-full"></div>
-                <div className="flex justify-between items-start">
-                  <div className="p-4 bg-white rounded-2xl shadow-md border border-gray-50">
-                    <Building2 className="text-[#0B63C5]" size={36} />
-                  </div>
-                  <span className="text-xs font-black text-gray-400 tracking-widest uppercase">UAE Licensed</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-5xl font-black text-gray-900">22+</div>
-                  <div className="text-sm font-bold text-gray-500 uppercase tracking-wider">Premium Projects Delivered</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CORE METRICS AT A GLANCE */}
-      <section id="about" className="py-16 border-y border-gray-100 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center md:text-left space-y-1">
-              <div className="text-xs font-extrabold text-[#FF6A00] tracking-widest uppercase">Established</div>
-              <div className="text-3xl font-black text-gray-900">2014</div>
-              <div className="text-xs text-gray-500">Over a decade of operations</div>
-            </div>
-            <div className="text-center md:text-left space-y-1">
-              <div className="text-xs font-extrabold text-[#0B63C5] tracking-widest uppercase">Headquarters</div>
-              <div className="text-3xl font-black text-gray-900">Abu Dhabi</div>
-              <div className="text-xs text-gray-500">United Arab Emirates</div>
-            </div>
-            <div className="text-center md:text-left space-y-1">
-              <div className="text-xs font-extrabold text-[#FF6A00] tracking-widest uppercase">Active Delivery</div>
-              <div className="text-3xl font-black text-gray-900">5 Ongoing</div>
-              <div className="text-xs text-gray-500">Projects structured currently</div>
-            </div>
-            <div className="text-center md:text-left space-y-1">
-              <div className="text-xs font-extrabold text-[#0B63C5] tracking-widest uppercase">Business Reach</div>
-              <div className="text-3xl font-black text-gray-900">Across UAE</div>
-              <div className="text-xs text-gray-500">Comprehensive local footprint</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* STRATEGIC VISION & MISSION */}
-      <section className="py-24 bg-gray-50/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#0B63C5]">
-                <Compass size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900">Our Vision</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                To become one of the UAE's most trusted providers of integrated facility management solutions by delivering excellence, innovation, sustainability, and customer satisfaction.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-[#FF6A00]">
-                <Layers size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900">Our Mission</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                To provide reliable, cost-effective, and innovative facility management solutions that maximize asset performance while creating safe, productive, and sustainable environments through engineering excellence.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-3">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Our Core Values</h3>
-              <div className="grid grid-cols-2 gap-3 text-xs">
-                <div className="p-2.5 bg-gray-50 rounded-lg"><strong className="text-gray-900 block font-bold">Excellence</strong> Quality without compromise.</div>
-                <div className="p-2.5 bg-gray-50 rounded-lg"><strong className="text-gray-900 block font-bold">Integrity</strong> Honesty & transparency.</div>
-                <div className="p-2.5 bg-gray-50 rounded-lg"><strong className="text-gray-900 block font-bold">Innovation</strong> Smarter technological platforms.</div>
-                <div className="p-2.5 bg-gray-50 rounded-lg"><strong className="text-gray-900 block font-bold">Customer First</strong> Exceeding client metrics.</div>
-                <div className="p-2.5 bg-gray-50 rounded-lg"><strong className="text-gray-900 block font-bold">Safety</strong> Protecting team & sites.</div>
-                <div className="p-2.5 bg-gray-50 rounded-lg"><strong className="text-gray-900 block font-bold">Sustainability</strong> Responsible operations.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CORE BUSINESS SERVICES */}
-      <section id="services" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-xs font-extrabold text-[#FF6A00] tracking-widest uppercase">Comprehensive Portfolios</h2>
-            <p className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">
-              One Partner. Complete Facility &amp; Construction Solutions.
-            </p>
-            <p className="text-base text-gray-500">
-              Reliable maintenance, skilled engineering, and dependable service under one roof.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Service 1 */}
-            <div className="group border border-gray-100 rounded-2xl p-6 hover:border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#0B63C5] group-hover:bg-[#0B63C5] group-hover:text-white transition-all">
-                  <Building2 size={24} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#0B63C5] transition-colors">Integrated Facility Management</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Combining hard technical maintenance and operations into a single seamless, highly customizable lifecycle management pipeline.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-1.5">
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">Hard FM</span>
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">Soft FM</span>
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">Specialized Systems</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Service 2 */}
-            <div className="group border border-gray-100 rounded-2xl p-6 hover:border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-[#FF6A00] group-hover:bg-[#FF6A00] group-hover:text-white transition-all">
-                  <Wrench size={24} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors">Annual Maintenance Contracts</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Tailored AMC frameworks for commercial, industrial, and residential assets. Incorporating continuous risk mapping and performance monitoring metrics.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-1.5">
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">Preventive Checks</span>
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">24/7 Support</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Service 3 */}
-            <div className="group border border-gray-100 rounded-2xl p-6 hover:border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#0B63C5] group-hover:bg-[#0B63C5] group-hover:text-white transition-all">
-                  <Cpu size={24} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#0B63C5] transition-colors">MEP Engineering</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Turnkey installations, diagnostics, and component optimizations spanning all high-voltage electrical arrays, drainage mechanics, and complex HVAC networks.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-1.5">
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">HVAC Chillers</span>
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">ELV Systems</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Service 4 */}
-            <div className="group border border-gray-100 rounded-2xl p-6 hover:border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-[#FF6A00] group-hover:bg-[#FF6A00] group-hover:text-white transition-all">
-                  <Paintbrush size={24} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors">Interior Fit-Out Solutions</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Transforming layout architectures across commercial offices, retail shops, and corporate landscapes into pristine, highly-functional spaces.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-1.5">
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">False Ceilings</span>
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">Joinery & Glass</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Service 5 */}
-            <div className="group border border-gray-100 rounded-2xl p-6 hover:border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#0B63C5] group-hover:bg-[#0B63C5] group-hover:text-white transition-all">
-                  <HardHat size={24} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#0B63C5] transition-colors">General Contracting & Civil</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Comprehensive building construction, dynamic concrete updates, structural extensions, and rigorous masonry/waterproofing defense systems.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-1.5">
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">Structural Work</span>
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">Renovations</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Service 6 */}
-            <div className="group border border-gray-100 rounded-2xl p-6 hover:border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-[#FF6A00] group-hover:bg-[#FF6A00] group-hover:text-white transition-all">
-                  <ShieldCheck size={24} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors">Specialized Facility Solutions</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Integrating intelligent perimeter access controls, security networks, rapid automatic gates, epoxy floor treatments, and automation setups.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-1.5">
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">Smart Gates</span>
-                  <span className="text-[11px] bg-gray-100 px-2.5 py-1 rounded-md text-gray-600 font-medium">CCTV & Automation</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CLIENTS CHOOSE US */}
-      <section id="why-choose-us" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5 space-y-4 sticky top-28">
-              <h2 className="text-xs font-extrabold text-[#0B63C5] tracking-widest uppercase">Value Drivers</h2>
-              <p className="text-3xl font-black text-gray-900 tracking-tight">
-                Delivering Value Beyond Standard Maintenance
-              </p>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Modern high-density assets demand intelligent data orchestration, preventive management structures, and unified accountabilities rather than chaotic fragmented subcontractors.
-              </p>
-            </div>
-
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                "Integrated Hard & Soft FM Solutions",
-                "Experienced Engineering Professionals",
-                "Customized Service Plans",
-                "Preventive Maintenance Programs",
-                "Fast Emergency Response Protocols",
-                "Advanced Management Technologies",
-                "Transparent Operational Reporting",
-                "Rigorous Quality Assurance Audits",
-                "Safety-Driven Work Operations",
-                "Sustainable Green Practices",
-                "Customer-Centric Service Tracking",
-                "Single Point of Total Accountability"
-              ].map((benefit, index) => (
-                <div key={index} className="bg-white p-4 rounded-xl border border-gray-100 flex items-center space-x-3 shadow-sm">
-                  <CheckCircle2 className="text-[#FF6A00] shrink-0" size={18} />
-                  <span className="text-sm font-semibold text-gray-800">{benefit}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED PROJECTS LEDGER */}
-      <section id="projects" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-xs font-extrabold text-[#FF6A00] tracking-widest uppercase mb-1">Execution Track Record</h2>
-            <p className="text-3xl font-black text-gray-900 tracking-tight">Featured Projects Log</p>
-          </div>
-          
-          <div className="overflow-x-auto border border-gray-100 rounded-2xl shadow-sm">
-            <table className="w-full text-left border-collapse bg-white text-sm">
-              <thead>
-                <tr className="bg-gray-50 border-b border-gray-100 text-gray-700 font-bold">
-                  <th className="p-4">Project &amp; Scope</th>
-                  <th className="p-4">Location</th>
-                  <th className="p-4">Client Representative</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-50 text-gray-600">
-                <tr className="hover:bg-gray-50/60 transition-colors">
-                  <td className="p-4 font-semibold text-gray-900">Renovation, Extension &amp; Fit-Out</td>
-                  <td className="p-4">Shakhbout City, Abu Dhabi</td>
-                  <td className="p-4">Al Maharat Private School / GEMS Education</td>
-                </tr>
-                <tr className="hover:bg-gray-50/60 transition-colors">
-                  <td className="p-4 font-semibold text-gray-900">Outlet Renovation - MEP, Fit-Out, HVAC</td>
-                  <td className="p-4">Marina Mall, Abu Dhabi</td>
-                  <td className="p-4">National Investment Corporation</td>
-                </tr>
-                <tr className="hover:bg-gray-50/60 transition-colors">
-                  <td className="p-4 font-semibold text-gray-900">Civil, MEP &amp; Fit-Out Works</td>
-                  <td className="p-4">Khalifa City, Abu Dhabi</td>
-                  <td className="p-4">Abu Dhabi Cricket &amp; Sports Club</td>
-                </tr>
-                <tr className="hover:bg-gray-50/60 transition-colors">
-                  <td className="p-4 font-semibold text-gray-900">Restaurant &amp; Pool Deck Renovation</td>
-                  <td className="p-4">Mubadala Tower, Abu Dhabi</td>
-                  <td className="p-4">Solution Plus Mubadala</td>
-                </tr>
-                <tr className="hover:bg-gray-50/60 transition-colors">
-                  <td className="p-4 font-semibold text-gray-900">MEP, HVAC &amp; Civil Works - Private Villa</td>
-                  <td className="p-4">Al Manhal, Abu Dhabi</td>
-                  <td className="p-4">Al Nasser Properties</td>
-                </tr>
-                <tr className="hover:bg-gray-50/60 transition-colors">
-                  <td className="p-4 font-semibold text-gray-900">Boiler Installation, HVAC &amp; Civil</td>
-                  <td className="p-4">Dubai Investment Park</td>
-                  <td className="p-4">Fedorowicz Laundry</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          {/* Target Industries Ribbon */}
-          <div className="mt-16 bg-gradient-to-r from-[#0B63C5]/5 to-transparent border-l-4 border-[#0B63C5] p-6 rounded-r-2xl">
-            <h4 className="text-xs font-black text-[#0B63C5] uppercase tracking-wider mb-3">Industries Universally Served</h4>
-            <div className="flex flex-wrap gap-2 text-xs font-bold text-gray-700">
-              {["Commercial Offices", "Residential Communities", "Healthcare Systems", "Hotels & Resorts", "Retail Outlets", "Industrial Plants", "Government Facilities", "Warehouses", "Education Centers"].map((ind, i) => (
-                <span key={i} className="bg-white border border-gray-200 px-3 py-1.5 rounded-lg shadow-2xs">{ind}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER & CONTACT DATA HUB - DARK BLUE THEME COLOR BACKGROUND */}
-      <footer id="contact" className="bg-[#071933] text-white pt-20 pb-12 mt-auto border-t-4 border-[#FF6A00]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-gray-800">
-            
-            <div className="lg:col-span-5 space-y-6">
-              <div>
-                <span className="text-2xl font-black tracking-tight text-white block">EMRALD ACE</span>
-                <span className="text-xs font-extrabold tracking-widest text-[#FF6A00] uppercase block mt-0.5">
-                  General Contracting &amp; Electromechanical
-                </span>
-              </div>
-              <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
-                Let's build better operational environments together. Schedule a technical audit or project consultation loop with our engineering estimator group today.
-              </p>
-              <div className="text-xs text-gray-500 font-semibold space-y-1">
-                <div>Emrald Ace Engineering &amp; Facilities Management LLC</div>
-                <div>ISO Certified | ICV Certified | UAE Licensed Contractor</div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <h4 className="text-sm font-black uppercase tracking-widest text-[#FF6A00]">Direct Connect Lines</h4>
-                <ul className="space-y-3 text-sm text-gray-300">
-                  <li className="flex items-center space-x-3">
-                    <Phone size={16} className="text-[#0B63C5] shrink-0" />
-                    <a href="tel:+971528976025" className="hover:text-white transition-colors font-semibold">+971 52 897 6025</a>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <Mail size={16} className="text-[#0B63C5] shrink-0" />
-                    <a href="mailto:sales1@emraldace.com" className="hover:text-white transition-colors font-semibold">sales1@emraldace.com</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="text-sm font-black uppercase tracking-widest text-[#FF6A00]">Base Coordinates</h4>
-                <ul className="space-y-3 text-sm text-gray-300">
-                  <li className="flex items-start space-x-3">
-                    <MapPin size={16} className="text-[#0B63C5] mt-1 shrink-0" />
-                    <span className="font-medium">Musaffah M-14, Abu Dhabi, United Arab Emirates</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 font-medium">
-            <p>© {new Date().getFullYear()} Emrald Ace. All structural rights preserved.</p>
-            <div className="flex space-x-6 mt-4 sm:mt-0">
-              <a href="https://www.emraldace.com" className="hover:text-white transition-colors">www.emraldace.com</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-    </div>
-  );
-}
-</file>
-
 <file path=".gitignore">
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
@@ -1026,46 +837,6 @@ const eslintConfig = defineConfig([
 ]);
 
 export default eslintConfig;
-</file>
-
-<file path="next.config.ts">
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
-</file>
-
-<file path="package.json">
-{
-  "name": "my-next-project",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "lucide-react": "^1.28.0",
-    "next": "16.2.12",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.12",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  }
-}
 </file>
 
 <file path="postcss.config.mjs">
@@ -1151,6 +922,224 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
     "**/*.mts"
   ],
   "exclude": ["node_modules"]
+}
+</file>
+
+<file path="src/app/globals.css">
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply antialiased overflow-x-hidden text-slate-800 bg-white;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+</file>
+
+<file path="src/app/layout.tsx">
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import './globals.css';
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap', 
+});
+
+export const metadata: Metadata = {
+  title: 'Emrald Ace | Integrated Facility Management & Electromechanical Services UAE',
+  description: 'Since 2014, Emrald Ace delivers high-performance Integrated Facility Management, MEP Engineering, Interior Fit-Out, and General Contracting services across Abu Dhabi and the UAE.',
+  keywords: ['Facility Management Abu Dhabi', 'MEP Engineering UAE', 'General Contracting', 'Interior Fit-Out', 'Annual Maintenance Contracts UAE', 'Emrald Ace'],
+  robots: 'index, follow',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} flex flex-col min-h-screen bg-white text-slate-800 antialiased overflow-x-hidden`}>
+        <Header />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
+</file>
+
+<file path="src/app/page.tsx">
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight, Award, ShieldCheck, Wrench, Building2, HardHat, CheckCircle } from 'lucide-react';
+
+export default function Home() {
+  const featuredProjects = [
+    { name: "Renovation, Extension & Fit-Out", loc: "Shakhbout City, Abu Dhabi", client: "Al Maharat Private School / GEMS Education" },
+    { name: "Outlet Renovation - MEP, Fit-Out & HVAC", loc: "Marina Mall, Abu Dhabi", client: "National Investment Corporation" },
+    { name: "Civil, MEP & Fit-Out Infrastructure", loc: "Khalifa City, Abu Dhabi", client: "Abu Dhabi Cricket & Sports Club" },
+  ];
+
+  return (
+    <div className="relative w-full overflow-hidden">
+      {/* Dynamic Modern Hero Section with Background Image Layout Template */}
+      <section className="relative min-h-[85vh] flex items-center bg-slate-900 py-24 text-white">
+        <div className="absolute inset-0 z-0 opacity-25">
+          <Image 
+            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80"
+            alt="Engineering Infrastructure Background Placeholder"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900 to-transparent" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+          <div className="lg:col-span-7 space-y-6 text-left">
+            <div className="inline-flex items-center space-x-2 bg-[#0B63C5]/20 border border-[#0B63C5]/40 rounded-full px-4 py-1.5 backdrop-blur-xs">
+              <span className="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span>
+              <span className="text-xs font-bold text-blue-200 uppercase tracking-wider">Established Since 2014</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white">
+              Building Lasting Partnerships Through <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0B63C5] to-blue-400">Excellence</span>
+            </h1>
+            <p className="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed">
+              Welcome to Emrald Ace General Contracting & Electromechanical L.L.C., where engineering expertise meets operational excellence. Supported by strong MEP capabilities across the UAE.
+            </p>
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link href="/services" className="px-6 py-3.5 bg-gradient-to-r from-[#0B63C5] to-[#0045A3] text-white font-bold rounded-xl shadow-lg transition-all flex items-center space-x-2 hover:scale-[1.02]">
+                <span>Our Core Business</span>
+                <ArrowRight size={18} />
+              </Link>
+              <Link href="/contact" className="px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-xl transition-all">
+                Contact Technical Experts
+              </Link>
+            </div>
+          </div>
+
+          <div className="lg:col-span-5 relative flex justify-center">
+            <div className="w-full max-w-md p-8 bg-slate-900/80 border border-slate-800 rounded-2xl shadow-2xl backdrop-blur-md space-y-6">
+              <span className="font-extrabold text-[#FF6A00] text-xs tracking-widest uppercase block border-b border-slate-850 pb-2">Overview At A Glance</span>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 bg-slate-950/50 rounded-xl border border-slate-850">
+                  <span className="block text-2xl font-black text-[#0B63C5]">2014</span>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tight">Established Year</span>
+                </div>
+                <div className="p-4 bg-slate-950/50 rounded-xl border border-slate-850">
+                  <span className="block text-2xl font-black text-[#0B63C5]">22+</span>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tight">Completed Projects</span>
+                </div>
+                <div className="p-4 bg-slate-950/50 rounded-xl border border-slate-850">
+                  <span className="block text-2xl font-black text-[#0B63C5]">2023</span>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tight">FM Division Expansion</span>
+                </div>
+                <div className="p-4 bg-slate-950/50 rounded-xl border border-slate-850">
+                  <span className="block text-2xl font-black text-[#0B63C5]">100%</span>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tight">UAE Coverage Matrix</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects Summary Row Block */}
+      <section className="py-20 bg-slate-50 border-b border-slate-150">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+            <div>
+              <h2 className="text-xs font-extrabold text-[#FF6A00] tracking-widest uppercase mb-1">Execution Log</h2>
+              <p className="text-3xl font-black text-slate-900 tracking-tight">Featured Enterprise Projects</p>
+            </div>
+            <Link href="/services" className="text-sm font-bold text-[#0B63C5] hover:text-[#0045A3] flex items-center gap-1">
+              <span>View details & metrics</span> <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {featuredProjects.map((proj, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-xl border border-slate-250/60 shadow-xs flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase block mb-2">{proj.loc}</span>
+                  <h3 className="text-base font-bold text-slate-900 tracking-tight mb-4">{proj.name}</h3>
+                </div>
+                <div className="border-t border-slate-100 pt-3 text-xs font-semibold text-[#0B63C5]">
+                  Client: {proj.client}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+</file>
+
+<file path="next.config.ts">
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
+};
+
+export default nextConfig;
+</file>
+
+<file path="package.json">
+{
+  "name": "my-next-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "lucide-react": "^1.28.0",
+    "next": "16.2.12",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.12",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
 }
 </file>
 

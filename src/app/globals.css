@@ -4,17 +4,31 @@
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
   }
+  
   body {
-    @apply antialiased overflow-x-hidden text-slate-800 bg-white;
+    position: relative;
+    overflow-x: hidden;
+    background-color: #ffffff;
+    color: #0f172a;
+    text-rendering: optimizeLegibility;
+    overscroll-behavior-y: none;
+  }
+
+  /* Structural touch scrolling optimization across touch hardware devices */
+  input, textarea, select, button {
+    touch-action: manipulation;
   }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
+  from { opacity: 0; transform: translateY(-6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.2s ease-out forwards;
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
 }
