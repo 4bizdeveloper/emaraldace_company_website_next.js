@@ -251,7 +251,7 @@ export default function Home() {
             <div className="lg:col-span-5 relative">
               <div className="relative w-full aspect-square max-w-md mx-auto lg:max-w-none rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <Image 
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
+                  src="/integrated-engineering-aco-system-uae.jpg" 
                   alt="Emrald Ace Executive Operations Meeting"
                   fill
                   className="object-cover"
@@ -419,51 +419,52 @@ export default function Home() {
       </section>
 
       {/* 8. TRUSTED BY INDUSTRY LEADERS */}
-      <section className="py-24 bg-slate-950 text-white overflow-hidden relative">
+      <section className="py-24 bg-gradient-to-r from-slate-900 via-[#0b63c5] to-slate-900 text-white overflow-hidden relative transform-gpu">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
             <div>
-              <span className="text-xs uppercase font-bold text-blue-400 tracking-widest block">Trusted By Industry Leaders</span>
-              <p className="text-xl sm:text-2xl font-bold text-white tracking-tight mt-1">Strategic Partners Across the Last 5 Years</p>
+              <span className="text-xs uppercase font-bold text-blue-300 tracking-widest block">Trusted By Industry Leaders</span>
+              <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">Strategic Partners Across the Last 5 Years</h2>
             </div>
             
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3 shrink-0">
               <button 
                 onClick={() => handleScroll('left')} 
                 aria-label="Previous Slide" 
-                className="w-10 h-10 rounded-full bg-slate-800 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-colors border border-slate-700 cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all border border-white/20 hover:border-blue-400 active:scale-95 cursor-pointer"
               >
-                <ChevronLeft size={20} />
+                <ChevronLeft size={22} />
               </button>
               <button 
                 onClick={() => handleScroll('right')} 
                 aria-label="Next Slide" 
-                className="w-10 h-10 rounded-full bg-slate-800 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-colors border border-slate-700 cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all border border-white/20 hover:border-blue-400 active:scale-95 cursor-pointer"
               >
-                <ChevronRight size={20} />
+                <ChevronRight size={22} />
               </button>
             </div>
           </div>
+        </div>
 
+        {/* Carousel Container Wrapper - Seamlessly Responsive across all device breakpoints */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={scrollRef} 
-            className="flex items-center space-x-8 overflow-x-auto py-4 no-scrollbar scroll-smooth"
+            className="flex items-center space-x-6 overflow-x-auto py-4 no-scrollbar scroll-smooth snap-x snap-mandatory will-change-transform"
           >
             {clientLogos.concat(clientLogos).map((logo, lIdx) => (
               <div 
                 key={lIdx} 
-                className="relative min-w-[200px] h-20 bg-slate-900/60 rounded-xl border border-slate-800 flex items-center justify-center px-6 shrink-0 transition-all hover:border-blue-500/50 group"
+                className="relative w-[180px] sm:w-[220px] h-28 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-black/20 overflow-hidden snap-center transform-gpu transition-all duration-300 hover:scale-[1.03] border-2 border-transparent hover:border-blue-400"
               >
                 <Image 
                   src={logo.url} 
-                  alt={`${logo.name} Corporate Partnership Footprint`} 
+                  alt={`${logo.name} Corporate Partnership Logo`} 
                   fill 
-                  sizes="200px"
-                  className="object-cover rounded-xl opacity-60 group-hover:opacity-100 transition-opacity" 
+                  sizes="(max-width: 640px) 180px, 220px"
+                  priority={lIdx < 4}
+                  className="object-cover rounded-2xl" 
                 />
-                <span className="relative z-10 text-xs font-semibold text-slate-300 group-hover:text-white bg-slate-950/70 px-3 py-1 rounded-md backdrop-blur-xs">
-                  {logo.name}
-                </span>
               </div>
             ))}
           </div>
