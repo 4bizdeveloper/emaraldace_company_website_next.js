@@ -93,7 +93,7 @@ export default function Footer() {
       {/* Bottom Copyright & Powered By Bar */}
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center space-y-2 text-slate-400 text-xs sm:text-sm">
         <p className="leading-normal">
-          &copy; {activeYear} Emrald Ace Engineering & Facilities Management LLC. All core commercial operations preserved.
+          &copy; {activeYear} All rights reserved for Emrald Ace 
         </p>
         <p className="text-slate-500 text-xs font-medium">
           Powered by{' '}
