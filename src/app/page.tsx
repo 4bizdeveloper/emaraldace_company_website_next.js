@@ -399,18 +399,18 @@ export default function Home() {
             <div className="lg:col-span-6 grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="relative h-[240px] w-full rounded-2xl overflow-hidden border border-slate-100 shadow-md">
-                  <Image src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" alt="Commercial Interiors" fill className="object-cover" />
+                  <Image src="/sector-ecosystem-1.jpg" alt="Commercial Interiors" fill className="object-cover" />
                 </div>
                 <div className="relative h-[160px] w-full rounded-2xl overflow-hidden border border-slate-100 shadow-md">
-                  <Image src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=400&q=80" alt="MEP Plants" fill className="object-cover" />
+                  <Image src="/sector-ecosystem-2.jpg" alt="MEP Plants" fill className="object-cover" />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
                 <div className="relative h-[160px] w-full rounded-2xl overflow-hidden border border-slate-100 shadow-md">
-                  <Image src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80" alt="Corporate Facilities" fill className="object-cover" />
+                  <Image src="/sector-ecosystem-3.jpg" alt="Corporate Facilities" fill className="object-cover" />
                 </div>
                 <div className="relative h-[240px] w-full rounded-2xl overflow-hidden border border-slate-100 shadow-md">
-                  <Image src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=80" alt="Civil Development" fill className="object-cover" />
+                  <Image src="/sector-ecosystem-4.jpg" alt="Civil Development" fill className="object-cover" />
                 </div>
               </div>
             </div>
