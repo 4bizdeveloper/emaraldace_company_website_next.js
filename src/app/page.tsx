@@ -125,7 +125,7 @@ export default function Home() {
             poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=90"
             className="w-full h-full object-cover object-center scale-[1.01] will-change-transform"
           >
-            <source src="/bg-video.mp4" type="video/mp4" />
+            <source src="/bg-video-1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
