@@ -23,7 +23,7 @@ export default function Services() {
       icon: <Building className="w-6 h-6 text-white" />,
       bg: "from-[#0B63C5] to-[#084B96]",
       accentColor: "text-[#0B63C5]",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+      image: "/integrated-facility-management-2.webp",
       desc: "Our integrated model brings every essential service together under one accountable team, giving clients a single point of contact, faster response times, and measurable long-term value.",
       subCategories: [
         { 
@@ -71,7 +71,7 @@ export default function Services() {
       icon: <Wrench className="w-6 h-6 text-white" />,
       bg: "from-[#FF6A00] to-[#E05D00]",
       accentColor: "text-[#FF6A00]",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+      image: "annual-maintenance-contracts.webp",
       desc: "We tailor every AMC to the specific needs of residential, commercial, or industrial facilities, combining planned servicing with rapid-response support.",
       subCategories: [
         { 
@@ -122,7 +122,7 @@ export default function Services() {
       icon: <Paintbrush className="w-6 h-6 text-white" />,
       bg: "from-slate-900 to-slate-800",
       accentColor: "text-slate-900",
-      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",
+      image: "/interior-fit-out-solutions-2.webp",
       desc: "We design and deliver modern, aesthetically pleasing interior environments tailored to business and residential specifications across the UAE.",
       subCategories: [
         { 
@@ -167,7 +167,7 @@ export default function Services() {
       icon: <Cpu className="w-6 h-6 text-white" />,
       bg: "from-[#0B63C5] to-[#084B96]",
       accentColor: "text-[#0B63C5]",
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80",
+      image: "/mep-engineering-services-2.webp",
       desc: "Comprehensive engineering execution providing sustainable, high-efficiency MEP design, installation, and lifecycle support.",
       subCategories: [
         { 
@@ -212,7 +212,7 @@ export default function Services() {
       icon: <HardHat className="w-6 h-6 text-white" />,
       bg: "from-[#FF6A00] to-[#E05D00]",
       accentColor: "text-[#FF6A00]",
-      image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1200&q=80",
+      image: "/general-contracting&specialized-civil.webp",
       desc: "Robust construction, structural restoration, and outdoor automation services designed for modern commercial and residential infrastructure.",
       subCategories: [
         { 
