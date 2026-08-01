@@ -20,13 +20,13 @@ export default function About() {
             <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-[#0B63C5] shadow-lg">
               <Image 
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" 
-                alt="Drew Feig Chairman Placeholder Image Target"
+                alt="Nithin Gopinathan Nair Chairman Placeholder Image Target"
                 fill
                 className="object-cover object-top"
               />
             </div>
             <div>
-              <h3 className="text-lg font-black text-slate-950">Drew Feig</h3>
+              <h3 className="text-lg font-black text-slate-950">Nithin Gopinathan Nair</h3>
               <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Chairman Statement Lead</p>
             </div>
           </div>
