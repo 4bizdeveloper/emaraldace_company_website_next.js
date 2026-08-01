@@ -20,32 +20,32 @@ export default function Home() {
   const coreServices = [
     { 
       title: "Integrated Facility Management", 
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80",
+      image: "/integrated-facility-management.webp",
       desc: "Combining engineering maintenance, workplace workflows, and technical operation networks into one single asset lifecycle team strategy." 
     },
     { 
       title: "Annual Maintenance Contracts (AMC)", 
-      image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80",
+      image: "/annual-maintenance-contract.webp",
       desc: "Customized preventative upkeep programs mapping out regular diagnostic checks with responsive emergency technical dispatch frameworks." 
     },
     { 
       title: "Interior Fit-Out Solutions", 
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80",
+      image: "/interior-fit-out-solutions.webp",
       desc: "Designing functional, modern commercial offices, high-spec glass partition modules, joinery structural units, and false ceilings." 
     },
     { 
       title: "MEP Engineering Services", 
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+      image: "/mep-engineering-services.webp",
       desc: "Mechanical HVAC architectures, heavy industrial electrical layouts, plumbing networks, and advanced automated building telemetry systems." 
     },
     { 
       title: "General Contracting & Civil", 
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80",
+      image: "/general-contracting&civil.webp",
       desc: "Turnkey structural renovations, commercial spatial additions, structural concrete preservation, and institutional execution." 
     },
     { 
       title: "Specialized Infrastructure", 
-      image: "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?auto=format&fit=crop&w=600&q=80",
+      image: "/specialized-infrastructure.webp",
       desc: "Smart parking gate logic controls, unified CCTV security matrices, clean epoxy chemical flooring protection, and advanced commercial waterproofing." 
     }
   ];
