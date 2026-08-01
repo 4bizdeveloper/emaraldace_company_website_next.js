@@ -122,7 +122,7 @@ export default function Home() {
             loop
             playsInline
             preload="metadata"
-            poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=90"
+            poster="/integrated-facility-management-2.webp"
             className="w-full h-full object-cover object-center scale-[1.01] will-change-transform"
           >
             <source src="/bg-video-1.mp4" type="video/mp4" />
