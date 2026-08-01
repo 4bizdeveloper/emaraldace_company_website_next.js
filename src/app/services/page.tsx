@@ -120,8 +120,8 @@ export default function Services() {
       title: "Interior Fit-Out Solutions",
       tagline: "Creating Inspiring & Functional Workspaces.",
       icon: <Paintbrush className="w-6 h-6 text-white" />,
-      bg: "from-slate-900 to-slate-800",
-      accentColor: "text-slate-900",
+      bg: "from-slate-900 to-slate-850",
+      accentColor: "text-slate-400",
       image: "/interior-fit-out-solutions-2.webp",
       desc: "We design and deliver modern, aesthetically pleasing interior environments tailored to business and residential specifications across the UAE.",
       subCategories: [
@@ -271,20 +271,20 @@ export default function Services() {
   };
 
   return (
-    <section className="py-12 sm:py-20 bg-slate-50 relative overflow-hidden font-sans" id="services">
+    <section className="py-12 sm:py-14 bg-slate-950 relative overflow-hidden font-sans" id="services">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Main Section Header */}
         <header className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs uppercase tracking-widest font-black text-[#0B63C5] bg-blue-50/80 rounded-full border border-blue-100">
+          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs uppercase tracking-widest font-black text-blue-450 bg-blue-950/40 rounded-full border border-blue-900/40">
             <Sparkles className="w-3.5 h-3.5" /> Our Service Matrix
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
             Integrated Engineering & Facility Solutions
           </h1>
-          <p className="text-base sm:text-lg text-slate-600 font-medium">
+          <p className="text-base sm:text-lg text-slate-400 font-medium">
             Reliable maintenance, skilled engineering, and dependable service – unified under one accountable provider.
           </p>
         </header>
@@ -294,7 +294,7 @@ export default function Services() {
           {serviceBlocks.map((block) => (
             <article 
               key={block.id} 
-              className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              className="bg-slate-900 rounded-3xl border border-white/5 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
             >
               {/* Header Banner */}
               <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
@@ -314,44 +314,44 @@ export default function Services() {
                 </div>
 
                 {/* Service Header Image */}
-                <div className="lg:col-span-5 relative min-h-[220px] lg:min-h-full overflow-hidden bg-slate-200">
+                <div className="lg:col-span-5 relative min-h-[220px] lg:min-h-full overflow-hidden bg-slate-850">
                   <img 
                     src={block.image} 
                     alt={block.title} 
                     loading="lazy" 
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent lg:hidden" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent lg:hidden" />
                 </div>
               </div>
 
               {/* Grid of Subcategories - Fixed Equal Column Heights */}
-              <div className="p-6 sm:p-8 bg-white">
+              <div className="p-6 sm:p-8 bg-slate-900/60">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
                   {block.subCategories.map((sub, sIdx) => (
                     <div 
                       key={sIdx} 
-                      className="flex flex-col justify-between h-full space-y-4 bg-slate-50/70 p-5 sm:p-6 rounded-2xl border border-slate-100 hover:bg-white hover:border-slate-200 hover:shadow-md transition-all duration-200"
+                      className="flex flex-col justify-between h-full space-y-4 bg-slate-900 p-5 sm:p-6 rounded-2xl border border-slate-800 hover:bg-slate-850 hover:border-slate-700 hover:shadow-md transition-all duration-200"
                     >
                       <div className="space-y-3.5">
-                        <div className="flex items-center justify-between border-b border-slate-200/70 pb-3">
-                          <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wider">
+                        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                          <h3 className="text-sm font-extrabold text-slate-200 uppercase tracking-wider">
                             {sub.name}
                           </h3>
                           <span className="w-2.5 h-2.5 rounded-full bg-[#0B63C5]" />
                         </div>
                         <ul className="space-y-2.5">
                           {sub.items.map((item, iIdx) => (
-                            <li key={iIdx} className="text-xs font-medium text-slate-600 flex items-start gap-2.5 leading-relaxed">
+                            <li key={iIdx} className="text-xs font-medium text-slate-400 flex items-start gap-2.5 leading-relaxed">
                               <CheckCircle2 className="w-4 h-4 text-[#0B63C5] shrink-0 mt-0.5" />
-                              <span className="text-slate-700">{item}</span>
+                              <span className="text-slate-300">{item}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
 
                       {/* Small Bottom Accent Badge */}
-                      <div className="pt-3 border-t border-slate-200/40 flex items-center justify-between text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                      <div className="pt-3 border-t border-slate-800/60 flex items-center justify-between text-[11px] font-bold text-slate-500 uppercase tracking-wider">
                         <span>Professional SLA</span>
                         <ArrowUpRight className="w-3.5 h-3.5 text-[#0B63C5]" />
                       </div>
@@ -364,10 +364,10 @@ export default function Services() {
         </div>
 
         {/* Target Industries */}
-        <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white text-center space-y-8 relative overflow-hidden shadow-xl">
+        <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white text-center space-y-8 relative overflow-hidden border border-white/5 shadow-xl">
           <div className="max-w-2xl mx-auto space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#FF6A00]">Sector Coverage</span>
-            <h2 className="text-2xl sm:text-4xl font-black">Industries We Serve Across UAE</h2>
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-100">Industries We Serve Across UAE</h2>
             <p className="text-xs sm:text-sm text-slate-400">Tailored maintenance and contracting capabilities adapted for diverse operational requirements.</p>
           </div>
 
@@ -375,7 +375,7 @@ export default function Services() {
             {industries.map((ind, idx) => (
               <span 
                 key={idx} 
-                className="px-4 py-2 bg-slate-800/80 hover:bg-slate-700 border border-slate-700/80 text-xs sm:text-sm font-semibold rounded-xl text-slate-200 transition-colors"
+                className="px-4 py-2 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-xs sm:text-sm font-semibold rounded-xl text-slate-300 transition-colors"
               >
                 {ind}
               </span>

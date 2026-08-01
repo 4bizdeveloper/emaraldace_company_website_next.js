@@ -74,7 +74,6 @@ export default function Home() {
     }
   };
 
-  // Auto-slide effect for client logos
   useEffect(() => {
     const interval = setInterval(() => {
       if (scrollRef.current) {
@@ -90,7 +89,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full text-slate-900 bg-white selection:bg-[#0b63c5] selection:text-white transform-gpu antialiased scroll-smooth" style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <main className="w-full text-slate-100 bg-slate-950 selection:bg-[#0b63c5] selection:text-white transform-gpu antialiased scroll-smooth" style={{ fontFamily: 'Poppins, sans-serif' }}>
       
       {/* Inline Styles optimized for GPU-accelerated frame performance */}
       <style>{`
@@ -114,7 +113,7 @@ export default function Home() {
       {/* 1. FULL SCREEN HERO SECTION WITH ULTRA MODERN VIDEO BACKGROUND */}
       <section className="relative h-screen w-full min-h-[100dvh] flex items-center justify-center bg-slate-950 text-white overflow-hidden">
         
-        {/* Background Full-Screen Video - Enhanced layout shifting protection & rendering optimization */}
+        {/* Background Full-Screen Video */}
         <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <video
             autoPlay
@@ -131,8 +130,8 @@ export default function Home() {
         </div>
 
         {/* Dynamic Light Overlay Gradient for Maximum Clarity and Contrast */}
-        <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px] z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-slate-950/40 z-10" />
+        <div className="absolute inset-0 bg-slate-950/50 backdrop-blur-[1px] z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/60 z-10" />
 
         {/* Hero Central Overlay Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full my-auto space-y-6 sm:space-y-8 pt-16">
@@ -140,7 +139,7 @@ export default function Home() {
           {/* Main Hero Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.15] text-white max-w-4xl mx-auto drop-shadow-2xl">
             Engineering Value. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-400 to-indigo-300">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-400 to-indigo-400">
               Optimizing Assets.
             </span>
           </h1>
@@ -148,11 +147,11 @@ export default function Home() {
       </section>
 
       {/* 2. HERO SUB-CONTENTS SECTION */}
-      <section className="bg-slate-950 text-white border-b border-slate-800 py-16 lg:py-24 relative z-20">
+      <section className="bg-slate-950 text-white py-12 lg:py-16 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Centered, bright-white text and pulsing bright dots credentials row */}
-          <div className="mb-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs font-semibold uppercase tracking-widest text-white border-b border-slate-800 pb-8">
+          {/* Credentials Row without hard borders */}
+          <div className="mb-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs font-semibold uppercase tracking-widest text-white pb-4">
             <span className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#FF6A00] animate-pulse shadow-[0_0_8px_#FF6A00]"></span> 
               ISO Certified
@@ -181,7 +180,7 @@ export default function Home() {
                   <span>Explore Enterprise Solutions</span>
                   <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </Link>
-                <Link href="/contact" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-xl backdrop-blur-md transition-all text-center">
+                <Link href="/contact" className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl backdrop-blur-md transition-all text-center">
                   Request Engineering Callback
                 </Link>
               </div>
@@ -190,10 +189,10 @@ export default function Home() {
             {/* Metrics Statistics Panel */}
             <div className="lg:col-span-5 relative">
               <div className="absolute inset-0 bg-[#0b63c5] rounded-3xl opacity-20 blur-3xl transform rotate-6 scale-95 pointer-events-none"></div>
-              <div className="w-full max-w-md mx-auto p-8 bg-slate-900/90 border border-slate-800 rounded-2xl shadow-2xl backdrop-blur-xl space-y-6 relative border-t-2 border-t-[#0b63c5]">
-                <div className="flex justify-between items-center border-b border-slate-800 pb-4">
+              <div className="w-full max-w-md mx-auto p-8 bg-slate-900/90 rounded-2xl shadow-2xl backdrop-blur-xl space-y-6 relative">
+                <div className="flex justify-between items-center pb-2">
                   <span className="font-bold text-blue-400 text-xs tracking-widest uppercase block">Operational Statistics</span>
-                  <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full border border-emerald-500/20">Active Coverage</span>
+                  <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full">Active Coverage</span>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   {[
@@ -202,7 +201,7 @@ export default function Home() {
                     { metric: "2023", label: "FM Division Expansion Year" },
                     { metric: "100%", label: "UAE Regional Fulfillment" }
                   ].map((stat, sIdx) => (
-                    <div key={sIdx} className="p-4 bg-slate-950/60 rounded-xl border border-slate-800 transform hover:scale-[1.02] transition-transform">
+                    <div key={sIdx} className="p-4 bg-slate-950/60 rounded-xl transform hover:scale-[1.02] transition-transform">
                       <span className="block text-3xl font-bold text-white tracking-tight">{stat.metric}</span>
                       <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-tight mt-1 block leading-tight">{stat.label}</span>
                     </div>
@@ -216,28 +215,28 @@ export default function Home() {
       </section>
 
       {/* 3. CORPORATE CORE COMPLIANCE BADGES SECTION */}
-      <section className="bg-slate-50 border-b border-slate-200 py-16">
+      <section className="bg-slate-950 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch text-left">
-            <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:shadow-md">
-              <div className="w-12 h-12 bg-blue-50 text-[#0b63c5] rounded-xl flex items-center justify-center shrink-0 border border-blue-100"><ShieldCheck className="w-6 h-6" /></div>
+            <div className="p-8 bg-slate-900/60 rounded-2xl shadow-xl flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:bg-slate-900">
+              <div className="w-12 h-12 bg-blue-950 text-blue-400 rounded-xl flex items-center justify-center shrink-0"><ShieldCheck className="w-6 h-6" /></div>
               <div>
-                <h3 className="font-bold text-slate-900 text-sm uppercase tracking-wider">ISO Quality Management</h3>
-                <p className="text-slate-500 text-xs mt-1 font-medium leading-relaxed">Certified systems driving strict control parameters across technical engineering operations.</p>
+                <h3 className="font-bold text-slate-100 text-sm uppercase tracking-wider">ISO Quality Management</h3>
+                <p className="text-slate-400 text-xs mt-1 font-medium leading-relaxed">Certified systems driving strict control parameters across technical engineering operations.</p>
               </div>
             </div>
-            <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:shadow-md">
-              <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center shrink-0 border border-amber-100"><Award className="w-6 h-6" /></div>
+            <div className="p-8 bg-slate-900/60 rounded-2xl shadow-xl flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:bg-slate-900">
+              <div className="w-12 h-12 bg-amber-950 text-amber-400 rounded-xl flex items-center justify-center shrink-0"><Award className="w-6 h-6" /></div>
               <div>
-                <h3 className="font-bold text-slate-900 text-sm uppercase tracking-wider">ICV Value certified</h3>
-                <p className="text-slate-500 text-xs mt-1 font-medium leading-relaxed">Validating localized supply network execution loops for strategic corporate integration.</p>
+                <h3 className="font-bold text-slate-100 text-sm uppercase tracking-wider">ICV Value certified</h3>
+                <p className="text-slate-400 text-xs mt-1 font-medium leading-relaxed">Validating localized supply network execution loops for strategic corporate integration.</p>
               </div>
             </div>
-            <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:shadow-md">
-              <div className="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center shrink-0"><HardHat className="w-6 h-6" /></div>
+            <div className="p-8 bg-slate-900/60 rounded-2xl shadow-xl flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:bg-slate-900">
+              <div className="w-12 h-12 bg-slate-800 text-slate-100 rounded-xl flex items-center justify-center shrink-0"><HardHat className="w-6 h-6" /></div>
               <div>
-                <h3 className="font-bold text-slate-900 text-sm uppercase tracking-wider">UAE Licensed Contractor</h3>
-                <p className="text-slate-500 text-xs mt-1 font-medium leading-relaxed">Fully credentialed and authorized to deploy large-scale civil and electromechanical contracts.</p>
+                <h3 className="font-bold text-slate-100 text-sm uppercase tracking-wider">UAE Licensed Contractor</h3>
+                <p className="text-slate-400 text-xs mt-1 font-medium leading-relaxed">Fully credentialed and authorized to deploy large-scale civil and electromechanical contracts.</p>
               </div>
             </div>
           </div>
@@ -245,11 +244,11 @@ export default function Home() {
       </section>
 
       {/* 4. EXECUTIVE INTRODUCTORY SECTION */}
-      <section className="py-24 bg-white">
+      <section className="py-14 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5 relative">
-              <div className="relative w-full aspect-square max-w-md mx-auto lg:max-w-none rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+              <div className="relative w-full aspect-square max-w-md mx-auto lg:max-w-none rounded-3xl overflow-hidden shadow-2xl">
                 <Image 
                   src="/integrated-engineering-aco-system-uae.webp" 
                   alt="Emrald Ace Executive Operations Meeting"
@@ -264,14 +263,14 @@ export default function Home() {
             </div>
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Corporate DNA</span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Delivering Integrated Engineering Ecosystems Across The UAE</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-100 tracking-tight">Delivering Integrated Engineering Ecosystems Across The UAE</h2>
               <div className="w-12 h-1 bg-[#0b63c5] rounded-full"></div>
-              <p className="text-slate-600 text-sm font-medium leading-relaxed">
+              <p className="text-slate-400 text-sm font-medium leading-relaxed">
                 Emrald Ace has evolved into a trusted provider of Integrated Facility Management, Annual Maintenance Contracts, and Interior Fit-Out solutions, backed by absolute engineering proficiency. Modern physical plant infrastructures require proactive monitoring methodologies, specialized insight arrays, and direct professional governance metrics.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                 {["Intelligent Operational Planning", "Rigorous Asset Lifetime Preservation", "Transparent SLA Reporting Structures", "Direct Accountability Frameworks"].map((item, idx) => (
-                  <div key={idx} className="flex items-center space-x-2 text-xs font-bold text-slate-700">
+                  <div key={idx} className="flex items-center space-x-2 text-xs font-bold text-slate-300">
                     <CheckCircle2 className="w-4 h-4 text-[#0b63c5] shrink-0" />
                     <span>{item}</span>
                   </div>
@@ -289,19 +288,19 @@ export default function Home() {
       </section>
 
       {/* 5. OPTIMIZED SERVICES SECTION */}
-      <section className="py-24 bg-slate-50 border-y border-slate-200">
+      <section className="py-14 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
             <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-widest block">Service Matrix</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Technical Capability Modules</h2>
-            <p className="text-slate-500 text-xs sm:text-sm font-medium">Reliable maintenance, specialized engineering, and operational governance execution under one direct roof structure.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-100 tracking-tight">Technical Capability Modules</h2>
+            <p className="text-slate-400 text-xs sm:text-sm font-medium">Reliable maintenance, specialized engineering, and operational governance execution under one direct roof structure.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {coreServices.map((service, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group transform hover:-translate-y-1"
+                className="bg-slate-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col group transform hover:-translate-y-1"
               >
                 <div className="relative h-[240px] w-full overflow-hidden">
                   <Image 
@@ -320,8 +319,8 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-4 bg-white">
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-4 bg-slate-900">
+                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-normal">
                     {service.desc}
                   </p>
                 </div>
@@ -329,7 +328,7 @@ export default function Home() {
             ))}
           </div>
           
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <Link href="/services" className="inline-flex items-center justify-center bg-[#0b63c5] text-white font-bold px-8 py-4 rounded-xl hover:bg-blue-600 transition-all text-sm tracking-wide shadow-md shadow-blue-600/10">
               View Extended Capabilities Catalogue
             </Link>
@@ -338,10 +337,9 @@ export default function Home() {
       </section>
 
       {/* 6. HIGH-CONVERTING CTA SECTION */}
-      <section className="py-20 bg-gradient-to-r from-slate-900 via-[#0b63c5] to-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-slate-950/20" />
+      <section className="py-12 bg-slate-950 text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-slate-950/40 border border-white/10 backdrop-blur-xl rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 border border-white/5">
             <div className="space-y-4 text-center lg:text-left max-w-2xl">
               <span className="text-xs font-bold text-amber-400 uppercase tracking-widest inline-flex items-center gap-2">
                 <Sparkles className="w-4 h-4" /> 24/7 Rapid Emergency Response
@@ -349,7 +347,7 @@ export default function Home() {
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
                 Ready to Upgrade Your Facility Management & MEP Operations?
               </h2>
-              <p className="text-slate-200 text-xs sm:text-sm font-normal">
+              <p className="text-slate-300 text-xs sm:text-sm font-normal">
                 Speak directly with our technical dispatch engineers now for consultations, emergency support, or AMC inquiries.
               </p>
             </div>
@@ -367,7 +365,7 @@ export default function Home() {
 
               <Link 
                 href="/contact" 
-                className="w-full sm:w-auto px-6 py-4 bg-transparent hover:bg-white/10 border border-white/30 text-white font-bold rounded-xl transition-all text-center text-sm"
+                className="w-full sm:w-auto px-6 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-all text-center text-sm"
               >
                 Request Quotation
               </Link>
@@ -377,18 +375,18 @@ export default function Home() {
       </section>
 
       {/* 7. SECTOR DIVERSIFICATION FOOTPRINT GRID */}
-      <section className="py-24 bg-white">
+      <section className="py-14 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Sector Ecosystems</span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Diversified Industry Frameworks We Systematically Serve</h2>
-              <p className="text-slate-500 text-xs sm:text-sm font-medium leading-relaxed">
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-100 tracking-tight">Diversified Industry Frameworks We Systematically Serve</h2>
+              <p className="text-slate-400 text-xs sm:text-sm font-medium leading-relaxed">
                 Our active engineering field deployment units are structurally configured to implement continuous preventative, reactive, and asset enhancement operations directly within specialized commercial business verticals throughout the UAE jurisdiction boundaries.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {["Commercial Offices", "Residential Units", "Healthcare Centers", "Luxury Hotels", "Retail Spaces", "Industrial Sites"].map((vertical, vIdx) => (
-                  <div key={vIdx} className="p-4 bg-slate-50 rounded-xl border border-slate-150 flex items-center space-x-2 text-xs font-bold text-slate-800">
+                  <div key={vIdx} className="p-4 bg-slate-900 rounded-xl flex items-center space-x-2 text-xs font-bold text-slate-200">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#0b63c5]"></span>
                     <span>{vertical}</span>
                   </div>
@@ -398,18 +396,18 @@ export default function Home() {
             
             <div className="lg:col-span-6 grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="relative h-[240px] w-full rounded-2xl overflow-hidden border border-slate-100 shadow-md">
+                <div className="relative h-[240px] w-full rounded-2xl overflow-hidden shadow-xl">
                   <Image src="/sector-ecosystem-1.jpg" alt="Commercial Interiors" fill className="object-cover" />
                 </div>
-                <div className="relative h-[160px] w-full rounded-2xl overflow-hidden border border-slate-100 shadow-md">
+                <div className="relative h-[160px] w-full rounded-2xl overflow-hidden shadow-xl">
                   <Image src="/sector-ecosystem-2.jpg" alt="MEP Plants" fill className="object-cover" />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
-                <div className="relative h-[160px] w-full rounded-2xl overflow-hidden border border-slate-100 shadow-md">
+                <div className="relative h-[160px] w-full rounded-2xl overflow-hidden shadow-xl">
                   <Image src="/sector-ecosystem-3.jpg" alt="Corporate Facilities" fill className="object-cover" />
                 </div>
-                <div className="relative h-[240px] w-full rounded-2xl overflow-hidden border border-slate-100 shadow-md">
+                <div className="relative h-[240px] w-full rounded-2xl overflow-hidden shadow-xl">
                   <Image src="/sector-ecosystem-4.jpg" alt="Civil Development" fill className="object-cover" />
                 </div>
               </div>
@@ -419,9 +417,9 @@ export default function Home() {
       </section>
 
       {/* 8. TRUSTED BY INDUSTRY LEADERS */}
-      <section className="py-24 bg-gradient-to-r from-slate-900 via-[#0b63c5] to-slate-900 text-white overflow-hidden relative transform-gpu">
+      <section className="py-14 bg-slate-950 text-white overflow-hidden relative transform-gpu">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8">
             <div>
               <span className="text-xs uppercase font-bold text-blue-300 tracking-widest block">Trusted By Industry Leaders</span>
               <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">Strategic Partners Across the Last 5 Years</h2>
@@ -431,14 +429,14 @@ export default function Home() {
               <button 
                 onClick={() => handleScroll('left')} 
                 aria-label="Previous Slide" 
-                className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all border border-white/20 hover:border-blue-400 active:scale-95 cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all hover:border-blue-400 active:scale-95 cursor-pointer"
               >
                 <ChevronLeft size={22} />
               </button>
               <button 
                 onClick={() => handleScroll('right')} 
                 aria-label="Next Slide" 
-                className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all border border-white/20 hover:border-blue-400 active:scale-95 cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all hover:border-blue-400 active:scale-95 cursor-pointer"
               >
                 <ChevronRight size={22} />
               </button>
@@ -446,7 +444,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Carousel Container Wrapper - Seamlessly Responsive across all device breakpoints */}
+        {/* Carousel Container Wrapper */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={scrollRef} 
@@ -455,7 +453,7 @@ export default function Home() {
             {clientLogos.concat(clientLogos).map((logo, lIdx) => (
               <div 
                 key={lIdx} 
-                className="relative w-[180px] sm:w-[220px] h-28 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-black/20 overflow-hidden snap-center transform-gpu transition-all duration-300 hover:scale-[1.03] border-2 border-transparent hover:border-blue-400"
+                className="relative w-[180px] sm:w-[220px] h-28 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-2xl overflow-hidden snap-center transform-gpu transition-all duration-300 hover:scale-[1.03]"
               >
                 <Image 
                   src={logo.url} 
@@ -472,11 +470,11 @@ export default function Home() {
       </section>
 
       {/* 9. FAQ SECTION */}
-      <section className="py-24 bg-slate-50 border-t border-slate-200 scroll-mt-10">
+      <section className="py-14 bg-slate-950 scroll-mt-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
+          <div className="text-center space-y-4 mb-12">
             <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-widest block">Knowledge Base</span>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-slate-100 tracking-tight">Frequently Asked Questions</h2>
             <div className="w-12 h-1 bg-[#0b63c5] mx-auto rounded-full"></div>
           </div>
 
@@ -486,29 +484,29 @@ export default function Home() {
               return (
                 <div 
                   key={fIdx} 
-                  className="bg-white rounded-xl border border-slate-200/90 shadow-xs overflow-hidden transition-all duration-300"
+                  className="bg-slate-900 rounded-xl overflow-hidden shadow-xl transition-all duration-300"
                 >
                   <button
                     onClick={() => toggleFaq(fIdx)}
-                    className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 focus:outline-hidden group hover:bg-slate-50/60 transition-colors cursor-pointer"
+                    className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 focus:outline-hidden group hover:bg-slate-800/50 transition-colors cursor-pointer"
                     aria-expanded={isOpen}
                   >
-                    <h3 className="text-sm sm:text-base font-semibold text-slate-800 flex items-start gap-3.5 pr-2 leading-snug">
+                    <h3 className="text-sm sm:text-base font-semibold text-slate-200 flex items-start gap-3.5 pr-2 leading-snug">
                       <HelpCircle className="w-5 h-5 text-[#0b63c5] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                       <span>{faq.q}</span>
                     </h3>
-                    <div className={`w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'rotate-180 bg-[#0b63c5] text-white' : ''}`}>
+                    <div className={`w-8 h-8 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'rotate-180 bg-[#0b63c5] text-white' : ''}`}>
                       <ChevronDown size={16} />
                     </div>
                   </button>
 
                   <div 
-                    className={`grid transition-all duration-300 ease-in-out border-slate-100 ${
-                      isOpen ? 'grid-rows-[1fr] border-t opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="p-6 sm:p-7 pl-14 text-xs sm:text-sm font-normal text-slate-600 leading-relaxed bg-slate-50/40">
+                      <div className="p-6 sm:p-7 pl-14 text-xs sm:text-sm font-normal text-slate-300 leading-relaxed bg-slate-950/40">
                         {faq.a}
                       </div>
                     </div>
