@@ -251,7 +251,7 @@ export default function Home() {
             <div className="lg:col-span-5 relative">
               <div className="relative w-full aspect-square max-w-md mx-auto lg:max-w-none rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <Image 
-                  src="/integrated-engineering-aco-system-uae.jpg" 
+                  src="/integrated-engineering-aco-system-uae.webp" 
                   alt="Emrald Ace Executive Operations Meeting"
                   fill
                   className="object-cover"
