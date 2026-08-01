@@ -1,17 +1,83 @@
 import React from 'react';
 import Image from 'next/image';
-import { Compass, Layers, ShieldCheck, Award, Building, HardHat } from 'lucide-react';
+import { Compass, Layers, ShieldCheck, Award, Building, HardHat, CheckCircle2 } from 'lucide-react';
 
 export default function About() {
   return (
-    <div className="py-20 bg-white">
+    <div className="py-20 bg-white selection:bg-[#0B63C5]/20 selection:text-[#0B63C5]">
+      
+      {/* Dynamic SEO Split Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Text Content Grid */}
+          <div className="lg:col-span-7 space-y-6 text-left order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 bg-[#0B63C5]/5 border border-[#0B63C5]/10 px-3 py-1 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-[#0B63C5] animate-pulse"></span>
+              <span className="text-xs uppercase tracking-widest font-extrabold text-[#0B63C5]">Engineering & Facilities Management</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-none">
+              About <span className="text-[#0B63C5]">Emrald</span> <span className="text-[#FF6A00]">Ace</span>
+            </h1>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium max-w-2xl">
+              An industry-leading, ISO & ICV certified engineering and integrated facilities management contractor operating across the UAE. We deliver complete mechanical, electrical, plumbing, and general contracting solutions designed for maximum operational longevity.
+            </p>
+            
+            {/* Quick trust metrics */}
+            <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-3">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
+                <span className="text-xs sm:text-sm font-bold text-slate-800">ISO Certified</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
+                <span className="text-xs sm:text-sm font-bold text-slate-800">ICV Certified</span>
+              </div>
+              <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
+                <CheckCircle2 className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
+                <span className="text-xs sm:text-sm font-bold text-slate-800">UAE Licensed</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Logo Presentation Grid */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2">
+            <div className="relative w-full max-w-[320px] sm:max-w-[400px] aspect-square flex items-center justify-center p-6 bg-slate-50 border border-slate-100 rounded-3xl transition-transform duration-500 hover:scale-[1.02]">
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#0B63C5]/5 via-transparent to-[#FF6A00]/5 rounded-3xl pointer-events-none" />
+              <Image 
+                src="/logo.png" 
+                alt="Emrald Ace General Contracting & Electromechanical Logo"
+                width={360}
+                height={360}
+                priority
+                className="w-auto h-auto max-h-[85%] object-contain drop-shadow-sm select-none"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Head Block Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-20">
-          <h1 className="text-xs uppercase tracking-widest font-extrabold text-[#FF6A00]">Corporate Identity</h1>
-          <p className="text-4xl font-black text-slate-900 tracking-tight">About Emrald Ace</p>
-          <div className="w-12 h-1 bg-[#0B63C5] mx-auto rounded-full"></div>
+        {/* Core Profile Corporate Metrics Block */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
+          <div className="p-6 text-center bg-slate-50 border border-slate-100 rounded-2xl">
+            <div className="text-3xl font-black text-[#0B63C5] mb-1">2014</div>
+            <div className="text-xs uppercase tracking-wider font-extrabold text-slate-500">Established</div>
+          </div>
+          <div className="p-6 text-center bg-slate-50 border border-slate-100 rounded-2xl">
+            <div className="text-3xl font-black text-[#0B63C5] mb-1">Abu Dhabi</div>
+            <div className="text-xs uppercase tracking-wider font-extrabold text-slate-500">Headquarters</div>
+          </div>
+          <div className="p-6 text-center bg-slate-50 border border-slate-100 rounded-2xl">
+            <div className="text-3xl font-black text-[#0B63C5] mb-1">22+</div>
+            <div className="text-xs uppercase tracking-wider font-extrabold text-slate-500">Projects Delivered</div>
+          </div>
+          <div className="p-6 text-center bg-slate-50 border border-slate-100 rounded-2xl">
+            <div className="text-3xl font-black text-[#0B63C5] mb-1">100%</div>
+            <div className="text-xs uppercase tracking-wider font-extrabold text-slate-500">UAE Business Coverage</div>
+          </div>
         </div>
 
         {/* Chairman's Section Block Template */}
@@ -19,8 +85,8 @@ export default function About() {
           <div className="lg:col-span-4 flex flex-col items-center text-center space-y-4">
             <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-[#0B63C5] shadow-lg">
               <Image 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" 
-                alt="Nithin Gopinathan Nair Chairman Placeholder Image Target"
+                src="/nithin-gopinathan-nair.jpeg" 
+                alt="Nithin Gopinathan Nair Chairman"
                 fill
                 className="object-cover object-top"
               />
@@ -61,6 +127,44 @@ export default function About() {
             <p className="text-sm text-slate-600 leading-relaxed font-medium">
               To provide reliable, cost-effective, and innovative facility management solutions that maximize asset performance while creating safe, productive, and sustainable environments through engineering excellence and continuous improvement.
             </p>
+          </div>
+        </div>
+
+        {/* Core Values Section Grid Add-on */}
+        <div className="pt-4 border-t border-slate-100">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+            <h2 className="text-xs uppercase tracking-widest font-extrabold text-[#FF6A00]">Foundational Standards</h2>
+            <p className="text-2xl font-black text-slate-900 tracking-tight">Our Core Corporate Values</p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl flex gap-4 items-start">
+              <div className="p-2 bg-white rounded-lg border border-slate-200 text-[#0B63C5] flex-shrink-0">
+                <Award className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 mb-1">Excellence</h4>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">Delivering unmatched quality without technical or operational compromises.</p>
+              </div>
+            </div>
+            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl flex gap-4 items-start">
+              <div className="p-2 bg-white rounded-lg border border-slate-200 text-[#0B63C5] flex-shrink-0">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 mb-1">Safety First</h4>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">Proactively protecting personnel, physical properties, and the environment.</p>
+              </div>
+            </div>
+            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl flex gap-4 items-start">
+              <div className="p-2 bg-white rounded-lg border border-slate-200 text-[#0B63C5] flex-shrink-0">
+                <Building className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 mb-1">Sustainability</h4>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">Creating enduring structural value through smart resource operations.</p>
+              </div>
+            </div>
           </div>
         </div>
 
