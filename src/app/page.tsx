@@ -90,40 +90,55 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full text-slate-900 bg-white selection:bg-[#0b63c5] selection:text-white transform-gpu" style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <main className="w-full text-slate-900 bg-white selection:bg-[#0b63c5] selection:text-white transform-gpu antialiased scroll-smooth" style={{ fontFamily: 'Poppins, sans-serif' }}>
       
+      {/* Inline Styles optimized for GPU-accelerated frame performance */}
+      <style>{`
+        @keyframes floatUpDown {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-12px); }
+        }
+        .animate-float-reciprocate {
+          animation: floatUpDown 3s ease-in-out infinite;
+          will-change: transform;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+
       {/* 1. FULL SCREEN HERO SECTION WITH ULTRA MODERN VIDEO BACKGROUND */}
       <section className="relative h-screen w-full min-h-[100dvh] flex items-center justify-center bg-slate-950 text-white overflow-hidden">
         
-        {/* Background Full-Screen Video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=90"
-          className="absolute inset-0 w-full h-full object-cover object-center z-0 will-change-transform"
-        >
-          <source src="/bg-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        {/* Background Full-Screen Video - Enhanced layout shifting protection & rendering optimization */}
+        <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=90"
+            className="w-full h-full object-cover object-center scale-[1.01] will-change-transform"
+          >
+            <source src="/bg-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
         {/* Dynamic Light Overlay Gradient for Maximum Clarity and Contrast */}
-        <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px] z-0" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-slate-950/40 z-0" />
+        <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px] z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-slate-950/40 z-10" />
 
         {/* Hero Central Overlay Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center w-full my-auto space-y-6 sm:space-y-8 pt-16">
-          <div className="inline-flex items-center space-x-2.5 bg-slate-900/80 border border-blue-400/40 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#FF6A00] animate-ping"></span>
-            <span className="text-xs sm:text-sm font-bold text-blue-100 uppercase tracking-widest">
-              ISO Certified | ICV Certified | UAE Licensed Contractor
-            </span>
-          </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full my-auto space-y-6 sm:space-y-8 pt-16">
           
           {/* Main Hero Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black tracking-tight leading-[1.08] text-white max-w-5xl mx-auto drop-shadow-2xl">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.15] text-white max-w-4xl mx-auto drop-shadow-2xl">
             Engineering Value. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-400 to-indigo-300">
               Optimizing Assets.
@@ -132,15 +147,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. HERO SUB-CONTENTS SECTION (Positioned Directly Below Fullscreen Hero) */}
-      <section className="bg-slate-950 text-white border-b border-slate-800 py-16 lg:py-20">
+      {/* 2. HERO SUB-CONTENTS SECTION */}
+      <section className="bg-slate-950 text-white border-b border-slate-800 py-16 lg:py-24 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Centered, bright-white text and pulsing bright dots credentials row */}
+          <div className="mb-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs font-semibold uppercase tracking-widest text-white border-b border-slate-800 pb-8">
+            <span className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FF6A00] animate-pulse shadow-[0_0_8px_#FF6A00]"></span> 
+              ISO Certified
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#22d3ee]"></span> 
+              ICV Certified
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-indigo-400 animate-pulse shadow-[0_0_8px_#818cf8]"></span> 
+              UAE Licensed Contractor
+            </span>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
             {/* Description & Call to Actions */}
             <div className="lg:col-span-7 space-y-6 text-left">
               <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">About Emrald Ace</span>
-              <p className="text-lg sm:text-2xl text-slate-200 font-normal leading-relaxed">
+              <p className="text-xl sm:text-2xl text-slate-200 font-normal leading-relaxed">
                 Welcome to Emrald Ace General Contracting & Electromechanical L.L.C. We deliver reliable facility management, maintenance, and robust engineering setups across the UAE footprint since 2014.
               </p>
               
@@ -160,7 +192,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-[#0b63c5] rounded-3xl opacity-20 blur-3xl transform rotate-6 scale-95 pointer-events-none"></div>
               <div className="w-full max-w-md mx-auto p-8 bg-slate-900/90 border border-slate-800 rounded-2xl shadow-2xl backdrop-blur-xl space-y-6 relative border-t-2 border-t-[#0b63c5]">
                 <div className="flex justify-between items-center border-b border-slate-800 pb-4">
-                  <span className="font-extrabold text-blue-400 text-xs tracking-widest uppercase block">Operational Statistics</span>
+                  <span className="font-bold text-blue-400 text-xs tracking-widest uppercase block">Operational Statistics</span>
                   <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full border border-emerald-500/20">Active Coverage</span>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -171,7 +203,7 @@ export default function Home() {
                     { metric: "100%", label: "UAE Regional Fulfillment" }
                   ].map((stat, sIdx) => (
                     <div key={sIdx} className="p-4 bg-slate-950/60 rounded-xl border border-slate-800 transform hover:scale-[1.02] transition-transform">
-                      <span className="block text-3xl font-black text-white tracking-tight">{stat.metric}</span>
+                      <span className="block text-3xl font-bold text-white tracking-tight">{stat.metric}</span>
                       <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-tight mt-1 block leading-tight">{stat.label}</span>
                     </div>
                   ))}
@@ -184,28 +216,28 @@ export default function Home() {
       </section>
 
       {/* 3. CORPORATE CORE COMPLIANCE BADGES SECTION */}
-      <section className="bg-slate-50 border-b border-slate-200 py-12">
+      <section className="bg-slate-50 border-b border-slate-200 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
-            <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch text-left">
+            <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:shadow-md">
               <div className="w-12 h-12 bg-blue-50 text-[#0b63c5] rounded-xl flex items-center justify-center shrink-0 border border-blue-100"><ShieldCheck className="w-6 h-6" /></div>
               <div>
                 <h3 className="font-bold text-slate-900 text-sm uppercase tracking-wider">ISO Quality Management</h3>
-                <p className="text-slate-500 text-xs mt-1 font-medium">Certified systems driving strict control parameters across technical engineering operations.</p>
+                <p className="text-slate-500 text-xs mt-1 font-medium leading-relaxed">Certified systems driving strict control parameters across technical engineering operations.</p>
               </div>
             </div>
-            <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:shadow-md">
               <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center shrink-0 border border-amber-100"><Award className="w-6 h-6" /></div>
               <div>
                 <h3 className="font-bold text-slate-900 text-sm uppercase tracking-wider">ICV Value certified</h3>
-                <p className="text-slate-500 text-xs mt-1 font-medium">Validating localized supply network execution loops for strategic corporate integration.</p>
+                <p className="text-slate-500 text-xs mt-1 font-medium leading-relaxed">Validating localized supply network execution loops for strategic corporate integration.</p>
               </div>
             </div>
-            <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:shadow-md">
               <div className="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center shrink-0"><HardHat className="w-6 h-6" /></div>
               <div>
                 <h3 className="font-bold text-slate-900 text-sm uppercase tracking-wider">UAE Licensed Contractor</h3>
-                <p className="text-slate-500 text-xs mt-1 font-medium">Fully credentialed and authorized to deploy large-scale civil and electromechanical contracts.</p>
+                <p className="text-slate-500 text-xs mt-1 font-medium leading-relaxed">Fully credentialed and authorized to deploy large-scale civil and electromechanical contracts.</p>
               </div>
             </div>
           </div>
@@ -217,7 +249,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5 relative">
-              <div className="relative w-full h-[450px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+              <div className="relative w-full aspect-square max-w-md mx-auto lg:max-w-none rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <Image 
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
                   alt="Emrald Ace Executive Operations Meeting"
@@ -225,14 +257,14 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-[#0b63c5] text-white p-6 rounded-2xl shadow-xl hidden sm:block max-w-[220px]">
+              <div className="absolute -bottom-6 -right-6 bg-[#0b63c5] text-white p-6 rounded-2xl shadow-xl hidden sm:block max-w-[220px] animate-float-reciprocate">
                 <ThumbsUp className="w-8 h-8 text-white mb-2" />
                 <p className="text-xs font-bold uppercase tracking-widest leading-tight">Operational Reliability Guaranteed</p>
               </div>
             </div>
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-extrabold text-[#FF6A00] uppercase tracking-widest block">Corporate DNA</span>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Delivering Integrated Engineering Ecosystems Across The UAE</h2>
+              <span className="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Corporate DNA</span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Delivering Integrated Engineering Ecosystems Across The UAE</h2>
               <div className="w-12 h-1 bg-[#0b63c5] rounded-full"></div>
               <p className="text-slate-600 text-sm font-medium leading-relaxed">
                 Emrald Ace has evolved into a trusted provider of Integrated Facility Management, Annual Maintenance Contracts, and Interior Fit-Out solutions, backed by absolute engineering proficiency. Modern physical plant infrastructures require proactive monitoring methodologies, specialized insight arrays, and direct professional governance metrics.
@@ -240,15 +272,15 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                 {["Intelligent Operational Planning", "Rigorous Asset Lifetime Preservation", "Transparent SLA Reporting Structures", "Direct Accountability Frameworks"].map((item, idx) => (
                   <div key={idx} className="flex items-center space-x-2 text-xs font-bold text-slate-700">
-                    <CheckCircle2 className="w-4 h-4 text-[#0b63c5]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#0b63c5] shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
               <div className="pt-4">
-                <Link href="/about" className="inline-flex items-center text-sm font-bold text-[#0b63c5] hover:text-blue-700 transition-colors group">
+                <Link href="/about" className="inline-flex items-center justify-center bg-[#0b63c5] hover:bg-blue-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-blue-600/20 transition-all text-sm group">
                   <span>Read full corporate overview portfolio</span>
-                  <ChevronRight size={16} className="ml-1 transition-transform group-hover:translate-x-0.5" />
+                  <ChevronRight size={16} className="ml-2 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </div>
             </div>
@@ -260,8 +292,8 @@ export default function Home() {
       <section className="py-24 bg-slate-50 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <span className="text-xs font-extrabold text-[#0b63c5] uppercase tracking-widest block">Service Matrix</span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Technical Capability Modules</h2>
+            <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-widest block">Service Matrix</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Technical Capability Modules</h2>
             <p className="text-slate-500 text-xs sm:text-sm font-medium">Reliable maintenance, specialized engineering, and operational governance execution under one direct roof structure.</p>
           </div>
 
@@ -271,7 +303,7 @@ export default function Home() {
                 key={index} 
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group transform hover:-translate-y-1"
               >
-                <div className="relative h-[220px] w-full overflow-hidden">
+                <div className="relative h-[240px] w-full overflow-hidden">
                   <Image 
                     src={service.image} 
                     alt={service.title} 
@@ -298,7 +330,7 @@ export default function Home() {
           </div>
           
           <div className="text-center mt-16">
-            <Link href="/services" className="inline-flex items-center justify-center bg-slate-950 text-white font-bold px-8 py-4 rounded-xl hover:bg-[#0b63c5] transition-all text-sm tracking-wide shadow-md">
+            <Link href="/services" className="inline-flex items-center justify-center bg-[#0b63c5] text-white font-bold px-8 py-4 rounded-xl hover:bg-blue-600 transition-all text-sm tracking-wide shadow-md shadow-blue-600/10">
               View Extended Capabilities Catalogue
             </Link>
           </div>
@@ -306,7 +338,7 @@ export default function Home() {
       </section>
 
       {/* 6. HIGH-CONVERTING CTA SECTION */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 via-[#0b63c5] to-slate-900 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-slate-900 via-[#0b63c5] to-slate-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-slate-950/20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="bg-slate-950/40 border border-white/10 backdrop-blur-xl rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -314,7 +346,7 @@ export default function Home() {
               <span className="text-xs font-bold text-amber-400 uppercase tracking-widest inline-flex items-center gap-2">
                 <Sparkles className="w-4 h-4" /> 24/7 Rapid Emergency Response
               </span>
-              <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
                 Ready to Upgrade Your Facility Management & MEP Operations?
               </h2>
               <p className="text-slate-200 text-xs sm:text-sm font-normal">
@@ -325,7 +357,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto shrink-0">
               <a 
                 href="tel:+97126282868" 
-                className="w-full sm:w-auto px-6 py-4 bg-white hover:bg-slate-100 text-slate-950 font-black rounded-xl shadow-xl transition-all flex items-center justify-center space-x-3 text-sm tracking-wide group"
+                className="w-full sm:w-auto px-6 py-4 bg-white hover:bg-slate-100 text-slate-950 font-bold rounded-xl shadow-xl transition-all flex items-center justify-center space-x-3 text-sm tracking-wide group"
               >
                 <div className="w-8 h-8 rounded-full bg-[#0b63c5]/10 flex items-center justify-center text-[#0b63c5]">
                   <Phone className="w-4 h-4 text-[#0b63c5] animate-bounce" />
@@ -349,8 +381,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-extrabold text-[#FF6A00] uppercase tracking-widest block">Sector Ecosystems</span>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Diversified Industry Frameworks We Systematically Serve</h2>
+              <span className="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Sector Ecosystems</span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Diversified Industry Frameworks We Systematically Serve</h2>
               <p className="text-slate-500 text-xs sm:text-sm font-medium leading-relaxed">
                 Our active engineering field deployment units are structurally configured to implement continuous preventative, reactive, and asset enhancement operations directly within specialized commercial business verticals throughout the UAE jurisdiction boundaries.
               </p>
@@ -387,7 +419,7 @@ export default function Home() {
       </section>
 
       {/* 8. TRUSTED BY INDUSTRY LEADERS */}
-      <section className="py-20 bg-slate-950 text-white overflow-hidden relative">
+      <section className="py-24 bg-slate-950 text-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-10">
             <div>
@@ -415,8 +447,7 @@ export default function Home() {
 
           <div 
             ref={scrollRef} 
-            className="flex items-center space-x-8 overflow-x-auto scrollbar-none scroll-smooth py-4 no-scrollbar"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="flex items-center space-x-8 overflow-x-auto py-4 no-scrollbar scroll-smooth"
           >
             {clientLogos.concat(clientLogos).map((logo, lIdx) => (
               <div 
@@ -427,6 +458,7 @@ export default function Home() {
                   src={logo.url} 
                   alt={`${logo.name} Corporate Partnership Footprint`} 
                   fill 
+                  sizes="200px"
                   className="object-cover rounded-xl opacity-60 group-hover:opacity-100 transition-opacity" 
                 />
                 <span className="relative z-10 text-xs font-semibold text-slate-300 group-hover:text-white bg-slate-950/70 px-3 py-1 rounded-md backdrop-blur-xs">
@@ -442,7 +474,7 @@ export default function Home() {
       <section className="py-24 bg-slate-50 border-t border-slate-200 scroll-mt-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <span className="text-xs font-extrabold text-[#0b63c5] uppercase tracking-widest block">Knowledge Base</span>
+            <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-widest block">Knowledge Base</span>
             <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Frequently Asked Questions</h2>
             <div className="w-12 h-1 bg-[#0b63c5] mx-auto rounded-full"></div>
           </div>
@@ -520,6 +552,6 @@ export default function Home() {
           }}
         />
       </section>
-    </div>
+    </main>
   );
 }
