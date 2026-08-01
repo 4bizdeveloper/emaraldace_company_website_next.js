@@ -99,7 +99,7 @@ export default function Header() {
                     href={link.href}
                     className="inline-flex items-center justify-center bg-[#0b63c5] text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-900 hover:shadow-md hover:shadow-slate-950/10 transition-all duration-300 transform hover:-translate-y-0.5 group"
                   >
-                    <span>Connect Now</span>
+                    <span>Contact Us</span>
                     <ArrowUpRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 );
