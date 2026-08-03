@@ -130,8 +130,8 @@ export default function Home() {
         </div>
 
         {/* Dynamic Light Overlay Gradient for Maximum Clarity and Contrast */}
-        <div className="absolute inset-0 bg-slate-950/50 backdrop-blur-[1px] z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/60 z-10" />
+        <div className="absolute inset-0 bg-slate-950/30 backdrop-blur-[1px] z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent z-10" />
 
         {/* Hero Central Overlay Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full my-auto space-y-6 sm:space-y-8 pt-16">
