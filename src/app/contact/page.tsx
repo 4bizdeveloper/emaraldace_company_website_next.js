@@ -165,9 +165,9 @@ export default function ContactPage() {
 
             {/* Right Column: Premium Form Block */}
             <div className="grid-cols-1 lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border-2 border-slate-300 shadow-sm transition-all duration-300">
-              {/* Changed text color class here to text-[#0b63c5] */}
-              <h3 className="text-xl font-medium tracking-tight text-[#0b63c5] mb-8">
-                Submit Request / Requirement Scope
+              {/* Changed font weight here from font-medium to font-semibold to increase thickness */}
+              <h3 className="text-xl font-semibold tracking-tight text-[#0b63c5] mb-8">
+                Submit Request 
               </h3>
               
               <form onSubmit={handleFormSubmission} className="space-y-6 text-sm">
