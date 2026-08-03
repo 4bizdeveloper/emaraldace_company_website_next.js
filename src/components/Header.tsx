@@ -11,7 +11,8 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  const isHome = pathname === '/';
+  // Force the home page behavior for all paths uniformly
+  const isHome = true;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +54,7 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-50 w-full h-14 md:h-16 transition-all duration-300 ease-in-out antialiased ${
           isTransparent
             ? 'bg-transparent border-b border-transparent shadow-none'
-            : 'bg-white/95 backdrop-blur-md border-b border-[#0b63c5] shadow-xs'
+            : 'bg-slate-950/70 backdrop-blur-md border-b border-white/5 shadow-xs'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
@@ -71,14 +72,10 @@ export default function Header() {
               />
             </div>
             <div className="flex flex-col">
-              <span className={`text-sm md:text-base font-black tracking-tight leading-none transition-colors duration-300 ${
-                isTransparent ? 'text-white' : 'text-[#0b63c5]'
-              }`}>
+              <span className="text-sm md:text-base font-black tracking-tight leading-none transition-colors duration-300 text-white">
                 EMRALD ACE
               </span>
-              <span className={`text-[6.5px] md:text-[7.5px] uppercase tracking-widest font-semibold mt-0.5 md:mt-1 block max-w-[190px] sm:max-w-none transition-colors duration-300 ${
-                isTransparent ? 'text-slate-300' : 'text-slate-500'
-              }`}>
+              <span className="text-[6.5px] md:text-[7.5px] uppercase tracking-widest font-semibold mt-0.5 md:mt-1 block max-w-[190px] sm:max-w-none transition-colors duration-300 text-slate-400">
                 General Contracting & Electromechanical
               </span>
             </div>
@@ -95,7 +92,7 @@ export default function Header() {
                   <Link 
                     key={link.name}
                     href={link.href}
-                    className="inline-flex items-center justify-center bg-[#0b63c5] text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-900 hover:shadow-md hover:shadow-slate-950/10 transition-all duration-300 transform hover:-translate-y-0.5 group"
+                    className="inline-flex items-center justify-center bg-[#0b63c5] text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:shadow-md hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-0.5 group"
                   >
                     <span>Contact Us</span>
                     <ArrowUpRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -109,13 +106,13 @@ export default function Header() {
                   href={link.href}
                   className={`transition-colors py-1 relative text-[13.5px] font-semibold tracking-wide ${
                     isActive 
-                      ? isTransparent ? 'text-white' : 'text-[#0b63c5]' 
-                      : isTransparent ? 'text-slate-200 hover:text-white' : 'text-slate-600 hover:text-[#0b63c5]'
+                      ? 'text-blue-400' 
+                      : 'text-slate-200 hover:text-blue-400'
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute bottom-[-4px] left-0 w-full h-0.5 bg-[#FF6A00] rounded-full" />
+                    <span className="absolute bottom-[-4px] left-0 w-full h-0.5 bg-blue-400 rounded-full" />
                   )}
                 </Link>
               );
@@ -125,11 +122,7 @@ export default function Header() {
           {/* Enlarged Modern Mobile Interface Toggle Button */}
           <button 
             onClick={() => setIsOpen(true)} 
-            className={`md:hidden p-2 focus:outline-none transition-all rounded-xl active:scale-95 ${
-              isTransparent 
-                ? 'text-white bg-white/10 hover:bg-white/20' 
-                : 'text-[#0b63c5] bg-blue-50/50 hover:bg-blue-50'
-            }`}
+            className="md:hidden p-2 focus:outline-none transition-all rounded-xl active:scale-95 text-white bg-white/5 hover:bg-white/10"
             aria-label="Open navigation menu"
           >
             <Menu className="w-6 h-6 stroke-[2.25]" />
@@ -145,19 +138,19 @@ export default function Header() {
       >
         {/* Dark Backdrop Overlay */}
         <div 
-          className="absolute inset-0 bg-slate-900/40 backdrop-blur-xs"
+          className="absolute inset-0 bg-slate-950/60 backdrop-blur-xs"
           onClick={() => setIsOpen(false)}
         />
         
         {/* Right Flyout Panel Drawer */}
         <div 
-          className={`absolute top-0 right-0 h-full w-[280px] sm:w-[320px] bg-white shadow-2xl transition-transform duration-300 ease-out transform flex flex-col justify-between ${
+          className={`absolute top-0 right-0 h-full w-[280px] sm:w-[320px] bg-slate-950 border-l border-white/5 shadow-2xl transition-transform duration-300 ease-out transform flex flex-col justify-between ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
           {/* Drawer Top Header Wrapper */}
           <div>
-            <div className="flex items-center justify-between px-5 pt-4 pb-4 border-b border-slate-100">
+            <div className="flex items-center justify-between px-5 pt-4 pb-4 border-b border-white/5">
               {/* Brand Logo Placement on the Left */}
               <div className="relative w-8 h-8 flex items-center justify-center">
                 <Image 
@@ -173,14 +166,14 @@ export default function Header() {
               {/* Action Close Button Shifted Right */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 rounded-xl text-[#0b63c5] bg-blue-50/50 hover:bg-blue-50 transition-colors focus:outline-none"
+                className="p-2 rounded-xl text-white bg-white/5 hover:bg-white/10 transition-colors focus:outline-none"
                 aria-label="Close navigation menu"
               >
                 <X className="w-6 h-6 stroke-[2.25]" />
               </button>
             </div>
 
-            {/* Nav Links Stack (Includes Contact inside list for smooth mobile flows) */}
+            {/* Nav Links Stack */}
             <div className="p-4 space-y-1">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
@@ -192,8 +185,8 @@ export default function Header() {
                     onClick={() => setIsOpen(false)}
                     className={`block py-3 px-4 text-[15px] font-semibold rounded-xl transition-colors ${
                       isActive 
-                        ? 'bg-blue-50 text-[#0b63c5]' 
-                        : 'text-slate-700 hover:bg-slate-50 hover:text-[#0b63c5]'
+                        ? 'bg-white/10 text-blue-400' 
+                        : 'text-slate-200 hover:bg-white/5 hover:text-blue-400'
                     }`}
                   >
                     {link.name}
@@ -206,7 +199,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Dynamic Spacer (Matches responsive size seamlessly to eliminate cumulative layout shifts) */}
+      {/* Dynamic Spacer */}
       <div className={isTransparent ? 'h-0 hidden' : 'h-14 md:h-16 w-full'} aria-hidden="true" />
     </>
   );
