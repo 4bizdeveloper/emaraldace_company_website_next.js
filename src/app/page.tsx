@@ -548,6 +548,14 @@ const clientLogos = [
               </div>
             ))}
           </div>
+
+          {/* Centered Our Clients Button */}
+          <div className="text-center mt-10">
+            <Link href="/clients" className="inline-flex items-center justify-center bg-[#0b63c5] hover:bg-blue-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-blue-600/20 transition-all text-sm group tracking-wide">
+              <span>Our Clients</span>
+              <ChevronRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
       </section>
 
