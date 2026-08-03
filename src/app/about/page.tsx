@@ -4,7 +4,7 @@ import { Compass, Layers, ShieldCheck, Award, Building, HardHat, CheckCircle2 } 
 
 export default function About() {
   return (
-    <div className="py-20 bg-slate-950 selection:bg-[#0B63C5]/20 selection:text-[#0B63C5]">
+    <div className="pt-36 pb-20 sm:pt-40 bg-slate-950 selection:bg-[#0B63C5]/20 selection:text-[#0B63C5]">
       
       {/* Dynamic SEO Split Hero Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">

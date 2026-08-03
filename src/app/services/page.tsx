@@ -271,15 +271,15 @@ export default function Services() {
   };
 
   return (
-    <section className="py-12 sm:py-14 bg-slate-950 relative overflow-hidden font-sans" id="services">
+    <section className="pt-28 pb-12 sm:pt-32 sm:pb-14 bg-slate-950 relative overflow-hidden font-sans" id="services">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Main Section Header */}
         <header className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs uppercase tracking-widest font-black text-blue-450 bg-blue-950/40 rounded-full border border-blue-900/40">
-            <Sparkles className="w-3.5 h-3.5" /> Our Service Matrix
+          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs uppercase tracking-widest font-black text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+            <Sparkles className="w-3.5 h-3.5 text-blue-400" /> Our Service Matrix
           </span>
           <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
             Integrated Engineering & Facility Solutions
@@ -291,76 +291,123 @@ export default function Services() {
 
         {/* Services List */}
         <div className="space-y-12">
-          {serviceBlocks.map((block) => (
-            <article 
-              key={block.id} 
-              className="bg-slate-900 rounded-3xl border border-white/5 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
-            >
-              {/* Header Banner */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-                <div className={`p-8 lg:p-10 bg-gradient-to-r ${block.bg} text-white lg:col-span-7 flex flex-col justify-center space-y-4 relative overflow-hidden`}>
-                  <div className="flex items-center gap-3">
-                    <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-inner shrink-0">
-                      {block.icon}
+          {serviceBlocks.map((block) => {
+            // Find the maximum number of items in any subcategory to build the balanced rows
+            const maxItemsCount = Math.max(...block.subCategories.map(s => s.items.length));
+
+            return (
+              <article 
+                key={block.id} 
+                className="bg-slate-900 rounded-3xl border border-white/5 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              >
+                {/* Header Banner */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+                  <div className={`p-8 lg:p-10 bg-gradient-to-r ${block.bg} text-white lg:col-span-7 flex flex-col justify-center space-y-4 relative overflow-hidden`}>
+                    <div className="flex items-center gap-3">
+                      <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-inner shrink-0">
+                        {block.icon}
+                      </div>
+                      <div>
+                        <span className="text-xs uppercase font-extrabold tracking-wider text-white/80">{block.tagline}</span>
+                        <h2 className="text-2xl sm:text-4xl font-black tracking-tight leading-tight">{block.title}</h2>
+                      </div>
                     </div>
-                    <div>
-                      <span className="text-xs uppercase font-extrabold tracking-wider text-white/80">{block.tagline}</span>
-                      <h2 className="text-2xl sm:text-4xl font-black tracking-tight leading-tight">{block.title}</h2>
-                    </div>
+                    <p className="text-sm sm:text-base text-slate-100 opacity-95 font-normal leading-relaxed">
+                      {block.desc}
+                    </p>
                   </div>
-                  <p className="text-sm sm:text-base text-slate-100 opacity-95 font-normal leading-relaxed">
-                    {block.desc}
-                  </p>
+
+                  {/* Service Header Image */}
+                  <div className="lg:col-span-5 relative min-h-[220px] lg:min-h-full overflow-hidden bg-slate-850">
+                    <img 
+                      src={block.image} 
+                      alt={block.title} 
+                      loading="lazy" 
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent lg:hidden" />
+                  </div>
                 </div>
 
-                {/* Service Header Image */}
-                <div className="lg:col-span-5 relative min-h-[220px] lg:min-h-full overflow-hidden bg-slate-850">
-                  <img 
-                    src={block.image} 
-                    alt={block.title} 
-                    loading="lazy" 
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent lg:hidden" />
-                </div>
-              </div>
+                {/* Grid of Subcategories - Synchronized Row Alignment */}
+                <div className="p-6 sm:p-8 bg-slate-900/60">
+                  
+                  {/* Desktop view: Columns are linked row-by-row so everything stays uniformly level */}
+                  <div className="hidden lg:grid grid-cols-3 gap-x-6">
+                    {/* Headers Row */}
+                    {block.subCategories.map((sub, sIdx) => (
+                      <div 
+                        key={`h-${sIdx}`} 
+                        className="bg-slate-900 p-5 rounded-t-2xl border-t border-x border-slate-800 flex items-center justify-between pb-4"
+                      >
+                        <h3 className="text-sm font-extrabold text-slate-200 uppercase tracking-wider">
+                          {sub.name}
+                        </h3>
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#0B63C5]" />
+                      </div>
+                    ))}
 
-              {/* Grid of Subcategories - Fixed Equal Column Heights */}
-              <div className="p-6 sm:p-8 bg-slate-900/60">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-                  {block.subCategories.map((sub, sIdx) => (
-                    <div 
-                      key={sIdx} 
-                      className="flex flex-col justify-between h-full space-y-4 bg-slate-900 p-5 sm:p-6 rounded-2xl border border-slate-800 hover:bg-slate-850 hover:border-slate-700 hover:shadow-md transition-all duration-200"
-                    >
-                      <div className="space-y-3.5">
-                        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                          <h3 className="text-sm font-extrabold text-slate-200 uppercase tracking-wider">
-                            {sub.name}
-                          </h3>
-                          <span className="w-2.5 h-2.5 rounded-full bg-[#0B63C5]" />
+                    {/* Dynamically aligned item rows */}
+                    {Array.from({ length: maxItemsCount }).map((_, iIdx) => (
+                      <React.Fragment key={`row-${iIdx}`}>
+                        {block.subCategories.map((sub, sIdx) => {
+                          const item = sub.items[iIdx];
+                          const isLastRow = iIdx === maxItemsCount - 1;
+                          
+                          return (
+                            <div 
+                              key={`cell-${sIdx}-${iIdx}`} 
+                              className={`bg-slate-900 px-5 py-2.5 border-x border-slate-800 flex items-start gap-2.5 leading-relaxed
+                                ${isLastRow ? 'rounded-b-2xl border-b pb-6' : ''}
+                              `}
+                            >
+                              {item ? (
+                                <>
+                                  <CheckCircle2 className="w-4 h-4 text-[#0B63C5] shrink-0 mt-0.5" />
+                                  <span className="text-xs font-medium text-slate-300">{item}</span>
+                                </>
+                              ) : (
+                                // Preserves layout alignment structure if text lengths or lists deviate
+                                <div className="h-4" /> 
+                              )}
+                            </div>
+                          );
+                        })}
+                      </React.Fragment>
+                    ))}
+                  </div>
+
+                  {/* Mobile & Tablet Fallback View */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-6 items-stretch">
+                    {block.subCategories.map((sub, sIdx) => (
+                      <div 
+                        key={sIdx} 
+                        className="flex flex-col justify-between h-full space-y-4 bg-slate-900 p-5 sm:p-6 rounded-2xl border border-slate-800"
+                      >
+                        <div className="space-y-3.5">
+                          <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                            <h3 className="text-sm font-extrabold text-slate-200 uppercase tracking-wider">
+                              {sub.name}
+                            </h3>
+                            <span className="w-2.5 h-2.5 rounded-full bg-[#0B63C5]" />
+                          </div>
+                          <ul className="space-y-2.5">
+                            {sub.items.map((item, iIdx) => (
+                              <li key={iIdx} className="text-xs font-medium text-slate-400 flex items-start gap-2.5 leading-relaxed">
+                                <CheckCircle2 className="w-4 h-4 text-[#0B63C5] shrink-0 mt-0.5" />
+                                <span className="text-slate-300">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <ul className="space-y-2.5">
-                          {sub.items.map((item, iIdx) => (
-                            <li key={iIdx} className="text-xs font-medium text-slate-400 flex items-start gap-2.5 leading-relaxed">
-                              <CheckCircle2 className="w-4 h-4 text-[#0B63C5] shrink-0 mt-0.5" />
-                              <span className="text-slate-300">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
                       </div>
+                    ))}
+                  </div>
 
-                      {/* Small Bottom Accent Badge */}
-                      <div className="pt-3 border-t border-slate-800/60 flex items-center justify-between text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                        <span>Professional SLA</span>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-[#0B63C5]" />
-                      </div>
-                    </div>
-                  ))}
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
 
         {/* Target Industries */}

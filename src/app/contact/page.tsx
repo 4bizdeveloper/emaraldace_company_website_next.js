@@ -56,8 +56,9 @@ export default function ContactPage() {
       {/* ==========================================
           ULTRA-MODERN SEO & AI OPTIMIZED HERO TITLE
          ========================================== */}
+      {/* Increased padding-top (pt-32 md:pt-40 lg:pt-44) to resolve header overlap/closeness */}
       <section 
-        className="relative overflow-hidden pt-16 pb-8 md:pt-24 md:pb-12 lg:pt-28 lg:pb-16 bg-slate-950"
+        className="relative overflow-hidden pt-32 pb-8 md:pt-40 md:pb-12 lg:pt-44 lg:pb-16 bg-slate-950"
         aria-labelledby="contact-hero-heading"
       >
         {/* Continuous high-performance background decorative grid pattern */}
@@ -164,7 +165,8 @@ export default function ContactPage() {
 
             {/* Right Column: Premium Form Block */}
             <div className="grid-cols-1 lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border-2 border-slate-300 shadow-sm transition-all duration-300">
-              <h3 className="text-xl font-medium tracking-tight text-slate-900 mb-8">
+              {/* Changed text color class here to text-[#0b63c5] */}
+              <h3 className="text-xl font-medium tracking-tight text-[#0b63c5] mb-8">
                 Submit Request / Requirement Scope
               </h3>
               
