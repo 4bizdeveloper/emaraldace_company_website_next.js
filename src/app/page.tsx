@@ -50,15 +50,42 @@ export default function Home() {
     }
   ];
 
-  const clientLogos = [
-    { name: "Mubadala", url: "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?auto=format&fit=crop&w=240&q=80" },
-    { name: "GEMS Education", url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=240&q=80" },
-    { name: "Baker Hughes", url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=240&q=80" },
-    { name: "Hilton", url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=240&q=80" },
-    { name: "Emaar", url: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=240&q=80" },
-    { name: "Aldar Properties", url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=240&q=80" },
-    { name: "Sobha Realty", url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=240&q=80" }
-  ];
+const clientLogos = [
+  { 
+    name: "Baker Hughes", 
+    url: "/client-logos/baker-hughes.webp" 
+  },
+  { 
+    name: "Capital Engineering Consultancy", 
+    url: "/client-logos/Capital-Engineering-Consultancy.webp" 
+  },
+  { 
+    name: "Emichem", 
+    url: "/client-logos/emichem.webp" 
+  },
+  { 
+    name: "ENOC", 
+    url: "/client-logos/enoc.webp" 
+  },
+  { 
+    name: "GEMS Education", 
+    url: "/client-logos/gems-education.webp" 
+  },
+  { 
+    name: "Mubadala", 
+    url: "/client-logos/mubadala.webp" 
+  },
+  { 
+    name: "SEHA", 
+    url: "/client-logos/seha.webp" 
+  },
+  { 
+    name: "Trojan", 
+    url: "/client-logos/trojan.webp" 
+  }
+];
+
+
 
   const faqs = [
     { q: "What sectors do your Integrated Facility Management solutions support inside the UAE?", a: "Emrald Ace services commercial enterprise office suites, extensive residential gated communities, healthcare hospital complexes, hospitality environments, high-capacity retail hubs, industrial manufacturing zones, corporate warehouses, and government department facilities across all Emirates." },
