@@ -1,218 +1,134 @@
-'use client';
+import React from "react";
+import Image from "next/image";
+import { Metadata } from "next";
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Sparkles, Building2, ShieldCheck, CheckCircle2 } from 'lucide-react';
+// Highly SEO Optimized Metadata (Search Engine & AI Engine friendly)
+export const metadata: Metadata = {
+  title: "Our Trusted Clients & Strategic Partners | Emrald Ace",
+  description: "Discover the industry leaders, government entities, and global brands that trust Emrald Ace for elite general contracting and electromechanical solutions across the region.",
+  keywords: ["Emrald Ace clients", "strategic partners", "Abu Dhabi Global Market", "Mubadala", "EGA", "ENOC", "engineering partners"],
+  openGraph: {
+    title: "Our Trusted Clients & Strategic Partners | Emrald Ace",
+    description: "Explore the network of industry giants partnering with Emrald Ace.",
+    type: "website",
+  },
+};
 
-const clientLogos = [
-  { 
-    name: "Abu Dhabi Global Market", 
-    url: "/client-logos/abudhabi-global-market.webp" 
-  },
-  { 
-    name: "Almaharat", 
-    url: "/client-logos/almaharat.webp" 
-  },
-  { 
-    name: "Al Nasser", 
-    url: "/client-logos/alnasser.webp" 
-  },
-  { 
-    name: "Baker Hughes", 
-    url: "/client-logos/baker-hughes.webp" 
-  },
-  { 
-    name: "Capital Engineering Consultancy", 
-    url: "/client-logos/Capital-Engineering-Consultancy.webp" 
-  },
-  { 
-    name: "Capital Motion", 
-    url: "/client-logos/capital-motion.webp" 
-  },
-  { 
-    name: "Design Infinity", 
-    url: "/client-logos/design-ifinity.webp" 
-  },
-  { 
-    name: "EGA", 
-    url: "/client-logos/ega.webp" 
-  },
-  { 
-    name: "Emichem", 
-    url: "/client-logos/emichem.webp" 
-  },
-  { 
-    name: "ENOC", 
-    url: "/client-logos/enoc.webp" 
-  },
-  { 
-    name: "Envirocon", 
-    url: "/client-logos/envirocon.webp" 
-  },
-  { 
-    name: "GEMS Education", 
-    url: "/client-logos/gems-education.webp" 
-  },
-  { 
-    name: "Gulf Rock", 
-    url: "/client-logos/gulf-rock.webp" 
-  },
-  { 
-    name: "Hilton Hotels", 
-    url: "/client-logos/hilton-hotels.webp" 
-  },
-  { 
-    name: "KEZAD Group", 
-    url: "/client-logos/kezad-group.webp" 
-  },
-  { 
-    name: "Mubadala", 
-    url: "/client-logos/mubadala.webp" 
-  },
-  { 
-    name: "Rotana Hotels", 
-    url: "/client-logos/rotana-hotels.webp" 
-  },
-  { 
-    name: "RTA", 
-    url: "/client-logos/rta.webp" 
-  },
-  { 
-    name: "SEHA", 
-    url: "/client-logos/seha.webp" 
-  },
-  { 
-    name: "Sharjah Book Authority", 
-    url: "/client-logos/sharja-book-authority.webp" 
-  },
-  { 
-    name: "Trojan", 
-    url: "/client-logos/trojan.webp" 
-  },
-  { 
-    name: "Winner Holistic Consultant", 
-    url: "/client-logos/winner-holistic-consultant.webp" 
-  }
+// 100% complete dataset preserved exactly as requested
+const clients = [
+  { name: "Abu Dhabi Global Market", url: "/client-logos/abudhabi-global-market.webp" },
+  { name: "Almaharat", url: "/client-logos/almaharat.webp" },
+  { name: "Al Nasser", url: "/client-logos/alnasser.webp" },
+  { name: "Baker Hughes", url: "/client-logos/baker-hughes.webp" },
+  { name: "Capital Engineering Consultancy", url: "/client-logos/Capital-Engineering-Consultancy.webp" },
+  { name: "Capital Motion", url: "/client-logos/capital-motion.webp" },
+  { name: "Design Infinity", url: "/client-logos/design-ifinity.webp" },
+  { name: "EGA", url: "/client-logos/ega.webp" },
+  { name: "Emichem", url: "/client-logos/emichem.webp" },
+  { name: "ENOC", url: "/client-logos/enoc.webp" },
+  { name: "Envirocon", url: "/client-logos/envirocon.webp" },
+  { name: "GEMS Education", url: "/client-logos/gems-education.webp" },
+  { name: "Gulf Rock", url: "/client-logos/gulf-rock.webp" },
+  { name: "Hilton Hotels", url: "/client-logos/hilton-hotels.webp" },
+  { name: "KEZAD Group", url: "/client-logos/kezad-group.webp" },
+  { name: "Mubadala", url: "/client-logos/mubadala.webp" },
+  { name: "Rotana Hotels", url: "/client-logos/rotana-hotels.webp" },
+  { name: "RTA", url: "/client-logos/rta.webp" },
+  { name: "SEHA", url: "/client-logos/seha.webp" },
+  { name: "Sharjah Book Authority", url: "/client-logos/sharja-book-authority.webp" },
+  { name: "Trojan", url: "/client-logos/trojan.webp" },
+  { name: "Winner Holistic Consultant", url: "/client-logos/winner-holistic-consultant.webp" }
 ];
 
 export default function ClientsPage() {
   return (
-    <main className="w-full min-h-screen text-slate-100 bg-slate-950 selection:bg-[#0b63c5] selection:text-white transform-gpu antialiased scroll-smooth" style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <main className="min-h-screen bg-[#030712] bg-gradient-to-b from-[#030712] via-[#071330] to-[#030712] text-white pt-44 md:pt-52 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden select-none">
       
-      {/* Dynamic Background Mesh Gradients */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
-
-      {/* 1. HERO HEADER SECTION */}
-      <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <div className="text-center space-y-4 max-w-4xl mx-auto flex flex-col items-center">
-          <span className="text-xs font-bold text-blue-400 uppercase tracking-widest inline-flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-blue-400" /> Strategic Partners & Track Record
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
-            Trusted by{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-400 to-indigo-400">
-              Industry Leaders
-            </span>
-          </h1>
-          <p className="text-slate-400 text-sm sm:text-base md:text-lg font-normal leading-relaxed max-w-3xl">
-            Over the last 5 years, Emrald Ace has systematically executed enterprise facility management, 
-            MEP setups, and large-scale structural additions for the UAE’s most demanding corporate, 
-            governmental, and industrial ecosystems.
-          </p>
-        </div>
-
-        {/* Dynamic Trust Pillars Block */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 pt-8 border-t border-slate-900">
-          <div className="flex items-center gap-3 p-4 bg-slate-900/40 rounded-xl backdrop-blur-md">
-            <Building2 className="w-5 h-5 text-[#FF6A00]" />
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-300">22+ Major Blue-Chip Clients</span>
-          </div>
-          <div className="flex items-center gap-3 p-4 bg-slate-900/40 rounded-xl backdrop-blur-md">
-            <ShieldCheck className="w-5 h-5 text-emerald-400" />
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-300">100% SLA Fulfillment Matrix</span>
-          </div>
-          <div className="flex items-center gap-3 p-4 bg-slate-900/40 rounded-xl backdrop-blur-md">
-            <CheckCircle2 className="w-5 h-5 text-cyan-400" />
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-300">UAE-Wide Project Footprint</span>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. PREMIUM HIGH-PERFORMANCE GRID */}
-      <section className="relative pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
-          {clientLogos.map((logo, index) => (
-            <div 
-              key={index}
-              className="group relative w-full h-32 bg-white rounded-2xl flex items-center justify-center p-4 shadow-xl overflow-hidden transform-gpu transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl border border-transparent hover:border-blue-500/30"
-            >
-              {/* Subtle Ambient Hover Glow */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-blue-500/5 to-transparent transition-opacity duration-300 pointer-events-none" />
-              
-              <div className="relative w-full h-full">
-                <Image 
-                  src={logo.url} 
-                  alt={`${logo.name} Corporate Partnership Logo - Emrald Ace Authorized Vendor`} 
-                  fill 
-                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                  priority={index < 10} // Priority load top rows to hit extreme LCP targets
-                  loading={index >= 10 ? "lazy" : undefined}
-                  className="object-contain rounded-xl filter transition-transform duration-300 group-hover:scale-102"
-                />
-              </div>
-
-              {/* Invisible Meta Label for AI Crawlers & Accessibility */}
-              <span className="sr-only">{logo.name} Facility Management Client</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 3. CONVERSION ENGAGEMENT ROW */}
-      <section className="pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-slate-900/60 backdrop-blur-xl border border-white/5 rounded-3xl p-8 text-center max-w-4xl mx-auto space-y-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            Partner with a Credentialed Engineering Contractor
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto font-medium">
-            Join our structural deployment network. Enjoy proactive engineering diagnostics, automated facility updates, and 24/7 dedicated account management workflows.
-          </p>
-          <div className="pt-2">
-            <Link href="/contact" className="inline-flex items-center justify-center bg-[#0b63c5] hover:bg-blue-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all text-sm tracking-wide">
-              Initiate Enterprise Partnership Consultation
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* SEARCH ENGINE & AI AGENT KNOWLEDGE GRAPH SCHEMA */}
+      {/* Structural Schema Markup for Search and AI Crawlers */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "ItemPage",
-            "name": "Corporate Partners and Enterprise Clients - Emrald Ace",
-            "description": "Directory of strategic institutional partners and corporate entities operating under Emrald Ace Integrated Facility Management framework in the UAE.",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Emrald Ace General Contracting & Electromechanical L.L.C",
-              "url": "https://emraldace.com"
-            },
-            "mainEntity": {
-              "@type": "ItemList",
-              "numberOfItems": clientLogos.length,
-              "itemListElement": clientLogos.map((logo, idx) => ({
-                "@type": "ListItem",
-                "position": idx + 1,
-                "name": logo.name
-              }))
-            }
-          })
+            "@type": "WebPage",
+            "name": "Emrald Ace - Clients and Partners",
+            "description": "List of elite strategic partners and clients associated with Emrald Ace.",
+            "brand": clients.map((c) => ({ "@type": "Brand", "name": c.name })),
+          }),
         }}
       />
+
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto text-center mb-20 relative z-10">
+        {/* Ambient background glow using exact brand color */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#0b63c5]/15 rounded-full blur-3xl pointer-events-none" />
+        
+        {/* Brand Tag: Adjusted color to exact #0b63c5 and improved font size visibility */}
+        <p className="text-xs sm:text-sm font-bold tracking-widest text-[#0b63c5] uppercase mb-4 drop-shadow-sm">
+          Trusted by Industry Leaders
+        </p>
+        
+        {/* Adjusted tracking & padding to ensure letters never overlap or cut on any device width */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-normal text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-300 pb-3 mb-6">
+          Our Strategic Clients & Partners
+        </h1>
+        
+        {/* Enhanced text color to slate-300 for premium readability contrast against dark backgrounds */}
+        <p className="max-w-3xl mx-auto text-base sm:text-lg text-slate-300 font-normal leading-relaxed px-2">
+          We collaborate with global enterprises and government organizations to deliver elite electromechanical infrastructure across the region.
+        </p>
+      </div>
+
+      {/* Modern Responsive Grid Section */}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+          {clients.map((client, index) => (
+            <div
+              key={index}
+              className="group relative flex items-center justify-center p-5 bg-white rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.04] border border-slate-100/5 aspect-[4/3] overflow-hidden"
+            >
+              {/* Dynamic brand-color backdrop glow on item hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-white opacity-100 transition-opacity duration-300 group-hover:from-blue-50/20 group-hover:to-white" />
+              
+              {/* Image Container with high quality contrast optimizations */}
+              <div className="relative w-full h-full transform transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src={client.url}
+                  alt={`${client.name} logo - Official Client of Emrald Ace`}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                  className="object-contain p-2 filter contrast-[1.04] drop-shadow-sm transition-all duration-300"
+                  priority={index < 10}
+                  loading={index >= 10 ? "lazy" : undefined}
+                />
+              </div>
+
+              {/* Accessible Blind/AI Reader Title Tag */}
+              <span className="sr-only">{client.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Call to Action Banner */}
+      <div className="max-w-4xl mx-auto mt-24 text-center relative z-10">
+        <div className="p-8 rounded-2xl border border-[#0b63c5]/30 bg-gradient-to-r from-blue-950/40 via-[#071330] to-blue-950/40 backdrop-blur-md shadow-2xl">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white tracking-wide">
+            Ready to Build Your Next Landmark Project?
+          </h2>
+          <p className="text-sm sm:text-base text-slate-300 mb-8 max-w-xl mx-auto leading-relaxed">
+            Join our growing ecosystem of industry pioneers and experience engineering execution at its finest.
+          </p>
+          
+          {/* Action button customized with exactly #0b63c5 brand identity colors */}
+          <a
+            href="/contact"
+            className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white bg-[#0b63c5] hover:bg-[#0952a4] transition-all duration-300 rounded-lg shadow-lg shadow-[#0b63c5]/30 hover:shadow-[#0b63c5]/50 hover:-translate-y-0.5 tracking-wider uppercase"
+          >
+            Partner With Us
+          </a>
+        </div>
+      </div>
     </main>
   );
 }
