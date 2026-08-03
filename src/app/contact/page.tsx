@@ -165,7 +165,6 @@ export default function ContactPage() {
 
             {/* Right Column: Premium Form Block */}
             <div className="grid-cols-1 lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border-2 border-slate-300 shadow-sm transition-all duration-300">
-              {/* Changed font weight here from font-medium to font-semibold to increase thickness */}
               <h3 className="text-xl font-semibold tracking-tight text-[#0b63c5] mb-8">
                 Submit Request 
               </h3>
@@ -173,7 +172,7 @@ export default function ContactPage() {
               <form onSubmit={handleFormSubmission} className="space-y-6 text-sm">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-xs font-medium text-slate-600 block">
+                    <label htmlFor="name" className="text-sm font-semibold text-slate-700 block mb-1">
                       Full Name <span className="text-[#0b63c5]">*</span>
                     </label>
                     <input 
@@ -183,7 +182,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="text-xs font-medium text-slate-600 block">
+                    <label htmlFor="phone" className="text-sm font-semibold text-slate-700 block mb-1">
                       Contact Number <span className="text-[#0b63c5]">*</span>
                     </label>
                     <input 
@@ -195,7 +194,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-xs font-medium text-slate-600 block">
+                  <label htmlFor="email" className="text-sm font-semibold text-slate-700 block mb-1">
                     Email Address <span className="text-[#0b63c5]">*</span>
                   </label>
                   <input 
@@ -206,8 +205,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-xs font-medium text-slate-600 block">
-                    Message Scope <span className="text-slate-400 font-light">(Optional)</span>
+                  <label htmlFor="message" className="text-sm font-semibold text-slate-700 block mb-1">
+                    Message <span className="text-slate-500 font-normal text-xs ml-1">(Optional)</span>
                   </label>
                   <textarea 
                     id="message" name="message" rows={4} value={formData.message} onChange={handleInputChange}

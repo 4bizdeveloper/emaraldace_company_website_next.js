@@ -29,20 +29,20 @@ export async function POST(request: Request) {
       from: `"${name}" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_RECEIVER_EMAIL || 'sales1@emraldace.com',
       replyTo: email,
-      subject: `🚨 [ENGINEERING LEAD DISPATCH] - New Web Request from ${name}`,
+      subject: `🚨 New Contact Form Enquiry from Emrald Ace website`,
       text: `
-        Emrald Ace Engineering Lead Capture Log:
+        New Contact Form Enquiry from Emrald Ace website:
         ------------------------------------------
         Client Name: ${name}
         Contact Number: ${phone}
         Email Address: ${email}
         
-        Requirement Specification Notes:
+        Requirement Specification Message:
         ${message || 'No additional scope specifications attached.'}
       `,
       html: `
         <div style="font-family: sans-serif; padding: 24px; color: #1e293b; max-width: 600px; border: 1px solid #e2e8f0; border-radius: 12px;">
-          <h2 style="color: #0b63c5; margin-top: 0;">Emrald Ace Engineering Lead Dispatch Log</h2>
+          <h2 style="color: #0b63c5; margin-top: 0;">New Contact Form Enquiry from Emrald Ace website</h2>
           <hr style="border: 0; border-top: 1px solid #e2e8f0; margin-bottom: 20px;" />
           <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
             <tr>
