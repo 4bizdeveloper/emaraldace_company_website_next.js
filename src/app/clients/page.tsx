@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 // 100% complete dataset preserved exactly as requested
 const clients = [
-  { name: "Abu Dhabi Global Market", url: "/client-logos/abudhabi-global-market.webp" },
+  { name: "Abu Dhabi Global Market", url: "/client-logos/abhudhabi-global-market.webp" },
   { name: "Almaharat", url: "/client-logos/almaharat.webp" },
   { name: "Al Nasser", url: "/client-logos/alnasser.webp" },
   { name: "Baker Hughes", url: "/client-logos/baker-hughes.webp" },
