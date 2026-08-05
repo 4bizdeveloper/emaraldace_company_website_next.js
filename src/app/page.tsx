@@ -53,7 +53,7 @@ export default function Home() {
 const clientLogos = [
   { 
     name: "Abu Dhabi Global Market", 
-    url: "/client-logos/abudhabi-global-market.webp" 
+    url: "/client-logos/abhudhabi-global-market.webp" 
   },
   { 
     name: "Almaharat", 
