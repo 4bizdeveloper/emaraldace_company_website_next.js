@@ -9,7 +9,9 @@ import {
   CheckCircle2,
   ShieldCheck,
   Zap,
-  Building2
+  Building2,
+  ChevronDown,
+  HelpCircle
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -69,6 +71,29 @@ export default function ServicesPage() {
     }
   ];
 
+  const faqList = [
+    {
+      question: "What facility management and MEP services does Emrald Ace provide in Abu Dhabi and the UAE?",
+      answer: "Emrald Ace provides end-to-end solutions including Integrated Facility Management (IFM), customized Annual Maintenance Contracts (AMC), licensed MEP engineering (HVAC, electrical, plumbing, fire safety), commercial interior fit-outs, and specialized civil contracting."
+    },
+    {
+      question: "How fast is your emergency response time for AMC and facility maintenance clients?",
+      answer: "We offer 24/7 rapid emergency dispatch across Abu Dhabi and all emirates in the UAE. Contracted AMC clients receive prioritized response times to handle critical MEP, HVAC, or structural emergencies without operation delays."
+    },
+    {
+      question: "Are your engineering and maintenance services fully compliant with UAE government regulations?",
+      answer: "Yes, all our engineering, MEP installations, and facility management operations comply with ISO standards and strict local municipal, Civil Defense, and UAE building authority standards."
+    },
+    {
+      question: "Can Emrald Ace customize Annual Maintenance Contracts (AMC) for commercial and residential properties?",
+      answer: "Absolutely. We tailor AMC packages based on individual facility sizes, operational needs, equipment lifecycles, and budget parameters—covering preventive maintenance, corrective repairs, and 24/7 emergency support."
+    },
+    {
+      question: "Do you handle complete turnkey interior fit-out projects from design to handover?",
+      answer: "Yes, our interior fit-out division manages turnkey solutions including space planning, architectural design, custom joinery, glass partitions, flooring, acoustic ceilings, and all integrated MEP utility connections."
+    }
+  ];
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -88,12 +113,29 @@ export default function ServicesPage() {
     ]
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqList.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <main className="relative pt-28 sm:pt-36 pb-20 bg-[#070b14] text-white min-h-screen overflow-hidden selection:bg-[#0b63c5] selection:text-white">
-      {/* Search Engine & AI Structured Schema */}
+      {/* Search Engine, GEO, & AI Structured Schema */}
       <script 
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} 
+      />
+      <script 
+        type="application/ld+json" 
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} 
       />
 
       {/* Decorative Glow Background Lights */}
@@ -182,7 +224,7 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                {/* Concise Action Button (Normal Case, Brand Color #0b63c5, Auto Width) */}
+                {/* Concise Action Button */}
                 <div className="p-6 pt-2">
                   <Link 
                     href={service.slug}
@@ -217,6 +259,50 @@ export default function ServicesPage() {
             <span>Connect with us</span>
           </a>
         </div>
+
+        {/* High-Performance, Ultra-Modern Accordion FAQ Section */}
+        <section aria-labelledby="faq-heading" className="pt-10 sm:pt-16 border-t border-slate-800/80">
+          <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12">
+            
+            {/* FAQ Header */}
+            <div className="text-center space-y-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wide">
+                <HelpCircle className="w-3.5 h-3.5" />
+                <span>Got Questions?</span>
+              </div>
+              <h2 id="faq-heading" className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
+                Everything you need to know about our engineering, MEP, and facility management services in the UAE.
+              </p>
+            </div>
+
+            {/* Accessible Native Details/Summary Accordion Grid */}
+            <div className="space-y-4">
+              {faqList.map((faq, index) => (
+                <details 
+                  key={index} 
+                  className="group bg-slate-900/50 hover:bg-slate-900/80 border border-slate-800/80 hover:border-[#0b63c5]/50 rounded-2xl transition-all duration-300 overflow-hidden shadow-lg"
+                >
+                  <summary className="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden font-semibold text-sm sm:text-base text-slate-100 group-open:text-blue-300 transition-colors">
+                    <span className="flex items-center gap-3">
+                      <span className="text-blue-400/60 text-xs font-mono font-bold">
+                        0{index + 1}.
+                      </span>
+                      {faq.question}
+                    </span>
+                    <ChevronDown className="w-5 h-5 text-slate-400 group-open:rotate-180 group-open:text-blue-400 transition-transform duration-300 shrink-0" />
+                  </summary>
+                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-0 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/40 mt-1">
+                    <p className="pt-3">{faq.answer}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+
+          </div>
+        </section>
 
       </div>
     </main>
