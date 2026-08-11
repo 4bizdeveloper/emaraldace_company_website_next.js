@@ -9,9 +9,7 @@ import {
   CheckCircle2,
   ShieldCheck,
   Zap,
-  Building2,
-  ChevronDown,
-  HelpCircle
+  Building2
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -71,29 +69,6 @@ export default function ServicesPage() {
     }
   ];
 
-  const faqList = [
-    {
-      question: "What facility management and MEP services does Emrald Ace provide in Abu Dhabi and the UAE?",
-      answer: "Emrald Ace provides end-to-end solutions including Integrated Facility Management (IFM), customized Annual Maintenance Contracts (AMC), licensed MEP engineering (HVAC, electrical, plumbing, fire safety), commercial interior fit-outs, and specialized civil contracting."
-    },
-    {
-      question: "How fast is your emergency response time for AMC and facility maintenance clients?",
-      answer: "We offer 24/7 rapid emergency dispatch across Abu Dhabi and all emirates in the UAE. Contracted AMC clients receive prioritized response times to handle critical MEP, HVAC, or structural emergencies without operation delays."
-    },
-    {
-      question: "Are your engineering and maintenance services fully compliant with UAE government regulations?",
-      answer: "Yes, all our engineering, MEP installations, and facility management operations comply with ISO standards and strict local municipal, Civil Defense, and UAE building authority standards."
-    },
-    {
-      question: "Can Emrald Ace customize Annual Maintenance Contracts (AMC) for commercial and residential properties?",
-      answer: "Absolutely. We tailor AMC packages based on individual facility sizes, operational needs, equipment lifecycles, and budget parameters—covering preventive maintenance, corrective repairs, and 24/7 emergency support."
-    },
-    {
-      question: "Do you handle complete turnkey interior fit-out projects from design to handover?",
-      answer: "Yes, our interior fit-out division manages turnkey solutions including space planning, architectural design, custom joinery, glass partitions, flooring, acoustic ceilings, and all integrated MEP utility connections."
-    }
-  ];
-
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -113,135 +88,133 @@ export default function ServicesPage() {
     ]
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqList.map((faq) => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
   return (
-    <main className="relative pt-28 sm:pt-36 pb-20 bg-[#070b14] text-white min-h-screen overflow-hidden selection:bg-[#0b63c5] selection:text-white">
-      {/* Search Engine, GEO, & AI Structured Schema */}
+    <main className="relative bg-[#050811] text-white min-h-screen selection:bg-[#0b63c5] selection:text-white overflow-x-hidden">
+      {/* Search Engine & AI Structured Schema */}
       <script 
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} 
       />
-      <script 
-        type="application/ld+json" 
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} 
-      />
 
-      {/* Decorative Glow Background Lights */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[400px] bg-gradient-to-b from-[#0b63c5]/15 via-blue-900/5 to-transparent blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-1/3 -right-48 w-96 h-96 bg-[#0b63c5]/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-1/4 -left-48 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      {/* Hero Section with First Service Background Image (Seamless Transition) */}
+      <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Crisp Background Image Container */}
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src={serviceOverviewList[0].image}
+            alt="Emrald Ace Engineering Hero Background"
+            fill
+            priority
+            quality={95}
+            sizes="100vw"
+            className="object-cover object-center brightness-110 contrast-105"
+          />
+          {/* Subtle Balanced Light Gradients for High Readability and Visual Pop */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050811]/90 via-[#050811]/60 to-[#050811]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050811] via-[#050811]/10 to-[#050811]/40" />
+        </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <header className="max-w-3xl space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/80 border border-blue-400/40 backdrop-blur-md shadow-lg">
+              <Sparkles className="w-4 h-4 text-blue-400" />
+              <span className="text-xs uppercase tracking-widest font-extrabold text-blue-300">
+                Our Core Capability Matrix
+              </span>
+            </div>
 
-        {/* Dynamic Header Block */}
-        <header className="text-center max-w-3xl mx-auto space-y-4 sm:space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#0b63c5]/10 via-[#0b63c5]/20 to-[#0b63c5]/10 border border-[#0b63c5]/30 backdrop-blur-md">
-            <Sparkles className="w-4 h-4 text-blue-400 animate-pulse" />
-            <span className="text-xs uppercase tracking-widest font-extrabold text-blue-300">
-              Our Core Capability Matrix
-            </span>
-          </div>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] text-white drop-shadow-lg">
+              Integrated Engineering & Facility Solutions
+            </h1>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400">
-            Integrated Engineering & Facility Solutions
-          </h1>
+            <p className="text-sm sm:text-base lg:text-lg text-slate-100 font-medium leading-relaxed max-w-2xl drop-shadow-md">
+              Precision electromechanical execution, proactive maintenance, and specialized contracting services across Abu Dhabi and the UAE.
+            </p>
 
-          <p className="text-sm sm:text-base lg:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
-            Precision electromechanical execution, proactive maintenance, and specialized contracting services across Abu Dhabi and the UAE.
-          </p>
+            {/* Quick Metrics Bar */}
+            <div className="pt-4 flex flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm font-medium text-slate-100">
+              <span className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-700/60 backdrop-blur-md shadow-xl">
+                <ShieldCheck className="w-4 h-4 text-blue-400 shrink-0" /> ISO Certified Standards
+              </span>
+              <span className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-700/60 backdrop-blur-md shadow-xl">
+                <Zap className="w-4 h-4 text-amber-400 shrink-0" /> 24/7 Rapid Response
+              </span>
+              <span className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-700/60 backdrop-blur-md shadow-xl">
+                <Building2 className="w-4 h-4 text-emerald-400 shrink-0" /> UAE-Wide Coverage
+              </span>
+            </div>
+          </header>
+        </div>
+      </section>
 
-          {/* Quick Metrics Bar */}
-          <div className="pt-2 flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-xs text-slate-400">
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-blue-400" /> ISO Certified Standards
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Zap className="w-4 h-4 text-amber-400" /> 24/7 Rapid Response
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Building2 className="w-4 h-4 text-emerald-400" /> UAE-Wide Coverage
-            </span>
-          </div>
-        </header>
+      {/* Service Rows Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-20 sm:space-y-28">
+        {serviceOverviewList.map((service, idx) => {
+          const isEven = idx % 2 === 0;
 
-        {/* Centered Symmetric Services Grid */}
-        <div className="flex flex-wrap justify-center -m-3 sm:-m-4">
-          {serviceOverviewList.map((service, idx) => (
-            <div 
+          return (
+            <article 
               key={service.id} 
-              className="p-3 sm:p-4 w-full md:w-1/2 lg:w-1/3 flex"
+              className={`group flex flex-col lg:flex-row items-center gap-8 lg:gap-16 ${
+                !isEven ? 'lg:flex-row-reverse' : ''
+              }`}
             >
-              <article 
-                className="w-full group relative bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-3xl overflow-hidden hover:border-[#0b63c5]/60 transition-all duration-500 hover:shadow-2xl hover:shadow-[#0b63c5]/15 flex flex-col justify-between"
-              >
-                <div>
-                  {/* Image Section */}
-                  <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-slate-950">
-                    <Image 
-                      src={service.image} 
-                      alt={service.title} 
-                      fill 
-                      priority={idx < 3}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-[#070b14]/40 to-transparent" />
-                    
-                    {/* Badge */}
-                    <div className="absolute top-4 left-4">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-300 bg-slate-950/80 backdrop-blur-md rounded-lg border border-slate-700/60 shadow-lg">
-                        <CheckCircle2 className="w-3 h-3 text-blue-400" />
-                        {service.badge}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Content Section */}
-                  <div className="p-6 space-y-3">
-                    <span className="text-[11px] font-extrabold uppercase tracking-widest text-blue-400 block">
-                      {service.tagline}
+              {/* Vibrant Image Column (40% width) */}
+              <div className="w-full lg:w-2/5 shrink-0">
+                <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-950/20 ring-1 ring-white/10 group-hover:ring-[#0b63c5]/50 transition-all duration-300">
+                  <Image 
+                    src={service.image} 
+                    alt={service.title} 
+                    fill 
+                    priority={idx === 0}
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover object-center brightness-100 contrast-100 group-hover:scale-105 transition-transform duration-500 ease-out" 
+                  />
+                  
+                  {/* Glassmorphic Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-wider text-white bg-slate-950/80 backdrop-blur-md rounded-xl border border-white/20 shadow-xl">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                      {service.badge}
                     </span>
-                    
-                    <h2 className="text-xl font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
-                      {service.title}
-                    </h2>
-                    
-                    <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed">
-                      {service.desc}
-                    </p>
                   </div>
                 </div>
+              </div>
 
-                {/* Concise Action Button */}
-                <div className="p-6 pt-2">
+              {/* Spaced Content Column (60% width) */}
+              <div className="w-full lg:w-3/5 space-y-4 sm:space-y-6">
+                <span className="inline-block text-xs font-black uppercase tracking-widest text-blue-400">
+                  {service.tagline}
+                </span>
+                
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight group-hover:text-blue-200 transition-colors">
+                  {service.title}
+                </h2>
+                
+                <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
+                  {service.desc}
+                </p>
+
+                <div className="pt-2">
                   <Link 
                     href={service.slug}
                     aria-label={`Read full details about ${service.title}`}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-semibold normal-case text-white bg-[#0b63c5] hover:bg-[#084b96] rounded-xl transition-all duration-300 shadow-md shadow-[#0b63c5]/20 group-hover:shadow-[#0b63c5]/40 active:scale-[0.98]"
+                    className="inline-flex items-center gap-2.5 px-6 py-3 text-xs sm:text-sm font-bold text-white bg-[#0b63c5] hover:bg-[#084b96] rounded-xl transition-all duration-300 shadow-md shadow-[#0b63c5]/20 group-hover:shadow-[#0b63c5]/40 active:scale-95"
                   >
                     <span>Read full details</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
-              </article>
-            </div>
-          ))}
-        </div>
+              </div>
+            </article>
+          );
+        })}
+      </section>
 
-        {/* CTA Callout Banner */}
-        <div className="relative mt-12 sm:mt-16 rounded-3xl overflow-hidden p-8 sm:p-10 border border-[#0b63c5]/30 bg-gradient-to-r from-blue-900/40 via-blue-800/30 to-indigo-900/40 backdrop-blur-xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+      {/* CTA Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="relative rounded-3xl overflow-hidden p-8 sm:p-12 border border-[#0b63c5]/40 bg-gradient-to-r from-blue-950/80 via-blue-900/60 to-slate-900/90 backdrop-blur-2xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2 text-center md:text-left max-w-xl">
             <h3 className="text-2xl sm:text-3xl font-black text-white">
               Need a Customized Technical Proposal?
@@ -253,58 +226,13 @@ export default function ServicesPage() {
 
           <a 
             href="tel:+971528976025" 
-            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-white hover:bg-blue-50 text-[#0b63c5] font-black rounded-xl transition-all duration-300 shrink-0 text-xs normal-case shadow-xl hover:scale-105 active:scale-95"
+            className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white hover:bg-blue-50 text-[#0b63c5] font-black rounded-xl transition-all duration-300 shrink-0 text-xs sm:text-sm normal-case shadow-xl hover:scale-105 active:scale-95"
           >
-            <PhoneCall className="w-4 h-4 text-[#0b63c5]" /> 
+            <PhoneCall className="w-4.5 h-4.5 text-[#0b63c5] shrink-0" /> 
             <span>Connect with us</span>
           </a>
         </div>
-
-        {/* High-Performance, Ultra-Modern Accordion FAQ Section */}
-        <section aria-labelledby="faq-heading" className="pt-10 sm:pt-16 border-t border-slate-800/80">
-          <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12">
-            
-            {/* FAQ Header */}
-            <div className="text-center space-y-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wide">
-                <HelpCircle className="w-3.5 h-3.5" />
-                <span>Got Questions?</span>
-              </div>
-              <h2 id="faq-heading" className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
-                Everything you need to know about our engineering, MEP, and facility management services in the UAE.
-              </p>
-            </div>
-
-            {/* Accessible Native Details/Summary Accordion Grid */}
-            <div className="space-y-4">
-              {faqList.map((faq, index) => (
-                <details 
-                  key={index} 
-                  className="group bg-slate-900/50 hover:bg-slate-900/80 border border-slate-800/80 hover:border-[#0b63c5]/50 rounded-2xl transition-all duration-300 overflow-hidden shadow-lg"
-                >
-                  <summary className="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden font-semibold text-sm sm:text-base text-slate-100 group-open:text-blue-300 transition-colors">
-                    <span className="flex items-center gap-3">
-                      <span className="text-blue-400/60 text-xs font-mono font-bold">
-                        0{index + 1}.
-                      </span>
-                      {faq.question}
-                    </span>
-                    <ChevronDown className="w-5 h-5 text-slate-400 group-open:rotate-180 group-open:text-blue-400 transition-transform duration-300 shrink-0" />
-                  </summary>
-                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-0 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/40 mt-1">
-                    <p className="pt-3">{faq.answer}</p>
-                  </div>
-                </details>
-              ))}
-            </div>
-
-          </div>
-        </section>
-
-      </div>
+      </section>
     </main>
   );
 }
