@@ -313,8 +313,9 @@ export default function IFMPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative">
-              <div className="relative h-[320px] sm:h-[400px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
+            {/* --- HERO IMAGE COLUMN (TEXT OVERLAY REMOVED FROM IMAGE & PLACED BELOW) --- */}
+            <div className="lg:col-span-5 space-y-3">
+              <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
                 <Image
                   src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
                   alt="Integrated Facility Management Abu Dhabi"
@@ -323,16 +324,17 @@ export default function IFMPage() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-85" />
-                <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-slate-800/90 shadow-xl">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-[#0b63c5] shrink-0">
-                      <Building2 className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-slate-400 font-medium">Headquartered in</p>
-                      <p className="text-sm font-bold text-white">Musaffah, Abu Dhabi, UAE</p>
-                    </div>
+              </div>
+
+              {/* Relocated Location Badge Box Outside / Below Image */}
+              <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/90 shadow-xl backdrop-blur-md transition-colors hover:border-[#0b63c5]/40">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-[#0b63c5] shrink-0">
+                    <Building2 className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-400 font-medium">Headquartered in</p>
+                    <p className="text-sm font-bold text-white">Musaffah, Abu Dhabi, UAE</p>
                   </div>
                 </div>
               </div>
@@ -418,7 +420,7 @@ export default function IFMPage() {
             </div>
           </div>
 
-          {/* Soft FM Block with Center-Aligned 2-Column Row & Content-Integrated Google Image */}
+          {/* Soft FM Block with Center-Aligned 2-Column Row & Content-Integrated Visual */}
           <div className="space-y-8 pt-4">
             <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
               <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
@@ -430,7 +432,7 @@ export default function IFMPage() {
               </div>
             </div>
 
-            {/* Added High-Quality Google Sourced Visual Feature integrated with text content */}
+            {/* High-Quality Visual Feature integrated with text content */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center my-6 p-6 rounded-2xl bg-slate-900/30 border border-slate-800/80">
               <div className="lg:col-span-7 space-y-3 text-center lg:text-left">
                 <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Premium Soft FM Execution</span>
@@ -439,16 +441,17 @@ export default function IFMPage() {
                   Our Soft FM division deploys specialized eco-friendly equipment, non-toxic sanitization, and certified hospitality managers to elevate asset value, occupant health, and corporate prestige across UAE properties.
                 </p>
               </div>
-              <div className="lg:col-span-5 relative h-48 sm:h-56 w-full rounded-xl overflow-hidden border border-slate-800 shadow-md bg-slate-900">
-                <Image
-                  src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80"
-                  alt="Commercial Cleaning and Soft Facility Services"
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 1024px) 100vw, 35vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3 text-[11px] font-semibold text-slate-200 bg-slate-950/80 backdrop-blur-md p-2 rounded-lg border border-slate-800 flex items-center gap-2">
+              <div className="lg:col-span-5 space-y-2">
+                <div className="relative h-48 sm:h-56 w-full rounded-xl overflow-hidden border border-slate-800 shadow-md bg-slate-900">
+                  <Image
+                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80"
+                    alt="Commercial Cleaning and Soft Facility Services"
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 1024px) 100vw, 35vw"
+                  />
+                </div>
+                <div className="text-[11px] font-semibold text-slate-200 bg-slate-950/80 backdrop-blur-md p-2.5 rounded-lg border border-slate-800 flex items-center justify-center gap-2">
                   <Sparkles className="w-3.5 h-3.5 text-[#0b63c5]" />
                   Sustainable & Hygiene Certified Soft Services
                 </div>
@@ -473,7 +476,7 @@ export default function IFMPage() {
               ))}
             </div>
 
-            {/* Row 2: 2 Items Strictly Centered at Center Width for Desktop & Tablet */}
+            {/* Row 2: 2 Items Strictly Centered for Desktop & Tablet */}
             <div className="flex flex-col sm:flex-row justify-center items-stretch gap-6">
               {softFmItemsRow2.map((item, idx) => (
                 <div 
