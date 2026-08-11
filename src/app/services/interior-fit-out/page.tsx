@@ -8,7 +8,6 @@ import {
   Calendar, 
   Wrench, 
   Sparkles, 
-  Cpu, 
   ChevronDown, 
   CheckCircle2, 
   ArrowRight, 
@@ -17,7 +16,12 @@ import {
   Building2,
   FolderCheck,
   MapPin,
-  Check
+  Check,
+  Layers,
+  LayoutGrid,
+  Paintbrush,
+  Home,
+  CheckSquare
 } from 'lucide-react';
 
 // --- FAQ Accordion Component ---
@@ -52,8 +56,8 @@ function FAQAccordion({ faq }: { faq: { q: string; a: string } }) {
   );
 }
 
-export default function IFMPage() {
-  // Breadcrumb Schema
+export default function InteriorFitOutPage() {
+  // Breadcrumb Schema (JSON-LD only - no visual HTML rendering)
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -62,33 +66,34 @@ export default function IFMPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.emraldace.com"
+        "item": "https://www.emraldace.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://www.emraldace.com/services"
+        "item": "https://www.emraldace.com/services/"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Integrated Facility Management",
-        "item": "https://www.emraldace.com/services/integrated-facility-management"
+        "name": "Interior Fit-Out",
+        "item": "https://www.emraldace.com/services/interior-fit-out"
       }
     ]
   };
 
-  // Service Schema for Advanced AI Search & SEO
+  // Service Schema for Search Engines & AI Assistants
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Integrated Facility Management",
+    "name": "Interior Fit-Out Company in Abu Dhabi, UAE",
     "provider": {
       "@type": "Organization",
       "name": "Emrald Ace General Contracting & Electromechanical",
       "url": "https://www.emraldace.com",
-      "telephone": "+971528976025 ",
+      "telephone": "+971528976025",
+      "email": "sales1@emraldace.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Musaffah",
@@ -97,109 +102,64 @@ export default function IFMPage() {
       }
     },
     "areaServed": ["Abu Dhabi", "Dubai", "United Arab Emirates"],
-    "description": "ISO 45001-certified Integrated Facility Management in Abu Dhabi & across the UAE. Hard FM, Soft FM & Specialized FM under one accountable team."
+    "description": "Commercial & residential interior fit-out in Abu Dhabi, UAE — office & retail fit-out, partitions, joinery, false ceilings, flooring & more."
   };
 
-  const hardFmItems = [
+  const includedServices = [
     {
-      title: "Mechanical Systems",
-      desc: "Maintenance and servicing of core mechanical equipment that keeps a building running: HVAC units, chillers, pumps, air handling units (AHUs), and fan coil units (FCUs). Includes scheduled inspections, performance checks, and repairs to prevent breakdowns that disrupt occupant comfort or business operations."
+      icon: Building2,
+      title: "Commercial Interiors",
+      desc: "Full interior build-out for offices and commercial spaces, taken from empty shell to move-in ready. Covers space planning, partition layouts, ceiling and lighting design, flooring, and finishing works tailored to how the business operates — reception areas, workstations, meeting rooms, break-out zones, storage. Emrald Ace coordinates civil, electrical, and finishing trades under one team, giving clients a single point of contact from design handover to final snagging."
     },
     {
-      title: "Electrical Systems",
-      desc: "Management of a facility's power infrastructure, including low-voltage and medium-voltage (LV/MV) systems, switchgear, uninterruptible power supplies (UPS), backup generators, and lighting systems. Regular testing and preventive checks reduce the risk of outages and keep systems compliant with safety standards."
+      icon: LayoutGrid,
+      title: "Office Fit-Out",
+      desc: "End-to-end workplace fit-out, from partitions to finishes, designed to support how teams work day to day. Includes workstation layouts, meeting and huddle rooms, cabling and power points for IT infrastructure, acoustic partitioning, ceiling and lighting upgrades, and branded finishing touches. Scheduled to minimize disruption for occupied offices, with phased handover available."
     },
     {
-      title: "HVAC Services",
-      desc: "Ongoing preventive maintenance for heating, ventilation, and air conditioning systems, focused on maintaining air quality and improving energy efficiency. Covers filter changes, coil cleaning, refrigerant checks, and performance tuning to extend equipment life and control energy costs."
+      icon: Sparkles,
+      title: "Retail Fit-Out",
+      desc: "Store and outlet fit-out built for brand and footfall, designed to reflect brand identity while guiding customer flow toward key display and checkout areas. Covers shopfront and signage coordination, display fixtures, flooring and lighting suited to retail environments, changing rooms or service counters, and fast-turnaround scheduling for tight opening-day deadlines."
     },
     {
-      title: "Civil & Building Fabric Maintenance",
-      desc: "Upkeep of a building's structural and surface elements, including masonry repairs, painting, waterproofing, and façade maintenance. Regular inspection and repair work protects the building envelope from water ingress, wear, and weathering, preserving both appearance and structural integrity."
+      icon: Home,
+      title: "Residential Interiors",
+      desc: "Tailored interior finishing for homes and apartments, from full villa interiors to individual room renovations. Includes wall finishes and painting, flooring, false ceilings, custom joinery (wardrobes, kitchen units, cabinetry), bathroom and kitchen finishing, and coordination with plumbing and electrical works."
     },
     {
-      title: "Fire & Life Safety Systems",
-      desc: "Installation, testing, and maintenance of fire alarms, suppression systems, sprinklers, and life-safety equipment, backed by scheduled compliance testing to meet UAE Civil Defense requirements and keep occupants protected."
+      icon: Layers,
+      title: "Partitions & False Ceilings",
+      desc: "Space planning executed through partitions, ceilings and layout design. Includes drywall and glass partitions for zoning offices or retail areas, acoustic partitioning for meeting rooms, and false ceiling systems (gypsum, grid, or specialty designs) that conceal MEP services while improving lighting and acoustics."
     },
     {
-      title: "Building Management Systems (BMS)",
-      desc: "Centralized monitoring and automation of a building's core systems — HVAC, lighting, security, and energy use — through a BMS platform, enabling real-time performance tracking and energy optimization across the facility."
-    },
-    {
-      title: "Plumbing & Water Systems",
-      desc: "Installation and maintenance of water supply lines, drainage systems, and wastewater management infrastructure, engineered to prevent leaks, blockages, and pressure issues."
-    }
-  ];
-
-  const softFmItemsRow1 = [
-    {
-      title: "Housekeeping & Cleaning",
-      desc: "Scheduled commercial cleaning programs covering interiors, common areas, and building exteriors. Cleaning schedules are tailored to foot traffic and facility type."
-    },
-    {
-      title: "Glass & Façade Cleaning",
-      desc: "Scheduled cleaning of glass surfaces and building façades for both high-rise and ground-level structures, using appropriate access equipment and safety protocols to maintain a clean, professional exterior appearance."
-    },
-    {
-      title: "Pest & Waste Management",
-      desc: "Preventive pest control programs designed to stop infestations before they start, paired with structured waste collection, segregation, and disposal coordination — keeping facilities compliant with health and environmental regulations."
-    }
-  ];
-
-  const softFmItemsRow2 = [
-    {
-      title: "Concierge, Reception & Porter Services",
-      desc: "Front-of-house staffing that manages visitor reception, mail and deliveries, and day-to-day porter support, giving tenants and visitors a consistently professional first point of contact."
-    },
-    {
-      title: "Landscaping & Grounds Maintenance",
-      desc: "Upkeep of outdoor and green spaces, including planting, irrigation, lawn care, and general grounds maintenance, keeping external areas presentable and well-maintained year-round."
-    }
-  ];
-
-  const specializedFmItems = [
-    {
-      title: "Smart FM & Asset Management",
-      desc: "Technology-driven facility oversight using CAFM (Computer-Aided Facility Management) software and IoT sensors to track asset condition, monitor energy consumption, and flag maintenance needs before they become failures."
-    },
-    {
-      title: "Asset Management",
-      desc: "Structured tracking of facility assets across their lifecycle — condition, maintenance history, and replacement planning — supporting better budgeting decisions and reducing unplanned equipment failure."
-    },
-    {
-      title: "Energy Management",
-      desc: "Monitoring and optimization of a facility's energy consumption through data tracking and performance benchmarking, helping reduce operating costs and improve sustainability performance."
-    },
-    {
-      title: "24/7 Helpdesk & Emergency Response",
-      desc: "Round-the-clock support desk for logging issues, dispatching technicians, and coordinating emergency response, ensuring urgent facility problems are addressed without delay regardless of time of day."
+      icon: Paintbrush,
+      title: "Flooring, Joinery & Glass Works",
+      desc: "A combined finishing package covering flooring (tiles, vinyl, epoxy, wood, laminate), carpentry and joinery (custom furniture, cabinetry, reception counters, wall paneling), aluminium works (framing, partitions, external cladding), and glass works (partition glazing, glass doors, shopfronts, decorative glass). Typically the final-stage trades giving a fit-out its finished look."
     }
   ];
 
   const whyChooseUs = [
-    "Integrated Hard & Soft FM expertise under one team",
-    "Experienced engineering professionals",
-    "Customized service plans per project",
-    "Preventive, planned approach to every job",
-    "Advanced facility management technologies",
-    "Fast emergency response",
-    "Transparent monthly reporting",
-    "Safety-driven, ISO 45001-certified operations",
-    "Sustainable, quality-assured practices",
-    "Single point of accountability, start to finish"
+    "Turnkey interior fit-out solutions from shell to move-in ready",
+    "Single point of contact for civil, MEP, and decorative finishes",
+    "Expertise across commercial, retail, and residential sectors",
+    "Acoustic and ergonomic designs optimized for workplace productivity",
+    "Custom joinery, glass, and bespoke architectural finishing",
+    "Fast-turnaround schedules with phased handover options",
+    "Strict compliance with UAE safety and building codes",
+    "Transparent pricing and detailed scope management"
   ];
 
   const steps = [
-    { num: "01", title: "Site Assessment", desc: "We evaluate scope, condition and requirements on site" },
-    { num: "02", title: "Proposal & Plan", desc: "A tailored scope, schedule and cost estimate" },
-    { num: "03", title: "Mobilization", desc: "Dedicated team, materials and permits arranged" },
-    { num: "04", title: "Delivery & Handover", desc: "Work executed, quality-checked and signed off" }
+    { num: "01", title: "Site Assessment & Space Planning", desc: "We review site dimensions, layout specs, and architectural requirements." },
+    { num: "02", title: "Tailored Design & Proposal", desc: "Detailed scope, material selections, layout plans, and cost estimates." },
+    { num: "03", title: "Execution & Trade Coordination", desc: "Civil, MEP, joinery, partitions, and finishing executed seamlessly." },
+    { num: "04", title: "Quality Check & Handover", desc: "Rigorous snagging inspection and seamless move-in delivery." }
   ];
 
   const industries = [
-    "Commercial Offices", "Residential Communities", "Healthcare", 
-    "Hotels", "Retail", "Industrial", 
-    "Government", "Warehouse", "Education"
+    "Commercial Offices", "Retail Stores & Boutiques", "Residential Villas & Apartments",
+    "Restaurants & Cafes", "Hotels & Hospitality", "Educational Facilities",
+    "Healthcare Clinics", "Corporate Showrooms"
   ];
 
   const projects = [
@@ -237,24 +197,20 @@ export default function IFMPage() {
 
   const faqs = [
     {
-      q: "What is Integrated Facility Management (IFM)?",
-      a: "IFM is a single-provider model combining Hard FM, Soft FM and Specialized FM under one accountable team, instead of managing separate vendors for each service."
+      q: "What does Emrald Ace's interior fit-out service cover?",
+      a: "Commercial interiors, partitions, painting, joinery, aluminium works, residential interiors, office fit-out, retail fit-out, false ceilings, flooring, carpentry and glass works."
     },
     {
-      q: "What does Emrald Ace's IFM service include?",
-      a: "Hard FM (mechanical, electrical, HVAC, civil, fire safety, BMS, plumbing), Soft FM (cleaning, pest control, waste management, concierge, landscaping) and Specialized FM (asset management, energy management, smart FM, 24/7 helpdesk)."
+      q: "Does Emrald Ace do both office and retail fit-out?",
+      a: "Yes — Emrald Ace delivers office fit-out and retail fit-out projects across the UAE."
     },
     {
-      q: "Which areas does Emrald Ace serve?",
-      a: "Emrald Ace is headquartered in Musaffah, Abu Dhabi, and serves clients across the UAE, including Abu Dhabi and Dubai."
+      q: "Can Emrald Ace handle residential interior fit-out?",
+      a: "Yes, alongside commercial interiors, Emrald Ace delivers residential interior fit-out tailored to homeowner requirements."
     },
     {
-      q: "Is Emrald Ace certified for facility management?",
-      a: "Yes — ISO 45001:2018 certified with a UAE Trade License, operating since 2014."
-    },
-    {
-      q: "How is IFM different from an Annual Maintenance Contract?",
-      a: "An AMC covers scheduled maintenance for specific systems. IFM is broader, bundling Hard FM, Soft FM and Specialized FM under one provider."
+      q: "Does interior fit-out include MEP and civil work?",
+      a: "Emrald Ace's fit-out projects are often combined with MEP Engineering and General Contracting services when a project needs civil, electrical or mechanical work alongside interiors."
     }
   ];
 
@@ -289,10 +245,10 @@ export default function IFMPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
-                Integrated Facility Management in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-[#0b63c5]">Abu Dhabi</span> & Across the UAE
+                Interior Fit-Out Solutions in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-[#0b63c5]">Abu Dhabi</span> & the UAE
               </h1>
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-                One accountable team for Hard FM, Soft FM and Specialized FM — so your buildings run safely, efficiently and predictably, without juggling multiple contractors.
+                Functional, modern and aesthetically pleasing interior environments — designed and delivered for commercial and residential requirements.
               </p>
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
@@ -300,7 +256,7 @@ export default function IFMPage() {
                   href="#contact"
                   className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-sm transition-all shadow-lg shadow-[#0b63c5]/25 hover:shadow-[#0b63c5]/40 active:scale-95 flex items-center justify-center gap-2"
                 >
-                  Schedule Consultation
+                  Get Fit-Out Plan
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
@@ -316,8 +272,8 @@ export default function IFMPage() {
             <div className="lg:col-span-5 space-y-3">
               <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
-                  alt="Integrated Facility Management Abu Dhabi"
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+                  alt="Interior Fit-Out Company Abu Dhabi"
                   fill
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -342,7 +298,7 @@ export default function IFMPage() {
           <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border-y border-slate-800/80 py-8 text-center">
             <div>
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">35+</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Engineering & FM Staff</p>
+              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Specialized Engineers & Craftsmen</p>
             </div>
             <div>
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">22+</p>
@@ -353,8 +309,8 @@ export default function IFMPage() {
               <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Established in UAE</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">24/7</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Helpdesk & Emergency Response</p>
+              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">Turnkey</p>
+              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Civil, MEP & Finish Coordination</p>
             </div>
           </div>
         </div>
@@ -369,7 +325,7 @@ export default function IFMPage() {
               <div className="space-y-2">
                 <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Quick Answer</span>
                 <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-5xl">
-                  Integrated Facility Management (IFM) combines <strong className="text-white font-semibold">Hard FM</strong> (mechanical, electrical, HVAC, civil, fire safety, BMS), <strong className="text-white font-semibold">Soft FM</strong> (cleaning, pest control, waste, concierge, landscaping) and <strong className="text-white font-semibold">Specialized FM</strong> (asset & energy management, smart building systems) under one accountable team.
+                  Interior fit-out is the process of designing and building the interior of a space — partitions, ceilings, flooring, joinery and finishes — to make it functional and ready for use. Emrald Ace delivers fit-out for offices, retail units and residential interiors across the UAE.
                 </p>
               </div>
             </div>
@@ -382,145 +338,31 @@ export default function IFMPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">What's Included in Our IFM Solutions</h2>
-            <p className="text-sm text-slate-400">Complete end-to-end facility services designed for operational excellence.</p>
+            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">What's Included in Our Interior Fit-Out</h2>
+            <p className="text-sm text-slate-400">Comprehensive interior engineering, joinery, and architectural finishes under one team.</p>
           </div>
 
-          {/* Hard FM Block */}
-          <div className="space-y-8">
-            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
-              <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
-                <Wrench className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Hard Facility Management</h3>
-                <p className="text-xs text-slate-400">Core electro-mechanical, HVAC, structural and life safety maintenance</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-              {hardFmItems.map((item, idx) => (
-                <div 
-                  key={idx} 
-                  className={`p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5 ${
-                    idx === hardFmItems.length - 1 && hardFmItems.length % 3 !== 0 ? 'sm:col-span-2 lg:col-span-3' : ''
-                  }`}
-                >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
-                      0{idx + 1}
-                    </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Soft FM Block */}
-          <div className="space-y-8 pt-4">
-            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
-              <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
-                <Sparkles className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Soft Facility Management</h3>
-                <p className="text-xs text-slate-400">Environmental, hygiene, front-of-house and grounds upkeep</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center my-6 p-6 rounded-2xl bg-slate-900/30 border border-slate-800/80">
-              <div className="lg:col-span-7 space-y-3 text-center lg:text-left">
-                <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Premium Soft FM Execution</span>
-                <h4 className="text-lg sm:text-xl font-bold text-white">Hospitality-Grade Commercial Cleaning & Environmental Maintenance</h4>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Our Soft FM division deploys specialized eco-friendly equipment, non-toxic sanitization, and certified hospitality managers to elevate asset value, occupant health, and corporate prestige across UAE properties.
-                </p>
-              </div>
-              <div className="lg:col-span-5 space-y-2">
-                <div className="relative h-48 sm:h-56 w-full rounded-xl overflow-hidden border border-slate-800 shadow-md bg-slate-900">
-                  <Image
-                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80"
-                    alt="Commercial Cleaning and Soft Facility Services"
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 1024px) 100vw, 35vw"
-                  />
-                </div>
-                <div className="text-[11px] font-semibold text-slate-200 bg-slate-950/80 backdrop-blur-md p-2.5 rounded-lg border border-slate-800 flex items-center justify-center gap-2">
-                  <Sparkles className="w-3.5 h-3.5 text-[#0b63c5]" />
-                  Sustainable & Hygiene Certified Soft Services
-                </div>
-              </div>
-            </div>
-
-            {/* Row 1: 3 Items */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {softFmItemsRow1.map((item, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+            {includedServices.map((service, idx) => {
+              const IconComp = service.icon;
+              return (
                 <div 
                   key={idx} 
                   className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
                 >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
-                      0{idx + 1}
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="p-3 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
+                        <IconComp className="w-6 h-6" />
+                      </div>
+                      <span className="text-xs font-mono font-bold text-slate-500">0{idx + 1}</span>
                     </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+                    <h3 className="text-lg font-bold text-white group-hover:text-[#0b63c5] transition-colors">{service.title}</h3>
+                    <p className="text-xs text-slate-400 leading-relaxed">{service.desc}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Row 2: 2 Items Centered for Desktop & Tablet */}
-            <div className="flex flex-col sm:flex-row justify-center items-stretch gap-6">
-              {softFmItemsRow2.map((item, idx) => (
-                <div 
-                  key={idx} 
-                  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
-                >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
-                      0{idx + 4}
-                    </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-          {/* Specialized FM Block */}
-          <div className="space-y-8 pt-4">
-            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
-              <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
-                <Cpu className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Specialized Facility Management</h3>
-                <p className="text-xs text-slate-400">Advanced IoT monitoring, asset lifecycle intelligence and 24/7 helpdesk</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
-              {specializedFmItems.map((item, idx) => (
-                <div 
-                  key={idx} 
-                  className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
-                >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
-                      0{idx + 1}
-                    </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
 
         </div>
@@ -535,13 +377,13 @@ export default function IFMPage() {
               <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">The Advantage</span>
               <h2 className="text-2xl sm:text-4xl font-black text-white">Why Emrald Ace</h2>
               <p className="text-sm text-slate-400 leading-relaxed">
-                By consolidating all building services under a single roof, we eliminate vendor friction, lower operating overheads, and guarantee single-point accountability.
+                We combine creative space optimization with rigorous engineering coordination. By handling civil, MEP, joinery, and finishes together, we reduce delays and ensure pristine craftsmanship.
               </p>
 
               <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
-                  alt="Emrald Ace Engineering Team"
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+                  alt="Emrald Ace Fit-Out Craftsmanship"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -567,7 +409,7 @@ export default function IFMPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-white">How It Works</h2>
-            <p className="text-sm text-slate-400">Our structured 4-step deployment process</p>
+            <p className="text-sm text-slate-400">Our structured 4-step delivery process</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -589,8 +431,8 @@ export default function IFMPage() {
       <section className="py-12 bg-slate-950/60 border-y border-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="text-center sm:text-left">
-            <h2 className="text-xl sm:text-2xl font-black text-white">Industries We Serve</h2>
-            <p className="text-xs text-slate-400 mt-1">Tailored solutions for sectors across Abu Dhabi & UAE</p>
+            <h2 className="text-xl sm:text-2xl font-black text-white">Sectors We Serve</h2>
+            <p className="text-xs text-slate-400 mt-1">Tailored fit-out solutions for commercial and residential properties across the UAE</p>
           </div>
 
           <div className="flex flex-wrap justify-center sm:justify-start gap-2.5 sm:gap-3">
@@ -608,7 +450,7 @@ export default function IFMPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-white">Featured Projects</h2>
-            <p className="text-sm text-slate-400">Demonstrated excellence across commercial, retail, and civil facilities</p>
+            <p className="text-sm text-slate-400">Demonstrated excellence across commercial, retail, and residential interiors</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
@@ -655,7 +497,7 @@ export default function IFMPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-white">FAQs</h2>
-            <p className="text-sm text-slate-400">Everything you need to know about Integrated Facility Management</p>
+            <p className="text-sm text-slate-400">Everything you need to know about our interior fit-out services</p>
           </div>
 
           <div className="divide-y divide-slate-800 rounded-2xl bg-slate-900/30 border border-slate-800 p-6 sm:p-8 backdrop-blur-sm">
@@ -674,10 +516,10 @@ export default function IFMPage() {
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-center lg:text-left">
               <div className="lg:col-span-8 space-y-4">
                 <h2 className="text-2xl sm:text-4xl font-black text-white">
-                  Let's Build Better Environments Together
+                  Get a Tailored Interior Fit-Out Plan for Your Property
                 </h2>
                 <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto lg:mx-0">
-                  Schedule a consultation with our team and get a tailored Integrated Facility Management plan for your property.
+                  Connect with our team today to discuss space planning, custom joinery, partitions, MEP integration, or full turnkey execution.
                 </p>
               </div>
 

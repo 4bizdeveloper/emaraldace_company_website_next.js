@@ -7,17 +7,24 @@ import {
   Award, 
   Calendar, 
   Wrench, 
-  Sparkles, 
-  Cpu, 
-  ChevronDown, 
+  Clock, 
+  Search, 
+  FileText, 
+  Users, 
   CheckCircle2, 
+  ChevronDown, 
   ArrowRight, 
   Phone, 
   Mail, 
-  Building2,
-  FolderCheck,
-  MapPin,
-  Check
+  Building2, 
+  FolderCheck, 
+  MapPin, 
+  Check,
+  Zap,
+  PackageCheck,
+  Activity,
+  Layers,
+  Sparkles
 } from 'lucide-react';
 
 // --- FAQ Accordion Component ---
@@ -52,8 +59,8 @@ function FAQAccordion({ faq }: { faq: { q: string; a: string } }) {
   );
 }
 
-export default function IFMPage() {
-  // Breadcrumb Schema
+export default function AMCPage() {
+  // Breadcrumb Schema Format: Home > Services > Current Page Name
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -62,33 +69,34 @@ export default function IFMPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.emraldace.com"
+        "item": "https://www.emraldace.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://www.emraldace.com/services"
+        "item": "https://www.emraldace.com/services/"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Integrated Facility Management",
-        "item": "https://www.emraldace.com/services/integrated-facility-management"
+        "name": "Annual Maintenance Contracts (AMC) in Abu Dhabi, UAE",
+        "item": "https://www.emraldace.com/services/annual-maintenance-contracts"
       }
     ]
   };
 
-  // Service Schema for Advanced AI Search & SEO
+  // Service Schema for Search Engine & AI Level Optimization
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Integrated Facility Management",
+    "name": "Annual Maintenance Contracts (AMC) in Abu Dhabi, UAE",
     "provider": {
       "@type": "Organization",
       "name": "Emrald Ace General Contracting & Electromechanical",
       "url": "https://www.emraldace.com",
-      "telephone": "+971528976025 ",
+      "telephone": "+971528976025",
+      "email": "sales1@emraldace.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Musaffah",
@@ -97,103 +105,66 @@ export default function IFMPage() {
       }
     },
     "areaServed": ["Abu Dhabi", "Dubai", "United Arab Emirates"],
-    "description": "ISO 45001-certified Integrated Facility Management in Abu Dhabi & across the UAE. Hard FM, Soft FM & Specialized FM under one accountable team."
+    "description": "Customized Annual Maintenance Contracts in Abu Dhabi & UAE — preventive maintenance, 24/7 emergency support & monthly reporting. ISO 45001 certified."
   };
 
-  const hardFmItems = [
+  const whatsIncludedItems = [
     {
-      title: "Mechanical Systems",
-      desc: "Maintenance and servicing of core mechanical equipment that keeps a building running: HVAC units, chillers, pumps, air handling units (AHUs), and fan coil units (FCUs). Includes scheduled inspections, performance checks, and repairs to prevent breakdowns that disrupt occupant comfort or business operations."
+      icon: Calendar,
+      title: "Scheduled Preventive Maintenance",
+      desc: "Planned, calendar-based servicing of equipment and systems, carried out before problems occur, to reduce unexpected breakdowns and keep warranties and compliance requirements intact."
     },
     {
-      title: "Electrical Systems",
-      desc: "Management of a facility's power infrastructure, including low-voltage and medium-voltage (LV/MV) systems, switchgear, uninterruptible power supplies (UPS), backup generators, and lighting systems. Regular testing and preventive checks reduce the risk of outages and keep systems compliant with safety standards."
+      icon: Zap,
+      title: "Corrective & Emergency Maintenance",
+      desc: "Rapid repair response when equipment fails or underperforms outside the scheduled maintenance cycle, minimizing downtime and preventing small faults from escalating into costly failures."
     },
     {
-      title: "HVAC Services",
-      desc: "Ongoing preventive maintenance for heating, ventilation, and air conditioning systems, focused on maintaining air quality and improving energy efficiency. Covers filter changes, coil cleaning, refrigerant checks, and performance tuning to extend equipment life and control energy costs."
+      icon: Search,
+      title: "Routine Equipment Inspections",
+      desc: "Regular physical checks of mechanical, electrical, and building systems to catch early signs of wear, corrosion, or malfunction, documented for compliance and performance tracking."
     },
     {
-      title: "Civil & Building Fabric Maintenance",
-      desc: "Upkeep of a building's structural and surface elements, including masonry repairs, painting, waterproofing, and façade maintenance. Regular inspection and repair work protects the building envelope from water ingress, wear, and weathering, preserving both appearance and structural integrity."
+      icon: Clock,
+      title: "24/7 Emergency Support",
+      desc: "Round-the-clock availability for urgent facility issues, so clients aren't left waiting until business hours for critical repairs affecting safety or operations."
     },
     {
-      title: "Fire & Life Safety Systems",
-      desc: "Installation, testing, and maintenance of fire alarms, suppression systems, sprinklers, and life-safety equipment, backed by scheduled compliance testing to meet UAE Civil Defense requirements and keep occupants protected."
+      icon: PackageCheck,
+      title: "Spare Parts Coordination",
+      desc: "Proactive sourcing and stocking of commonly needed spare parts, reducing repair turnaround time by avoiding delays caused by part procurement."
     },
     {
-      title: "Building Management Systems (BMS)",
-      desc: "Centralized monitoring and automation of a building's core systems — HVAC, lighting, security, and energy use — through a BMS platform, enabling real-time performance tracking and energy optimization across the facility."
+      icon: FileText,
+      title: "Monthly Performance Reporting",
+      desc: "Regular reports covering completed maintenance activities, equipment condition, and recommendations, giving clients visibility into facility health without needing to chase updates."
     },
     {
-      title: "Plumbing & Water Systems",
-      desc: "Installation and maintenance of water supply lines, drainage systems, and wastewater management infrastructure, engineered to prevent leaks, blockages, and pressure issues."
+      icon: Users,
+      title: "Dedicated Service Team",
+      desc: "A consistent, assigned team familiar with the client's facility, equipment history, and specific requirements, rather than rotating technicians unfamiliar with the site."
+    },
+    {
+      icon: ShieldCheck,
+      title: "Compliance & Safety Checks",
+      desc: "Scheduled checks to confirm systems meet UAE safety and regulatory standards, reducing liability risk and supporting insurance and audit requirements."
     }
   ];
 
-  const softFmItemsRow1 = [
-    {
-      title: "Housekeeping & Cleaning",
-      desc: "Scheduled commercial cleaning programs covering interiors, common areas, and building exteriors. Cleaning schedules are tailored to foot traffic and facility type."
-    },
-    {
-      title: "Glass & Façade Cleaning",
-      desc: "Scheduled cleaning of glass surfaces and building façades for both high-rise and ground-level structures, using appropriate access equipment and safety protocols to maintain a clean, professional exterior appearance."
-    },
-    {
-      title: "Pest & Waste Management",
-      desc: "Preventive pest control programs designed to stop infestations before they start, paired with structured waste collection, segregation, and disposal coordination — keeping facilities compliant with health and environmental regulations."
-    }
-  ];
-
-  const softFmItemsRow2 = [
-    {
-      title: "Concierge, Reception & Porter Services",
-      desc: "Front-of-house staffing that manages visitor reception, mail and deliveries, and day-to-day porter support, giving tenants and visitors a consistently professional first point of contact."
-    },
-    {
-      title: "Landscaping & Grounds Maintenance",
-      desc: "Upkeep of outdoor and green spaces, including planting, irrigation, lawn care, and general grounds maintenance, keeping external areas presentable and well-maintained year-round."
-    }
-  ];
-
-  const specializedFmItems = [
-    {
-      title: "Smart FM & Asset Management",
-      desc: "Technology-driven facility oversight using CAFM (Computer-Aided Facility Management) software and IoT sensors to track asset condition, monitor energy consumption, and flag maintenance needs before they become failures."
-    },
-    {
-      title: "Asset Management",
-      desc: "Structured tracking of facility assets across their lifecycle — condition, maintenance history, and replacement planning — supporting better budgeting decisions and reducing unplanned equipment failure."
-    },
-    {
-      title: "Energy Management",
-      desc: "Monitoring and optimization of a facility's energy consumption through data tracking and performance benchmarking, helping reduce operating costs and improve sustainability performance."
-    },
-    {
-      title: "24/7 Helpdesk & Emergency Response",
-      desc: "Round-the-clock support desk for logging issues, dispatching technicians, and coordinating emergency response, ensuring urgent facility problems are addressed without delay regardless of time of day."
-    }
-  ];
-
-  const whyChooseUs = [
-    "Integrated Hard & Soft FM expertise under one team",
-    "Experienced engineering professionals",
-    "Customized service plans per project",
-    "Preventive, planned approach to every job",
-    "Advanced facility management technologies",
-    "Fast emergency response",
-    "Transparent monthly reporting",
-    "Safety-driven, ISO 45001-certified operations",
-    "Sustainable, quality-assured practices",
-    "Single point of accountability, start to finish"
+  const benefits = [
+    "Reduced downtime",
+    "Lower long-term maintenance costs",
+    "Extended equipment life",
+    "Predictable annual budgeting",
+    "Faster response times",
+    "Single point of accountability"
   ];
 
   const steps = [
-    { num: "01", title: "Site Assessment", desc: "We evaluate scope, condition and requirements on site" },
-    { num: "02", title: "Proposal & Plan", desc: "A tailored scope, schedule and cost estimate" },
-    { num: "03", title: "Mobilization", desc: "Dedicated team, materials and permits arranged" },
-    { num: "04", title: "Delivery & Handover", desc: "Work executed, quality-checked and signed off" }
+    { num: "01", title: "Site Survey", desc: "We assess assets, systems and maintenance history" },
+    { num: "02", title: "Custom AMC Scope", desc: "A contract tailored to residential, commercial or industrial needs" },
+    { num: "03", title: "Scheduled Servicing", desc: "Planned preventive visits begin on schedule" },
+    { num: "04", title: "Reporting & Support", desc: "Monthly reports plus 24/7 emergency response" }
   ];
 
   const industries = [
@@ -237,30 +208,26 @@ export default function IFMPage() {
 
   const faqs = [
     {
-      q: "What is Integrated Facility Management (IFM)?",
-      a: "IFM is a single-provider model combining Hard FM, Soft FM and Specialized FM under one accountable team, instead of managing separate vendors for each service."
+      q: "What is included in Emrald Ace's Annual Maintenance Contract?",
+      a: "Scheduled preventive maintenance, corrective and emergency maintenance, routine equipment inspections, 24/7 emergency support, spare parts coordination, monthly performance reporting, a dedicated service team, and compliance and safety checks."
     },
     {
-      q: "What does Emrald Ace's IFM service include?",
-      a: "Hard FM (mechanical, electrical, HVAC, civil, fire safety, BMS, plumbing), Soft FM (cleaning, pest control, waste management, concierge, landscaping) and Specialized FM (asset management, energy management, smart FM, 24/7 helpdesk)."
+      q: "What are the benefits of an AMC?",
+      a: "Reduced downtime, lower long-term maintenance costs, extended equipment life, predictable annual budgeting, faster response times, and a single point of accountability."
     },
     {
-      q: "Which areas does Emrald Ace serve?",
-      a: "Emrald Ace is headquartered in Musaffah, Abu Dhabi, and serves clients across the UAE, including Abu Dhabi and Dubai."
+      q: "Does Emrald Ace offer AMCs for residential, commercial and industrial properties?",
+      a: "Yes — every AMC is tailored to the specific needs of the facility, whether residential, commercial, or industrial."
     },
     {
-      q: "Is Emrald Ace certified for facility management?",
-      a: "Yes — ISO 45001:2018 certified with a UAE Trade License, operating since 2014."
-    },
-    {
-      q: "How is IFM different from an Annual Maintenance Contract?",
-      a: "An AMC covers scheduled maintenance for specific systems. IFM is broader, bundling Hard FM, Soft FM and Specialized FM under one provider."
+      q: "Is emergency support available under an AMC?",
+      a: "Yes, Emrald Ace provides 24/7 emergency support as part of its Annual Maintenance Contracts."
     }
   ];
 
   return (
     <main className="bg-[#030712] text-slate-100 min-h-screen font-sans selection:bg-[#0b63c5] selection:text-white pt-20 overflow-x-hidden">
-      {/* Structural Structured Data Injection for Search Engine & AI Optimization */}
+      {/* Search Engine, AI & Server Level JSON-LD Schema (No Breadcrumb HTML Tag as Requested) */}
       <script 
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, serviceSchema]) }} 
@@ -274,7 +241,7 @@ export default function IFMPage() {
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5 md:gap-3 mb-8">
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-800 text-slate-300 shadow-sm backdrop-blur-sm">
               <ShieldCheck className="w-3.5 h-3.5 text-[#0b63c5]" />
-              ISO 45001:2018 Certified
+              ISO 45001 Certified
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-800 text-slate-300 shadow-sm backdrop-blur-sm">
               <Award className="w-3.5 h-3.5 text-[#0b63c5]" />
@@ -289,10 +256,10 @@ export default function IFMPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
-                Integrated Facility Management in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-[#0b63c5]">Abu Dhabi</span> & Across the UAE
+                Annual Maintenance Contracts (AMC) in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-[#0b63c5]">Abu Dhabi & UAE</span>
               </h1>
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-                One accountable team for Hard FM, Soft FM and Specialized FM — so your buildings run safely, efficiently and predictably, without juggling multiple contractors.
+                Scheduled inspections, preventive maintenance, emergency response and continuous performance monitoring — so small issues never become costly failures.
               </p>
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
@@ -300,7 +267,7 @@ export default function IFMPage() {
                   href="#contact"
                   className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-sm transition-all shadow-lg shadow-[#0b63c5]/25 hover:shadow-[#0b63c5]/40 active:scale-95 flex items-center justify-center gap-2"
                 >
-                  Schedule Consultation
+                  Get a Tailored AMC Plan
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
@@ -316,8 +283,8 @@ export default function IFMPage() {
             <div className="lg:col-span-5 space-y-3">
               <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
-                  alt="Integrated Facility Management Abu Dhabi"
+                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
+                  alt="Annual Maintenance Contracts AMC Abu Dhabi UAE"
                   fill
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -342,7 +309,7 @@ export default function IFMPage() {
           <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border-y border-slate-800/80 py-8 text-center">
             <div>
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">35+</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Engineering & FM Staff</p>
+              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Engineering & Support Staff</p>
             </div>
             <div>
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">22+</p>
@@ -354,7 +321,7 @@ export default function IFMPage() {
             </div>
             <div>
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">24/7</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Helpdesk & Emergency Response</p>
+              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Emergency Support</p>
             </div>
           </div>
         </div>
@@ -369,7 +336,7 @@ export default function IFMPage() {
               <div className="space-y-2">
                 <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Quick Answer</span>
                 <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-5xl">
-                  Integrated Facility Management (IFM) combines <strong className="text-white font-semibold">Hard FM</strong> (mechanical, electrical, HVAC, civil, fire safety, BMS), <strong className="text-white font-semibold">Soft FM</strong> (cleaning, pest control, waste, concierge, landscaping) and <strong className="text-white font-semibold">Specialized FM</strong> (asset & energy management, smart building systems) under one accountable team.
+                  An <strong className="text-white font-semibold">Annual Maintenance Contract (AMC)</strong> is a yearly service agreement that covers scheduled preventive maintenance, emergency repairs and routine inspections for a facility's equipment and systems, giving clients predictable costs and reduced downtime.
                 </p>
               </div>
             </div>
@@ -379,169 +346,59 @@ export default function IFMPage() {
 
       {/* --- WHAT'S INCLUDED SECTION --- */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">What's Included in Our IFM Solutions</h2>
-            <p className="text-sm text-slate-400">Complete end-to-end facility services designed for operational excellence.</p>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0b63c5]/10 border border-[#0b63c5]/20 text-[#0b63c5] text-xs font-bold uppercase tracking-wider">
+              <Layers className="w-3.5 h-3.5" />
+              Comprehensive Scope
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">What's Included in Our AMC</h2>
+            <p className="text-sm text-slate-400">Complete end-to-end facility protection and preventive care</p>
           </div>
 
-          {/* Hard FM Block */}
-          <div className="space-y-8">
-            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
-              <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
-                <Wrench className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Hard Facility Management</h3>
-                <p className="text-xs text-slate-400">Core electro-mechanical, HVAC, structural and life safety maintenance</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-              {hardFmItems.map((item, idx) => (
-                <div 
-                  key={idx} 
-                  className={`p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5 ${
-                    idx === hardFmItems.length - 1 && hardFmItems.length % 3 !== 0 ? 'sm:col-span-2 lg:col-span-3' : ''
-                  }`}
-                >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
-                      0{idx + 1}
-                    </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Soft FM Block */}
-          <div className="space-y-8 pt-4">
-            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
-              <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
-                <Sparkles className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Soft Facility Management</h3>
-                <p className="text-xs text-slate-400">Environmental, hygiene, front-of-house and grounds upkeep</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center my-6 p-6 rounded-2xl bg-slate-900/30 border border-slate-800/80">
-              <div className="lg:col-span-7 space-y-3 text-center lg:text-left">
-                <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Premium Soft FM Execution</span>
-                <h4 className="text-lg sm:text-xl font-bold text-white">Hospitality-Grade Commercial Cleaning & Environmental Maintenance</h4>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Our Soft FM division deploys specialized eco-friendly equipment, non-toxic sanitization, and certified hospitality managers to elevate asset value, occupant health, and corporate prestige across UAE properties.
-                </p>
-              </div>
-              <div className="lg:col-span-5 space-y-2">
-                <div className="relative h-48 sm:h-56 w-full rounded-xl overflow-hidden border border-slate-800 shadow-md bg-slate-900">
-                  <Image
-                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80"
-                    alt="Commercial Cleaning and Soft Facility Services"
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 1024px) 100vw, 35vw"
-                  />
-                </div>
-                <div className="text-[11px] font-semibold text-slate-200 bg-slate-950/80 backdrop-blur-md p-2.5 rounded-lg border border-slate-800 flex items-center justify-center gap-2">
-                  <Sparkles className="w-3.5 h-3.5 text-[#0b63c5]" />
-                  Sustainable & Hygiene Certified Soft Services
-                </div>
-              </div>
-            </div>
-
-            {/* Row 1: 3 Items */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {softFmItemsRow1.map((item, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
+            {whatsIncludedItems.map((item, idx) => {
+              const IconComponent = item.icon;
+              return (
                 <div 
                   key={idx} 
                   className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
                 >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
-                      0{idx + 1}
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
+                        <IconComponent className="w-5 h-5" />
+                      </div>
+                      <span className="text-xs font-mono font-bold text-slate-500">0{idx + 1}</span>
                     </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
+                    <h3 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h3>
                     <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Row 2: 2 Items Centered for Desktop & Tablet */}
-            <div className="flex flex-col sm:flex-row justify-center items-stretch gap-6">
-              {softFmItemsRow2.map((item, idx) => (
-                <div 
-                  key={idx} 
-                  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
-                >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
-                      0{idx + 4}
-                    </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-          {/* Specialized FM Block */}
-          <div className="space-y-8 pt-4">
-            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
-              <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
-                <Cpu className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Specialized Facility Management</h3>
-                <p className="text-xs text-slate-400">Advanced IoT monitoring, asset lifecycle intelligence and 24/7 helpdesk</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
-              {specializedFmItems.map((item, idx) => (
-                <div 
-                  key={idx} 
-                  className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
-                >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
-                      0{idx + 1}
-                    </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
 
         </div>
       </section>
 
-      {/* --- WHY EMRALD ACE --- */}
+      {/* --- BENEFITS SECTION --- */}
       <section className="py-16 bg-slate-950 border-y border-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-5 space-y-4 text-center lg:text-left">
-              <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">The Advantage</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-white">Why Emrald Ace</h2>
+              <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Key Advantages</span>
+              <h2 className="text-2xl sm:text-4xl font-black text-white">Benefits of an AMC</h2>
               <p className="text-sm text-slate-400 leading-relaxed">
-                By consolidating all building services under a single roof, we eliminate vendor friction, lower operating overheads, and guarantee single-point accountability.
+                Partnering with Emrald Ace for your Annual Maintenance Contract delivers tangible operational efficiency, long-term asset security, and financial clarity for residential, commercial, or industrial properties.
               </p>
 
               <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
                 <Image
                   src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
-                  alt="Emrald Ace Engineering Team"
+                  alt="AMC Benefits and Facility Management"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -550,10 +407,10 @@ export default function IFMPage() {
             </div>
 
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {whyChooseUs.map((reason, idx) => (
-                <div key={idx} className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 flex items-start gap-3 hover:border-[#0b63c5]/40 transition-colors">
+              {benefits.map((benefit, idx) => (
+                <div key={idx} className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 flex items-start gap-3 hover:border-[#0b63c5]/40 transition-colors shadow-md">
                   <CheckCircle2 className="w-5 h-5 text-[#0b63c5] shrink-0 mt-0.5" />
-                  <span className="text-xs sm:text-sm text-slate-200 font-medium leading-snug">{reason}</span>
+                  <span className="text-sm text-slate-200 font-semibold leading-snug">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -590,7 +447,7 @@ export default function IFMPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="text-center sm:text-left">
             <h2 className="text-xl sm:text-2xl font-black text-white">Industries We Serve</h2>
-            <p className="text-xs text-slate-400 mt-1">Tailored solutions for sectors across Abu Dhabi & UAE</p>
+            <p className="text-xs text-slate-400 mt-1">Tailored AMC solutions for sectors across Abu Dhabi & UAE</p>
           </div>
 
           <div className="flex flex-wrap justify-center sm:justify-start gap-2.5 sm:gap-3">
@@ -655,7 +512,7 @@ export default function IFMPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-white">FAQs</h2>
-            <p className="text-sm text-slate-400">Everything you need to know about Integrated Facility Management</p>
+            <p className="text-sm text-slate-400">Everything you need to know about Annual Maintenance Contracts</p>
           </div>
 
           <div className="divide-y divide-slate-800 rounded-2xl bg-slate-900/30 border border-slate-800 p-6 sm:p-8 backdrop-blur-sm">
@@ -674,10 +531,10 @@ export default function IFMPage() {
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-center lg:text-left">
               <div className="lg:col-span-8 space-y-4">
                 <h2 className="text-2xl sm:text-4xl font-black text-white">
-                  Let's Build Better Environments Together
+                  Get a Tailored Annual Maintenance Contracts Plan for Your Property
                 </h2>
                 <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto lg:mx-0">
-                  Schedule a consultation with our team and get a tailored Integrated Facility Management plan for your property.
+                  Protect your assets with proactive maintenance, 24/7 emergency response, and customized contract scopes.
                 </p>
               </div>
 
@@ -690,7 +547,7 @@ export default function IFMPage() {
                   sales1@emraldace.com
                 </a>
                 <a
-                  href="tel:+971 52 897 6025"
+                  href="tel:+971528976025"
                   className="px-6 py-3.5 rounded-xl bg-slate-950/80 border border-slate-700 hover:border-slate-500 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2"
                 >
                   <Phone className="w-4 h-4 text-[#0b63c5]" />

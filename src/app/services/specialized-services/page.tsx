@@ -17,7 +17,10 @@ import {
   Building2,
   FolderCheck,
   MapPin,
-  Check
+  Check,
+  Layers,
+  Lock,
+  Droplet
 } from 'lucide-react';
 
 // --- FAQ Accordion Component ---
@@ -52,8 +55,8 @@ function FAQAccordion({ faq }: { faq: { q: string; a: string } }) {
   );
 }
 
-export default function IFMPage() {
-  // Breadcrumb Schema
+export default function SpecializedServicesPage() {
+  // Breadcrumb Schema (No breadcrumb HTML tags rendered in UI per guidelines)
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -62,33 +65,33 @@ export default function IFMPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.emraldace.com"
+        "item": "https://www.emraldace.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://www.emraldace.com/services"
+        "item": "https://www.emraldace.com/services/"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Integrated Facility Management",
-        "item": "https://www.emraldace.com/services/integrated-facility-management"
+        "name": "Smart Access, Automation & Outdoor Solutions",
+        "item": "https://www.emraldace.com/services/specialized-services"
       }
     ]
   };
 
-  // Service Schema for Advanced AI Search & SEO
+  // Service Schema for Search Engine & AI Optimization
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Integrated Facility Management",
+    "name": "Smart Access, Automation & Outdoor Solutions",
     "provider": {
       "@type": "Organization",
       "name": "Emrald Ace General Contracting & Electromechanical",
       "url": "https://www.emraldace.com",
-      "telephone": "+971528976025 ",
+      "telephone": "+971528976025",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Musaffah",
@@ -97,93 +100,47 @@ export default function IFMPage() {
       }
     },
     "areaServed": ["Abu Dhabi", "Dubai", "United Arab Emirates"],
-    "description": "ISO 45001-certified Integrated Facility Management in Abu Dhabi & across the UAE. Hard FM, Soft FM & Specialized FM under one accountable team."
+    "description": "Specialized facility services in Abu Dhabi, UAE — CCTV, parking access control, automatic gates, waterproofing, epoxy flooring & landscaping."
   };
 
-  const hardFmItems = [
+  const smartAccessItems = [
     {
-      title: "Mechanical Systems",
-      desc: "Maintenance and servicing of core mechanical equipment that keeps a building running: HVAC units, chillers, pumps, air handling units (AHUs), and fan coil units (FCUs). Includes scheduled inspections, performance checks, and repairs to prevent breakdowns that disrupt occupant comfort or business operations."
+      title: "Parking Access Control",
+      desc: "Automated systems (barriers, ticketing, license plate recognition) that manage vehicle entry and exit in parking facilities, improving security and traffic flow."
     },
     {
-      title: "Electrical Systems",
-      desc: "Management of a facility's power infrastructure, including low-voltage and medium-voltage (LV/MV) systems, switchgear, uninterruptible power supplies (UPS), backup generators, and lighting systems. Regular testing and preventive checks reduce the risk of outages and keep systems compliant with safety standards."
+      title: "Automatic & Remote Control Gates",
+      desc: "Installation of motorized gates operated via remote control or automated triggers, for both vehicular and pedestrian access points, improving convenience and site security."
     },
     {
-      title: "HVAC Services",
-      desc: "Ongoing preventive maintenance for heating, ventilation, and air conditioning systems, focused on maintaining air quality and improving energy efficiency. Covers filter changes, coil cleaning, refrigerant checks, and performance tuning to extend equipment life and control energy costs."
-    },
-    {
-      title: "Civil & Building Fabric Maintenance",
-      desc: "Upkeep of a building's structural and surface elements, including masonry repairs, painting, waterproofing, and façade maintenance. Regular inspection and repair work protects the building envelope from water ingress, wear, and weathering, preserving both appearance and structural integrity."
-    },
-    {
-      title: "Fire & Life Safety Systems",
-      desc: "Installation, testing, and maintenance of fire alarms, suppression systems, sprinklers, and life-safety equipment, backed by scheduled compliance testing to meet UAE Civil Defense requirements and keep occupants protected."
-    },
-    {
-      title: "Building Management Systems (BMS)",
-      desc: "Centralized monitoring and automation of a building's core systems — HVAC, lighting, security, and energy use — through a BMS platform, enabling real-time performance tracking and energy optimization across the facility."
-    },
-    {
-      title: "Plumbing & Water Systems",
-      desc: "Installation and maintenance of water supply lines, drainage systems, and wastewater management infrastructure, engineered to prevent leaks, blockages, and pressure issues."
+      title: "CCTV Systems",
+      desc: "Design and installation of surveillance camera networks covering entry points, common areas, and perimeters, with recording and monitoring setup tailored to the facility's security needs."
     }
   ];
 
-  const softFmItemsRow1 = [
+  const outdoorSurfaceItems = [
     {
-      title: "Housekeeping & Cleaning",
-      desc: "Scheduled commercial cleaning programs covering interiors, common areas, and building exteriors. Cleaning schedules are tailored to foot traffic and facility type."
+      title: "Waterproofing",
+      desc: "Application of waterproofing membranes and treatments to roofs, terraces, basements, and other exposed structures to prevent water ingress and long-term structural damage."
     },
     {
-      title: "Glass & Façade Cleaning",
-      desc: "Scheduled cleaning of glass surfaces and building façades for both high-rise and ground-level structures, using appropriate access equipment and safety protocols to maintain a clean, professional exterior appearance."
+      title: "Epoxy Flooring",
+      desc: "Installation of durable, chemical-resistant epoxy flooring suited to industrial facilities, warehouses, and commercial spaces requiring high-traffic, easy-to-clean surfaces."
     },
     {
-      title: "Pest & Waste Management",
-      desc: "Preventive pest control programs designed to stop infestations before they start, paired with structured waste collection, segregation, and disposal coordination — keeping facilities compliant with health and environmental regulations."
-    }
-  ];
-
-  const softFmItemsRow2 = [
-    {
-      title: "Concierge, Reception & Porter Services",
-      desc: "Front-of-house staffing that manages visitor reception, mail and deliveries, and day-to-day porter support, giving tenants and visitors a consistently professional first point of contact."
-    },
-    {
-      title: "Landscaping & Grounds Maintenance",
-      desc: "Upkeep of outdoor and green spaces, including planting, irrigation, lawn care, and general grounds maintenance, keeping external areas presentable and well-maintained year-round."
-    }
-  ];
-
-  const specializedFmItems = [
-    {
-      title: "Smart FM & Asset Management",
-      desc: "Technology-driven facility oversight using CAFM (Computer-Aided Facility Management) software and IoT sensors to track asset condition, monitor energy consumption, and flag maintenance needs before they become failures."
-    },
-    {
-      title: "Asset Management",
-      desc: "Structured tracking of facility assets across their lifecycle — condition, maintenance history, and replacement planning — supporting better budgeting decisions and reducing unplanned equipment failure."
-    },
-    {
-      title: "Energy Management",
-      desc: "Monitoring and optimization of a facility's energy consumption through data tracking and performance benchmarking, helping reduce operating costs and improve sustainability performance."
-    },
-    {
-      title: "24/7 Helpdesk & Emergency Response",
-      desc: "Round-the-clock support desk for logging issues, dispatching technicians, and coordinating emergency response, ensuring urgent facility problems are addressed without delay regardless of time of day."
+      title: "Artificial Turf & Landscaping",
+      desc: "Installation of artificial turf for outdoor and recreational areas, combined with landscaping services covering planting, irrigation, and grounds maintenance for a finished exterior look."
     }
   ];
 
   const whyChooseUs = [
-    "Integrated Hard & Soft FM expertise under one team",
-    "Experienced engineering professionals",
+    "Smart Access & Outdoor expertise under one team",
+    "Experienced engineering and security professionals",
     "Customized service plans per project",
     "Preventive, planned approach to every job",
-    "Advanced facility management technologies",
+    "Advanced automation technologies",
     "Fast emergency response",
-    "Transparent monthly reporting",
+    "Transparent reporting & client communication",
     "Safety-driven, ISO 45001-certified operations",
     "Sustainable, quality-assured practices",
     "Single point of accountability, start to finish"
@@ -237,24 +194,20 @@ export default function IFMPage() {
 
   const faqs = [
     {
-      q: "What is Integrated Facility Management (IFM)?",
-      a: "IFM is a single-provider model combining Hard FM, Soft FM and Specialized FM under one accountable team, instead of managing separate vendors for each service."
+      q: "What specialized services does Emrald Ace offer?",
+      a: "Parking access control, automatic gates, remote control gates, CCTV systems, artificial turf installation, waterproofing, epoxy flooring, smart building solutions, and landscaping."
     },
     {
-      q: "What does Emrald Ace's IFM service include?",
-      a: "Hard FM (mechanical, electrical, HVAC, civil, fire safety, BMS, plumbing), Soft FM (cleaning, pest control, waste management, concierge, landscaping) and Specialized FM (asset management, energy management, smart FM, 24/7 helpdesk)."
+      q: "Does Emrald Ace install CCTV and access control systems?",
+      a: "Yes, CCTV systems and parking access control are part of Emrald Ace's Specialized Services."
     },
     {
-      q: "Which areas does Emrald Ace serve?",
-      a: "Emrald Ace is headquartered in Musaffah, Abu Dhabi, and serves clients across the UAE, including Abu Dhabi and Dubai."
+      q: "Does Emrald Ace provide waterproofing and epoxy flooring?",
+      a: "Yes — waterproofing and epoxy flooring are included in the Specialized Services scope."
     },
     {
-      q: "Is Emrald Ace certified for facility management?",
-      a: "Yes — ISO 45001:2018 certified with a UAE Trade License, operating since 2014."
-    },
-    {
-      q: "How is IFM different from an Annual Maintenance Contract?",
-      a: "An AMC covers scheduled maintenance for specific systems. IFM is broader, bundling Hard FM, Soft FM and Specialized FM under one provider."
+      q: "Are these services available as standalone projects or only with facility management contracts?",
+      a: "Specialized Services can be delivered as standalone projects or combined with Emrald Ace's Integrated Facility Management and Annual Maintenance Contracts."
     }
   ];
 
@@ -289,10 +242,10 @@ export default function IFMPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
-                Integrated Facility Management in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-[#0b63c5]">Abu Dhabi</span> & Across the UAE
+                Specialized Services — Smart Access, Automation & Outdoor Solutions
               </h1>
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-                One accountable team for Hard FM, Soft FM and Specialized FM — so your buildings run safely, efficiently and predictably, without juggling multiple contractors.
+                Parking access control, automatic gates, CCTV, waterproofing, epoxy flooring and landscaping — for every facility across the UAE.
               </p>
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
@@ -300,7 +253,7 @@ export default function IFMPage() {
                   href="#contact"
                   className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-sm transition-all shadow-lg shadow-[#0b63c5]/25 hover:shadow-[#0b63c5]/40 active:scale-95 flex items-center justify-center gap-2"
                 >
-                  Schedule Consultation
+                  Get a Tailored Plan
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
@@ -316,8 +269,8 @@ export default function IFMPage() {
             <div className="lg:col-span-5 space-y-3">
               <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
-                  alt="Integrated Facility Management Abu Dhabi"
+                  src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80"
+                  alt="Smart Access, Automation & Outdoor Solutions Abu Dhabi"
                   fill
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -354,7 +307,7 @@ export default function IFMPage() {
             </div>
             <div>
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">24/7</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Helpdesk & Emergency Response</p>
+              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Helpdesk & Support</p>
             </div>
           </div>
         </div>
@@ -369,7 +322,7 @@ export default function IFMPage() {
               <div className="space-y-2">
                 <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Quick Answer</span>
                 <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-5xl">
-                  Integrated Facility Management (IFM) combines <strong className="text-white font-semibold">Hard FM</strong> (mechanical, electrical, HVAC, civil, fire safety, BMS), <strong className="text-white font-semibold">Soft FM</strong> (cleaning, pest control, waste, concierge, landscaping) and <strong className="text-white font-semibold">Specialized FM</strong> (asset & energy management, smart building systems) under one accountable team.
+                  Emrald Ace's Specialized Services cover <strong className="text-white font-semibold">smart access and automation</strong> (parking access control, automatic and remote gates, CCTV, smart building solutions) and <strong className="text-white font-semibold">outdoor and surface solutions</strong> (waterproofing, epoxy flooring, artificial turf, landscaping) for facilities across the UAE.
                 </p>
               </div>
             </div>
@@ -382,29 +335,27 @@ export default function IFMPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">What's Included in Our IFM Solutions</h2>
-            <p className="text-sm text-slate-400">Complete end-to-end facility services designed for operational excellence.</p>
+            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">What's Included in Our Specialized Scope</h2>
+            <p className="text-sm text-slate-400">Targeted security, automation, and surface treatments engineered for property preservation.</p>
           </div>
 
-          {/* Hard FM Block */}
+          {/* Smart Access & Automation Block */}
           <div className="space-y-8">
             <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
               <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
-                <Wrench className="w-6 h-6" />
+                <Lock className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Hard Facility Management</h3>
-                <p className="text-xs text-slate-400">Core electro-mechanical, HVAC, structural and life safety maintenance</p>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Smart Access & Automation</h3>
+                <p className="text-xs text-slate-400">Intelligent perimeter defense, barrier automation, and surveillance integration</p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-              {hardFmItems.map((item, idx) => (
+              {smartAccessItems.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className={`p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5 ${
-                    idx === hardFmItems.length - 1 && hardFmItems.length % 3 !== 0 ? 'sm:col-span-2 lg:col-span-3' : ''
-                  }`}
+                  className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
                 >
                   <div className="space-y-3">
                     <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
@@ -418,31 +369,31 @@ export default function IFMPage() {
             </div>
           </div>
 
-          {/* Soft FM Block */}
+          {/* Outdoor & Surface Solutions Block */}
           <div className="space-y-8 pt-4">
             <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
               <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
-                <Sparkles className="w-6 h-6" />
+                <Layers className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Soft Facility Management</h3>
-                <p className="text-xs text-slate-400">Environmental, hygiene, front-of-house and grounds upkeep</p>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Outdoor & Surface Solutions</h3>
+                <p className="text-xs text-slate-400">Protective coatings, specialized flooring, and outdoor landscaping</p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center my-6 p-6 rounded-2xl bg-slate-900/30 border border-slate-800/80">
               <div className="lg:col-span-7 space-y-3 text-center lg:text-left">
-                <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Premium Soft FM Execution</span>
-                <h4 className="text-lg sm:text-xl font-bold text-white">Hospitality-Grade Commercial Cleaning & Environmental Maintenance</h4>
+                <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">High-Performance Exterior & Surface Crafting</span>
+                <h4 className="text-lg sm:text-xl font-bold text-white">Durable Industrial Coatings & Smart Turf Integration</h4>
                 <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Our Soft FM division deploys specialized eco-friendly equipment, non-toxic sanitization, and certified hospitality managers to elevate asset value, occupant health, and corporate prestige across UAE properties.
+                  From heavy-duty chemical-resistant epoxy floors in industrial centers to weather-resilient waterproofing systems and premium artificial turf, our field teams deliver durable exterior transformations tailored to UAE climates.
                 </p>
               </div>
               <div className="lg:col-span-5 space-y-2">
                 <div className="relative h-48 sm:h-56 w-full rounded-xl overflow-hidden border border-slate-800 shadow-md bg-slate-900">
                   <Image
-                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80"
-                    alt="Commercial Cleaning and Soft Facility Services"
+                    src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80"
+                    alt="Epoxy Flooring and Waterproofing Application"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 1024px) 100vw, 35vw"
@@ -450,14 +401,13 @@ export default function IFMPage() {
                 </div>
                 <div className="text-[11px] font-semibold text-slate-200 bg-slate-950/80 backdrop-blur-md p-2.5 rounded-lg border border-slate-800 flex items-center justify-center gap-2">
                   <Sparkles className="w-3.5 h-3.5 text-[#0b63c5]" />
-                  Sustainable & Hygiene Certified Soft Services
+                  Weather-Resistant & Heavy-Duty Certified Treatments
                 </div>
               </div>
             </div>
 
-            {/* Row 1: 3 Items */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {softFmItemsRow1.map((item, idx) => (
+              {outdoorSurfaceItems.map((item, idx) => (
                 <div 
                   key={idx} 
                   className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
@@ -473,54 +423,6 @@ export default function IFMPage() {
               ))}
             </div>
 
-            {/* Row 2: 2 Items Centered for Desktop & Tablet */}
-            <div className="flex flex-col sm:flex-row justify-center items-stretch gap-6">
-              {softFmItemsRow2.map((item, idx) => (
-                <div 
-                  key={idx} 
-                  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
-                >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
-                      0{idx + 4}
-                    </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-          {/* Specialized FM Block */}
-          <div className="space-y-8 pt-4">
-            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
-              <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
-                <Cpu className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Specialized Facility Management</h3>
-                <p className="text-xs text-slate-400">Advanced IoT monitoring, asset lifecycle intelligence and 24/7 helpdesk</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
-              {specializedFmItems.map((item, idx) => (
-                <div 
-                  key={idx} 
-                  className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
-                >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
-                      0{idx + 1}
-                    </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
         </div>
@@ -535,12 +437,12 @@ export default function IFMPage() {
               <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">The Advantage</span>
               <h2 className="text-2xl sm:text-4xl font-black text-white">Why Emrald Ace</h2>
               <p className="text-sm text-slate-400 leading-relaxed">
-                By consolidating all building services under a single roof, we eliminate vendor friction, lower operating overheads, and guarantee single-point accountability.
+                Whether deployed as standalone specialty works or incorporated into full Facility Management contracts, our engineering team ensures flawless quality and long-term accountability.
               </p>
 
               <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80"
                   alt="Emrald Ace Engineering Team"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
@@ -655,7 +557,7 @@ export default function IFMPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-white">FAQs</h2>
-            <p className="text-sm text-slate-400">Everything you need to know about Integrated Facility Management</p>
+            <p className="text-sm text-slate-400">Everything you need to know about our Specialized Services</p>
           </div>
 
           <div className="divide-y divide-slate-800 rounded-2xl bg-slate-900/30 border border-slate-800 p-6 sm:p-8 backdrop-blur-sm">
@@ -674,10 +576,10 @@ export default function IFMPage() {
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-center lg:text-left">
               <div className="lg:col-span-8 space-y-4">
                 <h2 className="text-2xl sm:text-4xl font-black text-white">
-                  Let's Build Better Environments Together
+                  Get a tailored Specialized Services plan for your property.
                 </h2>
                 <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto lg:mx-0">
-                  Schedule a consultation with our team and get a tailored Integrated Facility Management plan for your property.
+                  Connect with our technical team today to discuss parking automation, security CCTV, surface coatings, or exterior landscaping.
                 </p>
               </div>
 
