@@ -1,444 +1,177 @@
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Metadata } from 'next';
 import { 
-  Building, 
-  Wrench, 
-  Paintbrush, 
-  Cpu, 
-  HardHat, 
-  CheckCircle2, 
-  ArrowUpRight, 
-  ShieldCheck, 
-  Clock, 
-  Layers, 
+  ArrowRight, 
   Sparkles,
-  PhoneCall
+  PhoneCall,
+  ChevronRight
 } from 'lucide-react';
 
-export default function Services() {
-  const serviceBlocks = [
+export const metadata: Metadata = {
+  title: "Engineering & Facility Management Services | Emrald Ace UAE",
+  description: "Explore our core electromechanical, facility management, AMC, MEP, interior fit-out, and civil contracting solutions across Abu Dhabi and the UAE.",
+  alternates: {
+    canonical: "https://www.emraldace.com/services",
+  },
+};
+
+export default function ServicesPage() {
+  const serviceOverviewList = [
     {
       id: "ifm",
+      slug: "/services/ifm",
       title: "Integrated Facility Management",
       tagline: "Smarter Facilities. Better Performance.",
-      icon: <Building className="w-6 h-6 text-white" />,
       bg: "from-[#0B63C5] to-[#084B96]",
-      accentColor: "text-[#0B63C5]",
       image: "/integrated-facility-management-2.webp",
-      desc: "Our integrated model brings every essential service together under one accountable team, giving clients a single point of contact, faster response times, and measurable long-term value.",
-      subCategories: [
-        { 
-          name: "Hard Facility Management", 
-          items: [
-            "Mechanical Systems (HVAC, chillers, pumps, AHUs, FCUs)", 
-            "Electrical Systems (LV/MV, switchgear, UPS, generators)", 
-            "Plumbing & Water Systems", 
-            "HVAC Preventive Maintenance & Energy Efficiency", 
-            "Civil & Building Fabric Maintenance (masonry, painting, waterproofing)", 
-            "Fire & Life Safety Systems (alarms, suppression, testing)", 
-            "Building Management Systems / BMS Monitoring & Automation"
-          ] 
-        },
-        { 
-          name: "Soft Facility Management", 
-          items: [
-            "Housekeeping & Commercial Deep Cleaning", 
-            "High-Rise Glass & Façade Cleaning", 
-            "Landscaping & Grounds Maintenance", 
-            "Sustainable Waste Management & Recycling", 
-            "Pest Management & Control", 
-            "Concierge, Reception & Porter Services",
-            "Indoor Plant Care & Decorative Landscaping"
-          ] 
-        },
-        { 
-          name: "Specialized Facility Management", 
-          items: [
-            "Energy Audits & Optimization Management", 
-            "Asset Lifecycle & Condition Management", 
-            "Smart FM (CAFM, IoT Integration, Automation)", 
-            "24/7 Central Helpdesk & Emergency Response",
-            "EHS (Environment, Health & Safety) Audits",
-            "Disaster Recovery & Risk Mitigation Planning",
-            "Vendor & Subcontractor Quality Assurance"
-          ] 
-        }
-      ]
+      desc: "Comprehensive Hard, Soft, and Specialized Facility Management solutions. We bring every essential service together under one accountable team."
     },
     {
       id: "amc",
+      slug: "/services/amc",
       title: "Annual Maintenance Contracts (AMC)",
       tagline: "Protecting Your Assets Every Day.",
-      icon: <Wrench className="w-6 h-6 text-white" />,
       bg: "from-[#FF6A00] to-[#E05D00]",
-      accentColor: "text-[#FF6A00]",
-      image: "annual-maintenance-contracts.webp",
-      desc: "We tailor every AMC to the specific needs of residential, commercial, or industrial facilities, combining planned servicing with rapid-response support.",
-      subCategories: [
-        { 
-          name: "What's Included", 
-          items: [
-            "Scheduled Preventive Maintenance Plans", 
-            "Corrective & Rapid Emergency Repairs", 
-            "Routine Equipment Audits & Inspections", 
-            "24/7 Dedicated Rapid Emergency Support", 
-            "Spare Parts Sourcing & Logistics", 
-            "Detailed Monthly Performance Reporting", 
-            "Dedicated On-Site Engineering Team", 
-            "Full Compliance & Regulatory Safety Audits"
-          ] 
-        },
-        { 
-          name: "Key Client Benefits", 
-          items: [
-            "Significantly Reduced Operational Downtime", 
-            "Lower Long-Term Asset Maintenance Costs", 
-            "Extended Life Expectancy of Capital Assets", 
-            "Predictable Annual Operational Budgeting", 
-            "Guaranteed Response Times with Strict SLAs", 
-            "Single Point of Operational Accountability",
-            "Improved Energy & Utility Cost Efficiency",
-            "Complete Risk Assessment & Hazard Prevention"
-          ] 
-        },
-        { 
-          name: "Customization & Scope", 
-          items: [
-            "Comprehensive All-Inclusive Coverage Plans", 
-            "Non-Comprehensive Labor-Only Contracts", 
-            "Custom SLAs Tailored for Critical Assets", 
-            "Multi-Site Portfolio Aggregation Discounts", 
-            "Real-time Digital Maintenance Tracking Portal",
-            "Seasonal Systems Preparedness Inspections",
-            "Dedicated Account Manager & Technical Support",
-            "Tailored Payment & Lifecycle Schedules"
-          ] 
-        }
-      ]
+      image: "/annual-maintenance-contracts.webp",
+      desc: "Tailored AMC packages for residential, commercial, and industrial facilities. Combining scheduled preventive servicing with 24/7 rapid response."
     },
     {
       id: "interior",
+      slug: "/services/interior",
       title: "Interior Fit-Out Solutions",
       tagline: "Creating Inspiring & Functional Workspaces.",
-      icon: <Paintbrush className="w-6 h-6 text-white" />,
-      bg: "from-slate-900 to-slate-850",
-      accentColor: "text-slate-400",
+      bg: "from-slate-900 to-slate-800",
       image: "/interior-fit-out-solutions-2.webp",
-      desc: "We design and deliver modern, aesthetically pleasing interior environments tailored to business and residential specifications across the UAE.",
-      subCategories: [
-        { 
-          name: "Commercial & Retail Fit-Out", 
-          items: [
-            "Corporate Office Space Planning & Fit-Out", 
-            "Retail Outlets & Showroom Interior Fit-Outs", 
-            "Commercial Building Interior Renovations", 
-            "High-End Residential Interiors & Upgrades", 
-            "Turnkey Project Design & Delivery Services",
-            "Space Optimization & Ergonomic Layouts"
-          ] 
-        },
-        { 
-          name: "Architectural & Joinery Works", 
-          items: [
-            "Custom Partitions & False Ceiling Systems", 
-            "Flooring Solutions (Epoxy, Vinyl, Carpet, Tile)", 
-            "Professional Wall Painting & Decorative Finishes", 
-            "Bespoke Wood Joinery & Carpentry Works", 
-            "Decorative Architectural Metal & Glass Features",
-            "Custom Acoustic Wall Panelling & Treatments"
-          ] 
-        },
-        { 
-          name: "Glazing & Aluminum Systems", 
-          items: [
-            "Glass Partitions & Acoustic Frameless Walls", 
-            "Aluminum Door & Window Fabrication", 
-            "Custom Glass Fixtures & Shopfronts", 
-            "Acoustic Ceiling Panels & Thermal Insulation",
-            "Automated Sliding & Sensor Glass Entrances",
-            "Fire-Rated Glass & Barrier Systems"
-          ] 
-        }
-      ]
+      desc: "Complete turnkey architectural interior design, custom joinery, glass partition walls, acoustic ceilings, and space optimization across the UAE."
     },
     {
       id: "mep",
+      slug: "/services/mep",
       title: "MEP Engineering Services",
       tagline: "Integrated Mechanical, Electrical & Plumbing Excellence.",
-      icon: <Cpu className="w-6 h-6 text-white" />,
       bg: "from-[#0B63C5] to-[#084B96]",
-      accentColor: "text-[#0B63C5]",
       image: "/mep-engineering-services-2.webp",
-      desc: "Comprehensive engineering execution providing sustainable, high-efficiency MEP design, installation, and lifecycle support.",
-      subCategories: [
-        { 
-          name: "Mechanical & HVAC Systems", 
-          items: [
-            "Complete HVAC System Architecture Design", 
-            "Heavy Chiller, AHU & FCU Installations", 
-            "Industrial Ducting & Air Distribution Networks", 
-            "Ventilation & Exhaust Extraction Systems",
-            "Indoor Air Quality (IAQ) Testing & Filtration",
-            "Precision Cooling for Server Rooms & Data Hubs"
-          ] 
-        },
-        { 
-          name: "Electrical & LV Systems", 
-          items: [
-            "High & Low Voltage Electrical Installations", 
-            "Switchgear & Power Distribution Networks", 
-            "ELV Systems & Building Automation Integration", 
-            "Energy-Efficient Commercial Lighting Systems",
-            "Emergency Generator & UPS Backup Installation",
-            "Lightning Protection & Grounding Networks"
-          ] 
-        },
-        { 
-          name: "Plumbing, Fire & Commissioning", 
-          items: [
-            "Plumbing, Drainage & Water Supply Networks", 
-            "Fire Fighting & Automatic Sprinkler Systems", 
-            "Fire Alarm Systems & Emergency Life Safety", 
-            "Full Lifecycle Testing, Balancing & Commissioning",
-            "Water Treatment, Filtration & Purification Systems",
-            "Central Heating & Hot Water Plant Services"
-          ] 
-        }
-      ]
+      desc: "Full lifecycle HVAC, power distribution, life safety fire systems, and low-voltage electrical engineering installations designed for maximum longevity."
     },
     {
       id: "civil",
+      slug: "/services/civil",
       title: "General Contracting & Specialized Civil",
-      tagline: "Comprehensive Civil Construction & Smart Automation Solutions.",
-      icon: <HardHat className="w-6 h-6 text-white" />,
+      tagline: "Comprehensive Civil Construction & Smart Access Solutions.",
       bg: "from-[#FF6A00] to-[#E05D00]",
-      accentColor: "text-[#FF6A00]",
       image: "/general-contracting&specialized-civil.webp",
-      desc: "Robust construction, structural restoration, and outdoor automation services designed for modern commercial and residential infrastructure.",
-      subCategories: [
-        { 
-          name: "Civil & Extension Focus", 
-          items: [
-            "Civil Construction & Structural Repairs", 
-            "Facility Extensions & Major Structural Modifications", 
-            "General Building Development & Refurbishment", 
-            "Architectural Planning & Design Delivery Support",
-            "Foundation Reinforcement & Concrete Restoration"
-          ] 
-        },
-        { 
-          name: "Smart Access & Automation", 
-          items: [
-            "Automated Parking Access Control Systems", 
-            "Remote Control Gates & Barrier Solutions", 
-            "High-Definition CCTV & Integrated Security Systems", 
-            "Smart Building IoT & Access Management",
-            "Biometric Access & Visitor Management Systems"
-          ] 
-        },
-        { 
-          name: "Specialized Outdoor & Surface Works", 
-          items: [
-            "Waterproofing & Structural Leak Remediation", 
-            "Industrial Epoxy & Protective Floor Coatings", 
-            "Artificial Turf Installation & Commercial Landscaping", 
-            "Hardscaping & Exterior Site Upgrades", 
-            "Interlocking Paving & Boundary Wall Finishes"
-          ] 
-        }
-      ]
+      desc: "Robust structural renovations, building additions, smart parking barriers, epoxy floor coatings, and commercial waterproofing."
     }
   ];
 
-  const industries = [
-    "Commercial Offices", "Residential Communities", "Healthcare", 
-    "Hotels & Hospitality", "Retail Centers", "Industrial Facilities", 
-    "Government Entities", "Warehouses", "Education Institutions"
-  ];
-
-  // SEO Schema Integration
-  const schemaData = {
+  const breadcrumbSchema = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": serviceBlocks.map((block, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "Service",
-        "name": block.title,
-        "description": block.desc
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.emraldace.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.emraldace.com/services"
       }
-    }))
+    ]
   };
 
   return (
-    <section className="pt-28 pb-12 sm:pt-32 sm:pb-14 bg-slate-950 relative overflow-hidden font-sans" id="services">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+    <section className="pt-32 pb-16 bg-slate-950 text-white min-h-screen">
+      <script 
+        type="application/ld+json" 
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} 
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {/* Main Section Header */}
+        {/* Hero Section Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="flex items-center text-xs font-semibold text-slate-400 space-x-2">
+          <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+          <span className="text-blue-400">Services</span>
+        </nav>
+
+        {/* Header Block */}
         <header className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs uppercase tracking-widest font-black text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
-            <Sparkles className="w-3.5 h-3.5 text-blue-400" /> Our Service Matrix
+          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs uppercase tracking-widest font-black text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/30">
+            <Sparkles className="w-3.5 h-3.5 text-blue-400" /> Our Core Capability Matrix
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
             Integrated Engineering & Facility Solutions
           </h1>
-          <p className="text-base sm:text-lg text-slate-400 font-medium">
-            Reliable maintenance, skilled engineering, and dependable service – unified under one accountable provider.
+          <p className="text-base sm:text-lg text-slate-400 font-normal">
+            Precision electromechanical execution, proactive maintenance, and specialized contracting services across the UAE.
           </p>
         </header>
 
-        {/* Services List */}
-        <div className="space-y-12">
-          {serviceBlocks.map((block) => {
-            // Find the maximum number of items in any subcategory to build the balanced rows
-            const maxItemsCount = Math.max(...block.subCategories.map(s => s.items.length));
+        {/* Concise Service Cards Matrix */}
+        <div className="flex flex-wrap justify-center -m-4">
+          {serviceOverviewList.map((service) => (
+            <div 
+              key={service.id} 
+              className="p-4 w-full md:w-1/2 lg:w-1/3 flex"
+            >
+              <article className="w-full bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-slate-700 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                  {/* Image Container */}
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image 
+                      src={service.image} 
+                      alt={service.title} 
+                      fill 
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+                  </div>
 
-            return (
-              <article 
-                key={block.id} 
-                className="bg-slate-900 rounded-3xl border border-white/5 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
-              >
-                {/* Header Banner */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-                  <div className={`p-8 lg:p-10 bg-gradient-to-r ${block.bg} text-white lg:col-span-7 flex flex-col justify-center space-y-4 relative overflow-hidden`}>
-                    <div className="flex items-center gap-3">
-                      <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-inner shrink-0">
-                        {block.icon}
-                      </div>
-                      <div>
-                        <span className="text-xs uppercase font-extrabold tracking-wider text-white/80">{block.tagline}</span>
-                        <h2 className="text-2xl sm:text-4xl font-black tracking-tight leading-tight">{block.title}</h2>
-                      </div>
-                    </div>
-                    <p className="text-sm sm:text-base text-slate-100 opacity-95 font-normal leading-relaxed">
-                      {block.desc}
+                  <div className="p-6 space-y-3">
+                    <span className="text-[11px] font-extrabold uppercase tracking-widest text-blue-400 block">
+                      {service.tagline}
+                    </span>
+                    <h2 className="text-xl font-bold text-white leading-snug">
+                      {service.title}
+                    </h2>
+                    <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed">
+                      {service.desc}
                     </p>
                   </div>
-
-                  {/* Service Header Image */}
-                  <div className="lg:col-span-5 relative min-h-[220px] lg:min-h-full overflow-hidden bg-slate-850">
-                    <img 
-                      src={block.image} 
-                      alt={block.title} 
-                      loading="lazy" 
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent lg:hidden" />
-                  </div>
                 </div>
 
-                {/* Grid of Subcategories - Synchronized Row Alignment */}
-                <div className="p-6 sm:p-8 bg-slate-900/60">
-                  
-                  {/* Desktop view: Columns are linked row-by-row so everything stays uniformly level */}
-                  <div className="hidden lg:grid grid-cols-3 gap-x-6">
-                    {/* Headers Row */}
-                    {block.subCategories.map((sub, sIdx) => (
-                      <div 
-                        key={`h-${sIdx}`} 
-                        className="bg-slate-900 p-5 rounded-t-2xl border-t border-x border-slate-800 flex items-center justify-between pb-4"
-                      >
-                        <h3 className="text-sm font-extrabold text-slate-200 uppercase tracking-wider">
-                          {sub.name}
-                        </h3>
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#0B63C5]" />
-                      </div>
-                    ))}
-
-                    {/* Dynamically aligned item rows */}
-                    {Array.from({ length: maxItemsCount }).map((_, iIdx) => (
-                      <React.Fragment key={`row-${iIdx}`}>
-                        {block.subCategories.map((sub, sIdx) => {
-                          const item = sub.items[iIdx];
-                          const isLastRow = iIdx === maxItemsCount - 1;
-                          
-                          return (
-                            <div 
-                              key={`cell-${sIdx}-${iIdx}`} 
-                              className={`bg-slate-900 px-5 py-2.5 border-x border-slate-800 flex items-start gap-2.5 leading-relaxed
-                                ${isLastRow ? 'rounded-b-2xl border-b pb-6' : ''}
-                              `}
-                            >
-                              {item ? (
-                                <>
-                                  <CheckCircle2 className="w-4 h-4 text-[#0B63C5] shrink-0 mt-0.5" />
-                                  <span className="text-xs font-medium text-slate-300">{item}</span>
-                                </>
-                              ) : (
-                                // Preserves layout alignment structure if text lengths or lists deviate
-                                <div className="h-4" /> 
-                              )}
-                            </div>
-                          );
-                        })}
-                      </React.Fragment>
-                    ))}
-                  </div>
-
-                  {/* Mobile & Tablet Fallback View */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-6 items-stretch">
-                    {block.subCategories.map((sub, sIdx) => (
-                      <div 
-                        key={sIdx} 
-                        className="flex flex-col justify-between h-full space-y-4 bg-slate-900 p-5 sm:p-6 rounded-2xl border border-slate-800"
-                      >
-                        <div className="space-y-3.5">
-                          <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                            <h3 className="text-sm font-extrabold text-slate-200 uppercase tracking-wider">
-                              {sub.name}
-                            </h3>
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#0B63C5]" />
-                          </div>
-                          <ul className="space-y-2.5">
-                            {sub.items.map((item, iIdx) => (
-                              <li key={iIdx} className="text-xs font-medium text-slate-400 flex items-start gap-2.5 leading-relaxed">
-                                <CheckCircle2 className="w-4 h-4 text-[#0B63C5] shrink-0 mt-0.5" />
-                                <span className="text-slate-300">{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
+                {/* Read More Action Button */}
+                <div className="p-6 pt-4">
+                  <Link 
+                    href={service.slug}
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-500 rounded-xl transition-all duration-300 shadow-md group-hover:shadow-blue-500/20"
+                  >
+                    <span>Read Full Details</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </div>
               </article>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
-        {/* Target Industries */}
-        <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white text-center space-y-8 relative overflow-hidden border border-white/5 shadow-xl">
-          <div className="max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#FF6A00]">Sector Coverage</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-slate-100">Industries We Serve Across UAE</h2>
-            <p className="text-xs sm:text-sm text-slate-400">Tailored maintenance and contracting capabilities adapted for diverse operational requirements.</p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            {industries.map((ind, idx) => (
-              <span 
-                key={idx} 
-                className="px-4 py-2 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-xs sm:text-sm font-semibold rounded-xl text-slate-300 transition-colors"
-              >
-                {ind}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Call To Action Banner */}
-        <div className="bg-gradient-to-r from-[#0B63C5] to-[#084B96] rounded-3xl p-8 sm:p-10 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
+        {/* CTA Banner with added top spacing (mt-8 sm:mt-12) to create clear distance from cards */}
+        <div className="mt-8 sm:mt-12 bg-gradient-to-r from-[#0B63C5] to-[#084B96] rounded-3xl p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center sm:text-left">
-            <h3 className="text-xl sm:text-2xl font-black">Need a Customized Service or AMC Proposal?</h3>
-            <p className="text-xs sm:text-sm text-blue-100">Schedule a consultation with our Abu Dhabi engineering team today.</p>
+            <h3 className="text-xl font-black">Need a Customized Technical Proposal?</h3>
+            <p className="text-xs sm:text-sm text-blue-100">Consult with our Abu Dhabi engineering division today.</p>
           </div>
           <a 
             href="tel:+971528976025" 
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#0B63C5] font-extrabold rounded-2xl hover:bg-blue-50 transition-colors shrink-0 text-sm shadow-md"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#0B63C5] font-extrabold rounded-xl hover:bg-blue-50 transition-colors shrink-0 text-xs uppercase tracking-wider"
           >
             <PhoneCall className="w-4 h-4" /> Connect With Us
           </a>

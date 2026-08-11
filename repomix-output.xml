@@ -41,6 +41,29 @@ The content is organized as follows:
 
 <directory_structure>
 public/
+  client-logos/
+    abhudhabi-global-market.webp
+    almaharat.webp
+    alnasser.webp
+    baker-hughes.webp
+    Capital-Engineering-Consultancy.webp
+    capital-motion.webp
+    design-ifinity.webp
+    ega.webp
+    emichem.webp
+    enoc.webp
+    envirocon.webp
+    gems-education.webp
+    gulf-rock.webp
+    hilton-hotels.webp
+    kezad-group.webp
+    mubadala.webp
+    rotana-hotels.webp
+    rta.webp
+    seha.webp
+    sharja-book-authority.webp
+    trojan.webp
+    winner-holistic-consultant.webp
   annual-maintenance-contract.webp
   annual-maintenance-contracts.webp
   bg-video-1.mp4
@@ -56,7 +79,6 @@ public/
   mep-engineering-services-2.webp
   mep-engineering-services.webp
   nithin-gopinathan-nair.jpeg
-  Picflow Images Aug 1 (1).zip
   sector-ecosystem-1.jpg
   sector-ecosystem-2.jpg
   sector-ecosystem-3.jpg
@@ -70,6 +92,8 @@ src/
     api/
       contact/
         route.ts
+    clients/
+      page.tsx
     contact/
       page.tsx
     services/
@@ -79,7 +103,6 @@ src/
     layout.tsx
     page.tsx
   components/
-    Contact.tsx
     FloatingActionButtons.tsx
     Footer.tsx
     Header.tsx
@@ -96,293 +119,6 @@ tsconfig.json
 
 <files>
 This section contains the contents of the repository's files.
-
-<file path="src/app/api/contact/route.ts">
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-
-export async function POST(request: Request) {
-  try {
-    const body = await request.json();
-    const { name, phone, email, message } = body;
-
-    // Strict input structural sanity assertions
-    if (!name || !phone || !email) {
-      return NextResponse.json(
-        { error: 'Required fields are missing validation hooks.' },
-        { status: 400 }
-      );
-    }
-
-    // Configure the transport layer engine using production credentials
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: process.env.SMTP_PORT === '465', 
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
-    const mailDataPayload = {
-      from: `"${name}" <${process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_RECEIVER_EMAIL || 'sales1@emraldace.com',
-      replyTo: email,
-      subject: `🚨 [ENGINEERING LEAD DISPATCH] - New Web Request from ${name}`,
-      text: `
-        Emrald Ace Engineering Lead Capture Log:
-        ------------------------------------------
-        Client Name: ${name}
-        Contact Number: ${phone}
-        Email Address: ${email}
-        
-        Requirement Specification Notes:
-        ${message || 'No additional scope specifications attached.'}
-      `,
-      html: `
-        <div style="font-family: sans-serif; padding: 24px; color: #1e293b; max-width: 600px; border: 1px solid #e2e8f0; border-radius: 12px;">
-          <h2 style="color: #0b63c5; margin-top: 0;">Emrald Ace Engineering Lead Dispatch Log</h2>
-          <hr style="border: 0; border-top: 1px solid #e2e8f0; margin-bottom: 20px;" />
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-            <tr>
-              <td style="padding: 8px 0; font-weight: bold; width: 30%;">Client Name:</td>
-              <td style="padding: 8px 0; color: #475569;">${name}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 0; font-weight: bold;">Contact Number:</td>
-              <td style="padding: 8px 0; color: #475569;">${phone}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 0; font-weight: bold;">Email Address:</td>
-              <td style="padding: 8px 0; color: #475569;"><a href="mailto:${email}" style="color: #0b63c5; text-decoration: none;">${email}</a></td>
-            </tr>
-          </table>
-          <h4 style="color: #0b63c5; margin-bottom: 8px; margin-top: 24px;">Requirement Specification Notes:</h4>
-          <div style="background-color: #f8fafc; padding: 16px; border-radius: 8px; font-size: 13px; color: #334155; border: 1px solid #f1f5f9; white-space: pre-wrap;">${message || 'No additional scope specifications attached.'}</div>
-        </div>
-      `,
-    };
-
-    // Execute standard transmission execution block
-    await transporter.sendMail(mailDataPayload);
-
-    return NextResponse.json({ success: true }, { status: 200 });
-
-  } catch (error: any) {
-    console.error('SMTP core transport failure encountered:', error);
-    return NextResponse.json(
-      { error: 'Internal SMTP server communication routing breakdown.' },
-      { status: 500 }
-    );
-  }
-}
-</file>
-
-<file path="src/components/Contact.tsx">
-'use client';
-
-import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, CheckCircle2, AlertTriangle, Loader2 } from 'lucide-react';
-
-export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [responseMsg, setResponseMsg] = useState('');
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleFormSubmission = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-      if (res.ok) {
-        setStatus('success');
-        setFormData({ name: '', phone: '', email: '', message: '' });
-      } else {
-        setStatus('error');
-        setResponseMsg(data.error || 'Transmission failed.');
-      }
-    } catch (err) {
-      setStatus('error');
-      setResponseMsg('Server transmission exception occurred.');
-    }
-  };
-
-  return (
-    <section aria-labelledby="contact-heading" className="py-20 md:py-28 bg-[#fafafa] font-normal containment-strict content-visibility-auto text-slate-800">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        
-        {/* Symmetric Dual-Column Core Split Layout Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-stretch">
-          
-          {/* Left Column: Title Context + Vertically Centered Contact Informational Channels */}
-          <div className="grid-cols-1 lg:col-span-5 flex flex-col justify-center h-full">
-            
-            {/* Integrated Top Header Context (Shifted to Left Container) */}
-            <div className="space-y-4 mb-12 lg:mb-16 text-center lg:text-left">
-              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#0b63c5] block">
-                Get In Touch
-              </span>
-              <h2 id="contact-heading" className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-slate-950 leading-tight">
-                Connect With <span className="font-semibold text-[#0b63c5]">Technical Experts</span>
-              </h2>
-              <p className="text-sm text-slate-500 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                Have a project query or technical scope requirement? Reach out and our engineering team will assist you shortly.
-              </p>
-            </div>
-
-            {/* Ultra-Minimal Stacked Info Blocks */}
-            <address className="space-y-10 not-italic flex flex-col items-center lg:items-stretch">
-              
-              {/* Field 1: Phone */}
-              <div className="group flex items-start space-x-5 w-full max-w-sm lg:max-w-none">
-                <div className="p-3 bg-white text-[#0b63c5] rounded-full border-2 border-slate-200 shadow-xs transition-colors group-hover:bg-[#0b63c5] group-hover:text-white duration-300 shrink-0">
-                  <Phone size={18} strokeWidth={1.5} />
-                </div>
-                <div className="space-y-1 pt-0.5">
-                  <span className="block text-[10px] uppercase font-bold text-slate-400 tracking-[0.15em] leading-none">Call Regional Office</span>
-                  <a href="tel:+971528976025" className="block text-base font-light text-slate-600 hover:text-[#0b63c5] transition-colors duration-200 tracking-wide">
-                    +971 52 897 6025
-                  </a>
-                </div>
-              </div>
-
-              {/* Field 2: Email */}
-              <div className="group flex items-start space-x-5 w-full max-w-sm lg:max-w-none">
-                <div className="p-3 bg-white text-[#0b63c5] rounded-full border-2 border-slate-200 shadow-xs transition-colors group-hover:bg-[#0b63c5] group-hover:text-white duration-300 shrink-0">
-                  <Mail size={18} strokeWidth={1.5} />
-                </div>
-                <div className="space-y-1 pt-0.5">
-                  <span className="block text-[10px] uppercase font-bold text-slate-400 tracking-[0.15em] leading-none">Email Global Sales</span>
-                  <a href="mailto:sales1@emraldace.com" className="block text-base font-light text-slate-600 hover:text-[#0b63c5] transition-colors duration-200 tracking-wide">
-                    sales1@emraldace.com
-                  </a>
-                </div>
-              </div>
-
-              {/* Field 3: Location */}
-              <div className="group flex items-start space-x-5 w-full max-w-sm lg:max-w-none">
-                <div className="p-3 bg-white text-slate-900 rounded-full border-2 border-slate-200 shadow-xs transition-colors group-hover:bg-slate-900 group-hover:text-white duration-300 shrink-0">
-                  <MapPin size={18} strokeWidth={1.5} />
-                </div>
-                <div className="space-y-1 pt-0.5">
-                  <span className="block text-[10px] uppercase font-bold text-slate-400 tracking-[0.15em] leading-none">Headquarters Coordinates</span>
-                  <p className="text-sm font-light text-slate-500 leading-relaxed max-w-xs">
-                    Musaffah M-14, Abu Dhabi, United Arab Emirates
-                  </p>
-                </div>
-              </div>
-              
-            </address>
-          </div>
-
-          {/* Right Column: Premium Stylish Dynamic Form Container with Refined Edge Weight */}
-          <div className="grid-cols-1 lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border-2 border-slate-300 shadow-sm">
-            <h3 className="text-xl font-medium tracking-tight text-slate-900 mb-8">
-              Submit Request / Requirement Scope
-            </h3>
-            
-            <form onSubmit={handleFormSubmission} className="space-y-6 text-sm">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-xs font-medium text-slate-600 block">
-                    Full Name <span className="text-[#0b63c5]">*</span>
-                  </label>
-                  <input 
-                    id="name" type="text" required name="name" value={formData.name} onChange={handleInputChange}
-                    className="w-full bg-slate-50 border-2 border-slate-300/80 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-800 transition-all outline-hidden duration-200"
-                    placeholder="Drew Feig"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="phone" className="text-xs font-medium text-slate-600 block">
-                    Contact Number <span className="text-[#0b63c5]">*</span>
-                  </label>
-                  <input 
-                    id="phone" type="tel" required name="phone" value={formData.phone} onChange={handleInputChange}
-                    className="w-full bg-slate-50 border-2 border-slate-300/80 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-800 transition-all outline-hidden duration-200"
-                    placeholder="+971 52 897 6025"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-xs font-medium text-slate-600 block">
-                  Email Address <span className="text-[#0b63c5]">*</span>
-                </label>
-                <input 
-                  id="email" type="email" required name="email" value={formData.email} onChange={handleInputChange}
-                  className="w-full bg-slate-50 border-2 border-slate-300/80 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-800 transition-all outline-hidden duration-200"
-                  placeholder="operations@client.com"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-xs font-medium text-slate-600 block">
-                  Message Scope <span className="text-slate-400 font-light">(Optional)</span>
-                </label>
-                <textarea 
-                  id="message" name="message" rows={4} value={formData.message} onChange={handleInputChange}
-                  className="w-full bg-slate-50 border-2 border-slate-300/80 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-800 transition-all outline-hidden resize-none duration-200"
-                  placeholder="Outline modern application details, scope, or facility specifications..."
-                />
-              </div>
-
-              {status === 'success' && (
-                <div role="alert" className="p-4 bg-emerald-50/60 border border-emerald-100 rounded-xl text-emerald-800 flex items-center space-x-3 text-xs sm:text-sm font-normal">
-                  <CheckCircle2 size={18} className="shrink-0 text-emerald-600" />
-                  <span>Your message has been safely delivered to our secure configuration workspace desk.</span>
-                </div>
-              )}
-
-              {status === 'error' && (
-                <div role="alert" className="p-4 bg-rose-50/60 border border-rose-100 rounded-xl text-rose-800 flex items-center space-x-3 text-xs sm:text-sm font-normal">
-                  <AlertTriangle size={18} className="shrink-0 text-rose-600" />
-                  <span>{responseMsg}</span>
-                </div>
-              )}
-
-              {/* Concise Symmetrical Action Button */}
-              <div className="pt-2 flex justify-start">
-                <button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  className="w-full sm:w-auto px-8 py-3.5 bg-[#0b63c5] text-white font-medium rounded-xl hover:bg-slate-950 transition-all duration-300 shadow-xs hover:shadow-md flex items-center justify-center space-x-2.5 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed select-none text-xs uppercase tracking-wider will-change-transform"
-                >
-                  {status === 'loading' ? (
-                    <>
-                      <Loader2 size={16} className="animate-spin" />
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Send Message</span>
-                      <Send size={13} />
-                    </>
-                  )}
-                </button>
-              </div>
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
-}
-</file>
 
 <file path=".gitignore">
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
@@ -547,6 +283,88 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 }
 </file>
 
+<file path="src/app/api/contact/route.ts">
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+    const { name, phone, email, message } = body;
+
+    // Strict input structural sanity assertions
+    if (!name || !phone || !email) {
+      return NextResponse.json(
+        { error: 'Required fields are missing validation hooks.' },
+        { status: 400 }
+      );
+    }
+
+    // Configure the transport layer engine using production credentials
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: parseInt(process.env.SMTP_PORT || '587'),
+      secure: process.env.SMTP_PORT === '465', 
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
+    const mailDataPayload = {
+      from: `"${name}" <${process.env.SMTP_USER}>`,
+      to: process.env.CONTACT_RECEIVER_EMAIL || 'sales1@emraldace.com',
+      replyTo: email,
+      subject: `🚨 New Contact Form Enquiry from Emrald Ace website`,
+      text: `
+        New Contact Form Enquiry from Emrald Ace website:
+        ------------------------------------------
+        Client Name: ${name}
+        Contact Number: ${phone}
+        Email Address: ${email}
+        
+        Requirement Specification Message:
+        ${message || 'No additional scope specifications attached.'}
+      `,
+      html: `
+        <div style="font-family: sans-serif; padding: 24px; color: #1e293b; max-width: 600px; border: 1px solid #e2e8f0; border-radius: 12px;">
+          <h2 style="color: #0b63c5; margin-top: 0;">New Contact Form Enquiry from Emrald Ace website</h2>
+          <hr style="border: 0; border-top: 1px solid #e2e8f0; margin-bottom: 20px;" />
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; width: 30%;">Client Name:</td>
+              <td style="padding: 8px 0; color: #475569;">${name}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold;">Contact Number:</td>
+              <td style="padding: 8px 0; color: #475569;">${phone}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold;">Email Address:</td>
+              <td style="padding: 8px 0; color: #475569;"><a href="mailto:${email}" style="color: #0b63c5; text-decoration: none;">${email}</a></td>
+            </tr>
+          </table>
+          <h4 style="color: #0b63c5; margin-bottom: 8px; margin-top: 24px;">Requirement Specification Notes:</h4>
+          <div style="background-color: #f8fafc; padding: 16px; border-radius: 8px; font-size: 13px; color: #334155; border: 1px solid #f1f5f9; white-space: pre-wrap;">${message || 'No additional scope specifications attached.'}</div>
+        </div>
+      `,
+    };
+
+    // Execute standard transmission execution block
+    await transporter.sendMail(mailDataPayload);
+
+    return NextResponse.json({ success: true }, { status: 200 });
+
+  } catch (error: any) {
+    console.error('SMTP core transport failure encountered:', error);
+    return NextResponse.json(
+      { error: 'Internal SMTP server communication routing breakdown.' },
+      { status: 500 }
+    );
+  }
+}
+</file>
+
 <file path="next.config.ts">
 import type { NextConfig } from "next";
 
@@ -566,585 +384,139 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 </file>
 
-<file path="src/app/about/page.tsx">
-import React from 'react';
-import Image from 'next/image';
-import { Compass, Layers, ShieldCheck, Award, Building, HardHat, CheckCircle2 } from 'lucide-react';
+<file path="src/app/clients/page.tsx">
+import React from "react";
+import Image from "next/image";
+import { Metadata } from "next";
 
-export default function About() {
+// Highly SEO Optimized Metadata (Search Engine & AI Engine friendly)
+export const metadata: Metadata = {
+  title: "Our Trusted Clients & Strategic Partners | Emrald Ace",
+  description: "Discover the industry leaders, government entities, and global brands that trust Emrald Ace for elite general contracting and electromechanical solutions across the region.",
+  keywords: ["Emrald Ace clients", "strategic partners", "Abu Dhabi Global Market", "Mubadala", "EGA", "ENOC", "engineering partners"],
+  openGraph: {
+    title: "Our Trusted Clients & Strategic Partners | Emrald Ace",
+    description: "Explore the network of industry giants partnering with Emrald Ace.",
+    type: "website",
+  },
+};
+
+// 100% complete dataset preserved exactly as requested
+const clients = [
+  { name: "Abu Dhabi Global Market", url: "/client-logos/abhudhabi-global-market.webp" },
+  { name: "Almaharat", url: "/client-logos/almaharat.webp" },
+  { name: "Al Nasser", url: "/client-logos/alnasser.webp" },
+  { name: "Baker Hughes", url: "/client-logos/baker-hughes.webp" },
+  { name: "Capital Engineering Consultancy", url: "/client-logos/Capital-Engineering-Consultancy.webp" },
+  { name: "Capital Motion", url: "/client-logos/capital-motion.webp" },
+  { name: "Design Infinity", url: "/client-logos/design-ifinity.webp" },
+  { name: "EGA", url: "/client-logos/ega.webp" },
+  { name: "Emichem", url: "/client-logos/emichem.webp" },
+  { name: "ENOC", url: "/client-logos/enoc.webp" },
+  { name: "Envirocon", url: "/client-logos/envirocon.webp" },
+  { name: "GEMS Education", url: "/client-logos/gems-education.webp" },
+  { name: "Gulf Rock", url: "/client-logos/gulf-rock.webp" },
+  { name: "Hilton Hotels", url: "/client-logos/hilton-hotels.webp" },
+  { name: "KEZAD Group", url: "/client-logos/kezad-group.webp" },
+  { name: "Mubadala", url: "/client-logos/mubadala.webp" },
+  { name: "Rotana Hotels", url: "/client-logos/rotana-hotels.webp" },
+  { name: "RTA", url: "/client-logos/rta.webp" },
+  { name: "SEHA", url: "/client-logos/seha.webp" },
+  { name: "Sharjah Book Authority", url: "/client-logos/sharja-book-authority.webp" },
+  { name: "Trojan", url: "/client-logos/trojan.webp" },
+  { name: "Winner Holistic Consultant", url: "/client-logos/winner-holistic-consultant.webp" }
+];
+
+export default function ClientsPage() {
   return (
-    <div className="py-20 bg-white selection:bg-[#0B63C5]/20 selection:text-[#0B63C5]">
+    <main className="min-h-screen bg-[#030712] bg-gradient-to-b from-[#030712] via-[#071330] to-[#030712] text-white pt-44 md:pt-52 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden select-none">
       
-      {/* Dynamic SEO Split Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Text Content Grid */}
-          <div className="lg:col-span-7 space-y-6 text-left order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 bg-[#0B63C5]/5 border border-[#0B63C5]/10 px-3 py-1 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-[#0B63C5] animate-pulse"></span>
-              <span className="text-xs uppercase tracking-widest font-extrabold text-[#0B63C5]">Engineering & Facilities Management</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-none">
-              About <span className="text-[#0B63C5]">Emrald</span> <span className="text-[#FF6A00]">Ace</span>
-            </h1>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium max-w-2xl">
-              An industry-leading, ISO & ICV certified engineering and integrated facilities management contractor operating across the UAE. We deliver complete mechanical, electrical, plumbing, and general contracting solutions designed for maximum operational longevity.
-            </p>
-            
-            {/* Quick trust metrics */}
-            <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-3">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-bold text-slate-800">ISO Certified</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-bold text-slate-800">ICV Certified</span>
-              </div>
-              <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
-                <CheckCircle2 className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-bold text-slate-800">UAE Licensed</span>
-              </div>
-            </div>
-          </div>
+      {/* Structural Schema Markup for Search and AI Crawlers */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Emrald Ace - Clients and Partners",
+            "description": "List of elite strategic partners and clients associated with Emrald Ace.",
+            "brand": clients.map((c) => ({ "@type": "Brand", "name": c.name })),
+          }),
+        }}
+      />
 
-          {/* Right Logo Presentation Grid */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2">
-            <div className="relative w-full max-w-[320px] sm:max-w-[400px] aspect-square flex items-center justify-center p-6 bg-slate-50 border border-slate-100 rounded-3xl transition-transform duration-500 hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#0B63C5]/5 via-transparent to-[#FF6A00]/5 rounded-3xl pointer-events-none" />
-              <Image 
-                src="/logo.png" 
-                alt="Emrald Ace General Contracting & Electromechanical Logo"
-                width={360}
-                height={360}
-                priority
-                className="w-auto h-auto max-h-[85%] object-contain drop-shadow-sm select-none"
-              />
-            </div>
-          </div>
-
-        </div>
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto text-center mb-20 relative z-10">
+        {/* Ambient background glow using exact brand color */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#0b63c5]/15 rounded-full blur-3xl pointer-events-none" />
+        
+        {/* Brand Tag: Adjusted color to exact #0b63c5 and improved font size visibility */}
+        <p className="text-xs sm:text-sm font-bold tracking-widest text-[#0b63c5] uppercase mb-4 drop-shadow-sm">
+          Trusted by Industry Leaders
+        </p>
+        
+        {/* Adjusted tracking & padding to ensure letters never overlap or cut on any device width */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-normal text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-300 pb-3 mb-6">
+          Our Strategic Clients & Partners
+        </h1>
+        
+        {/* Enhanced text color to slate-300 for premium readability contrast against dark backgrounds */}
+        <p className="max-w-3xl mx-auto text-base sm:text-lg text-slate-300 font-normal leading-relaxed px-2">
+          We collaborate with global enterprises and government organizations to deliver elite electromechanical infrastructure across the region.
+        </p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Core Profile Corporate Metrics Block */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
-          <div className="p-6 text-center bg-slate-50 border border-slate-100 rounded-2xl">
-            <div className="text-3xl font-black text-[#0B63C5] mb-1">2014</div>
-            <div className="text-xs uppercase tracking-wider font-extrabold text-slate-500">Established</div>
-          </div>
-          <div className="p-6 text-center bg-slate-50 border border-slate-100 rounded-2xl">
-            <div className="text-3xl font-black text-[#0B63C5] mb-1">Abu Dhabi</div>
-            <div className="text-xs uppercase tracking-wider font-extrabold text-slate-500">Headquarters</div>
-          </div>
-          <div className="p-6 text-center bg-slate-50 border border-slate-100 rounded-2xl">
-            <div className="text-3xl font-black text-[#0B63C5] mb-1">22+</div>
-            <div className="text-xs uppercase tracking-wider font-extrabold text-slate-500">Projects Delivered</div>
-          </div>
-          <div className="p-6 text-center bg-slate-50 border border-slate-100 rounded-2xl">
-            <div className="text-3xl font-black text-[#0B63C5] mb-1">100%</div>
-            <div className="text-xs uppercase tracking-wider font-extrabold text-slate-500">UAE Business Coverage</div>
-          </div>
-        </div>
-
-        {/* Chairman's Section Block Template */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24 bg-slate-50 p-8 sm:p-12 rounded-2xl border border-slate-150">
-          <div className="lg:col-span-4 flex flex-col items-center text-center space-y-4">
-            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-[#0B63C5] shadow-lg">
-              <Image 
-                src="/nithin-gopinathan-nair.jpeg" 
-                alt="Nithin Gopinathan Nair Chairman"
-                fill
-                className="object-cover object-top"
-              />
-            </div>
-            <div>
-              <h3 className="text-lg font-black text-slate-950">Nithin Gopinathan Nair</h3>
-              <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Chairman Statement Lead</p>
-            </div>
-          </div>
-          <div className="lg:col-span-8 space-y-4">
-            <h4 className="text-xl font-bold text-slate-900">Chairman's Message: Building Lasting Partnerships Through Excellence</h4>
-            <p className="text-sm text-slate-600 leading-relaxed font-medium">
-              Welcome to Emrald Ace General Contracting & Electromechanical L.L.C., where engineering expertise meets operational excellence. Since our establishment, we have built our reputation by delivering reliable facility management, maintenance, and engineering solutions that create long-term value for our clients. Today, our organization has evolved into a trusted provider of Integrated Facility Management, Annual Maintenance Contracts, and Interior Fit-Out, supported by strong MEP Engineering and General Contracting capabilities across the UAE.
-            </p>
-            <p className="text-sm text-slate-600 leading-relaxed font-medium">
-              We understand that modern facilities demand more than routine maintenance—they require intelligent planning, technical expertise, proactive management, and a commitment to continuous improvement. Our experienced team works closely with clients to provide customized solutions that improve operational efficiency, extend asset life, and create safe, productive environments.
-            </p>
-          </div>
-        </div>
-
-        {/* Strategic Identity Parameters Row Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mb-20">
-          <div className="p-8 bg-[#0B63C5]/5 border border-[#0B63C5]/10 rounded-2xl space-y-4">
-            <div className="w-12 h-12 bg-[#0B63C5] rounded-xl flex items-center justify-center text-white">
-              <Compass className="w-6 h-6" />
-            </div>
-            <h3 className="text-xl font-bold text-slate-900">Our Vision</h3>
-            <p className="text-sm text-slate-600 leading-relaxed font-medium">
-              To become one of the UAE's most trusted providers of integrated facility management solutions by delivering excellence, innovation, sustainability, and customer satisfaction metrics.
-            </p>
-          </div>
-
-          <div className="p-8 bg-orange-50/50 border border-orange-100 rounded-2xl space-y-4">
-            <div className="w-12 h-12 bg-[#FF6A00] rounded-xl flex items-center justify-center text-white">
-              <Layers className="w-6 h-6" />
-            </div>
-            <h3 className="text-xl font-bold text-slate-900">Our Mission</h3>
-            <p className="text-sm text-slate-600 leading-relaxed font-medium">
-              To provide reliable, cost-effective, and innovative facility management solutions that maximize asset performance while creating safe, productive, and sustainable environments through engineering excellence and continuous improvement.
-            </p>
-          </div>
-        </div>
-
-        {/* Core Values Section Grid Add-on */}
-        <div className="pt-4 border-t border-slate-100">
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-            <h2 className="text-xs uppercase tracking-widest font-extrabold text-[#FF6A00]">Foundational Standards</h2>
-            <p className="text-2xl font-black text-slate-900 tracking-tight">Our Core Corporate Values</p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl flex gap-4 items-start">
-              <div className="p-2 bg-white rounded-lg border border-slate-200 text-[#0B63C5] flex-shrink-0">
-                <Award className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="font-bold text-slate-900 mb-1">Excellence</h4>
-                <p className="text-xs text-slate-600 leading-relaxed font-medium">Delivering unmatched quality without technical or operational compromises.</p>
-              </div>
-            </div>
-            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl flex gap-4 items-start">
-              <div className="p-2 bg-white rounded-lg border border-slate-200 text-[#0B63C5] flex-shrink-0">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="font-bold text-slate-900 mb-1">Safety First</h4>
-                <p className="text-xs text-slate-600 leading-relaxed font-medium">Proactively protecting personnel, physical properties, and the environment.</p>
-              </div>
-            </div>
-            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl flex gap-4 items-start">
-              <div className="p-2 bg-white rounded-lg border border-slate-200 text-[#0B63C5] flex-shrink-0">
-                <Building className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="font-bold text-slate-900 mb-1">Sustainability</h4>
-                <p className="text-xs text-slate-600 leading-relaxed font-medium">Creating enduring structural value through smart resource operations.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/app/services/page.tsx">
-import React from 'react';
-import { 
-  Building, 
-  Wrench, 
-  Paintbrush, 
-  Cpu, 
-  HardHat, 
-  CheckCircle2, 
-  ArrowUpRight, 
-  ShieldCheck, 
-  Clock, 
-  Layers, 
-  Sparkles,
-  PhoneCall
-} from 'lucide-react';
-
-export default function Services() {
-  const serviceBlocks = [
-    {
-      id: "ifm",
-      title: "Integrated Facility Management",
-      tagline: "Smarter Facilities. Better Performance.",
-      icon: <Building className="w-6 h-6 text-white" />,
-      bg: "from-[#0B63C5] to-[#084B96]",
-      accentColor: "text-[#0B63C5]",
-      image: "/integrated-facility-management-2.webp",
-      desc: "Our integrated model brings every essential service together under one accountable team, giving clients a single point of contact, faster response times, and measurable long-term value.",
-      subCategories: [
-        { 
-          name: "Hard Facility Management", 
-          items: [
-            "Mechanical Systems (HVAC, chillers, pumps, AHUs, FCUs)", 
-            "Electrical Systems (LV/MV, switchgear, UPS, generators)", 
-            "Plumbing & Water Systems", 
-            "HVAC Preventive Maintenance & Energy Efficiency", 
-            "Civil & Building Fabric Maintenance (masonry, painting, waterproofing)", 
-            "Fire & Life Safety Systems (alarms, suppression, testing)", 
-            "Building Management Systems / BMS Monitoring & Automation"
-          ] 
-        },
-        { 
-          name: "Soft Facility Management", 
-          items: [
-            "Housekeeping & Commercial Deep Cleaning", 
-            "High-Rise Glass & Façade Cleaning", 
-            "Landscaping & Grounds Maintenance", 
-            "Sustainable Waste Management & Recycling", 
-            "Pest Management & Control", 
-            "Concierge, Reception & Porter Services",
-            "Indoor Plant Care & Decorative Landscaping"
-          ] 
-        },
-        { 
-          name: "Specialized Facility Management", 
-          items: [
-            "Energy Audits & Optimization Management", 
-            "Asset Lifecycle & Condition Management", 
-            "Smart FM (CAFM, IoT Integration, Automation)", 
-            "24/7 Central Helpdesk & Emergency Response",
-            "EHS (Environment, Health & Safety) Audits",
-            "Disaster Recovery & Risk Mitigation Planning",
-            "Vendor & Subcontractor Quality Assurance"
-          ] 
-        }
-      ]
-    },
-    {
-      id: "amc",
-      title: "Annual Maintenance Contracts (AMC)",
-      tagline: "Protecting Your Assets Every Day.",
-      icon: <Wrench className="w-6 h-6 text-white" />,
-      bg: "from-[#FF6A00] to-[#E05D00]",
-      accentColor: "text-[#FF6A00]",
-      image: "annual-maintenance-contracts.webp",
-      desc: "We tailor every AMC to the specific needs of residential, commercial, or industrial facilities, combining planned servicing with rapid-response support.",
-      subCategories: [
-        { 
-          name: "What's Included", 
-          items: [
-            "Scheduled Preventive Maintenance Plans", 
-            "Corrective & Rapid Emergency Repairs", 
-            "Routine Equipment Audits & Inspections", 
-            "24/7 Dedicated Rapid Emergency Support", 
-            "Spare Parts Sourcing & Logistics", 
-            "Detailed Monthly Performance Reporting", 
-            "Dedicated On-Site Engineering Team", 
-            "Full Compliance & Regulatory Safety Audits"
-          ] 
-        },
-        { 
-          name: "Key Client Benefits", 
-          items: [
-            "Significantly Reduced Operational Downtime", 
-            "Lower Long-Term Asset Maintenance Costs", 
-            "Extended Life Expectancy of Capital Assets", 
-            "Predictable Annual Operational Budgeting", 
-            "Guaranteed Response Times with Strict SLAs", 
-            "Single Point of Operational Accountability",
-            "Improved Energy & Utility Cost Efficiency",
-            "Complete Risk Assessment & Hazard Prevention"
-          ] 
-        },
-        { 
-          name: "Customization & Scope", 
-          items: [
-            "Comprehensive All-Inclusive Coverage Plans", 
-            "Non-Comprehensive Labor-Only Contracts", 
-            "Custom SLAs Tailored for Critical Assets", 
-            "Multi-Site Portfolio Aggregation Discounts", 
-            "Real-time Digital Maintenance Tracking Portal",
-            "Seasonal Systems Preparedness Inspections",
-            "Dedicated Account Manager & Technical Support",
-            "Tailored Payment & Lifecycle Schedules"
-          ] 
-        }
-      ]
-    },
-    {
-      id: "interior",
-      title: "Interior Fit-Out Solutions",
-      tagline: "Creating Inspiring & Functional Workspaces.",
-      icon: <Paintbrush className="w-6 h-6 text-white" />,
-      bg: "from-slate-900 to-slate-800",
-      accentColor: "text-slate-900",
-      image: "/interior-fit-out-solutions-2.webp",
-      desc: "We design and deliver modern, aesthetically pleasing interior environments tailored to business and residential specifications across the UAE.",
-      subCategories: [
-        { 
-          name: "Commercial & Retail Fit-Out", 
-          items: [
-            "Corporate Office Space Planning & Fit-Out", 
-            "Retail Outlets & Showroom Interior Fit-Outs", 
-            "Commercial Building Interior Renovations", 
-            "High-End Residential Interiors & Upgrades", 
-            "Turnkey Project Design & Delivery Services",
-            "Space Optimization & Ergonomic Layouts"
-          ] 
-        },
-        { 
-          name: "Architectural & Joinery Works", 
-          items: [
-            "Custom Partitions & False Ceiling Systems", 
-            "Flooring Solutions (Epoxy, Vinyl, Carpet, Tile)", 
-            "Professional Wall Painting & Decorative Finishes", 
-            "Bespoke Wood Joinery & Carpentry Works", 
-            "Decorative Architectural Metal & Glass Features",
-            "Custom Acoustic Wall Panelling & Treatments"
-          ] 
-        },
-        { 
-          name: "Glazing & Aluminum Systems", 
-          items: [
-            "Glass Partitions & Acoustic Frameless Walls", 
-            "Aluminum Door & Window Fabrication", 
-            "Custom Glass Fixtures & Shopfronts", 
-            "Acoustic Ceiling Panels & Thermal Insulation",
-            "Automated Sliding & Sensor Glass Entrances",
-            "Fire-Rated Glass & Barrier Systems"
-          ] 
-        }
-      ]
-    },
-    {
-      id: "mep",
-      title: "MEP Engineering Services",
-      tagline: "Integrated Mechanical, Electrical & Plumbing Excellence.",
-      icon: <Cpu className="w-6 h-6 text-white" />,
-      bg: "from-[#0B63C5] to-[#084B96]",
-      accentColor: "text-[#0B63C5]",
-      image: "/mep-engineering-services-2.webp",
-      desc: "Comprehensive engineering execution providing sustainable, high-efficiency MEP design, installation, and lifecycle support.",
-      subCategories: [
-        { 
-          name: "Mechanical & HVAC Systems", 
-          items: [
-            "Complete HVAC System Architecture Design", 
-            "Heavy Chiller, AHU & FCU Installations", 
-            "Industrial Ducting & Air Distribution Networks", 
-            "Ventilation & Exhaust Extraction Systems",
-            "Indoor Air Quality (IAQ) Testing & Filtration",
-            "Precision Cooling for Server Rooms & Data Hubs"
-          ] 
-        },
-        { 
-          name: "Electrical & LV Systems", 
-          items: [
-            "High & Low Voltage Electrical Installations", 
-            "Switchgear & Power Distribution Networks", 
-            "ELV Systems & Building Automation Integration", 
-            "Energy-Efficient Commercial Lighting Systems",
-            "Emergency Generator & UPS Backup Installation",
-            "Lightning Protection & Grounding Networks"
-          ] 
-        },
-        { 
-          name: "Plumbing, Fire & Commissioning", 
-          items: [
-            "Plumbing, Drainage & Water Supply Networks", 
-            "Fire Fighting & Automatic Sprinkler Systems", 
-            "Fire Alarm Systems & Emergency Life Safety", 
-            "Full Lifecycle Testing, Balancing & Commissioning",
-            "Water Treatment, Filtration & Purification Systems",
-            "Central Heating & Hot Water Plant Services"
-          ] 
-        }
-      ]
-    },
-    {
-      id: "civil",
-      title: "General Contracting & Specialized Civil",
-      tagline: "Comprehensive Civil Construction & Smart Automation Solutions.",
-      icon: <HardHat className="w-6 h-6 text-white" />,
-      bg: "from-[#FF6A00] to-[#E05D00]",
-      accentColor: "text-[#FF6A00]",
-      image: "/general-contracting&specialized-civil.webp",
-      desc: "Robust construction, structural restoration, and outdoor automation services designed for modern commercial and residential infrastructure.",
-      subCategories: [
-        { 
-          name: "Civil & Extension Focus", 
-          items: [
-            "Civil Construction & Structural Repairs", 
-            "Facility Extensions & Major Structural Modifications", 
-            "General Building Development & Refurbishment", 
-            "Architectural Planning & Design Delivery Support",
-            "Foundation Reinforcement & Concrete Restoration"
-          ] 
-        },
-        { 
-          name: "Smart Access & Automation", 
-          items: [
-            "Automated Parking Access Control Systems", 
-            "Remote Control Gates & Barrier Solutions", 
-            "High-Definition CCTV & Integrated Security Systems", 
-            "Smart Building IoT & Access Management",
-            "Biometric Access & Visitor Management Systems"
-          ] 
-        },
-        { 
-          name: "Specialized Outdoor & Surface Works", 
-          items: [
-            "Waterproofing & Structural Leak Remediation", 
-            "Industrial Epoxy & Protective Floor Coatings", 
-            "Artificial Turf Installation & Commercial Landscaping", 
-            "Hardscaping & Exterior Site Upgrades", 
-            "Interlocking Paving & Boundary Wall Finishes"
-          ] 
-        }
-      ]
-    }
-  ];
-
-  const industries = [
-    "Commercial Offices", "Residential Communities", "Healthcare", 
-    "Hotels & Hospitality", "Retail Centers", "Industrial Facilities", 
-    "Government Entities", "Warehouses", "Education Institutions"
-  ];
-
-  // SEO Schema Integration
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": serviceBlocks.map((block, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "Service",
-        "name": block.title,
-        "description": block.desc
-      }
-    }))
-  };
-
-  return (
-    <section className="py-12 sm:py-20 bg-slate-50 relative overflow-hidden font-sans" id="services">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        
-        {/* Main Section Header */}
-        <header className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs uppercase tracking-widest font-black text-[#0B63C5] bg-blue-50/80 rounded-full border border-blue-100">
-            <Sparkles className="w-3.5 h-3.5" /> Our Service Matrix
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            Integrated Engineering & Facility Solutions
-          </h1>
-          <p className="text-base sm:text-lg text-slate-600 font-medium">
-            Reliable maintenance, skilled engineering, and dependable service – unified under one accountable provider.
-          </p>
-        </header>
-
-        {/* Services List */}
-        <div className="space-y-12">
-          {serviceBlocks.map((block) => (
-            <article 
-              key={block.id} 
-              className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
+      {/* Modern Responsive Grid Section */}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+          {clients.map((client, index) => (
+            <div
+              key={index}
+              className="group relative flex items-center justify-center p-5 bg-white rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.04] border border-slate-100/5 aspect-[4/3] overflow-hidden"
             >
-              {/* Header Banner */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-                <div className={`p-8 lg:p-10 bg-gradient-to-r ${block.bg} text-white lg:col-span-7 flex flex-col justify-center space-y-4 relative overflow-hidden`}>
-                  <div className="flex items-center gap-3">
-                    <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-inner shrink-0">
-                      {block.icon}
-                    </div>
-                    <div>
-                      <span className="text-xs uppercase font-extrabold tracking-wider text-white/80">{block.tagline}</span>
-                      <h2 className="text-2xl sm:text-4xl font-black tracking-tight leading-tight">{block.title}</h2>
-                    </div>
-                  </div>
-                  <p className="text-sm sm:text-base text-slate-100 opacity-95 font-normal leading-relaxed">
-                    {block.desc}
-                  </p>
-                </div>
-
-                {/* Service Header Image */}
-                <div className="lg:col-span-5 relative min-h-[220px] lg:min-h-full overflow-hidden bg-slate-200">
-                  <img 
-                    src={block.image} 
-                    alt={block.title} 
-                    loading="lazy" 
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent lg:hidden" />
-                </div>
+              {/* Dynamic brand-color backdrop glow on item hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-white opacity-100 transition-opacity duration-300 group-hover:from-blue-50/20 group-hover:to-white" />
+              
+              {/* Image Container with high quality contrast optimizations */}
+              <div className="relative w-full h-full transform transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src={client.url}
+                  alt={`${client.name} logo - Official Client of Emrald Ace`}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                  className="object-contain p-2 filter contrast-[1.04] drop-shadow-sm transition-all duration-300"
+                  priority={index < 10}
+                  loading={index >= 10 ? "lazy" : undefined}
+                />
               </div>
 
-              {/* Grid of Subcategories - Fixed Equal Column Heights */}
-              <div className="p-6 sm:p-8 bg-white">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-                  {block.subCategories.map((sub, sIdx) => (
-                    <div 
-                      key={sIdx} 
-                      className="flex flex-col justify-between h-full space-y-4 bg-slate-50/70 p-5 sm:p-6 rounded-2xl border border-slate-100 hover:bg-white hover:border-slate-200 hover:shadow-md transition-all duration-200"
-                    >
-                      <div className="space-y-3.5">
-                        <div className="flex items-center justify-between border-b border-slate-200/70 pb-3">
-                          <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wider">
-                            {sub.name}
-                          </h3>
-                          <span className="w-2.5 h-2.5 rounded-full bg-[#0B63C5]" />
-                        </div>
-                        <ul className="space-y-2.5">
-                          {sub.items.map((item, iIdx) => (
-                            <li key={iIdx} className="text-xs font-medium text-slate-600 flex items-start gap-2.5 leading-relaxed">
-                              <CheckCircle2 className="w-4 h-4 text-[#0B63C5] shrink-0 mt-0.5" />
-                              <span className="text-slate-700">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Small Bottom Accent Badge */}
-                      <div className="pt-3 border-t border-slate-200/40 flex items-center justify-between text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                        <span>Professional SLA</span>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-[#0B63C5]" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </article>
+              {/* Accessible Blind/AI Reader Title Tag */}
+              <span className="sr-only">{client.name}</span>
+            </div>
           ))}
         </div>
+      </div>
 
-        {/* Target Industries */}
-        <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white text-center space-y-8 relative overflow-hidden shadow-xl">
-          <div className="max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#FF6A00]">Sector Coverage</span>
-            <h2 className="text-2xl sm:text-4xl font-black">Industries We Serve Across UAE</h2>
-            <p className="text-xs sm:text-sm text-slate-400">Tailored maintenance and contracting capabilities adapted for diverse operational requirements.</p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            {industries.map((ind, idx) => (
-              <span 
-                key={idx} 
-                className="px-4 py-2 bg-slate-800/80 hover:bg-slate-700 border border-slate-700/80 text-xs sm:text-sm font-semibold rounded-xl text-slate-200 transition-colors"
-              >
-                {ind}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Call To Action Banner */}
-        <div className="bg-gradient-to-r from-[#0B63C5] to-[#084B96] rounded-3xl p-8 sm:p-10 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
-          <div className="space-y-1 text-center sm:text-left">
-            <h3 className="text-xl sm:text-2xl font-black">Need a Customized Service or AMC Proposal?</h3>
-            <p className="text-xs sm:text-sm text-blue-100">Schedule a consultation with our Abu Dhabi engineering team today.</p>
-          </div>
-          <a 
-            href="tel:+971528976025" 
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#0B63C5] font-extrabold rounded-2xl hover:bg-blue-50 transition-colors shrink-0 text-sm shadow-md"
+      {/* Call to Action Banner */}
+      <div className="max-w-4xl mx-auto mt-24 text-center relative z-10">
+        <div className="p-8 rounded-2xl border border-[#0b63c5]/30 bg-gradient-to-r from-blue-950/40 via-[#071330] to-blue-950/40 backdrop-blur-md shadow-2xl">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white tracking-wide">
+            Ready to Build Your Next Landmark Project?
+          </h2>
+          <p className="text-sm sm:text-base text-slate-300 mb-8 max-w-xl mx-auto leading-relaxed">
+            Join our growing ecosystem of industry pioneers and experience engineering execution at its finest.
+          </p>
+          
+          {/* Action button customized with exactly #0b63c5 brand identity colors */}
+          <a
+            href="/contact"
+            className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white bg-[#0b63c5] hover:bg-[#0952a4] transition-all duration-300 rounded-lg shadow-lg shadow-[#0b63c5]/30 hover:shadow-[#0b63c5]/50 hover:-translate-y-0.5 tracking-wider uppercase"
           >
-            <PhoneCall className="w-4 h-4" /> Connect With Us
+            Partner With Us
           </a>
         </div>
-
       </div>
-    </section>
+    </main>
   );
 }
 </file>
@@ -1183,71 +555,6 @@ export default function RootLayout({
         <FloatingActionButtons /> {/* [!code ++] */}
       </body>
     </html>
-  );
-}
-</file>
-
-<file path="src/app/contact/page.tsx">
-import React from 'react';
-import Contact from '@/components/Contact'; // Update this path based on your real directory structural hierarchy
-
-// Server-level Metadata optimization for Search Engines & AI Search Scrapers (LLMs)
-export const metadata = {
-  title: 'Contact Our Technical Experts | Communications Gateway',
-  description: 'Connect via our secure technical dispatch engine loops. Reach our regional offices, global sales desks or base coordinates in Abu Dhabi.',
-  alternates: {
-    canonical: '/contact',
-  },
-};
-
-export default function ContactPage() {
-  return (
-    <main className="min-h-screen bg-slate-50 scroll-smooth antialiased">
-      
-      {/* ==========================================
-          ULTRA-MODERN SEO & AI OPTIMIZED HERO TITLE
-         ========================================== */}
-      <section 
-        className="relative overflow-hidden pt-12 pb-6 md:pt-16 md:pb-8 lg:pt-20 lg:pb-10 bg-gradient-to-b from-white to-slate-50/50"
-        aria-labelledby="contact-hero-heading"
-      >
-        {/* Subtle high-performance background decorative grid to prevent visual jumping */}
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-60" />
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          
-          {/* AI Scraper & SEO Optimized Context Tag */}
-          <span className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-700 ring-1 ring-inset ring-blue-700/10 mb-4 transform transition-all duration-300 hover:bg-blue-100">
-            Global Engineering Hub
-          </span>
-
-          {/* H1 Main Heading: Reduced thickness (font-bold) & size (max text-5xl) with clean tracking/leading to fix clipping */}
-          <h1 
-            id="contact-hero-heading"
-            className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight"
-          >
-            Let’s Build the Future{' '}
-            <span className="inline-block md:block mt-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 bg-clip-text text-transparent">
-              Of Infrastructure Together.
-            </span>
-          </h1>
-
-          {/* Subtitle/Description: Balanced margins and clear text hierarchy */}
-          <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed font-normal">
-            Partner with our premier electromechanical and contracting divisions to bring scale, precision, and world-class engineering execution to your upcoming complex developments.
-          </p>
-
-        </div>
-      </section>
-
-      {/* ==========================================
-          EXISTING CONTACT INTERFACE SECTION
-         ========================================== */}
-      <div className="relative z-10 transform-gpu transition-transform duration-500 ease-out">
-        <Contact />
-      </div>
-
-    </main>
   );
 }
 </file>
@@ -1621,6 +928,636 @@ export default QuickContactButtons;
 }
 </file>
 
+<file path="src/app/about/page.tsx">
+import React from 'react';
+import Image from 'next/image';
+import { Compass, Layers, ShieldCheck, Award, Building, HardHat, CheckCircle2 } from 'lucide-react';
+
+export default function About() {
+  return (
+    <div className="pt-36 pb-20 sm:pt-40 bg-slate-950 selection:bg-[#0B63C5]/20 selection:text-[#0B63C5]">
+      
+      {/* Dynamic SEO Split Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Text Content Grid */}
+          <div className="lg:col-span-7 space-y-6 text-left order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 bg-[#0B63C5]/5 border border-[#0B63C5]/10 px-3 py-1 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-[#0B63C5] animate-pulse"></span>
+              <span className="text-xs uppercase tracking-widest font-extrabold text-[#0B63C5]">Engineering & Facilities Management</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-none">
+              About <span className="text-[#0B63C5]">Emrald</span> <span className="text-[#FF6A00]">Ace</span>
+            </h1>
+            <p className="text-base sm:text-lg text-slate-400 leading-relaxed font-medium max-w-2xl">
+              An industry-leading, ISO & ICV certified engineering and integrated facilities management contractor operating across the UAE. We deliver complete mechanical, electrical, plumbing, and general contracting solutions designed for maximum operational longevity.
+            </p>
+            
+            {/* Quick trust metrics */}
+            <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-3">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
+                <span className="text-xs sm:text-sm font-bold text-slate-200">ISO Certified</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
+                <span className="text-xs sm:text-sm font-bold text-slate-200">ICV Certified</span>
+              </div>
+              <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
+                <CheckCircle2 className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
+                <span className="text-xs sm:text-sm font-bold text-slate-200">UAE Licensed</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Logo Presentation Grid */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2">
+            <div className="relative w-full max-w-[320px] sm:max-w-[400px] aspect-square flex items-center justify-center p-6 bg-slate-900/60 border border-white/5 rounded-3xl transition-transform duration-500 hover:scale-[1.02]">
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#0B63C5]/5 via-transparent to-[#FF6A00]/5 rounded-3xl pointer-events-none" />
+              <Image 
+                src="/logo.png" 
+                alt="Emrald Ace General Contracting & Electromechanical Logo"
+                width={360}
+                height={360}
+                priority
+                className="w-auto h-auto max-h-[85%] object-contain drop-shadow-sm select-none"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Core Profile Corporate Metrics Block */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
+          <div className="p-6 text-center bg-slate-900 border border-slate-800 rounded-2xl">
+            <div className="text-3xl font-black text-[#0B63C5] mb-1">2014</div>
+            <div className="text-xs uppercase tracking-wider font-extrabold text-slate-400">Established</div>
+          </div>
+          <div className="p-6 text-center bg-slate-900 border border-slate-800 rounded-2xl">
+            <div className="text-3xl font-black text-[#0B63C5] mb-1">Abu Dhabi</div>
+            <div className="text-xs uppercase tracking-wider font-extrabold text-slate-400">Headquarters</div>
+          </div>
+          <div className="p-6 text-center bg-slate-900 border border-slate-800 rounded-2xl">
+            <div className="text-3xl font-black text-[#0B63C5] mb-1">22+</div>
+            <div className="text-xs uppercase tracking-wider font-extrabold text-slate-400">Projects Delivered</div>
+          </div>
+          <div className="p-6 text-center bg-slate-900 border border-slate-800 rounded-2xl">
+            <div className="text-3xl font-black text-[#0B63C5] mb-1">100%</div>
+            <div className="text-xs uppercase tracking-wider font-extrabold text-slate-400">UAE Business Coverage</div>
+          </div>
+        </div>
+
+        {/* Chairman's Section Block Template */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24 bg-slate-900 p-8 sm:p-12 rounded-2xl border border-white/5">
+          <div className="lg:col-span-4 flex flex-col items-center text-center space-y-4">
+            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-[#0B63C5] shadow-lg">
+              <Image 
+                src="/nithin-gopinathan-nair.jpeg" 
+                alt="Nithin Gopinathan Nair Chairman"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+            <div>
+              <h3 className="text-lg font-black text-slate-100">Nithin Gopinathan Nair</h3>
+              <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Chairman Statement Lead</p>
+            </div>
+          </div>
+          <div className="lg:col-span-8 space-y-4">
+            <h4 className="text-xl font-bold text-white">Chairman's Message: Building Lasting Partnerships Through Excellence</h4>
+            <p className="text-sm text-slate-400 leading-relaxed font-medium">
+              Welcome to Emrald Ace General Contracting & Electromechanical L.L.C., where engineering expertise meets operational excellence. Since our establishment, we have built our reputation by delivering reliable facility management, maintenance, and engineering solutions that create long-term value for our clients. Today, our organization has evolved into a trusted provider of Integrated Facility Management, Annual Maintenance Contracts, and Interior Fit-Out, supported by strong MEP Engineering and General Contracting capabilities across the UAE.
+            </p>
+            <p className="text-sm text-slate-400 leading-relaxed font-medium">
+              We understand that modern facilities demand more than routine maintenance—they require intelligent planning, technical expertise, proactive management, and a commitment to continuous improvement. Our experienced team works closely with clients to provide customized solutions that improve operational efficiency, extend asset life, and create safe, productive environments.
+            </p>
+          </div>
+        </div>
+
+        {/* Strategic Identity Parameters Row Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mb-20">
+          <div className="p-8 bg-[#0B63C5]/5 border border-[#0B63C5]/10 rounded-2xl space-y-4">
+            <div className="w-12 h-12 bg-[#0B63C5] rounded-xl flex items-center justify-center text-white">
+              <Compass className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold text-white">Our Vision</h3>
+            <p className="text-sm text-slate-400 leading-relaxed font-medium">
+              To become one of the UAE's most trusted providers of integrated facility management solutions by delivering excellence, innovation, sustainability, and customer satisfaction metrics.
+            </p>
+          </div>
+
+          <div className="p-8 bg-orange-950/20 border border-orange-900/30 rounded-2xl space-y-4">
+            <div className="w-12 h-12 bg-[#FF6A00] rounded-xl flex items-center justify-center text-white">
+              <Layers className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold text-white">Our Mission</h3>
+            <p className="text-sm text-slate-400 leading-relaxed font-medium">
+              To provide reliable, cost-effective, and innovative facility management solutions that maximize asset performance while creating safe, productive, and sustainable environments through engineering excellence and continuous improvement.
+            </p>
+          </div>
+        </div>
+
+        {/* Core Values Section Grid Add-on */}
+        <div className="pt-4 border-t border-slate-800">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+            <h2 className="text-xs uppercase tracking-widest font-extrabold text-[#FF6A00]">Foundational Standards</h2>
+            <p className="text-2xl font-black text-white tracking-tight">Our Core Corporate Values</p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-6 bg-slate-900 border border-white/5 rounded-2xl flex gap-4 items-start">
+              <div className="p-2 bg-slate-950 rounded-lg border border-slate-800 text-[#0B63C5] flex-shrink-0">
+                <Award className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-white mb-1">Excellence</h4>
+                <p className="text-xs text-slate-400 leading-relaxed font-medium">Delivering unmatched quality without technical or operational compromises.</p>
+              </div>
+            </div>
+            <div className="p-6 bg-slate-900 border border-white/5 rounded-2xl flex gap-4 items-start">
+              <div className="p-2 bg-slate-950 rounded-lg border border-slate-800 text-[#0B63C5] flex-shrink-0">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-white mb-1">Safety First</h4>
+                <p className="text-xs text-slate-400 leading-relaxed font-medium">Proactively protecting personnel, physical properties, and the environment.</p>
+              </div>
+            </div>
+            <div className="p-6 bg-slate-900 border border-white/5 rounded-2xl flex gap-4 items-start">
+              <div className="p-2 bg-slate-950 rounded-lg border border-slate-800 text-[#0B63C5] flex-shrink-0">
+                <Building className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-white mb-1">Sustainability</h4>
+                <p className="text-xs text-slate-400 leading-relaxed font-medium">Creating enduring structural value through smart resource operations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/app/services/page.tsx">
+import React from 'react';
+import { 
+  Building, 
+  Wrench, 
+  Paintbrush, 
+  Cpu, 
+  HardHat, 
+  CheckCircle2, 
+  ArrowUpRight, 
+  ShieldCheck, 
+  Clock, 
+  Layers, 
+  Sparkles,
+  PhoneCall
+} from 'lucide-react';
+
+export default function Services() {
+  const serviceBlocks = [
+    {
+      id: "ifm",
+      title: "Integrated Facility Management",
+      tagline: "Smarter Facilities. Better Performance.",
+      icon: <Building className="w-6 h-6 text-white" />,
+      bg: "from-[#0B63C5] to-[#084B96]",
+      accentColor: "text-[#0B63C5]",
+      image: "/integrated-facility-management-2.webp",
+      desc: "Our integrated model brings every essential service together under one accountable team, giving clients a single point of contact, faster response times, and measurable long-term value.",
+      subCategories: [
+        { 
+          name: "Hard Facility Management", 
+          items: [
+            "Mechanical Systems (HVAC, chillers, pumps, AHUs, FCUs)", 
+            "Electrical Systems (LV/MV, switchgear, UPS, generators)", 
+            "Plumbing & Water Systems", 
+            "HVAC Preventive Maintenance & Energy Efficiency", 
+            "Civil & Building Fabric Maintenance (masonry, painting, waterproofing)", 
+            "Fire & Life Safety Systems (alarms, suppression, testing)", 
+            "Building Management Systems / BMS Monitoring & Automation"
+          ] 
+        },
+        { 
+          name: "Soft Facility Management", 
+          items: [
+            "Housekeeping & Commercial Deep Cleaning", 
+            "High-Rise Glass & Façade Cleaning", 
+            "Landscaping & Grounds Maintenance", 
+            "Sustainable Waste Management & Recycling", 
+            "Pest Management & Control", 
+            "Concierge, Reception & Porter Services",
+            "Indoor Plant Care & Decorative Landscaping"
+          ] 
+        },
+        { 
+          name: "Specialized Facility Management", 
+          items: [
+            "Energy Audits & Optimization Management", 
+            "Asset Lifecycle & Condition Management", 
+            "Smart FM (CAFM, IoT Integration, Automation)", 
+            "24/7 Central Helpdesk & Emergency Response",
+            "EHS (Environment, Health & Safety) Audits",
+            "Disaster Recovery & Risk Mitigation Planning",
+            "Vendor & Subcontractor Quality Assurance"
+          ] 
+        }
+      ]
+    },
+    {
+      id: "amc",
+      title: "Annual Maintenance Contracts (AMC)",
+      tagline: "Protecting Your Assets Every Day.",
+      icon: <Wrench className="w-6 h-6 text-white" />,
+      bg: "from-[#FF6A00] to-[#E05D00]",
+      accentColor: "text-[#FF6A00]",
+      image: "annual-maintenance-contracts.webp",
+      desc: "We tailor every AMC to the specific needs of residential, commercial, or industrial facilities, combining planned servicing with rapid-response support.",
+      subCategories: [
+        { 
+          name: "What's Included", 
+          items: [
+            "Scheduled Preventive Maintenance Plans", 
+            "Corrective & Rapid Emergency Repairs", 
+            "Routine Equipment Audits & Inspections", 
+            "24/7 Dedicated Rapid Emergency Support", 
+            "Spare Parts Sourcing & Logistics", 
+            "Detailed Monthly Performance Reporting", 
+            "Dedicated On-Site Engineering Team", 
+            "Full Compliance & Regulatory Safety Audits"
+          ] 
+        },
+        { 
+          name: "Key Client Benefits", 
+          items: [
+            "Significantly Reduced Operational Downtime", 
+            "Lower Long-Term Asset Maintenance Costs", 
+            "Extended Life Expectancy of Capital Assets", 
+            "Predictable Annual Operational Budgeting", 
+            "Guaranteed Response Times with Strict SLAs", 
+            "Single Point of Operational Accountability",
+            "Improved Energy & Utility Cost Efficiency",
+            "Complete Risk Assessment & Hazard Prevention"
+          ] 
+        },
+        { 
+          name: "Customization & Scope", 
+          items: [
+            "Comprehensive All-Inclusive Coverage Plans", 
+            "Non-Comprehensive Labor-Only Contracts", 
+            "Custom SLAs Tailored for Critical Assets", 
+            "Multi-Site Portfolio Aggregation Discounts", 
+            "Real-time Digital Maintenance Tracking Portal",
+            "Seasonal Systems Preparedness Inspections",
+            "Dedicated Account Manager & Technical Support",
+            "Tailored Payment & Lifecycle Schedules"
+          ] 
+        }
+      ]
+    },
+    {
+      id: "interior",
+      title: "Interior Fit-Out Solutions",
+      tagline: "Creating Inspiring & Functional Workspaces.",
+      icon: <Paintbrush className="w-6 h-6 text-white" />,
+      bg: "from-slate-900 to-slate-850",
+      accentColor: "text-slate-400",
+      image: "/interior-fit-out-solutions-2.webp",
+      desc: "We design and deliver modern, aesthetically pleasing interior environments tailored to business and residential specifications across the UAE.",
+      subCategories: [
+        { 
+          name: "Commercial & Retail Fit-Out", 
+          items: [
+            "Corporate Office Space Planning & Fit-Out", 
+            "Retail Outlets & Showroom Interior Fit-Outs", 
+            "Commercial Building Interior Renovations", 
+            "High-End Residential Interiors & Upgrades", 
+            "Turnkey Project Design & Delivery Services",
+            "Space Optimization & Ergonomic Layouts"
+          ] 
+        },
+        { 
+          name: "Architectural & Joinery Works", 
+          items: [
+            "Custom Partitions & False Ceiling Systems", 
+            "Flooring Solutions (Epoxy, Vinyl, Carpet, Tile)", 
+            "Professional Wall Painting & Decorative Finishes", 
+            "Bespoke Wood Joinery & Carpentry Works", 
+            "Decorative Architectural Metal & Glass Features",
+            "Custom Acoustic Wall Panelling & Treatments"
+          ] 
+        },
+        { 
+          name: "Glazing & Aluminum Systems", 
+          items: [
+            "Glass Partitions & Acoustic Frameless Walls", 
+            "Aluminum Door & Window Fabrication", 
+            "Custom Glass Fixtures & Shopfronts", 
+            "Acoustic Ceiling Panels & Thermal Insulation",
+            "Automated Sliding & Sensor Glass Entrances",
+            "Fire-Rated Glass & Barrier Systems"
+          ] 
+        }
+      ]
+    },
+    {
+      id: "mep",
+      title: "MEP Engineering Services",
+      tagline: "Integrated Mechanical, Electrical & Plumbing Excellence.",
+      icon: <Cpu className="w-6 h-6 text-white" />,
+      bg: "from-[#0B63C5] to-[#084B96]",
+      accentColor: "text-[#0B63C5]",
+      image: "/mep-engineering-services-2.webp",
+      desc: "Comprehensive engineering execution providing sustainable, high-efficiency MEP design, installation, and lifecycle support.",
+      subCategories: [
+        { 
+          name: "Mechanical & HVAC Systems", 
+          items: [
+            "Complete HVAC System Architecture Design", 
+            "Heavy Chiller, AHU & FCU Installations", 
+            "Industrial Ducting & Air Distribution Networks", 
+            "Ventilation & Exhaust Extraction Systems",
+            "Indoor Air Quality (IAQ) Testing & Filtration",
+            "Precision Cooling for Server Rooms & Data Hubs"
+          ] 
+        },
+        { 
+          name: "Electrical & LV Systems", 
+          items: [
+            "High & Low Voltage Electrical Installations", 
+            "Switchgear & Power Distribution Networks", 
+            "ELV Systems & Building Automation Integration", 
+            "Energy-Efficient Commercial Lighting Systems",
+            "Emergency Generator & UPS Backup Installation",
+            "Lightning Protection & Grounding Networks"
+          ] 
+        },
+        { 
+          name: "Plumbing, Fire & Commissioning", 
+          items: [
+            "Plumbing, Drainage & Water Supply Networks", 
+            "Fire Fighting & Automatic Sprinkler Systems", 
+            "Fire Alarm Systems & Emergency Life Safety", 
+            "Full Lifecycle Testing, Balancing & Commissioning",
+            "Water Treatment, Filtration & Purification Systems",
+            "Central Heating & Hot Water Plant Services"
+          ] 
+        }
+      ]
+    },
+    {
+      id: "civil",
+      title: "General Contracting & Specialized Civil",
+      tagline: "Comprehensive Civil Construction & Smart Automation Solutions.",
+      icon: <HardHat className="w-6 h-6 text-white" />,
+      bg: "from-[#FF6A00] to-[#E05D00]",
+      accentColor: "text-[#FF6A00]",
+      image: "/general-contracting&specialized-civil.webp",
+      desc: "Robust construction, structural restoration, and outdoor automation services designed for modern commercial and residential infrastructure.",
+      subCategories: [
+        { 
+          name: "Civil & Extension Focus", 
+          items: [
+            "Civil Construction & Structural Repairs", 
+            "Facility Extensions & Major Structural Modifications", 
+            "General Building Development & Refurbishment", 
+            "Architectural Planning & Design Delivery Support",
+            "Foundation Reinforcement & Concrete Restoration"
+          ] 
+        },
+        { 
+          name: "Smart Access & Automation", 
+          items: [
+            "Automated Parking Access Control Systems", 
+            "Remote Control Gates & Barrier Solutions", 
+            "High-Definition CCTV & Integrated Security Systems", 
+            "Smart Building IoT & Access Management",
+            "Biometric Access & Visitor Management Systems"
+          ] 
+        },
+        { 
+          name: "Specialized Outdoor & Surface Works", 
+          items: [
+            "Waterproofing & Structural Leak Remediation", 
+            "Industrial Epoxy & Protective Floor Coatings", 
+            "Artificial Turf Installation & Commercial Landscaping", 
+            "Hardscaping & Exterior Site Upgrades", 
+            "Interlocking Paving & Boundary Wall Finishes"
+          ] 
+        }
+      ]
+    }
+  ];
+
+  const industries = [
+    "Commercial Offices", "Residential Communities", "Healthcare", 
+    "Hotels & Hospitality", "Retail Centers", "Industrial Facilities", 
+    "Government Entities", "Warehouses", "Education Institutions"
+  ];
+
+  // SEO Schema Integration
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": serviceBlocks.map((block, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": block.title,
+        "description": block.desc
+      }
+    }))
+  };
+
+  return (
+    <section className="pt-28 pb-12 sm:pt-32 sm:pb-14 bg-slate-950 relative overflow-hidden font-sans" id="services">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        
+        {/* Main Section Header */}
+        <header className="text-center max-w-3xl mx-auto space-y-4">
+          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs uppercase tracking-widest font-black text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+            <Sparkles className="w-3.5 h-3.5 text-blue-400" /> Our Service Matrix
+          </span>
+          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+            Integrated Engineering & Facility Solutions
+          </h1>
+          <p className="text-base sm:text-lg text-slate-400 font-medium">
+            Reliable maintenance, skilled engineering, and dependable service – unified under one accountable provider.
+          </p>
+        </header>
+
+        {/* Services List */}
+        <div className="space-y-12">
+          {serviceBlocks.map((block) => {
+            // Find the maximum number of items in any subcategory to build the balanced rows
+            const maxItemsCount = Math.max(...block.subCategories.map(s => s.items.length));
+
+            return (
+              <article 
+                key={block.id} 
+                className="bg-slate-900 rounded-3xl border border-white/5 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              >
+                {/* Header Banner */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+                  <div className={`p-8 lg:p-10 bg-gradient-to-r ${block.bg} text-white lg:col-span-7 flex flex-col justify-center space-y-4 relative overflow-hidden`}>
+                    <div className="flex items-center gap-3">
+                      <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-inner shrink-0">
+                        {block.icon}
+                      </div>
+                      <div>
+                        <span className="text-xs uppercase font-extrabold tracking-wider text-white/80">{block.tagline}</span>
+                        <h2 className="text-2xl sm:text-4xl font-black tracking-tight leading-tight">{block.title}</h2>
+                      </div>
+                    </div>
+                    <p className="text-sm sm:text-base text-slate-100 opacity-95 font-normal leading-relaxed">
+                      {block.desc}
+                    </p>
+                  </div>
+
+                  {/* Service Header Image */}
+                  <div className="lg:col-span-5 relative min-h-[220px] lg:min-h-full overflow-hidden bg-slate-850">
+                    <img 
+                      src={block.image} 
+                      alt={block.title} 
+                      loading="lazy" 
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent lg:hidden" />
+                  </div>
+                </div>
+
+                {/* Grid of Subcategories - Synchronized Row Alignment */}
+                <div className="p-6 sm:p-8 bg-slate-900/60">
+                  
+                  {/* Desktop view: Columns are linked row-by-row so everything stays uniformly level */}
+                  <div className="hidden lg:grid grid-cols-3 gap-x-6">
+                    {/* Headers Row */}
+                    {block.subCategories.map((sub, sIdx) => (
+                      <div 
+                        key={`h-${sIdx}`} 
+                        className="bg-slate-900 p-5 rounded-t-2xl border-t border-x border-slate-800 flex items-center justify-between pb-4"
+                      >
+                        <h3 className="text-sm font-extrabold text-slate-200 uppercase tracking-wider">
+                          {sub.name}
+                        </h3>
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#0B63C5]" />
+                      </div>
+                    ))}
+
+                    {/* Dynamically aligned item rows */}
+                    {Array.from({ length: maxItemsCount }).map((_, iIdx) => (
+                      <React.Fragment key={`row-${iIdx}`}>
+                        {block.subCategories.map((sub, sIdx) => {
+                          const item = sub.items[iIdx];
+                          const isLastRow = iIdx === maxItemsCount - 1;
+                          
+                          return (
+                            <div 
+                              key={`cell-${sIdx}-${iIdx}`} 
+                              className={`bg-slate-900 px-5 py-2.5 border-x border-slate-800 flex items-start gap-2.5 leading-relaxed
+                                ${isLastRow ? 'rounded-b-2xl border-b pb-6' : ''}
+                              `}
+                            >
+                              {item ? (
+                                <>
+                                  <CheckCircle2 className="w-4 h-4 text-[#0B63C5] shrink-0 mt-0.5" />
+                                  <span className="text-xs font-medium text-slate-300">{item}</span>
+                                </>
+                              ) : (
+                                // Preserves layout alignment structure if text lengths or lists deviate
+                                <div className="h-4" /> 
+                              )}
+                            </div>
+                          );
+                        })}
+                      </React.Fragment>
+                    ))}
+                  </div>
+
+                  {/* Mobile & Tablet Fallback View */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-6 items-stretch">
+                    {block.subCategories.map((sub, sIdx) => (
+                      <div 
+                        key={sIdx} 
+                        className="flex flex-col justify-between h-full space-y-4 bg-slate-900 p-5 sm:p-6 rounded-2xl border border-slate-800"
+                      >
+                        <div className="space-y-3.5">
+                          <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                            <h3 className="text-sm font-extrabold text-slate-200 uppercase tracking-wider">
+                              {sub.name}
+                            </h3>
+                            <span className="w-2.5 h-2.5 rounded-full bg-[#0B63C5]" />
+                          </div>
+                          <ul className="space-y-2.5">
+                            {sub.items.map((item, iIdx) => (
+                              <li key={iIdx} className="text-xs font-medium text-slate-400 flex items-start gap-2.5 leading-relaxed">
+                                <CheckCircle2 className="w-4 h-4 text-[#0B63C5] shrink-0 mt-0.5" />
+                                <span className="text-slate-300">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        {/* Target Industries */}
+        <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white text-center space-y-8 relative overflow-hidden border border-white/5 shadow-xl">
+          <div className="max-w-2xl mx-auto space-y-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#FF6A00]">Sector Coverage</span>
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-100">Industries We Serve Across UAE</h2>
+            <p className="text-xs sm:text-sm text-slate-400">Tailored maintenance and contracting capabilities adapted for diverse operational requirements.</p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+            {industries.map((ind, idx) => (
+              <span 
+                key={idx} 
+                className="px-4 py-2 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-xs sm:text-sm font-semibold rounded-xl text-slate-300 transition-colors"
+              >
+                {ind}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Call To Action Banner */}
+        <div className="bg-gradient-to-r from-[#0B63C5] to-[#084B96] rounded-3xl p-8 sm:p-10 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
+          <div className="space-y-1 text-center sm:text-left">
+            <h3 className="text-xl sm:text-2xl font-black">Need a Customized Service or AMC Proposal?</h3>
+            <p className="text-xs sm:text-sm text-blue-100">Schedule a consultation with our Abu Dhabi engineering team today.</p>
+          </div>
+          <a 
+            href="tel:+971528976025" 
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#0B63C5] font-extrabold rounded-2xl hover:bg-blue-50 transition-colors shrink-0 text-sm shadow-md"
+          >
+            <PhoneCall className="w-4 h-4" /> Connect With Us
+          </a>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+</file>
+
 <file path="src/components/Footer.tsx">
 import React from 'react';
 import Image from 'next/image';
@@ -1741,6 +1678,270 @@ export default function Footer() {
 }
 </file>
 
+<file path="src/app/contact/page.tsx">
+'use client';
+
+import React, { useState } from 'react';
+import { Phone, Mail, MapPin, Send, CheckCircle2, AlertTriangle, Loader2 } from 'lucide-react';
+
+// NOTE: Next.js App Router demands metadata to be in a server component. 
+// Since this is a combined client file ('use client'), ensure you export this metadata 
+// from a separate layout.tsx or a parent server page if strict build errors occur, 
+// or leverage it directly here if using alternative architectures.
+export const pageMetadata = {
+  title: 'Contact Our Technical Experts | Communications Gateway',
+  description: 'Connect via our secure technical dispatch engine loops. Reach our regional offices, global sales desks or base coordinates in Abu Dhabi.',
+  alternates: {
+    canonical: '/contact',
+  },
+};
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [responseMsg, setResponseMsg] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFormSubmission = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        setStatus('success');
+        setFormData({ name: '', phone: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+        setResponseMsg(data.error || 'Transmission failed.');
+      }
+    } catch (err) {
+      setStatus('error');
+      setResponseMsg('Server transmission exception occurred.');
+    }
+  };
+
+  return (
+    <main className="min-h-screen bg-slate-950 scroll-smooth antialiased text-slate-200">
+      
+      {/* ==========================================
+          ULTRA-MODERN SEO & AI OPTIMIZED HERO TITLE
+         ========================================== */}
+      {/* Increased padding-top (pt-32 md:pt-40 lg:pt-44) to resolve header overlap/closeness */}
+      <section 
+        className="relative overflow-hidden pt-32 pb-8 md:pt-40 md:pb-12 lg:pt-44 lg:pb-16 bg-slate-950"
+        aria-labelledby="contact-hero-heading"
+      >
+        {/* Continuous high-performance background decorative grid pattern */}
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#334155_1px,transparent_1px),linear-gradient(to_bottom,#334155_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
+
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 text-center">
+          
+          {/* AI Scraper & SEO Optimized Context Tag */}
+          <span className="inline-flex items-center rounded-full bg-blue-950/50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-400 ring-1 ring-inset ring-blue-500/20 mb-6 transform transition-all duration-300 hover:bg-blue-900/50">
+            Global Engineering Hub
+          </span>
+
+          {/* H1 Main Heading */}
+          <h1 
+            id="contact-hero-heading"
+            className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight"
+          >
+            Let’s Build the Future{' '}
+            <span className="inline-block md:block mt-2 bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-300 bg-clip-text text-transparent">
+              Of Infrastructure Together.
+            </span>
+          </h1>
+
+          {/* Subtitle/Description */}
+          <p className="mx-auto mt-6 max-w-2xl text-sm sm:text-base md:text-lg text-slate-400 leading-relaxed font-light">
+            Partner with our premier electromechanical and contracting divisions to bring scale, precision, and world-class engineering execution to your upcoming complex developments.
+          </p>
+
+        </div>
+      </section>
+
+      {/* ==========================================
+          EXISTING CONTACT INTERFACE SECTION
+         ========================================== */}
+      <section 
+        aria-labelledby="contact-heading" 
+        className="py-12 md:py-16 bg-slate-950 font-normal containment-layout content-visibility-auto"
+      >
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          
+          {/* Symmetric Dual-Column Core Split Layout Container */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-stretch">
+            
+            {/* Left Column: Title Context + Vertically Centered Contact Informational Channels */}
+            <div className="grid-cols-1 lg:col-span-5 flex flex-col justify-center h-full">
+              
+              {/* Integrated Top Header Context */}
+              <div className="space-y-4 mb-12 lg:mb-16 text-center lg:text-left">
+                <span className="text-xs uppercase tracking-[0.2em] font-bold text-blue-400 block">
+                  Get In Touch
+                </span>
+                <h2 id="contact-heading" className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-white leading-tight">
+                  Connect With <span className="font-semibold text-blue-400">Technical Experts</span>
+                </h2>
+                <p className="text-sm text-slate-400 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                  Have a project query or technical scope requirement? Reach out and our engineering team will assist you shortly.
+                </p>
+              </div>
+
+              {/* Ultra-Minimal Stacked Info Blocks */}
+              <address className="space-y-10 not-italic flex flex-col items-center lg:items-stretch">
+                
+                {/* Field 1: Phone */}
+                <div className="group flex items-start space-x-5 w-full max-w-sm lg:max-w-none">
+                  <div className="p-3 bg-slate-900/60 text-blue-400 rounded-full border border-white/5 shadow-xs transition-colors group-hover:bg-[#0b63c5] group-hover:text-white duration-300 shrink-0">
+                    <Phone size={18} strokeWidth={1.5} />
+                  </div>
+                  <div className="space-y-1 pt-0.5">
+                    <span className="block text-[10px] uppercase font-bold text-slate-400 tracking-[0.15em] leading-none">Call Regional Office</span>
+                    <a href="tel:+971528976025" className="block text-base font-light text-slate-300 hover:text-blue-400 transition-colors duration-200 tracking-wide">
+                      +971 52 897 6025
+                    </a>
+                  </div>
+                </div>
+
+                {/* Field 2: Email */}
+                <div className="group flex items-start space-x-5 w-full max-w-sm lg:max-w-none">
+                  <div className="p-3 bg-slate-900/60 text-blue-400 rounded-full border border-white/5 shadow-xs transition-colors group-hover:bg-[#0b63c5] group-hover:text-white duration-300 shrink-0">
+                    <Mail size={18} strokeWidth={1.5} />
+                  </div>
+                  <div className="space-y-1 pt-0.5">
+                    <span className="block text-[10px] uppercase font-bold text-slate-400 tracking-[0.15em] leading-none">Email Global Sales</span>
+                    <a href="mailto:sales1@emraldace.com" className="block text-base font-light text-slate-300 hover:text-blue-400 transition-colors duration-200 tracking-wide">
+                      sales1@emraldace.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* Field 3: Location */}
+                <div className="group flex items-start space-x-5 w-full max-w-sm lg:max-w-none">
+                  <div className="p-3 bg-slate-900/60 text-slate-100 rounded-full border border-white/5 shadow-xs transition-colors group-hover:bg-slate-900 group-hover:text-white duration-300 shrink-0">
+                    <MapPin size={18} strokeWidth={1.5} />
+                  </div>
+                  <div className="space-y-1 pt-0.5">
+                    <span className="block text-[10px] uppercase font-bold text-slate-400 tracking-[0.15em] leading-none">Headquarters Coordinates</span>
+                    <p className="text-sm font-light text-slate-400 leading-relaxed max-w-xs">
+                      Musaffah M-14, Abu Dhabi, United Arab Emirates
+                    </p>
+                  </div>
+                </div>
+                
+              </address>
+            </div>
+
+            {/* Right Column: Premium Form Block */}
+            <div className="grid-cols-1 lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border-2 border-slate-300 shadow-sm transition-all duration-300">
+              <h3 className="text-xl font-semibold tracking-tight text-[#0b63c5] mb-8">
+                Submit Request 
+              </h3>
+              
+              <form onSubmit={handleFormSubmission} className="space-y-6 text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-sm font-semibold text-slate-700 block mb-1">
+                      Full Name <span className="text-[#0b63c5]">*</span>
+                    </label>
+                    <input 
+                      id="name" type="text" required name="name" value={formData.name} onChange={handleInputChange}
+                      className="w-full bg-slate-50 border-2 border-slate-300/80 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-800 transition-all outline-hidden duration-200"
+                      placeholder="Drew Feig"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="text-sm font-semibold text-slate-700 block mb-1">
+                      Contact Number <span className="text-[#0b63c5]">*</span>
+                    </label>
+                    <input 
+                      id="phone" type="tel" required name="phone" value={formData.phone} onChange={handleInputChange}
+                      className="w-full bg-slate-50 border-2 border-slate-300/80 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-800 transition-all outline-hidden duration-200"
+                      placeholder="+971 52 897 6025"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-semibold text-slate-700 block mb-1">
+                    Email Address <span className="text-[#0b63c5]">*</span>
+                  </label>
+                  <input 
+                    id="email" type="email" required name="email" value={formData.email} onChange={handleInputChange}
+                    className="w-full bg-slate-50 border-2 border-slate-300/80 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-800 transition-all outline-hidden duration-200"
+                    placeholder="operations@client.com"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-semibold text-slate-700 block mb-1">
+                    Message <span className="text-slate-500 font-normal text-xs ml-1">(Optional)</span>
+                  </label>
+                  <textarea 
+                    id="message" name="message" rows={4} value={formData.message} onChange={handleInputChange}
+                    className="w-full bg-slate-50 border-2 border-slate-300/80 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-800 transition-all outline-hidden resize-none duration-200"
+                    placeholder="Outline modern application details, scope, or facility specifications..."
+                  />
+                </div>
+
+                {status === 'success' && (
+                  <div role="alert" className="p-4 bg-emerald-50/60 border border-emerald-100 rounded-xl text-emerald-800 flex items-center space-x-3 text-xs sm:text-sm font-normal">
+                    <CheckCircle2 size={18} className="shrink-0 text-emerald-600" />
+                    <span>Your message has been safely delivered to our secure configuration workspace desk.</span>
+                  </div>
+                )}
+
+                {status === 'error' && (
+                  <div role="alert" className="p-4 bg-rose-50/60 border border-rose-100 rounded-xl text-rose-800 flex items-center space-x-3 text-xs sm:text-sm font-normal">
+                    <AlertTriangle size={18} className="shrink-0 text-rose-600" />
+                    <span>{responseMsg}</span>
+                  </div>
+                )}
+
+                {/* Symmetrical Action Button */}
+                <div className="pt-2 flex justify-start">
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="w-full sm:w-auto px-8 py-3.5 bg-[#0b63c5] text-white font-medium rounded-xl hover:bg-slate-950 transition-all duration-300 shadow-xs hover:shadow-md flex items-center justify-center space-x-2.5 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed select-none text-xs uppercase tracking-wider will-change-transform"
+                  >
+                    {status === 'loading' ? (
+                      <>
+                        <Loader2 size={16} className="animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Send Message</span>
+                        <Send size={13} />
+                      </>
+                    )}
+                  </button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+  );
+}
+</file>
+
 <file path="src/components/Header.tsx">
 'use client';
 
@@ -1755,7 +1956,8 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  const isHome = pathname === '/';
+  // Force the home page behavior for all paths uniformly
+  const isHome = true;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -1797,7 +1999,7 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-50 w-full h-14 md:h-16 transition-all duration-300 ease-in-out antialiased ${
           isTransparent
             ? 'bg-transparent border-b border-transparent shadow-none'
-            : 'bg-white/95 backdrop-blur-md border-b border-[#0b63c5] shadow-xs'
+            : 'bg-slate-950/70 backdrop-blur-md border-b border-white/20 shadow-xs'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
@@ -1815,14 +2017,10 @@ export default function Header() {
               />
             </div>
             <div className="flex flex-col">
-              <span className={`text-sm md:text-base font-black tracking-tight leading-none transition-colors duration-300 ${
-                isTransparent ? 'text-white' : 'text-[#0b63c5]'
-              }`}>
+              <span className="text-sm md:text-base font-black tracking-tight leading-none transition-colors duration-300 text-white">
                 EMRALD ACE
               </span>
-              <span className={`text-[6.5px] md:text-[7.5px] uppercase tracking-widest font-semibold mt-0.5 md:mt-1 block max-w-[190px] sm:max-w-none transition-colors duration-300 ${
-                isTransparent ? 'text-slate-300' : 'text-slate-500'
-              }`}>
+              <span className="text-[6.5px] md:text-[7.5px] uppercase tracking-widest font-semibold mt-0.5 md:mt-1 block max-w-[190px] sm:max-w-none transition-colors duration-300 text-slate-400">
                 General Contracting & Electromechanical
               </span>
             </div>
@@ -1839,7 +2037,7 @@ export default function Header() {
                   <Link 
                     key={link.name}
                     href={link.href}
-                    className="inline-flex items-center justify-center bg-[#0b63c5] text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-900 hover:shadow-md hover:shadow-slate-950/10 transition-all duration-300 transform hover:-translate-y-0.5 group"
+                    className="inline-flex items-center justify-center bg-[#0b63c5] text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:shadow-md hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-0.5 group"
                   >
                     <span>Contact Us</span>
                     <ArrowUpRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -1853,13 +2051,13 @@ export default function Header() {
                   href={link.href}
                   className={`transition-colors py-1 relative text-[13.5px] font-semibold tracking-wide ${
                     isActive 
-                      ? isTransparent ? 'text-white' : 'text-[#0b63c5]' 
-                      : isTransparent ? 'text-slate-200 hover:text-white' : 'text-slate-600 hover:text-[#0b63c5]'
+                      ? 'text-blue-400' 
+                      : 'text-slate-200 hover:text-blue-400'
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute bottom-[-4px] left-0 w-full h-0.5 bg-[#FF6A00] rounded-full" />
+                    <span className="absolute bottom-[-4px] left-0 w-full h-0.5 bg-blue-400 rounded-full" />
                   )}
                 </Link>
               );
@@ -1869,11 +2067,7 @@ export default function Header() {
           {/* Enlarged Modern Mobile Interface Toggle Button */}
           <button 
             onClick={() => setIsOpen(true)} 
-            className={`md:hidden p-2 focus:outline-none transition-all rounded-xl active:scale-95 ${
-              isTransparent 
-                ? 'text-white bg-white/10 hover:bg-white/20' 
-                : 'text-[#0b63c5] bg-blue-50/50 hover:bg-blue-50'
-            }`}
+            className="md:hidden p-2 focus:outline-none transition-all rounded-xl active:scale-95 text-white bg-white/5 hover:bg-white/10"
             aria-label="Open navigation menu"
           >
             <Menu className="w-6 h-6 stroke-[2.25]" />
@@ -1889,19 +2083,19 @@ export default function Header() {
       >
         {/* Dark Backdrop Overlay */}
         <div 
-          className="absolute inset-0 bg-slate-900/40 backdrop-blur-xs"
+          className="absolute inset-0 bg-slate-950/60 backdrop-blur-xs"
           onClick={() => setIsOpen(false)}
         />
         
         {/* Right Flyout Panel Drawer */}
         <div 
-          className={`absolute top-0 right-0 h-full w-[280px] sm:w-[320px] bg-white shadow-2xl transition-transform duration-300 ease-out transform flex flex-col justify-between ${
+          className={`absolute top-0 right-0 h-full w-[280px] sm:w-[320px] bg-slate-950 border-l border-white/5 shadow-2xl transition-transform duration-300 ease-out transform flex flex-col justify-between ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
           {/* Drawer Top Header Wrapper */}
           <div>
-            <div className="flex items-center justify-between px-5 pt-4 pb-4 border-b border-slate-100">
+            <div className="flex items-center justify-between px-5 pt-4 pb-4 border-b border-white/5">
               {/* Brand Logo Placement on the Left */}
               <div className="relative w-8 h-8 flex items-center justify-center">
                 <Image 
@@ -1917,14 +2111,14 @@ export default function Header() {
               {/* Action Close Button Shifted Right */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 rounded-xl text-[#0b63c5] bg-blue-50/50 hover:bg-blue-50 transition-colors focus:outline-none"
+                className="p-2 rounded-xl text-white bg-white/5 hover:bg-white/10 transition-colors focus:outline-none"
                 aria-label="Close navigation menu"
               >
                 <X className="w-6 h-6 stroke-[2.25]" />
               </button>
             </div>
 
-            {/* Nav Links Stack (Includes Contact inside list for smooth mobile flows) */}
+            {/* Nav Links Stack */}
             <div className="p-4 space-y-1">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
@@ -1936,8 +2130,8 @@ export default function Header() {
                     onClick={() => setIsOpen(false)}
                     className={`block py-3 px-4 text-[15px] font-semibold rounded-xl transition-colors ${
                       isActive 
-                        ? 'bg-blue-50 text-[#0b63c5]' 
-                        : 'text-slate-700 hover:bg-slate-50 hover:text-[#0b63c5]'
+                        ? 'bg-white/10 text-blue-400' 
+                        : 'text-slate-200 hover:bg-white/5 hover:text-blue-400'
                     }`}
                   >
                     {link.name}
@@ -1950,7 +2144,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Dynamic Spacer (Matches responsive size seamlessly to eliminate cumulative layout shifts) */}
+      {/* Dynamic Spacer */}
       <div className={isTransparent ? 'h-0 hidden' : 'h-14 md:h-16 w-full'} aria-hidden="true" />
     </>
   );
@@ -2010,15 +2204,97 @@ export default function Home() {
     }
   ];
 
-  const clientLogos = [
-    { name: "Mubadala", url: "https://images.unsplash.com/photo-1516880711640-ef7db81be3e1?auto=format&fit=crop&w=240&q=80" },
-    { name: "GEMS Education", url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=240&q=80" },
-    { name: "Baker Hughes", url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=240&q=80" },
-    { name: "Hilton", url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=240&q=80" },
-    { name: "Emaar", url: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=240&q=80" },
-    { name: "Aldar Properties", url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=240&q=80" },
-    { name: "Sobha Realty", url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=240&q=80" }
-  ];
+const clientLogos = [
+  { 
+    name: "Abu Dhabi Global Market", 
+    url: "/client-logos/abhudhabi-global-market.webp" 
+  },
+  { 
+    name: "Almaharat", 
+    url: "/client-logos/almaharat.webp" 
+  },
+  { 
+    name: "Al Nasser", 
+    url: "/client-logos/alnasser.webp" 
+  },
+  { 
+    name: "Baker Hughes", 
+    url: "/client-logos/baker-hughes.webp" 
+  },
+  { 
+    name: "Capital Engineering Consultancy", 
+    url: "/client-logos/Capital-Engineering-Consultancy.webp" 
+  },
+  { 
+    name: "Capital Motion", 
+    url: "/client-logos/capital-motion.webp" 
+  },
+  { 
+    name: "Design Infinity", 
+    url: "/client-logos/design-ifinity.webp" 
+  },
+  { 
+    name: "EGA", 
+    url: "/client-logos/ega.webp" 
+  },
+  { 
+    name: "Emichem", 
+    url: "/client-logos/emichem.webp" 
+  },
+  { 
+    name: "ENOC", 
+    url: "/client-logos/enoc.webp" 
+  },
+  { 
+    name: "Envirocon", 
+    url: "/client-logos/envirocon.webp" 
+  },
+  { 
+    name: "GEMS Education", 
+    url: "/client-logos/gems-education.webp" 
+  },
+  { 
+    name: "Gulf Rock", 
+    url: "/client-logos/gulf-rock.webp" 
+  },
+  { 
+    name: "Hilton Hotels", 
+    url: "/client-logos/hilton-hotels.webp" 
+  },
+  { 
+    name: "KEZAD Group", 
+    url: "/client-logos/kezad-group.webp" 
+  },
+  { 
+    name: "Mubadala", 
+    url: "/client-logos/mubadala.webp" 
+  },
+  { 
+    name: "Rotana Hotels", 
+    url: "/client-logos/rotana-hotels.webp" 
+  },
+  { 
+    name: "RTA", 
+    url: "/client-logos/rta.webp" 
+  },
+  { 
+    name: "SEHA", 
+    url: "/client-logos/seha.webp" 
+  },
+  { 
+    name: "Sharjah Book Authority", 
+    url: "/client-logos/sharja-book-authority.webp" 
+  },
+  { 
+    name: "Trojan", 
+    url: "/client-logos/trojan.webp" 
+  },
+  { 
+    name: "Winner Holistic Consultant", 
+    url: "/client-logos/winner-holistic-consultant.webp" 
+  }
+];
+
 
   const faqs = [
     { q: "What sectors do your Integrated Facility Management solutions support inside the UAE?", a: "Emrald Ace services commercial enterprise office suites, extensive residential gated communities, healthcare hospital complexes, hospitality environments, high-capacity retail hubs, industrial manufacturing zones, corporate warehouses, and government department facilities across all Emirates." },
@@ -2034,7 +2310,6 @@ export default function Home() {
     }
   };
 
-  // Auto-slide effect for client logos
   useEffect(() => {
     const interval = setInterval(() => {
       if (scrollRef.current) {
@@ -2050,7 +2325,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full text-slate-900 bg-white selection:bg-[#0b63c5] selection:text-white transform-gpu antialiased scroll-smooth" style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <main className="w-full text-slate-100 bg-slate-950 selection:bg-[#0b63c5] selection:text-white transform-gpu antialiased scroll-smooth" style={{ fontFamily: 'Poppins, sans-serif' }}>
       
       {/* Inline Styles optimized for GPU-accelerated frame performance */}
       <style>{`
@@ -2074,7 +2349,7 @@ export default function Home() {
       {/* 1. FULL SCREEN HERO SECTION WITH ULTRA MODERN VIDEO BACKGROUND */}
       <section className="relative h-screen w-full min-h-[100dvh] flex items-center justify-center bg-slate-950 text-white overflow-hidden">
         
-        {/* Background Full-Screen Video - Enhanced layout shifting protection & rendering optimization */}
+        {/* Background Full-Screen Video */}
         <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <video
             autoPlay
@@ -2082,7 +2357,7 @@ export default function Home() {
             loop
             playsInline
             preload="metadata"
-            poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=90"
+            poster="/integrated-facility-management-2.webp"
             className="w-full h-full object-cover object-center scale-[1.01] will-change-transform"
           >
             <source src="/bg-video-1.mp4" type="video/mp4" />
@@ -2091,8 +2366,8 @@ export default function Home() {
         </div>
 
         {/* Dynamic Light Overlay Gradient for Maximum Clarity and Contrast */}
-        <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px] z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-slate-950/40 z-10" />
+        <div className="absolute inset-0 bg-slate-950/30 backdrop-blur-[1px] z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent z-10" />
 
         {/* Hero Central Overlay Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full my-auto space-y-6 sm:space-y-8 pt-16">
@@ -2100,7 +2375,7 @@ export default function Home() {
           {/* Main Hero Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.15] text-white max-w-4xl mx-auto drop-shadow-2xl">
             Engineering Value. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-400 to-indigo-300">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-400 to-indigo-400">
               Optimizing Assets.
             </span>
           </h1>
@@ -2108,11 +2383,11 @@ export default function Home() {
       </section>
 
       {/* 2. HERO SUB-CONTENTS SECTION */}
-      <section className="bg-slate-950 text-white border-b border-slate-800 py-16 lg:py-24 relative z-20">
+      <section className="bg-slate-950 text-white py-12 lg:py-16 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Centered, bright-white text and pulsing bright dots credentials row */}
-          <div className="mb-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs font-semibold uppercase tracking-widest text-white border-b border-slate-800 pb-8">
+          {/* Credentials Row without hard borders */}
+          <div className="mb-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs font-semibold uppercase tracking-widest text-white pb-4">
             <span className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#FF6A00] animate-pulse shadow-[0_0_8px_#FF6A00]"></span> 
               ISO Certified
@@ -2141,7 +2416,7 @@ export default function Home() {
                   <span>Explore Enterprise Solutions</span>
                   <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </Link>
-                <Link href="/contact" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-xl backdrop-blur-md transition-all text-center">
+                <Link href="/contact" className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl backdrop-blur-md transition-all text-center">
                   Request Engineering Callback
                 </Link>
               </div>
@@ -2150,10 +2425,10 @@ export default function Home() {
             {/* Metrics Statistics Panel */}
             <div className="lg:col-span-5 relative">
               <div className="absolute inset-0 bg-[#0b63c5] rounded-3xl opacity-20 blur-3xl transform rotate-6 scale-95 pointer-events-none"></div>
-              <div className="w-full max-w-md mx-auto p-8 bg-slate-900/90 border border-slate-800 rounded-2xl shadow-2xl backdrop-blur-xl space-y-6 relative border-t-2 border-t-[#0b63c5]">
-                <div className="flex justify-between items-center border-b border-slate-800 pb-4">
+              <div className="w-full max-w-md mx-auto p-8 bg-slate-900/90 rounded-2xl shadow-2xl backdrop-blur-xl space-y-6 relative">
+                <div className="flex justify-between items-center pb-2">
                   <span className="font-bold text-blue-400 text-xs tracking-widest uppercase block">Operational Statistics</span>
-                  <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full border border-emerald-500/20">Active Coverage</span>
+                  <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full">Active Coverage</span>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   {[
@@ -2162,7 +2437,7 @@ export default function Home() {
                     { metric: "2023", label: "FM Division Expansion Year" },
                     { metric: "100%", label: "UAE Regional Fulfillment" }
                   ].map((stat, sIdx) => (
-                    <div key={sIdx} className="p-4 bg-slate-950/60 rounded-xl border border-slate-800 transform hover:scale-[1.02] transition-transform">
+                    <div key={sIdx} className="p-4 bg-slate-950/60 rounded-xl transform hover:scale-[1.02] transition-transform">
                       <span className="block text-3xl font-bold text-white tracking-tight">{stat.metric}</span>
                       <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-tight mt-1 block leading-tight">{stat.label}</span>
                     </div>
@@ -2176,28 +2451,28 @@ export default function Home() {
       </section>
 
       {/* 3. CORPORATE CORE COMPLIANCE BADGES SECTION */}
-      <section className="bg-slate-50 border-b border-slate-200 py-16">
+      <section className="bg-slate-950 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch text-left">
-            <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:shadow-md">
-              <div className="w-12 h-12 bg-blue-50 text-[#0b63c5] rounded-xl flex items-center justify-center shrink-0 border border-blue-100"><ShieldCheck className="w-6 h-6" /></div>
+            <div className="p-8 bg-slate-900/60 rounded-2xl shadow-xl flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:bg-slate-900">
+              <div className="w-12 h-12 bg-blue-950 text-blue-400 rounded-xl flex items-center justify-center shrink-0"><ShieldCheck className="w-6 h-6" /></div>
               <div>
-                <h3 className="font-bold text-slate-900 text-sm uppercase tracking-wider">ISO Quality Management</h3>
-                <p className="text-slate-500 text-xs mt-1 font-medium leading-relaxed">Certified systems driving strict control parameters across technical engineering operations.</p>
+                <h3 className="font-bold text-slate-100 text-sm uppercase tracking-wider">ISO Quality Management</h3>
+                <p className="text-slate-400 text-xs mt-1 font-medium leading-relaxed">Certified systems driving strict control parameters across technical engineering operations.</p>
               </div>
             </div>
-            <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:shadow-md">
-              <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center shrink-0 border border-amber-100"><Award className="w-6 h-6" /></div>
+            <div className="p-8 bg-slate-900/60 rounded-2xl shadow-xl flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:bg-slate-900">
+              <div className="w-12 h-12 bg-amber-950 text-amber-400 rounded-xl flex items-center justify-center shrink-0"><Award className="w-6 h-6" /></div>
               <div>
-                <h3 className="font-bold text-slate-900 text-sm uppercase tracking-wider">ICV Value certified</h3>
-                <p className="text-slate-500 text-xs mt-1 font-medium leading-relaxed">Validating localized supply network execution loops for strategic corporate integration.</p>
+                <h3 className="font-bold text-slate-100 text-sm uppercase tracking-wider">ICV Value certified</h3>
+                <p className="text-slate-400 text-xs mt-1 font-medium leading-relaxed">Validating localized supply network execution loops for strategic corporate integration.</p>
               </div>
             </div>
-            <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:shadow-md">
-              <div className="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center shrink-0"><HardHat className="w-6 h-6" /></div>
+            <div className="p-8 bg-slate-900/60 rounded-2xl shadow-xl flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:bg-slate-900">
+              <div className="w-12 h-12 bg-slate-800 text-slate-100 rounded-xl flex items-center justify-center shrink-0"><HardHat className="w-6 h-6" /></div>
               <div>
-                <h3 className="font-bold text-slate-900 text-sm uppercase tracking-wider">UAE Licensed Contractor</h3>
-                <p className="text-slate-500 text-xs mt-1 font-medium leading-relaxed">Fully credentialed and authorized to deploy large-scale civil and electromechanical contracts.</p>
+                <h3 className="font-bold text-slate-100 text-sm uppercase tracking-wider">UAE Licensed Contractor</h3>
+                <p className="text-slate-400 text-xs mt-1 font-medium leading-relaxed">Fully credentialed and authorized to deploy large-scale civil and electromechanical contracts.</p>
               </div>
             </div>
           </div>
@@ -2205,13 +2480,13 @@ export default function Home() {
       </section>
 
       {/* 4. EXECUTIVE INTRODUCTORY SECTION */}
-      <section className="py-24 bg-white">
+      <section className="py-14 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5 relative">
-              <div className="relative w-full aspect-square max-w-md mx-auto lg:max-w-none rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+              <div className="relative w-full aspect-square max-w-md mx-auto lg:max-w-none rounded-3xl overflow-hidden shadow-2xl">
                 <Image 
-                  src="/integrated-engineering-aco-system-uae.jpg" 
+                  src="/integrated-engineering-aco-system-uae.webp" 
                   alt="Emrald Ace Executive Operations Meeting"
                   fill
                   className="object-cover"
@@ -2224,14 +2499,14 @@ export default function Home() {
             </div>
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Corporate DNA</span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Delivering Integrated Engineering Ecosystems Across The UAE</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-100 tracking-tight">Delivering Integrated Engineering Ecosystems Across The UAE</h2>
               <div className="w-12 h-1 bg-[#0b63c5] rounded-full"></div>
-              <p className="text-slate-600 text-sm font-medium leading-relaxed">
+              <p className="text-slate-400 text-sm font-medium leading-relaxed">
                 Emrald Ace has evolved into a trusted provider of Integrated Facility Management, Annual Maintenance Contracts, and Interior Fit-Out solutions, backed by absolute engineering proficiency. Modern physical plant infrastructures require proactive monitoring methodologies, specialized insight arrays, and direct professional governance metrics.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                 {["Intelligent Operational Planning", "Rigorous Asset Lifetime Preservation", "Transparent SLA Reporting Structures", "Direct Accountability Frameworks"].map((item, idx) => (
-                  <div key={idx} className="flex items-center space-x-2 text-xs font-bold text-slate-700">
+                  <div key={idx} className="flex items-center space-x-2 text-xs font-bold text-slate-300">
                     <CheckCircle2 className="w-4 h-4 text-[#0b63c5] shrink-0" />
                     <span>{item}</span>
                   </div>
@@ -2249,19 +2524,19 @@ export default function Home() {
       </section>
 
       {/* 5. OPTIMIZED SERVICES SECTION */}
-      <section className="py-24 bg-slate-50 border-y border-slate-200">
+      <section className="py-14 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
             <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-widest block">Service Matrix</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Technical Capability Modules</h2>
-            <p className="text-slate-500 text-xs sm:text-sm font-medium">Reliable maintenance, specialized engineering, and operational governance execution under one direct roof structure.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-100 tracking-tight">Technical Capability Modules</h2>
+            <p className="text-slate-400 text-xs sm:text-sm font-medium">Reliable maintenance, specialized engineering, and operational governance execution under one direct roof structure.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {coreServices.map((service, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group transform hover:-translate-y-1"
+                className="bg-slate-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col group transform hover:-translate-y-1"
               >
                 <div className="relative h-[240px] w-full overflow-hidden">
                   <Image 
@@ -2280,8 +2555,8 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-4 bg-white">
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-4 bg-slate-900">
+                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-normal">
                     {service.desc}
                   </p>
                 </div>
@@ -2289,7 +2564,7 @@ export default function Home() {
             ))}
           </div>
           
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <Link href="/services" className="inline-flex items-center justify-center bg-[#0b63c5] text-white font-bold px-8 py-4 rounded-xl hover:bg-blue-600 transition-all text-sm tracking-wide shadow-md shadow-blue-600/10">
               View Extended Capabilities Catalogue
             </Link>
@@ -2298,10 +2573,9 @@ export default function Home() {
       </section>
 
       {/* 6. HIGH-CONVERTING CTA SECTION */}
-      <section className="py-20 bg-gradient-to-r from-slate-900 via-[#0b63c5] to-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-slate-950/20" />
+      <section className="py-12 bg-slate-950 text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-slate-950/40 border border-white/10 backdrop-blur-xl rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 border border-white/5">
             <div className="space-y-4 text-center lg:text-left max-w-2xl">
               <span className="text-xs font-bold text-amber-400 uppercase tracking-widest inline-flex items-center gap-2">
                 <Sparkles className="w-4 h-4" /> 24/7 Rapid Emergency Response
@@ -2309,7 +2583,7 @@ export default function Home() {
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
                 Ready to Upgrade Your Facility Management & MEP Operations?
               </h2>
-              <p className="text-slate-200 text-xs sm:text-sm font-normal">
+              <p className="text-slate-300 text-xs sm:text-sm font-normal">
                 Speak directly with our technical dispatch engineers now for consultations, emergency support, or AMC inquiries.
               </p>
             </div>
@@ -2327,7 +2601,7 @@ export default function Home() {
 
               <Link 
                 href="/contact" 
-                className="w-full sm:w-auto px-6 py-4 bg-transparent hover:bg-white/10 border border-white/30 text-white font-bold rounded-xl transition-all text-center text-sm"
+                className="w-full sm:w-auto px-6 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-all text-center text-sm"
               >
                 Request Quotation
               </Link>
@@ -2337,18 +2611,18 @@ export default function Home() {
       </section>
 
       {/* 7. SECTOR DIVERSIFICATION FOOTPRINT GRID */}
-      <section className="py-24 bg-white">
+      <section className="py-14 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Sector Ecosystems</span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Diversified Industry Frameworks We Systematically Serve</h2>
-              <p className="text-slate-500 text-xs sm:text-sm font-medium leading-relaxed">
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-100 tracking-tight">Diversified Industry Frameworks We Systematically Serve</h2>
+              <p className="text-slate-400 text-xs sm:text-sm font-medium leading-relaxed">
                 Our active engineering field deployment units are structurally configured to implement continuous preventative, reactive, and asset enhancement operations directly within specialized commercial business verticals throughout the UAE jurisdiction boundaries.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {["Commercial Offices", "Residential Units", "Healthcare Centers", "Luxury Hotels", "Retail Spaces", "Industrial Sites"].map((vertical, vIdx) => (
-                  <div key={vIdx} className="p-4 bg-slate-50 rounded-xl border border-slate-150 flex items-center space-x-2 text-xs font-bold text-slate-800">
+                  <div key={vIdx} className="p-4 bg-slate-900 rounded-xl flex items-center space-x-2 text-xs font-bold text-slate-200">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#0b63c5]"></span>
                     <span>{vertical}</span>
                   </div>
@@ -2358,18 +2632,18 @@ export default function Home() {
             
             <div className="lg:col-span-6 grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="relative h-[240px] w-full rounded-2xl overflow-hidden border border-slate-100 shadow-md">
+                <div className="relative h-[240px] w-full rounded-2xl overflow-hidden shadow-xl">
                   <Image src="/sector-ecosystem-1.jpg" alt="Commercial Interiors" fill className="object-cover" />
                 </div>
-                <div className="relative h-[160px] w-full rounded-2xl overflow-hidden border border-slate-100 shadow-md">
+                <div className="relative h-[160px] w-full rounded-2xl overflow-hidden shadow-xl">
                   <Image src="/sector-ecosystem-2.jpg" alt="MEP Plants" fill className="object-cover" />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
-                <div className="relative h-[160px] w-full rounded-2xl overflow-hidden border border-slate-100 shadow-md">
+                <div className="relative h-[160px] w-full rounded-2xl overflow-hidden shadow-xl">
                   <Image src="/sector-ecosystem-3.jpg" alt="Corporate Facilities" fill className="object-cover" />
                 </div>
-                <div className="relative h-[240px] w-full rounded-2xl overflow-hidden border border-slate-100 shadow-md">
+                <div className="relative h-[240px] w-full rounded-2xl overflow-hidden shadow-xl">
                   <Image src="/sector-ecosystem-4.jpg" alt="Civil Development" fill className="object-cover" />
                 </div>
               </div>
@@ -2379,9 +2653,9 @@ export default function Home() {
       </section>
 
       {/* 8. TRUSTED BY INDUSTRY LEADERS */}
-      <section className="py-24 bg-gradient-to-r from-slate-900 via-[#0b63c5] to-slate-900 text-white overflow-hidden relative transform-gpu">
+      <section className="py-14 bg-slate-950 text-white overflow-hidden relative transform-gpu">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8">
             <div>
               <span className="text-xs uppercase font-bold text-blue-300 tracking-widest block">Trusted By Industry Leaders</span>
               <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">Strategic Partners Across the Last 5 Years</h2>
@@ -2391,14 +2665,14 @@ export default function Home() {
               <button 
                 onClick={() => handleScroll('left')} 
                 aria-label="Previous Slide" 
-                className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all border border-white/20 hover:border-blue-400 active:scale-95 cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all hover:border-blue-400 active:scale-95 cursor-pointer"
               >
                 <ChevronLeft size={22} />
               </button>
               <button 
                 onClick={() => handleScroll('right')} 
                 aria-label="Next Slide" 
-                className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all border border-white/20 hover:border-blue-400 active:scale-95 cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all hover:border-blue-400 active:scale-95 cursor-pointer"
               >
                 <ChevronRight size={22} />
               </button>
@@ -2406,7 +2680,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Carousel Container Wrapper - Seamlessly Responsive across all device breakpoints */}
+        {/* Carousel Container Wrapper */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={scrollRef} 
@@ -2415,7 +2689,7 @@ export default function Home() {
             {clientLogos.concat(clientLogos).map((logo, lIdx) => (
               <div 
                 key={lIdx} 
-                className="relative w-[180px] sm:w-[220px] h-28 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-black/20 overflow-hidden snap-center transform-gpu transition-all duration-300 hover:scale-[1.03] border-2 border-transparent hover:border-blue-400"
+                className="relative w-[180px] sm:w-[220px] h-28 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-2xl overflow-hidden snap-center transform-gpu transition-all duration-300 hover:scale-[1.03]"
               >
                 <Image 
                   src={logo.url} 
@@ -2428,15 +2702,23 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          {/* Centered Our Clients Button */}
+          <div className="text-center mt-10">
+            <Link href="/clients" className="inline-flex items-center justify-center bg-[#0b63c5] hover:bg-blue-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-blue-600/20 transition-all text-sm group tracking-wide">
+              <span>Our Clients</span>
+              <ChevronRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* 9. FAQ SECTION */}
-      <section className="py-24 bg-slate-50 border-t border-slate-200 scroll-mt-10">
+      <section className="py-14 bg-slate-950 scroll-mt-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
+          <div className="text-center space-y-4 mb-12">
             <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-widest block">Knowledge Base</span>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-slate-100 tracking-tight">Frequently Asked Questions</h2>
             <div className="w-12 h-1 bg-[#0b63c5] mx-auto rounded-full"></div>
           </div>
 
@@ -2446,29 +2728,29 @@ export default function Home() {
               return (
                 <div 
                   key={fIdx} 
-                  className="bg-white rounded-xl border border-slate-200/90 shadow-xs overflow-hidden transition-all duration-300"
+                  className="bg-slate-900 rounded-xl overflow-hidden shadow-xl transition-all duration-300"
                 >
                   <button
                     onClick={() => toggleFaq(fIdx)}
-                    className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 focus:outline-hidden group hover:bg-slate-50/60 transition-colors cursor-pointer"
+                    className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 focus:outline-hidden group hover:bg-slate-800/50 transition-colors cursor-pointer"
                     aria-expanded={isOpen}
                   >
-                    <h3 className="text-sm sm:text-base font-semibold text-slate-800 flex items-start gap-3.5 pr-2 leading-snug">
+                    <h3 className="text-sm sm:text-base font-semibold text-slate-200 flex items-start gap-3.5 pr-2 leading-snug">
                       <HelpCircle className="w-5 h-5 text-[#0b63c5] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                       <span>{faq.q}</span>
                     </h3>
-                    <div className={`w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'rotate-180 bg-[#0b63c5] text-white' : ''}`}>
+                    <div className={`w-8 h-8 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'rotate-180 bg-[#0b63c5] text-white' : ''}`}>
                       <ChevronDown size={16} />
                     </div>
                   </button>
 
                   <div 
-                    className={`grid transition-all duration-300 ease-in-out border-slate-100 ${
-                      isOpen ? 'grid-rows-[1fr] border-t opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="p-6 sm:p-7 pl-14 text-xs sm:text-sm font-normal text-slate-600 leading-relaxed bg-slate-50/40">
+                      <div className="p-6 sm:p-7 pl-14 text-xs sm:text-sm font-normal text-slate-300 leading-relaxed bg-slate-950/40">
                         {faq.a}
                       </div>
                     </div>
