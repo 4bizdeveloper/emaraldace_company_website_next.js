@@ -316,7 +316,7 @@ export default function IFMPage() {
             <div className="lg:col-span-5 space-y-3">
               <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+                  src="/integrated-facility-management-1.jfif"
                   alt="Integrated Facility Management Abu Dhabi"
                   fill
                   priority
@@ -441,7 +441,7 @@ export default function IFMPage() {
               <div className="lg:col-span-5 space-y-2">
                 <div className="relative h-48 sm:h-56 w-full rounded-xl overflow-hidden border border-slate-800 shadow-md bg-slate-900">
                   <Image
-                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80"
+                    src="/hospitality-cleaning.jfif"
                     alt="Commercial Cleaning and Soft Facility Services"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
@@ -540,7 +540,7 @@ export default function IFMPage() {
 
               <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+                  src="/integrated-facility-management.webp"
                   alt="Emrald Ace Engineering Team"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
