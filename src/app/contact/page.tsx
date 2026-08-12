@@ -83,43 +83,46 @@ export default function ContactPage() {
       />
 
       {/* ==========================================
-          ULTRA-MODERN SEO & AI OPTIMIZED HERO TITLE
+          ULTRA-MODERN SEO & AI OPTIMIZED HERO SECTION
          ========================================== */}
       <section 
         className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 lg:pb-36 bg-slate-950 isolate min-h-[75vh] flex flex-col justify-center items-center"
         aria-labelledby="contact-hero-heading"
       >
-        {/* Next.js LCP-Optimized Background Image Layer with High Visibility */}
-        <div className="absolute inset-0 -z-20 overflow-hidden">
+        {/* Seamless Masked & Multi-Gradients Image Container */}
+        <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)]">
           <Image
             src="/integrated-facility-management-2.webp"
             alt="Integrated Facility Management Engineering Background"
             fill
             priority
-            quality={90}
+            quality={95}
             sizes="100vw"
             aria-hidden="true"
-            className="object-cover object-center filter brightness-90 contrast-[1.05] opacity-80 transform scale-105 transition-all duration-1000 ease-out"
+            className="object-cover object-center filter brightness-90 contrast-[1.08] opacity-75 transform scale-105 transition-all duration-1000 ease-out"
           />
-          {/* Subtle multi-stop gradient overlay preserving high image visibility & contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/45 to-slate-950/90" />
-          <div className="absolute inset-0 bg-blue-950/20 mix-blend-color-dodge" />
+          {/* Top/Bottom Seamless Soft Vignette */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/30 to-slate-950" />
+          {/* Left/Right Seamless Edge Blend */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-transparent to-slate-950" />
+          {/* Ambient Brand Color Tint */}
+          <div className="absolute inset-0 bg-blue-950/20 mix-blend-overlay" />
         </div>
 
         {/* Continuous high-performance background decorative grid pattern */}
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#334155_1px,transparent_1px),linear-gradient(to_bottom,#334155_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] opacity-25" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#334155_1px,transparent_1px),linear-gradient(to_bottom,#334155_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] opacity-20" />
 
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 text-center relative z-10 my-auto">
           
           {/* AI Scraper & SEO Optimized Context Tag */}
-          <span className="inline-flex items-center rounded-full bg-blue-950/70 backdrop-blur-md px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-blue-300 ring-1 ring-inset ring-blue-400/30 mb-6 shadow-lg shadow-black/40">
+          <span className="inline-flex items-center rounded-full bg-blue-950/60 backdrop-blur-md px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-blue-300 ring-1 ring-inset ring-blue-400/30 mb-6 shadow-lg shadow-black/40">
             Global Engineering Hub
           </span>
 
           {/* H1 Main Heading */}
           <h1 
             id="contact-hero-heading"
-            className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight drop-shadow-md"
+            className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight drop-shadow-lg"
           >
             Let’s Build the Future{' '}
             <span className="inline-block md:block mt-2 bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-200 bg-clip-text text-transparent filter drop-shadow">
