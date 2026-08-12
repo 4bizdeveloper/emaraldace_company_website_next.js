@@ -242,7 +242,7 @@ export default function ContactPage() {
                     </label>
                     <input 
                       id="name" type="text" required name="name" value={formData.name} onChange={handleInputChange}
-                      className="w-full bg-slate-50 border-2 border-slate-300/80 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-800 transition-all outline-hidden duration-200"
+                      className="w-full bg-slate-50 border-2 border-slate-400 hover:border-slate-500 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-900 placeholder:text-slate-500 transition-all outline-hidden duration-200"
                       placeholder="Drew Feig"
                     />
                   </div>
@@ -252,7 +252,7 @@ export default function ContactPage() {
                     </label>
                     <input 
                       id="phone" type="tel" required name="phone" value={formData.phone} onChange={handleInputChange}
-                      className="w-full bg-slate-50 border-2 border-slate-300/80 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-800 transition-all outline-hidden duration-200"
+                      className="w-full bg-slate-50 border-2 border-slate-400 hover:border-slate-500 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-900 placeholder:text-slate-500 transition-all outline-hidden duration-200"
                       placeholder="+971 52 897 6025"
                     />
                   </div>
@@ -264,7 +264,7 @@ export default function ContactPage() {
                   </label>
                   <input 
                     id="email" type="email" required name="email" value={formData.email} onChange={handleInputChange}
-                    className="w-full bg-slate-50 border-2 border-slate-300/80 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-800 transition-all outline-hidden duration-200"
+                    className="w-full bg-slate-50 border-2 border-slate-400 hover:border-slate-500 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-900 placeholder:text-slate-500 transition-all outline-hidden duration-200"
                     placeholder="operations@client.com"
                   />
                 </div>
@@ -275,7 +275,7 @@ export default function ContactPage() {
                   </label>
                   <textarea 
                     id="message" name="message" rows={4} value={formData.message} onChange={handleInputChange}
-                    className="w-full bg-slate-50 border-2 border-slate-300/80 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-800 transition-all outline-hidden resize-none duration-200"
+                    className="w-full bg-slate-50 border-2 border-slate-400 hover:border-slate-500 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3.5 font-normal text-slate-900 placeholder:text-slate-500 transition-all outline-hidden resize-none duration-200"
                     placeholder="Outline modern application details, scope, or facility specifications..."
                   />
                 </div>
