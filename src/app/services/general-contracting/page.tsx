@@ -411,7 +411,7 @@ export default function GeneralContractingPage() {
 
               <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
                 <Image
-                  src="/mep-general-contracting.jfif"
+                  src="/mep-general-contracting.webp"
                   alt="Emrald Ace Engineering Team"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700 ease-out"

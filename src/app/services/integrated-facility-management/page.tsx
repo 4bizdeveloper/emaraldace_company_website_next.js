@@ -441,7 +441,7 @@ export default function IFMPage() {
               <div className="lg:col-span-5 space-y-2">
                 <div className="relative h-48 sm:h-56 w-full rounded-xl overflow-hidden border border-slate-800 shadow-md bg-slate-900">
                   <Image
-                    src="/hospitality-cleaning.jfif"
+                    src="/hospitality-cleaning.webp"
                     alt="Commercial Cleaning and Soft Facility Services"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"

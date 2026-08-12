@@ -382,7 +382,7 @@ export default function InteriorFitOutPage() {
 
               <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
                 <Image
-                  src="/interior-fit-out-solutions-2.jfif"
+                  src="/interior-fit-out-solutions-2.webp"
                   alt="Emrald Ace Fit-Out Craftsmanship"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
