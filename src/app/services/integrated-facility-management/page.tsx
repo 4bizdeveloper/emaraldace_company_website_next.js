@@ -316,7 +316,7 @@ export default function IFMPage() {
             <div className="lg:col-span-5 space-y-3">
               <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
                 <Image
-                  src="/integrated-facility-management-1.jfif"
+                  src="/integrated-facility-management-1.webp"
                   alt="Integrated Facility Management Abu Dhabi"
                   fill
                   priority
