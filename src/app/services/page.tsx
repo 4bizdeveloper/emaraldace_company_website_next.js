@@ -73,7 +73,7 @@ export default function ServicesPage() {
       title: "General Contracting Services",
       tagline: "Comprehensive Civil Construction & Structural Excellence.",
       badge: "Structural Solutions",
-      image: "/general-contracting&specialized-civil.webp",
+      image: "/general-contracting-and-specialized-civil.webp",
       desc: "End-to-end civil construction, complete building renovations, structural repairs, space extensions, and pre-construction planning delivered with precision across Abu Dhabi and the UAE."
     },
     {
