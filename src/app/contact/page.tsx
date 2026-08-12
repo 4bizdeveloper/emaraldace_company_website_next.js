@@ -1,12 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, CheckCircle2, AlertTriangle, Loader2 } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, Mail, MapPin, Send, CheckCircle2, AlertTriangle, Loader2, ChevronDown } from 'lucide-react';
 
-// NOTE: Next.js App Router demands metadata to be in a server component. 
-// Since this is a combined client file ('use client'), ensure you export this metadata 
-// from a separate layout.tsx or a parent server page if strict build errors occur, 
-// or leverage it directly here if using alternative architectures.
 export const pageMetadata = {
   title: 'Contact Our Technical Experts | Communications Gateway',
   description: 'Connect via our secure technical dispatch engine loops. Reach our regional offices, global sales desks or base coordinates in Abu Dhabi.',
@@ -50,43 +47,107 @@ export default function ContactPage() {
     }
   };
 
+  const scrollToContent = () => {
+    const section = document.getElementById('contact-interface-section');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <main className="min-h-screen bg-slate-950 scroll-smooth antialiased text-slate-200">
       
+      {/* Schema Structured Data for Search Engine & AI Crawlers */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Emrald Ace",
+            "description": "Connect with our technical electromechanical and contracting experts.",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "Emrald Ace General Contracting & Electromechanical",
+              "telephone": "+971528976025",
+              "email": "sales1@emraldace.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Musaffah M-14",
+                "addressLocality": "Abu Dhabi",
+                "addressCountry": "AE"
+              }
+            }
+          })
+        }}
+      />
+
       {/* ==========================================
           ULTRA-MODERN SEO & AI OPTIMIZED HERO TITLE
          ========================================== */}
-      {/* Increased padding-top (pt-32 md:pt-40 lg:pt-44) to resolve header overlap/closeness */}
       <section 
-        className="relative overflow-hidden pt-32 pb-8 md:pt-40 md:pb-12 lg:pt-44 lg:pb-16 bg-slate-950"
+        className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 lg:pb-36 bg-slate-950 isolate min-h-[75vh] flex flex-col justify-center items-center"
         aria-labelledby="contact-hero-heading"
       >
-        {/* Continuous high-performance background decorative grid pattern */}
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#334155_1px,transparent_1px),linear-gradient(to_bottom,#334155_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
+        {/* Next.js LCP-Optimized Background Image Layer with High Visibility */}
+        <div className="absolute inset-0 -z-20 overflow-hidden">
+          <Image
+            src="/integrated-facility-management-2.webp"
+            alt="Integrated Facility Management Engineering Background"
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            aria-hidden="true"
+            className="object-cover object-center filter brightness-90 contrast-[1.05] opacity-80 transform scale-105 transition-all duration-1000 ease-out"
+          />
+          {/* Subtle multi-stop gradient overlay preserving high image visibility & contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/45 to-slate-950/90" />
+          <div className="absolute inset-0 bg-blue-950/20 mix-blend-color-dodge" />
+        </div>
 
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 text-center">
+        {/* Continuous high-performance background decorative grid pattern */}
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#334155_1px,transparent_1px),linear-gradient(to_bottom,#334155_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] opacity-25" />
+
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 text-center relative z-10 my-auto">
           
           {/* AI Scraper & SEO Optimized Context Tag */}
-          <span className="inline-flex items-center rounded-full bg-blue-950/50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-400 ring-1 ring-inset ring-blue-500/20 mb-6 transform transition-all duration-300 hover:bg-blue-900/50">
+          <span className="inline-flex items-center rounded-full bg-blue-950/70 backdrop-blur-md px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-blue-300 ring-1 ring-inset ring-blue-400/30 mb-6 shadow-lg shadow-black/40">
             Global Engineering Hub
           </span>
 
           {/* H1 Main Heading */}
           <h1 
             id="contact-hero-heading"
-            className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight"
+            className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight drop-shadow-md"
           >
             Let’s Build the Future{' '}
-            <span className="inline-block md:block mt-2 bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-300 bg-clip-text text-transparent">
+            <span className="inline-block md:block mt-2 bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-200 bg-clip-text text-transparent filter drop-shadow">
               Of Infrastructure Together.
             </span>
           </h1>
 
           {/* Subtitle/Description */}
-          <p className="mx-auto mt-6 max-w-2xl text-sm sm:text-base md:text-lg text-slate-400 leading-relaxed font-light">
+          <p className="mx-auto mt-6 max-w-2xl text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-normal drop-shadow-sm">
             Partner with our premier electromechanical and contracting divisions to bring scale, precision, and world-class engineering execution to your upcoming complex developments.
           </p>
 
+        </div>
+
+        {/* Scroll Down Indicator Component */}
+        <div className="relative z-10 pt-8 sm:pt-12 flex flex-col items-center justify-center">
+          <button
+            onClick={scrollToContent}
+            aria-label="Scroll to contact information section"
+            className="group flex flex-col items-center space-y-2 text-slate-300 hover:text-white transition-colors duration-300 focus:outline-hidden cursor-pointer"
+          >
+            <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300 group-hover:text-blue-400 transition-colors duration-300">
+              Scroll Down
+            </span>
+            <div className="p-2 rounded-full bg-slate-900/60 backdrop-blur-md border border-white/10 group-hover:border-blue-500/50 group-hover:bg-blue-950/40 transition-all duration-300 shadow-lg">
+              <ChevronDown size={18} className="animate-bounce text-blue-400 group-hover:text-blue-300 transition-colors" />
+            </div>
+          </button>
         </div>
       </section>
 
@@ -94,8 +155,9 @@ export default function ContactPage() {
           EXISTING CONTACT INTERFACE SECTION
          ========================================== */}
       <section 
+        id="contact-interface-section"
         aria-labelledby="contact-heading" 
-        className="py-12 md:py-16 bg-slate-950 font-normal containment-layout content-visibility-auto"
+        className="py-12 md:py-16 bg-slate-950 font-normal relative z-10"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           
