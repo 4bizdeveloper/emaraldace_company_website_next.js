@@ -46,7 +46,7 @@ export default function ServicesPage() {
       title: "Annual Maintenance Contracts (AMC)",
       tagline: "Protecting Your Assets Every Day.",
       badge: "24/7 Rapid Response",
-      image: "/annual-maintenance-contracts.webp",
+      image: "/annual-maintenance-contract-1.webp",
       desc: "Scheduled inspections, planned preventive maintenance, emergency repairs, and monthly performance monitoring tailored to keep facility operations smooth and eliminate unexpected downtime."
     },
     {
@@ -55,7 +55,7 @@ export default function ServicesPage() {
       title: "Interior Fit-Out Solutions",
       tagline: "Creating Inspiring & Functional Workspaces.",
       badge: "Turnkey Design & Build",
-      image: "/interior-fit-out-solutions-2.webp",
+      image: "/interior-fit-out-solution-2.webp",
       desc: "Functional, modern interior build-outs for commercial offices, retail outlets, and residential properties across the UAE—including partitions, false ceilings, custom joinery, flooring, and glass works."
     },
     {
