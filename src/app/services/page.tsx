@@ -82,7 +82,7 @@ export default function ServicesPage() {
       title: "Specialized Services",
       tagline: "Smart Access, Automation & Outdoor Solutions.",
       badge: "Smart Automation",
-      image: "/general-contracting&specialized-civil.webp",
+      image: "/specialized-service-1.webp",
       desc: "High-performance facility enhancements including parking access control, automatic gates, CCTV networks, structural waterproofing, industrial epoxy flooring, artificial turf, and landscaping."
     }
   ];
