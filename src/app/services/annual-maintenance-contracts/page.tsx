@@ -283,7 +283,7 @@ export default function AMCPage() {
             <div className="lg:col-span-5 space-y-3">
               <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
+                  src="/annual-maintenance-contract.webp"
                   alt="Annual Maintenance Contracts AMC Abu Dhabi UAE"
                   fill
                   priority
@@ -397,7 +397,7 @@ export default function AMCPage() {
 
               <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+                  src="/anual-maintenance-contract-2.jfif"
                   alt="AMC Benefits and Facility Management"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
