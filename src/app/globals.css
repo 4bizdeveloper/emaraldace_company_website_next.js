@@ -8,13 +8,16 @@
   user-select: text !important;         /* Standard */
 }
 
-
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
     text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
+    /* Hardware acceleration & smooth touch scrolling engine hints */
+    -webkit-overflow-scrolling: touch;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   
   body {
@@ -24,6 +27,10 @@
     color: #0f172a;
     text-rendering: optimizeLegibility;
     overscroll-behavior-y: none;
+    /* Prevents render pass drops during fast scroll flicks */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    touch-action: manipulation;
   }
 
   /* Structural touch scrolling optimization across touch hardware devices */
@@ -40,4 +47,18 @@
 .animate-fadeIn {
   animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: transform, opacity;
+}
+
+.smooth-scroll-section {
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Forces GPU compositing layer */
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Force modern layout compositor layer targeting main content */
+main {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
