@@ -40,7 +40,7 @@ export default function Home() {
     },
     { 
       title: "General Contracting & Civil", 
-      image: "/general-contracting&civil.webp",
+      image: "/general-contracting-and-specialized-civil.webp",
       desc: "Turnkey structural renovations, commercial spatial additions, structural concrete preservation, and institutional execution." 
     },
     { 
