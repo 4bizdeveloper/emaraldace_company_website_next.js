@@ -278,7 +278,7 @@ export default function GeneralContractingPage() {
             <div className="lg:col-span-5 space-y-3">
               <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1200&q=80"
+                  src="/general-contracting&specialized-civil.webp"
                   alt="General Contracting Civil Construction Abu Dhabi"
                   fill
                   priority
@@ -380,7 +380,7 @@ export default function GeneralContractingPage() {
             <div className="lg:col-span-5 space-y-2">
               <div className="relative h-48 sm:h-56 w-full rounded-xl overflow-hidden border border-slate-800 shadow-md bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
+                  src="/general-contracting-2.webp"
                   alt="General Contracting Engineering Execution"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
@@ -411,7 +411,7 @@ export default function GeneralContractingPage() {
 
               <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+                  src="/mep-general-contracting.jfif"
                   alt="Emrald Ace Engineering Team"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700 ease-out"

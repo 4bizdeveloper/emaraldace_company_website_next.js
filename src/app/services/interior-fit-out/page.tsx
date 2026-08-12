@@ -272,7 +272,7 @@ export default function InteriorFitOutPage() {
             <div className="lg:col-span-5 space-y-3">
               <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+                  src="/interior-fit-out-solutions.webp"
                   alt="Interior Fit-Out Company Abu Dhabi"
                   fill
                   priority
@@ -382,7 +382,7 @@ export default function InteriorFitOutPage() {
 
               <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+                  src="/interior-fit-out-solutions-2.jfif"
                   alt="Emrald Ace Fit-Out Craftsmanship"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700 ease-out"

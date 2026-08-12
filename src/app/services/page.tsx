@@ -55,7 +55,7 @@ export default function ServicesPage() {
       title: "Interior Fit-Out Solutions",
       tagline: "Creating Inspiring & Functional Workspaces.",
       badge: "Turnkey Design & Build",
-      image: "/interior-fit-out-solution-2.webp",
+      image: "/interior-fit-out-solutions.webp",
       desc: "Functional, modern interior build-outs for commercial offices, retail outlets, and residential properties across the UAE—including partitions, false ceilings, custom joinery, flooring, and glass works."
     },
     {
@@ -82,7 +82,7 @@ export default function ServicesPage() {
       title: "Specialized Services",
       tagline: "Smart Access, Automation & Outdoor Solutions.",
       badge: "Smart Automation",
-      image: "/specialized-service-1.webp",
+      image: "/specialized-service-4.webp",
       desc: "High-performance facility enhancements including parking access control, automatic gates, CCTV networks, structural waterproofing, industrial epoxy flooring, artificial turf, and landscaping."
     }
   ];

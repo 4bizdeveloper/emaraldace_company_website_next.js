@@ -269,7 +269,7 @@ export default function SpecializedServicesPage() {
             <div className="lg:col-span-5 space-y-3">
               <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80"
+                  src="/specialized-service-1.webp"
                   alt="Smart Access, Automation & Outdoor Solutions Abu Dhabi"
                   fill
                   priority
@@ -392,7 +392,7 @@ export default function SpecializedServicesPage() {
               <div className="lg:col-span-5 space-y-2">
                 <div className="relative h-48 sm:h-56 w-full rounded-xl overflow-hidden border border-slate-800 shadow-md bg-slate-900">
                   <Image
-                    src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80"
+                    src="/specialized-service-2.webp"
                     alt="Epoxy Flooring and Waterproofing Application"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
@@ -442,7 +442,7 @@ export default function SpecializedServicesPage() {
 
               <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80"
+                  src="/specialised-serive-3.webp"
                   alt="Emrald Ace Engineering Team"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
