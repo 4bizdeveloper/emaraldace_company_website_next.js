@@ -6,7 +6,6 @@ import {
   ShieldCheck, 
   Award, 
   Calendar, 
-  Wrench, 
   Clock, 
   Search, 
   FileText, 
@@ -22,9 +21,7 @@ import {
   Check,
   Zap,
   PackageCheck,
-  Activity,
-  Layers,
-  Sparkles
+  Layers
 } from 'lucide-react';
 
 // --- FAQ Accordion Component ---
@@ -36,22 +33,22 @@ function FAQAccordion({ faq }: { faq: { q: string; a: string } }) {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-5 flex justify-between items-center text-left focus:outline-none group cursor-pointer"
+        className="w-full py-4 sm:py-5 flex justify-between items-center text-left focus:outline-none group cursor-pointer"
         aria-expanded={isOpen}
       >
-        <span className="text-base font-semibold text-slate-100 group-hover:text-[#0b63c5] transition-colors pr-4">
+        <span className="text-sm sm:text-base font-semibold text-slate-100 group-hover:text-white transition-colors pr-3 sm:pr-4">
           {faq.q}
         </span>
-        <div className={`p-2 rounded-full border border-slate-800 bg-slate-900/50 text-slate-400 group-hover:border-[#0b63c5]/40 group-hover:text-[#0b63c5] transition-all duration-300 shrink-0 ${isOpen ? 'rotate-180 bg-[#0b63c5]/10 text-[#0b63c5]' : ''}`}>
-          <ChevronDown className="w-4 h-4" />
+        <div className={`p-1.5 sm:p-2 rounded-full border border-slate-800 bg-slate-900/80 text-slate-300 group-hover:border-[#0b63c5] group-hover:text-white transition-all duration-300 shrink-0 ${isOpen ? 'rotate-180 bg-[#0b63c5]/20 text-white border-[#0b63c5]' : ''}`}>
+          <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         </div>
       </button>
       <div 
         className={`grid transition-all duration-300 ease-in-out ${
-          isOpen ? 'grid-rows-[1fr] opacity-100 pb-5' : 'grid-rows-[0fr] opacity-0'
+          isOpen ? 'grid-rows-[1fr] opacity-100 pb-4 sm:pb-5' : 'grid-rows-[0fr] opacity-0'
         }`}
       >
-        <div className="overflow-hidden text-sm text-slate-400 leading-relaxed pl-1">
+        <div className="overflow-hidden text-xs sm:text-sm text-slate-200 leading-relaxed sm:leading-relaxed pl-1">
           {faq.a}
         </div>
       </div>
@@ -60,7 +57,7 @@ function FAQAccordion({ faq }: { faq: { q: string; a: string } }) {
 }
 
 export default function AMCPage() {
-  // Breadcrumb Schema Format: Home > Services > Current Page Name
+  // Breadcrumb Schema Format
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -86,7 +83,7 @@ export default function AMCPage() {
     ]
   };
 
-  // Service Schema for Search Engine & AI Level Optimization
+  // Service Schema
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -226,117 +223,122 @@ export default function AMCPage() {
   ];
 
   return (
-    <main className="bg-[#030712] text-slate-100 min-h-screen font-sans selection:bg-[#0b63c5] selection:text-white pt-20 overflow-x-hidden">
-      {/* Search Engine, AI & Server Level JSON-LD Schema (No Breadcrumb HTML Tag as Requested) */}
+    <main className="bg-[#030712] text-slate-100 min-h-screen font-sans selection:bg-[#0b63c5] selection:text-white pt-0 overflow-x-hidden">
+      {/* Search Engine, AI & Server Level JSON-LD Schema */}
       <script 
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, serviceSchema]) }} 
       />
 
-      {/* --- HERO SECTION --- */}
-      <section className="relative pt-8 md:pt-12 pb-16 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] md:w-[900px] h-[350px] md:h-[450px] bg-gradient-to-tr from-[#0b63c5]/20 via-blue-500/10 to-transparent blur-[140px] rounded-full pointer-events-none -z-10" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5 md:gap-3 mb-8">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-800 text-slate-300 shadow-sm backdrop-blur-sm">
+      {/* --- HERO SECTION WITH TRANSPARENT HEADER COMPATIBILITY --- */}
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-14 md:pb-20 overflow-hidden">
+        {/* Background glow and subtle ambient gradient */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-b from-[#0b63c5]/15 via-blue-500/5 to-transparent blur-3xl pointer-events-none -z-10" />
+        <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#030712] via-[#030712]/80 to-transparent pointer-events-none z-10" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-2.5 mb-6 sm:mb-8">
+            <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-slate-900/90 border border-slate-700/80 text-slate-200 shadow-sm backdrop-blur-md">
               <ShieldCheck className="w-3.5 h-3.5 text-[#0b63c5]" />
               ISO 45001 Certified
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-800 text-slate-300 shadow-sm backdrop-blur-sm">
+            <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-slate-900/90 border border-slate-700/80 text-slate-200 shadow-sm backdrop-blur-md">
               <Award className="w-3.5 h-3.5 text-[#0b63c5]" />
               UAE Trade Licensed
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-800 text-slate-300 shadow-sm backdrop-blur-sm">
+            <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-slate-900/90 border border-slate-700/80 text-slate-200 shadow-sm backdrop-blur-md">
               <Calendar className="w-3.5 h-3.5 text-[#0b63c5]" />
               Operating Since 2014
             </span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
-                Annual Maintenance Contracts (AMC) in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-[#0b63c5]">Abu Dhabi & UAE</span>
+                Annual Maintenance Contracts (AMC) in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#0b63c5]">Abu Dhabi & UAE</span>
               </h1>
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
+              <p className="text-sm sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
                 Scheduled inspections, preventive maintenance, emergency response and continuous performance monitoring — so small issues never become costly failures.
               </p>
 
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+              {/* Mobile-optimized action buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2 w-full sm:w-auto">
                 <a
                   href="#contact"
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-sm transition-all shadow-lg shadow-[#0b63c5]/25 hover:shadow-[#0b63c5]/40 active:scale-95 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-[#0b63c5]/25 hover:shadow-[#0b63c5]/40 active:scale-95 flex items-center justify-center gap-2"
                 >
-                  Get a Tailored AMC Plan
-                  <ArrowRight className="w-4 h-4" />
+                  <span>Get a Tailored AMC Plan</span>
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </a>
                 <a
                   href="tel:+971528976025"
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-[#0b63c5]/50 text-slate-200 font-semibold text-sm transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-slate-900/90 border border-slate-700 hover:border-[#0b63c5] text-slate-100 hover:text-white font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-2"
                 >
-                  <Phone className="w-4 h-4 text-[#0b63c5]" />
-                  +971 52 897 6025
+                  <Phone className="w-4 h-4 text-[#0b63c5] shrink-0" />
+                  <span>+971 52 897 6025</span>
                 </a>
               </div>
             </div>
 
+            {/* Improved Hero Image Visibility */}
             <div className="lg:col-span-5 space-y-3">
-              <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
+              <div className="relative h-[260px] sm:h-[360px] lg:h-[380px] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl group bg-slate-900">
                 <Image
                   src="/annual-maintenance-contract.webp"
                   alt="Annual Maintenance Contracts AMC Abu Dhabi UAE"
                   fill
                   priority
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-95 group-hover:opacity-100"
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-60" />
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/90 shadow-xl backdrop-blur-md transition-colors hover:border-[#0b63c5]/40">
+              <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-xl backdrop-blur-md transition-colors hover:border-[#0b63c5]">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-[#0b63c5] shrink-0">
-                    <Building2 className="w-5 h-5" />
+                  <div className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl bg-[#0b63c5]/20 text-white shrink-0">
+                    <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 font-medium">Headquartered in</p>
-                    <p className="text-sm font-bold text-white">Musaffah, Abu Dhabi, UAE</p>
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Headquartered in</p>
+                    <p className="text-xs sm:text-sm font-bold text-white">Musaffah, Abu Dhabi, UAE</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border-y border-slate-800/80 py-8 text-center">
-            <div>
+          <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 border-t border-slate-800/80 pt-8 text-center">
+            <div className="p-2">
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">35+</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Engineering & Support Staff</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Engineering & Support Staff</p>
             </div>
-            <div>
+            <div className="p-2">
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">22+</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Projects Delivered</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Projects Delivered</p>
             </div>
-            <div>
+            <div className="p-2">
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">2014</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Established in UAE</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Established in UAE</p>
             </div>
-            <div>
+            <div className="p-2">
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">24/7</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Emergency Support</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Emergency Support</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* --- QUICK ANSWER SECTION --- */}
-      <section className="py-8 bg-slate-950/60 border-y border-slate-900/80">
+      <section className="py-8 bg-slate-950/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/40 border border-[#0b63c5]/25 backdrop-blur-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#0b63c5]/10 rounded-full blur-2xl pointer-events-none" />
-            <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-              <div className="space-y-2">
-                <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Quick Answer</span>
-                <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-5xl">
-                  An <strong className="text-white font-semibold">Annual Maintenance Contract (AMC)</strong> is a yearly service agreement that covers scheduled preventive maintenance, emergency repairs and routine inspections for a facility's equipment and systems, giving clients predictable costs and reduced downtime.
+          <div className="p-5 sm:p-8 rounded-2xl bg-slate-900/90 border border-slate-700/80 backdrop-blur-sm relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#0b63c5]/15 rounded-full blur-2xl pointer-events-none" />
+            <div className="flex flex-col md:flex-row gap-3 sm:gap-4 items-start md:items-center justify-between relative z-10">
+              <div className="space-y-1.5 sm:space-y-2">
+                <span className="text-[11px] sm:text-xs font-bold text-white uppercase tracking-wider bg-[#0b63c5]/30 px-2.5 py-0.5 rounded-md border border-[#0b63c5]/40 inline-block">Quick Answer</span>
+                <p className="text-xs sm:text-base text-slate-100 leading-relaxed max-w-5xl">
+                  An <strong className="text-white font-bold">Annual Maintenance Contract (AMC)</strong> is a yearly service agreement that covers scheduled preventive maintenance, emergency repairs and routine inspections for a facility's equipment and systems, giving clients predictable costs and reduced downtime.
                 </p>
               </div>
             </div>
@@ -345,35 +347,35 @@ export default function AMCPage() {
       </section>
 
       {/* --- WHAT'S INCLUDED SECTION --- */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
           
-          <div className="text-center max-w-2xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0b63c5]/10 border border-[#0b63c5]/20 text-[#0b63c5] text-xs font-bold uppercase tracking-wider">
-              <Layers className="w-3.5 h-3.5" />
+          <div className="text-center max-w-2xl mx-auto space-y-2.5 sm:space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0b63c5]/20 border border-[#0b63c5]/40 text-white text-xs font-bold uppercase tracking-wider">
+              <Layers className="w-3.5 h-3.5 text-[#0b63c5]" />
               Comprehensive Scope
             </div>
             <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">What's Included in Our AMC</h2>
-            <p className="text-sm text-slate-400">Complete end-to-end facility protection and preventive care</p>
+            <p className="text-xs sm:text-sm text-slate-300">Complete end-to-end facility protection and preventive care</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 auto-rows-fr">
             {whatsIncludedItems.map((item, idx) => {
               const IconComponent = item.icon;
               return (
                 <div 
                   key={idx} 
-                  className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
+                  className="p-5 sm:p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-[#0b63c5] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-[#0b63c5]/10"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-3.5">
                     <div className="flex items-center justify-between">
-                      <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
+                      <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-white group-hover:bg-[#0b63c5] transition-colors">
                         <IconComponent className="w-5 h-5" />
                       </div>
-                      <span className="text-xs font-mono font-bold text-slate-500">0{idx + 1}</span>
+                      <span className="text-xs font-mono font-bold text-slate-300">0{idx + 1}</span>
                     </div>
-                    <h3 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h3>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+                    <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-white transition-colors">{item.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               );
@@ -384,33 +386,33 @@ export default function AMCPage() {
       </section>
 
       {/* --- BENEFITS SECTION --- */}
-      <section className="py-16 bg-slate-950 border-y border-slate-900">
+      <section className="py-12 sm:py-16 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
             
-            <div className="lg:col-span-5 space-y-4 text-center lg:text-left">
-              <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Key Advantages</span>
+            <div className="lg:col-span-5 space-y-3.5 sm:space-y-4 text-center lg:text-left">
+              <span className="text-xs font-bold text-white bg-[#0b63c5]/30 px-2.5 py-1 rounded-md border border-[#0b63c5]/40 uppercase tracking-wider inline-block">Key Advantages</span>
               <h2 className="text-2xl sm:text-4xl font-black text-white">Benefits of an AMC</h2>
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 Partnering with Emrald Ace for your Annual Maintenance Contract delivers tangible operational efficiency, long-term asset security, and financial clarity for residential, commercial, or industrial properties.
               </p>
 
-              <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
+              <div className="relative h-[220px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-700/80 mt-4 sm:mt-6 bg-slate-900">
                 <Image
                   src="/anual-maintenance-contract-2.webp"
                   alt="AMC Benefits and Facility Management"
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover hover:scale-105 transition-transform duration-700 ease-out opacity-90 hover:opacity-100"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
             </div>
 
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {benefits.map((benefit, idx) => (
-                <div key={idx} className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 flex items-start gap-3 hover:border-[#0b63c5]/40 transition-colors shadow-md">
-                  <CheckCircle2 className="w-5 h-5 text-[#0b63c5] shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-200 font-semibold leading-snug">{benefit}</span>
+                <div key={idx} className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-900/80 border border-slate-800 flex items-start gap-3 hover:border-[#0b63c5] transition-colors shadow-sm">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-slate-100 font-semibold leading-snug">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -420,22 +422,22 @@ export default function AMCPage() {
       </section>
 
       {/* --- HOW IT WORKS --- */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-white">How It Works</h2>
-            <p className="text-sm text-slate-400">Our structured 4-step deployment process</p>
+            <p className="text-xs sm:text-sm text-slate-300">Our structured 4-step deployment process</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {steps.map((step, idx) => (
               <div 
                 key={idx} 
-                className="relative p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 space-y-3 hover:border-[#0b63c5]/40 transition-colors"
+                className="relative p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-2.5 sm:space-y-3 hover:border-[#0b63c5] transition-colors"
               >
-                <span className="text-3xl font-black text-[#0b63c5]">{step.num}</span>
-                <h3 className="text-base font-bold text-white">{step.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{step.desc}</p>
+                <span className="text-2xl sm:text-3xl font-black text-[#0b63c5]">{step.num}</span>
+                <h3 className="text-sm sm:text-base font-bold text-white">{step.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -443,16 +445,16 @@ export default function AMCPage() {
       </section>
 
       {/* --- INDUSTRIES WE SERVE --- */}
-      <section className="py-12 bg-slate-950/60 border-y border-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <section className="py-10 sm:py-12 bg-slate-950/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6">
           <div className="text-center sm:text-left">
             <h2 className="text-xl sm:text-2xl font-black text-white">Industries We Serve</h2>
-            <p className="text-xs text-slate-400 mt-1">Tailored AMC solutions for sectors across Abu Dhabi & UAE</p>
+            <p className="text-xs sm:text-sm text-slate-300 mt-1">Tailored AMC solutions for sectors across Abu Dhabi & UAE</p>
           </div>
 
-          <div className="flex flex-wrap justify-center sm:justify-start gap-2.5 sm:gap-3">
+          <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3">
             {industries.map((ind, idx) => (
-              <div key={idx} className="px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-semibold text-slate-300 hover:border-[#0b63c5] hover:text-white transition-all shadow-sm">
+              <div key={idx} className="px-3.5 sm:px-4 py-2 rounded-xl bg-slate-900 border border-slate-700/80 text-xs sm:text-sm font-medium text-slate-100 hover:border-[#0b63c5] hover:text-white transition-all shadow-sm">
                 {ind}
               </div>
             ))}
@@ -461,45 +463,45 @@ export default function AMCPage() {
       </section>
 
       {/* --- FEATURED PROJECTS --- */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-white">Featured Projects</h2>
-            <p className="text-sm text-slate-400">Demonstrated excellence across commercial, retail, and civil facilities</p>
+            <p className="text-xs sm:text-sm text-slate-300">Demonstrated excellence across commercial, retail, and civil facilities</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-fr">
             {projects.map((proj, idx) => (
               <div 
                 key={idx} 
-                className="group p-6 rounded-2xl bg-gradient-to-b from-slate-900/80 to-slate-900/30 border border-slate-800 hover:border-[#0b63c5]/50 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-lg"
+                className="group p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-900/40 border border-slate-800 hover:border-[#0b63c5] transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-md"
               >
-                <div className="space-y-4">
+                <div className="space-y-3.5">
                   <div className="flex items-center justify-between">
-                    <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5]">
-                      <FolderCheck className="w-5 h-5" />
+                    <div className="p-2 sm:p-2.5 rounded-xl bg-[#0b63c5]/20 text-white">
+                      <FolderCheck className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0b63c5] bg-[#0b63c5]/10 px-2.5 py-1 rounded-md border border-[#0b63c5]/20">
-                      <MapPin className="w-3 h-3" />
+                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-white bg-[#0b63c5]/20 px-2.5 py-1 rounded-md border border-[#0b63c5]/30">
+                      <MapPin className="w-3 h-3 text-[#0b63c5]" />
                       {proj.location}
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#0b63c5] transition-colors leading-snug">
+                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-white transition-colors leading-snug">
                       {proj.title}
                     </h3>
-                    <p className="text-xs text-slate-400 mt-2">
-                      Client: <span className="text-slate-200 font-medium">{proj.client}</span>
+                    <p className="text-xs sm:text-sm text-slate-300 mt-2">
+                      Client: <span className="text-white font-semibold">{proj.client}</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-4 mt-6 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-400">
-                  <span className="flex items-center gap-1 text-slate-300">
-                    <Check className="w-3.5 h-3.5 text-[#0b63c5]" /> Verified Delivery
+                <div className="pt-4 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-300">
+                  <span className="flex items-center gap-1.5 text-slate-200">
+                    <Check className="w-3.5 h-3.5 text-emerald-400" /> Verified Delivery
                   </span>
-                  <span className="font-mono text-[10px] text-slate-500">PROJ-0{idx + 1}</span>
+                  <span className="font-mono text-[11px] text-slate-400">PROJ-0{idx + 1}</span>
                 </div>
               </div>
             ))}
@@ -508,14 +510,14 @@ export default function AMCPage() {
       </section>
 
       {/* --- FAQ SECTION --- */}
-      <section className="py-16 bg-slate-950 border-t border-slate-900">
+      <section className="py-12 sm:py-16 bg-slate-950">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-white">FAQs</h2>
-            <p className="text-sm text-slate-400">Everything you need to know about Annual Maintenance Contracts</p>
+            <p className="text-xs sm:text-sm text-slate-300">Everything you need to know about Annual Maintenance Contracts</p>
           </div>
 
-          <div className="divide-y divide-slate-800 rounded-2xl bg-slate-900/30 border border-slate-800 p-6 sm:p-8 backdrop-blur-sm">
+          <div className="divide-y divide-slate-800/80 rounded-2xl bg-slate-900/60 border border-slate-800 p-4 sm:p-8 backdrop-blur-sm">
             {faqs.map((faq, idx) => (
               <FAQAccordion key={idx} faq={faq} />
             ))}
@@ -523,35 +525,36 @@ export default function AMCPage() {
         </div>
       </section>
 
-      {/* --- CALL TO ACTION (CTA) --- */}
-      <section id="contact" className="py-16">
+      {/* --- CALL TO ACTION (CTA) WITHOUT BOTTOM BORDER --- */}
+      <section id="contact" className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-[#0b63c5]/30 border border-[#0b63c5]/30 p-8 sm:p-12 overflow-hidden shadow-2xl">
+          <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900/90 to-[#0b63c5]/30 border border-[#0b63c5]/40 p-6 sm:p-12 overflow-hidden shadow-2xl">
             
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-center lg:text-left">
-              <div className="lg:col-span-8 space-y-4">
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center text-center lg:text-left">
+              <div className="lg:col-span-8 space-y-3 sm:space-y-4">
                 <h2 className="text-2xl sm:text-4xl font-black text-white">
                   Get a Tailored Annual Maintenance Contracts Plan for Your Property
                 </h2>
-                <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto lg:mx-0">
+                <p className="text-xs sm:text-base text-slate-200 max-w-2xl mx-auto lg:mx-0">
                   Protect your assets with proactive maintenance, 24/7 emergency response, and customized contract scopes.
                 </p>
               </div>
 
-              <div className="lg:col-span-4 flex flex-col space-y-3">
+              {/* Mobile-optimized CTAs */}
+              <div className="lg:col-span-4 flex flex-col gap-2.5 sm:gap-3 w-full">
                 <a
                   href="mailto:sales1@emraldace.com"
-                  className="px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2 shadow-lg active:scale-95"
+                  className="w-full px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-2 shadow-lg active:scale-95"
                 >
-                  <Mail className="w-4 h-4" />
-                  sales1@emraldace.com
+                  <Mail className="w-4 h-4 shrink-0" />
+                  <span>sales1@emraldace.com</span>
                 </a>
                 <a
                   href="tel:+971528976025"
-                  className="px-6 py-3.5 rounded-xl bg-slate-950/80 border border-slate-700 hover:border-slate-500 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2"
+                  className="w-full px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-slate-950 border border-slate-700 hover:border-slate-500 text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-2"
                 >
-                  <Phone className="w-4 h-4 text-[#0b63c5]" />
-                  Call: +971 52 897 6025
+                  <Phone className="w-4 h-4 text-[#0b63c5] shrink-0" />
+                  <span>Call: +971 52 897 6025</span>
                 </a>
               </div>
             </div>

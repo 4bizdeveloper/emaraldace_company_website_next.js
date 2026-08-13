@@ -29,26 +29,26 @@ function FAQAccordion({ faq }: { faq: { q: string; a: string } }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-slate-800/80 transition-colors duration-200">
+    <div className="border-b border-slate-800/90 last:border-b-0 transition-colors duration-200">
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-5 flex justify-between items-center text-left focus:outline-none group cursor-pointer"
+        className="w-full py-4 sm:py-5 flex justify-between items-center text-left focus:outline-none focus:ring-2 focus:ring-[#0b63c5] focus:ring-offset-2 focus:ring-offset-slate-950 rounded-lg group cursor-pointer transition-all"
         aria-expanded={isOpen}
       >
-        <span className="text-base font-semibold text-slate-100 group-hover:text-[#0b63c5] transition-colors pr-4">
+        <span className="text-sm sm:text-base font-semibold text-slate-100 group-hover:text-cyan-400 transition-colors pr-3">
           {faq.q}
         </span>
-        <div className={`p-2 rounded-full border border-slate-800 bg-slate-900/50 text-slate-400 group-hover:border-[#0b63c5]/40 group-hover:text-[#0b63c5] transition-all duration-300 shrink-0 ${isOpen ? 'rotate-180 bg-[#0b63c5]/10 text-[#0b63c5]' : ''}`}>
+        <div className={`p-1.5 sm:p-2 rounded-full border border-slate-700 bg-slate-900/80 text-cyan-400 group-hover:border-[#0b63c5] group-hover:text-white transition-all duration-300 shrink-0 ${isOpen ? 'rotate-180 bg-[#0b63c5] text-white shadow-lg shadow-[#0b63c5]/30' : ''}`}>
           <ChevronDown className="w-4 h-4" />
         </div>
       </button>
       <div 
         className={`grid transition-all duration-300 ease-in-out ${
-          isOpen ? 'grid-rows-[1fr] opacity-100 pb-5' : 'grid-rows-[0fr] opacity-0'
+          isOpen ? 'grid-rows-[1fr] opacity-100 pb-5' : 'grid-rows-[0fr] opacity-0 overflow-hidden'
         }`}
       >
-        <div className="overflow-hidden text-sm text-slate-400 leading-relaxed pl-1">
+        <div className="overflow-hidden text-xs sm:text-sm text-slate-300 leading-relaxed pl-1 pr-2">
           {faq.a}
         </div>
       </div>
@@ -57,7 +57,7 @@ function FAQAccordion({ faq }: { faq: { q: string; a: string } }) {
 }
 
 export default function MEPPage() {
-  // Breadcrumb Schema (JSON-LD Only - Format: Home > Services > Current Page Name)
+  // Breadcrumb Schema (JSON-LD)
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -83,7 +83,7 @@ export default function MEPPage() {
     ]
   };
 
-  // Service Schema for Advanced AI Search & Search Engine Level SEO
+  // Service Schema for Advanced AI Search & Local GEO Optimization
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -107,32 +107,32 @@ export default function MEPPage() {
   const mepIncludedItems = [
     {
       title: "Electrical Installation",
-      desc: "Design and installation of power distribution systems, wiring, panel boards, and lighting circuits, built to UAE electrical codes and sized to match the facility's current and future load requirements.",
+      desc: "Design and installation of power distribution systems, wiring, panel boards, and lighting circuits, built to UAE electrical codes and sized to match facility load requirements.",
       icon: Zap
     },
     {
       title: "Mechanical Works",
-      desc: "Installation and upkeep of core mechanical infrastructure supporting a building's operational systems, coordinated alongside HVAC and plumbing works.",
+      desc: "Installation and upkeep of core mechanical infrastructure supporting operational systems, coordinated alongside HVAC and plumbing works.",
       icon: Wrench
     },
     {
       title: "HVAC System",
-      desc: "Full-cycle HVAC delivery: design, equipment selection, installation, and commissioning, sized for the building's occupancy and climate demands, with energy efficiency built into the design.",
+      desc: "Full-cycle HVAC delivery: design, equipment selection, installation, and commissioning, sized for building occupancy and Gulf climate demands.",
       icon: Cpu
     },
     {
       title: "Plumbing & Drainage",
-      desc: "Installation of water supply lines, drainage systems, and wastewater management infrastructure, engineered to prevent leaks, blockages, and pressure issues.",
+      desc: "Installation of water supply lines, drainage systems, and wastewater management infrastructure engineered to prevent leaks and pressure drops.",
       icon: Droplet
     },
     {
       title: "Fire Fighting & Fire Alarm",
-      desc: "Installation of fire suppression systems (sprinklers, hydrants) and fire alarm/detection systems, tested and commissioned to meet UAE Civil Defense compliance requirements.",
+      desc: "Installation of fire suppression systems (sprinklers, hydrants) and detection systems, fully tested to meet UAE Civil Defense standards.",
       icon: Flame
     },
     {
       title: "Building Automation & Commissioning",
-      desc: "Integration of ELV (Extra-Low Voltage) systems and building automation controls for centralized monitoring of HVAC, lighting, and security, followed by formal testing and commissioning before handover.",
+      desc: "Integration of ELV systems and building automation controls for centralized monitoring of HVAC, lighting, and security with complete handover.",
       icon: Activity
     }
   ];
@@ -152,7 +152,7 @@ export default function MEPPage() {
     { num: "01", title: "Site Assessment & Design", desc: "We evaluate load demands, site parameters, and project compliance requirements." },
     { num: "02", title: "Engineering & Procurement", desc: "Detailed system modeling, material selection, and code-aligned design approval." },
     { num: "03", title: "Installation & Integration", desc: "Execution of electrical, HVAC, plumbing, and fire safety systems on site." },
-    { num: "04", title: "Testing, Commissioning & Handover", desc: "Formal validation, Civil Defense compliance testing, and seamless client sign-off." }
+    { num: "04", title: "Testing & Handover", desc: "Formal validation, Civil Defense compliance testing, and seamless client sign-off." }
   ];
 
   const industries = [
@@ -197,136 +197,140 @@ export default function MEPPage() {
   const faqs = [
     {
       q: "What does MEP stand for and what does Emrald Ace's MEP service include?",
-      a: "MEP stands for Mechanical, Electrical and Plumbing. Covers electrical installation, mechanical works, HVAC systems, plumbing and drainage, fire fighting and fire alarm systems, ELV systems, building automation, and testing and commissioning."
+      a: "MEP stands for Mechanical, Electrical, and Plumbing. Our services cover electrical installation, mechanical works, HVAC systems, plumbing, drainage, fire fighting, fire alarm systems, ELV systems, building automation, and final testing and commissioning."
     },
     {
       q: "Does Emrald Ace handle fire fighting and fire alarm installation?",
-      a: "Yes, fire fighting and fire alarm systems are part of Emrald Ace's MEP Engineering scope."
+      a: "Yes, complete life-safety system engineering, including fire fighting sprinklers and civil defense-compliant fire alarms, is core to our MEP scope."
     },
     {
       q: "Does Emrald Ace provide testing and commissioning for MEP systems?",
-      a: "Yes — included as the final stage of MEP Engineering delivery."
+      a: "Yes, comprehensive testing, balancing, and commissioning are standard stages before project sign-off and handover."
     },
     {
       q: "Can MEP Engineering be combined with fit-out or general contracting?",
-      a: "Yes, frequently delivered alongside Interior Fit-Out and General Contracting on the same project."
+      a: "Absolutely. We routinely manage turnkey solutions combining structural civil works, interior fit-out, and complete MEP integration."
     }
   ];
 
   return (
-    <main className="bg-[#030712] text-slate-100 min-h-screen font-sans selection:bg-[#0b63c5] selection:text-white pt-20 overflow-x-hidden">
-      {/* Structural Schema Injection for Search Engine, AI Search & Breadcrumbs */}
+    <main className="bg-[#030712] text-slate-100 min-h-screen font-sans selection:bg-[#0b63c5] selection:text-white pt-0 overflow-x-hidden">
+      {/* Structural Schema Injection */}
       <script 
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, serviceSchema]) }} 
       />
 
-      {/* Page Title & Meta Description context kept intact in HTML Metadata Head when rendered via Next.js Metadata API or Layout */}
-
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-8 md:pt-12 pb-16 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] md:w-[900px] h-[350px] md:h-[450px] bg-gradient-to-tr from-[#0b63c5]/20 via-blue-500/10 to-transparent blur-[140px] rounded-full pointer-events-none -z-10" />
-        
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-16 overflow-hidden bg-[#030712]">
+        {/* Blended Background Gradient Glow for Seamless Header Alignment */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-b from-[#0b63c5]/25 via-blue-600/10 to-transparent blur-[120px] rounded-full pointer-events-none -z-10" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5 md:gap-3 mb-8">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-800 text-slate-300 shadow-sm backdrop-blur-sm">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#0b63c5]" />
+          {/* Certifications Badges */}
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-3 mb-6 sm:mb-8">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 sm:py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-700/80 text-cyan-300 shadow-sm backdrop-blur-md">
+              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
               ISO 45001 Certified
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-800 text-slate-300 shadow-sm backdrop-blur-sm">
-              <Award className="w-3.5 h-3.5 text-[#0b63c5]" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 sm:py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-700/80 text-cyan-300 shadow-sm backdrop-blur-md">
+              <Award className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
               UAE Code Compliant
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-800 text-slate-300 shadow-sm backdrop-blur-sm">
-              <Calendar className="w-3.5 h-3.5 text-[#0b63c5]" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 sm:py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-700/80 text-cyan-300 shadow-sm backdrop-blur-md">
+              <Calendar className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
               Operating Since 2014
             </span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
-                MEP Engineering Contractor in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-[#0b63c5]">Abu Dhabi & the UAE</span>
+                MEP Engineering Contractor in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-cyan-400">Abu Dhabi & UAE</span>
               </h1>
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-                Integrated Mechanical, Electrical & Plumbing solutions — from installation through testing and commissioning.
+              <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
+                Integrated Mechanical, Electrical & Plumbing solutions — from site execution to testing and handover.
               </p>
 
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+              {/* Mobile Concise CTA Buttons */}
+              <div className="flex flex-row flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-4 pt-2">
                 <a
                   href="#contact"
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-sm transition-all shadow-lg shadow-[#0b63c5]/25 hover:shadow-[#0b63c5]/40 active:scale-95 flex items-center justify-center gap-2"
+                  className="flex-1 sm:flex-none px-4 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-[#0b63c5] hover:bg-blue-600 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-[#0b63c5]/30 hover:shadow-[#0b63c5]/50 active:scale-95 flex items-center justify-center gap-1.5 sm:gap-2 text-center"
                 >
-                  Get a Tailored MEP Plan
-                  <ArrowRight className="w-4 h-4" />
+                  <span>Get MEP Plan</span>
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                 </a>
                 <a
                   href="tel:+971528976025"
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-[#0b63c5]/50 text-slate-200 font-semibold text-sm transition-all flex items-center justify-center gap-2"
+                  className="flex-1 sm:flex-none px-4 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-cyan-400 text-slate-100 font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-center"
                 >
-                  <Phone className="w-4 h-4 text-[#0b63c5]" />
-                  +971 52 897 6025
+                  <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 shrink-0" />
+                  <span>+971 52 897 6025</span>
                 </a>
               </div>
             </div>
 
+            {/* Brightened & High Visibility Hero Image */}
             <div className="lg:col-span-5 space-y-3">
-              <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
+              <div className="relative h-[260px] sm:h-[340px] lg:h-[380px] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl group bg-slate-900">
                 <Image
                   src="/mep-engineering-services.webp"
                   alt="MEP Engineering Contractor Abu Dhabi UAE"
                   fill
                   priority
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out brightness-110 contrast-105"
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/90 shadow-xl backdrop-blur-md transition-colors hover:border-[#0b63c5]/40">
+              <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-xl backdrop-blur-md transition-colors hover:border-cyan-400/50">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-[#0b63c5] shrink-0">
-                    <Building2 className="w-5 h-5" />
+                  <div className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl bg-[#0b63c5]/20 text-cyan-400 shrink-0">
+                    <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 font-medium">Headquartered in</p>
-                    <p className="text-sm font-bold text-white">Musaffah, Abu Dhabi, UAE</p>
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Headquartered in</p>
+                    <p className="text-xs sm:text-sm font-bold text-white">Musaffah, Abu Dhabi, UAE</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border-y border-slate-800/80 py-8 text-center">
+          {/* Stats Bar */}
+          <div className="mt-10 sm:mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 border-y border-slate-800/90 py-6 sm:py-8 text-center">
             <div>
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">100%</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Civil Defense Compliant</p>
+              <p className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">100%</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-0.5 sm:mt-1">Civil Defense Compliant</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">22+</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Projects Delivered</p>
+              <p className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">22+</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-0.5 sm:mt-1">Projects Delivered</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">2014</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Established in UAE</p>
+              <p className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">2014</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-0.5 sm:mt-1">Established in UAE</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">Full</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Testing & Commissioning</p>
+              <p className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">Full</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-0.5 sm:mt-1">Testing & Handover</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* --- QUICK ANSWER SECTION --- */}
-      <section className="py-8 bg-slate-950/60 border-y border-slate-900/80">
+      <section className="py-6 sm:py-8 bg-slate-950/80 border-y border-slate-800/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/40 border border-[#0b63c5]/25 backdrop-blur-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#0b63c5]/10 rounded-full blur-2xl pointer-events-none" />
-            <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-              <div className="space-y-2">
-                <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Quick Answer</span>
-                <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-5xl">
-                  MEP Engineering covers the design, installation and commissioning of a building's Mechanical, Electrical and Plumbing systems — HVAC, power, fire safety, drainage and building automation — delivered by Emrald Ace as an integrated service across the UAE.
+          <div className="p-5 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/50 border border-cyan-500/30 backdrop-blur-sm relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#0b63c5]/15 rounded-full blur-2xl pointer-events-none" />
+            <div className="flex flex-col md:flex-row gap-3 sm:gap-4 items-start md:items-center justify-between">
+              <div className="space-y-1.5 sm:space-y-2">
+                <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Quick Answer</span>
+                <p className="text-xs sm:text-sm md:text-base text-slate-200 leading-relaxed max-w-5xl font-medium">
+                  MEP Engineering covers the design, installation, and commissioning of a building's Mechanical, Electrical, and Plumbing systems — including HVAC, power, fire safety, drainage, and automation — delivered by Emrald Ace across the UAE.
                 </p>
               </div>
             </div>
@@ -335,31 +339,31 @@ export default function MEPPage() {
       </section>
 
       {/* --- WHAT'S INCLUDED SECTION --- */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
           
-          <div className="text-center max-w-2xl mx-auto space-y-3">
+          <div className="text-center max-w-2xl mx-auto space-y-2.5">
             <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">What's Included in Our MEP Scope</h2>
-            <p className="text-sm text-slate-400">Complete, end-to-end electromechanical engineering and installation solutions.</p>
+            <p className="text-xs sm:text-sm text-slate-300">Complete, end-to-end electromechanical engineering and installation solutions.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-fr">
             {mepIncludedItems.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div 
                   key={idx} 
-                  className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
+                  className="p-5 sm:p-6 rounded-2xl bg-slate-900/70 border border-slate-800/90 hover:border-cyan-400/50 transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-cyan-500/10"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-3.5">
                     <div className="flex items-center justify-between">
-                      <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] group-hover:bg-[#0b63c5] group-hover:text-white transition-colors shrink-0">
-                        <Icon className="w-6 h-6" />
+                      <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-cyan-400 group-hover:bg-[#0b63c5] group-hover:text-white transition-colors shrink-0">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                       </div>
-                      <span className="text-xs font-mono text-slate-500 font-semibold">0{idx + 1}</span>
+                      <span className="text-xs font-mono text-cyan-300/80 font-bold">0{idx + 1}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h3>
-                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">{item.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               );
@@ -370,32 +374,32 @@ export default function MEPPage() {
       </section>
 
       {/* --- WHY EMRALD ACE --- */}
-      <section className="py-16 bg-slate-950 border-y border-slate-900">
+      <section className="py-12 sm:py-16 bg-slate-950 border-y border-slate-800/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <div className="lg:col-span-5 space-y-4 text-center lg:text-left">
-              <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">The Engineering Advantage</span>
+            <div className="lg:col-span-5 space-y-3.5 text-center lg:text-left">
+              <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">The Engineering Advantage</span>
               <h2 className="text-2xl sm:text-4xl font-black text-white">Why Emrald Ace for MEP?</h2>
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 We combine precise electromechanical design with flawless site execution. Delivering safer, high-performance infrastructure built to withstand regional climate conditions.
               </p>
 
-              <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
+              <div className="relative h-[200px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-700/80 mt-4 sm:mt-6 bg-slate-900">
                 <Image
                   src="/mep-engineering-services-2.webp"
                   alt="Emrald Ace MEP Engineering Team"
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover hover:scale-105 transition-transform duration-700 ease-out brightness-105"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
             </div>
 
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {whyChooseUs.map((reason, idx) => (
-                <div key={idx} className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 flex items-start gap-3 hover:border-[#0b63c5]/40 transition-colors">
-                  <CheckCircle2 className="w-5 h-5 text-[#0b63c5] shrink-0 mt-0.5" />
+                <div key={idx} className="p-3.5 sm:p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-2.5 sm:gap-3 hover:border-cyan-400/50 transition-colors">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 shrink-0 mt-0.5" />
                   <span className="text-xs sm:text-sm text-slate-200 font-medium leading-snug">{reason}</span>
                 </div>
               ))}
@@ -406,22 +410,22 @@ export default function MEPPage() {
       </section>
 
       {/* --- HOW IT WORKS --- */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-white">How We Deliver</h2>
-            <p className="text-sm text-slate-400">Our systematic 4-step execution methodology</p>
+            <p className="text-xs sm:text-sm text-slate-300">Our systematic 4-step execution methodology</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {steps.map((step, idx) => (
               <div 
                 key={idx} 
-                className="relative p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 space-y-3 hover:border-[#0b63c5]/40 transition-colors"
+                className="relative p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-2.5 hover:border-cyan-400/50 transition-colors"
               >
-                <span className="text-3xl font-black text-[#0b63c5]">{step.num}</span>
-                <h3 className="text-base font-bold text-white">{step.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{step.desc}</p>
+                <span className="text-2xl sm:text-3xl font-black text-cyan-400">{step.num}</span>
+                <h3 className="text-sm sm:text-base font-bold text-white">{step.title}</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -429,16 +433,16 @@ export default function MEPPage() {
       </section>
 
       {/* --- INDUSTRIES WE SERVE --- */}
-      <section className="py-12 bg-slate-950/60 border-y border-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <section className="py-10 sm:py-12 bg-slate-950/80 border-y border-slate-800/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6">
           <div className="text-center sm:text-left">
             <h2 className="text-xl sm:text-2xl font-black text-white">Sectors We Serve</h2>
-            <p className="text-xs text-slate-400 mt-1">Tailored MEP solutions across commercial and industrial infrastructure</p>
+            <p className="text-xs sm:text-sm text-slate-300 mt-0.5">Tailored MEP solutions across commercial and industrial infrastructure</p>
           </div>
 
-          <div className="flex flex-wrap justify-center sm:justify-start gap-2.5 sm:gap-3">
+          <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3">
             {industries.map((ind, idx) => (
-              <div key={idx} className="px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-semibold text-slate-300 hover:border-[#0b63c5] hover:text-white transition-all shadow-sm">
+              <div key={idx} className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-900 border border-slate-700/80 text-xs sm:text-sm font-semibold text-slate-200 hover:border-cyan-400 hover:text-white transition-all shadow-sm">
                 {ind}
               </div>
             ))}
@@ -447,45 +451,45 @@ export default function MEPPage() {
       </section>
 
       {/* --- FEATURED PROJECTS --- */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-white">Featured Projects</h2>
-            <p className="text-sm text-slate-400">Demonstrated excellence across commercial, educational, and public facilities</p>
+            <p className="text-xs sm:text-sm text-slate-300">Demonstrated excellence across commercial, educational, and public facilities</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-fr">
             {projects.map((proj, idx) => (
               <div 
                 key={idx} 
-                className="group p-6 rounded-2xl bg-gradient-to-b from-slate-900/80 to-slate-900/30 border border-slate-800 hover:border-[#0b63c5]/50 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-lg"
+                className="group p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-900/40 border border-slate-800 hover:border-cyan-400/50 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-lg"
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5]">
-                      <FolderCheck className="w-5 h-5" />
+                <div className="space-y-3.5">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="p-2 sm:p-2.5 rounded-xl bg-[#0b63c5]/20 text-cyan-400 shrink-0">
+                      <FolderCheck className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0b63c5] bg-[#0b63c5]/10 px-2.5 py-1 rounded-md border border-[#0b63c5]/20">
-                      <MapPin className="w-3 h-3" />
-                      {proj.location}
+                    <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold text-cyan-300 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-500/30">
+                      <MapPin className="w-3 h-3 text-cyan-400 shrink-0" />
+                      <span className="truncate">{proj.location}</span>
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#0b63c5] transition-colors leading-snug">
+                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
                       {proj.title}
                     </h3>
-                    <p className="text-xs text-slate-400 mt-2">
-                      Client: <span className="text-slate-200 font-medium">{proj.client}</span>
+                    <p className="text-xs text-slate-300 mt-2">
+                      Client: <span className="text-slate-100 font-medium">{proj.client}</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-4 mt-6 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-400">
-                  <span className="flex items-center gap-1 text-slate-300">
-                    <Check className="w-3.5 h-3.5 text-[#0b63c5]" /> MEP Execution Verified
+                <div className="pt-3.5 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-300">
+                  <span className="flex items-center gap-1 text-slate-200 text-[11px] sm:text-xs">
+                    <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Verified Delivery
                   </span>
-                  <span className="font-mono text-[10px] text-slate-500">MEP-0{idx + 1}</span>
+                  <span className="font-mono text-[10px] text-cyan-400/80 font-bold">MEP-0{idx + 1}</span>
                 </div>
               </div>
             ))}
@@ -494,14 +498,14 @@ export default function MEPPage() {
       </section>
 
       {/* --- FAQ SECTION --- */}
-      <section className="py-16 bg-slate-950 border-t border-slate-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="py-12 sm:py-16 bg-slate-950 border-t border-slate-800/80">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
           <div className="text-center space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-white">Frequently Asked Questions</h2>
-            <p className="text-sm text-slate-400">Everything you need to know about our MEP Engineering services</p>
+            <p className="text-xs sm:text-sm text-slate-300">Everything you need to know about our MEP Engineering services</p>
           </div>
 
-          <div className="divide-y divide-slate-800 rounded-2xl bg-slate-900/30 border border-slate-800 p-6 sm:p-8 backdrop-blur-sm">
+          <div className="rounded-2xl bg-slate-900/50 border border-slate-800 p-4 sm:p-8 backdrop-blur-sm">
             {faqs.map((faq, idx) => (
               <FAQAccordion key={idx} faq={faq} />
             ))}
@@ -510,34 +514,35 @@ export default function MEPPage() {
       </section>
 
       {/* --- CALL TO ACTION (CTA) --- */}
-      <section id="contact" className="py-16">
+      <section id="contact" className="py-12 sm:py-16 bg-[#030712]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-[#0b63c5]/30 border border-[#0b63c5]/30 p-8 sm:p-12 overflow-hidden shadow-2xl">
+          <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-[#0b63c5]/30 border border-cyan-500/30 p-6 sm:p-12 overflow-hidden shadow-2xl">
             
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-center lg:text-left">
-              <div className="lg:col-span-8 space-y-4">
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center text-center lg:text-left">
+              <div className="lg:col-span-8 space-y-3 sm:space-y-4">
                 <h2 className="text-2xl sm:text-4xl font-black text-white">
                   Get a Tailored MEP Engineering Plan for Your Property
                 </h2>
-                <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto lg:mx-0">
+                <p className="text-xs sm:text-base text-slate-200 max-w-2xl mx-auto lg:mx-0">
                   Connect with our electromechanical specialists to discuss design, installation, or testing requirements across Abu Dhabi and the UAE.
                 </p>
               </div>
 
-              <div className="lg:col-span-4 flex flex-col space-y-3">
+              {/* Mobile Concise CTA Action Buttons */}
+              <div className="lg:col-span-4 flex flex-row flex-wrap sm:flex-col gap-2.5 sm:gap-3">
                 <a
                   href="mailto:sales1@emraldace.com"
-                  className="px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2 shadow-lg active:scale-95"
+                  className="flex-1 sm:flex-none px-4 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-[#0b63c5] hover:bg-blue-600 text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-1.5 sm:gap-2 shadow-lg active:scale-95"
                 >
-                  <Mail className="w-4 h-4" />
-                  sales1@emraldace.com
+                  <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                  <span>Email Us</span>
                 </a>
                 <a
                   href="tel:+971528976025"
-                  className="px-6 py-3.5 rounded-xl bg-slate-950/80 border border-slate-700 hover:border-slate-500 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2"
+                  className="flex-1 sm:flex-none px-4 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-slate-950/90 border border-slate-700 hover:border-cyan-400 text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-1.5 sm:gap-2"
                 >
-                  <Phone className="w-4 h-4 text-[#0b63c5]" />
-                  Call: +971 52 897 6025
+                  <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 shrink-0" />
+                  <span>Call Us</span>
                 </a>
               </div>
             </div>

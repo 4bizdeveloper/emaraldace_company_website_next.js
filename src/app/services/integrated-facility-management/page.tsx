@@ -25,17 +25,17 @@ function FAQAccordion({ faq }: { faq: { q: string; a: string } }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-slate-800/80 transition-colors duration-200">
+    <div className="border-b border-slate-800/80 transition-colors duration-200 last:border-b-0">
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-5 flex justify-between items-center text-left focus:outline-none group cursor-pointer"
+        className="w-full py-4 sm:py-5 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0b63c5] rounded-lg group cursor-pointer"
         aria-expanded={isOpen}
       >
-        <span className="text-base font-semibold text-slate-100 group-hover:text-[#0b63c5] transition-colors pr-4">
+        <span className="text-sm sm:text-base font-semibold text-slate-100 group-hover:text-blue-400 transition-colors pr-3 leading-snug">
           {faq.q}
         </span>
-        <div className={`p-2 rounded-full border border-slate-800 bg-slate-900/50 text-slate-400 group-hover:border-[#0b63c5]/40 group-hover:text-[#0b63c5] transition-all duration-300 shrink-0 ${isOpen ? 'rotate-180 bg-[#0b63c5]/10 text-[#0b63c5]' : ''}`}>
+        <div className={`p-2 rounded-full border border-slate-800 bg-slate-900/60 text-slate-300 group-hover:border-[#0b63c5]/50 group-hover:text-blue-400 transition-all duration-300 shrink-0 ${isOpen ? 'rotate-180 bg-[#0b63c5]/20 text-blue-400' : ''}`}>
           <ChevronDown className="w-4 h-4" />
         </div>
       </button>
@@ -44,7 +44,7 @@ function FAQAccordion({ faq }: { faq: { q: string; a: string } }) {
           isOpen ? 'grid-rows-[1fr] opacity-100 pb-5' : 'grid-rows-[0fr] opacity-0'
         }`}
       >
-        <div className="overflow-hidden text-sm text-slate-400 leading-relaxed pl-1">
+        <div className="overflow-hidden text-xs sm:text-sm text-slate-300 leading-relaxed pl-1">
           {faq.a}
         </div>
       </div>
@@ -79,16 +79,17 @@ export default function IFMPage() {
     ]
   };
 
-  // Service Schema for Advanced AI Search & SEO
+  // Service Schema for Advanced AI Search & GEO Optimization
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Integrated Facility Management",
+    "serviceType": "Facility Management",
     "provider": {
       "@type": "Organization",
       "name": "Emrald Ace General Contracting & Electromechanical",
       "url": "https://www.emraldace.com",
-      "telephone": "+971528976025 ",
+      "telephone": "+971528976025",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Musaffah",
@@ -96,8 +97,60 @@ export default function IFMPage() {
         "addressCountry": "UAE"
       }
     },
-    "areaServed": ["Abu Dhabi", "Dubai", "United Arab Emirates"],
+    "areaServed": [
+      { "@type": "City", "name": "Abu Dhabi" },
+      { "@type": "City", "name": "Dubai" },
+      { "@type": "Country", "name": "United Arab Emirates" }
+    ],
     "description": "ISO 45001-certified Integrated Facility Management in Abu Dhabi & across the UAE. Hard FM, Soft FM & Specialized FM under one accountable team."
+  };
+
+  // FAQ Schema for Search Engines & AI Search
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Integrated Facility Management (IFM)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IFM is a single-provider model combining Hard FM, Soft FM and Specialized FM under one accountable team, instead of managing separate vendors for each service."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does Emrald Ace's IFM service include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hard FM (mechanical, electrical, HVAC, civil, fire safety, BMS, plumbing), Soft FM (cleaning, pest control, waste management, concierge, landscaping) and Specialized FM (asset management, energy management, smart FM, 24/7 helpdesk)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which areas does Emrald Ace serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Emrald Ace is headquartered in Musaffah, Abu Dhabi, and serves clients across the UAE, including Abu Dhabi and Dubai."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Emrald Ace certified for facility management?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — ISO 45001:2018 certified with a UAE Trade License, operating since 2014."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is IFM different from an Annual Maintenance Contract?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An AMC covers scheduled maintenance for specific systems. IFM is broader, bundling Hard FM, Soft FM and Specialized FM under one provider."
+        }
+      }
+    ]
   };
 
   const hardFmItems = [
@@ -259,116 +312,118 @@ export default function IFMPage() {
   ];
 
   return (
-    <main className="bg-[#030712] text-slate-100 min-h-screen font-sans selection:bg-[#0b63c5] selection:text-white pt-20 overflow-x-hidden">
-      {/* Structural Structured Data Injection for Search Engine & AI Optimization */}
+    <main className="bg-[#030712] text-slate-100 min-h-screen font-sans selection:bg-[#0b63c5] selection:text-white pt-0 overflow-x-clip">
+      {/* Structural Structured Data Injection for Search Engines, GEO & AI Search */}
       <script 
         type="application/ld+json" 
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, serviceSchema]) }} 
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, serviceSchema, faqSchema]) }} 
       />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-8 md:pt-12 pb-16 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] md:w-[900px] h-[350px] md:h-[450px] bg-gradient-to-tr from-[#0b63c5]/20 via-blue-500/10 to-transparent blur-[140px] rounded-full pointer-events-none -z-10" />
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-20 overflow-hidden bg-[#030712]">
+        {/* Glowing Background Glow - Gradient adjusted for smooth top transition */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] sm:w-[600px] md:w-[900px] h-[300px] md:h-[450px] bg-gradient-to-b from-[#0b63c5]/25 via-[#0b63c5]/10 to-transparent blur-[120px] md:blur-[150px] rounded-full pointer-events-none -z-10" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5 md:gap-3 mb-8">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-800 text-slate-300 shadow-sm backdrop-blur-sm">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#0b63c5]" />
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-6 sm:mb-8">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-slate-900/90 border border-slate-800 text-slate-200 shadow-sm backdrop-blur-md">
+              <ShieldCheck className="w-3.5 h-3.5 text-blue-400 shrink-0" />
               ISO 45001:2018 Certified
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-800 text-slate-300 shadow-sm backdrop-blur-sm">
-              <Award className="w-3.5 h-3.5 text-[#0b63c5]" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-slate-900/90 border border-slate-800 text-slate-200 shadow-sm backdrop-blur-md">
+              <Award className="w-3.5 h-3.5 text-blue-400 shrink-0" />
               UAE Trade Licensed
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-800 text-slate-300 shadow-sm backdrop-blur-sm">
-              <Calendar className="w-3.5 h-3.5 text-[#0b63c5]" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-slate-900/90 border border-slate-800 text-slate-200 shadow-sm backdrop-blur-md">
+              <Calendar className="w-3.5 h-3.5 text-blue-400 shrink-0" />
               Operating Since 2014
             </span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
-                Integrated Facility Management in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-[#0b63c5]">Abu Dhabi</span> & Across the UAE
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.18] text-white">
+                Integrated Facility Management in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-blue-400">Abu Dhabi</span> & Across the UAE
               </h1>
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
+              <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
                 One accountable team for Hard FM, Soft FM and Specialized FM — so your buildings run safely, efficiently and predictably, without juggling multiple contractors.
               </p>
 
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
                 <a
                   href="#contact"
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-sm transition-all shadow-lg shadow-[#0b63c5]/25 hover:shadow-[#0b63c5]/40 active:scale-95 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-blue-600 text-white font-semibold text-sm transition-all shadow-lg shadow-[#0b63c5]/30 hover:shadow-[#0b63c5]/50 active:scale-98 flex items-center justify-center gap-2"
                 >
                   Schedule Consultation
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </a>
                 <a
                   href="tel:+971528976025"
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-[#0b63c5]/50 text-slate-200 font-semibold text-sm transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900/90 border border-slate-700 hover:border-blue-400 text-slate-100 font-semibold text-sm transition-all flex items-center justify-center gap-2 active:scale-98"
                 >
-                  <Phone className="w-4 h-4 text-[#0b63c5]" />
+                  <Phone className="w-4 h-4 text-blue-400 shrink-0" />
                   +971 52 897 6025
                 </a>
               </div>
             </div>
 
             <div className="lg:col-span-5 space-y-3">
-              <div className="relative h-[320px] sm:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl group bg-slate-900">
+              <div className="relative h-[260px] sm:h-[340px] lg:h-[380px] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-800 shadow-2xl group bg-slate-900">
                 <Image
                   src="/integrated-facility-management-1.webp"
                   alt="Integrated Facility Management Abu Dhabi"
                   fill
                   priority
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out brightness-105 contrast-105"
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800/90 shadow-xl backdrop-blur-md transition-colors hover:border-[#0b63c5]/40">
+              <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900/95 border border-slate-800 shadow-xl backdrop-blur-md transition-colors hover:border-[#0b63c5]/50">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-[#0b63c5] shrink-0">
-                    <Building2 className="w-5 h-5" />
+                  <div className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl bg-[#0b63c5]/20 text-blue-400 shrink-0">
+                    <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 font-medium">Headquartered in</p>
-                    <p className="text-sm font-bold text-white">Musaffah, Abu Dhabi, UAE</p>
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Headquartered in</p>
+                    <p className="text-xs sm:text-sm font-bold text-white">Musaffah, Abu Dhabi, UAE</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border-y border-slate-800/80 py-8 text-center">
+          <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border-y border-slate-800/80 py-6 sm:py-8 text-center">
             <div>
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">35+</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Engineering & FM Staff</p>
+              <p className="text-2xl sm:text-4xl font-black text-white tracking-tight">35+</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Engineering & FM Staff</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">22+</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Projects Delivered</p>
+              <p className="text-2xl sm:text-4xl font-black text-white tracking-tight">22+</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Projects Delivered</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">2014</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Established in UAE</p>
+              <p className="text-2xl sm:text-4xl font-black text-white tracking-tight">2014</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Established in UAE</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">24/7</p>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">Helpdesk & Emergency Response</p>
+              <p className="text-2xl sm:text-4xl font-black text-white tracking-tight">24/7</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Helpdesk & Emergency</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* --- QUICK ANSWER SECTION --- */}
-      <section className="py-8 bg-slate-950/60 border-y border-slate-900/80">
+      <section className="py-6 sm:py-8 bg-slate-950/80 border-y border-slate-800/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/40 border border-[#0b63c5]/25 backdrop-blur-sm relative overflow-hidden">
+          <div className="p-5 sm:p-7 rounded-2xl bg-slate-900/90 border border-[#0b63c5]/30 backdrop-blur-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#0b63c5]/10 rounded-full blur-2xl pointer-events-none" />
-            <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-              <div className="space-y-2">
-                <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Quick Answer</span>
-                <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-5xl">
+            <div className="flex flex-col md:flex-row gap-3 items-start md:items-center justify-between">
+              <div className="space-y-1.5">
+                <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">Quick Answer</span>
+                <p className="text-xs sm:text-base text-slate-200 leading-relaxed max-w-5xl">
                   Integrated Facility Management (IFM) combines <strong className="text-white font-semibold">Hard FM</strong> (mechanical, electrical, HVAC, civil, fire safety, BMS), <strong className="text-white font-semibold">Soft FM</strong> (cleaning, pest control, waste, concierge, landscaping) and <strong className="text-white font-semibold">Specialized FM</strong> (asset & energy management, smart building systems) under one accountable team.
                 </p>
               </div>
@@ -378,40 +433,40 @@ export default function IFMPage() {
       </section>
 
       {/* --- WHAT'S INCLUDED SECTION --- */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
           
-          <div className="text-center max-w-2xl mx-auto space-y-3">
-            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">What's Included in Our IFM Solutions</h2>
-            <p className="text-sm text-slate-400">Complete end-to-end facility services designed for operational excellence.</p>
+          <div className="text-center max-w-2xl mx-auto space-y-2.5">
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">What's Included in Our IFM Solutions</h2>
+            <p className="text-xs sm:text-sm text-slate-300">Complete end-to-end facility services designed for operational excellence.</p>
           </div>
 
           {/* Hard FM Block */}
-          <div className="space-y-8">
-            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
-              <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
-                <Wrench className="w-6 h-6" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800/80 pb-4 max-w-4xl mx-auto">
+              <div className="p-2.5 rounded-xl bg-[#0b63c5]/15 text-blue-400 shrink-0">
+                <Wrench className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Hard Facility Management</h3>
-                <p className="text-xs text-slate-400">Core electro-mechanical, HVAC, structural and life safety maintenance</p>
+                <h3 className="text-lg sm:text-2xl font-bold text-white">Hard Facility Management</h3>
+                <p className="text-xs text-slate-300">Core electro-mechanical, HVAC, structural and life safety maintenance</p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-fr">
               {hardFmItems.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className={`p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5 ${
+                  className={`p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-[#0b63c5]/50 transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-[#0b63c5]/10 ${
                     idx === hardFmItems.length - 1 && hardFmItems.length % 3 !== 0 ? 'sm:col-span-2 lg:col-span-3' : ''
                   }`}
                 >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
+                  <div className="space-y-2.5">
+                    <div className="w-7 h-7 rounded-lg bg-slate-800 text-blue-400 flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
                       0{idx + 1}
                     </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+                    <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-blue-400 transition-colors">{item.title}</h4>
+                    <p className="text-xs text-slate-300 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -419,73 +474,73 @@ export default function IFMPage() {
           </div>
 
           {/* Soft FM Block */}
-          <div className="space-y-8 pt-4">
-            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
-              <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
-                <Sparkles className="w-6 h-6" />
+          <div className="space-y-6 sm:space-y-8 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800/80 pb-4 max-w-4xl mx-auto">
+              <div className="p-2.5 rounded-xl bg-[#0b63c5]/15 text-blue-400 shrink-0">
+                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Soft Facility Management</h3>
-                <p className="text-xs text-slate-400">Environmental, hygiene, front-of-house and grounds upkeep</p>
+                <h3 className="text-lg sm:text-2xl font-bold text-white">Soft Facility Management</h3>
+                <p className="text-xs text-slate-300">Environmental, hygiene, front-of-house and grounds upkeep</p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center my-6 p-6 rounded-2xl bg-slate-900/30 border border-slate-800/80">
-              <div className="lg:col-span-7 space-y-3 text-center lg:text-left">
-                <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">Premium Soft FM Execution</span>
-                <h4 className="text-lg sm:text-xl font-bold text-white">Hospitality-Grade Commercial Cleaning & Environmental Maintenance</h4>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center my-6 p-5 sm:p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
+              <div className="lg:col-span-7 space-y-2.5 text-center lg:text-left">
+                <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">Premium Soft FM Execution</span>
+                <h4 className="text-base sm:text-xl font-bold text-white">Hospitality-Grade Commercial Cleaning & Environmental Maintenance</h4>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                   Our Soft FM division deploys specialized eco-friendly equipment, non-toxic sanitization, and certified hospitality managers to elevate asset value, occupant health, and corporate prestige across UAE properties.
                 </p>
               </div>
               <div className="lg:col-span-5 space-y-2">
-                <div className="relative h-48 sm:h-56 w-full rounded-xl overflow-hidden border border-slate-800 shadow-md bg-slate-900">
+                <div className="relative h-44 sm:h-56 w-full rounded-xl overflow-hidden border border-slate-800 shadow-md bg-slate-900">
                   <Image
                     src="/hospitality-cleaning.webp"
                     alt="Commercial Cleaning and Soft Facility Services"
                     fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    className="object-cover hover:scale-105 transition-transform duration-500 brightness-105"
                     sizes="(max-width: 1024px) 100vw, 35vw"
                   />
                 </div>
-                <div className="text-[11px] font-semibold text-slate-200 bg-slate-950/80 backdrop-blur-md p-2.5 rounded-lg border border-slate-800 flex items-center justify-center gap-2">
-                  <Sparkles className="w-3.5 h-3.5 text-[#0b63c5]" />
+                <div className="text-[11px] font-medium text-slate-200 bg-slate-950/90 backdrop-blur-md p-2 rounded-lg border border-slate-800 flex items-center justify-center gap-2">
+                  <Sparkles className="w-3.5 h-3.5 text-blue-400 shrink-0" />
                   Sustainable & Hygiene Certified Soft Services
                 </div>
               </div>
             </div>
 
             {/* Row 1: 3 Items */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {softFmItemsRow1.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
+                  className="p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-[#0b63c5]/50 transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-[#0b63c5]/10"
                 >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
+                  <div className="space-y-2.5">
+                    <div className="w-7 h-7 rounded-lg bg-slate-800 text-blue-400 flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
                       0{idx + 1}
                     </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+                    <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-blue-400 transition-colors">{item.title}</h4>
+                    <p className="text-xs text-slate-300 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Row 2: 2 Items Centered for Desktop & Tablet */}
-            <div className="flex flex-col sm:flex-row justify-center items-stretch gap-6">
+            <div className="flex flex-col sm:flex-row justify-center items-stretch gap-4 sm:gap-6">
               {softFmItemsRow2.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
+                  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-[#0b63c5]/50 transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-[#0b63c5]/10"
                 >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
+                  <div className="space-y-2.5">
+                    <div className="w-7 h-7 rounded-lg bg-slate-800 text-blue-400 flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
                       0{idx + 4}
                     </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+                    <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-blue-400 transition-colors">{item.title}</h4>
+                    <p className="text-xs text-slate-300 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -494,29 +549,29 @@ export default function IFMPage() {
           </div>
 
           {/* Specialized FM Block */}
-          <div className="space-y-8 pt-4">
-            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800 pb-4 max-w-4xl mx-auto">
-              <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5] shrink-0">
-                <Cpu className="w-6 h-6" />
+          <div className="space-y-6 sm:space-y-8 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-3 border-b border-slate-800/80 pb-4 max-w-4xl mx-auto">
+              <div className="p-2.5 rounded-xl bg-[#0b63c5]/15 text-blue-400 shrink-0">
+                <Cpu className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Specialized Facility Management</h3>
-                <p className="text-xs text-slate-400">Advanced IoT monitoring, asset lifecycle intelligence and 24/7 helpdesk</p>
+                <h3 className="text-lg sm:text-2xl font-bold text-white">Specialized Facility Management</h3>
+                <p className="text-xs text-slate-300">Advanced IoT monitoring, asset lifecycle intelligence and 24/7 helpdesk</p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 auto-rows-fr">
               {specializedFmItems.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-[#0b63c5]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[#0b63c5]/5"
+                  className="p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-[#0b63c5]/50 transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-[#0b63c5]/10"
                 >
-                  <div className="space-y-3">
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 text-[#0b63c5] flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
+                  <div className="space-y-2.5">
+                    <div className="w-7 h-7 rounded-lg bg-slate-800 text-blue-400 flex items-center justify-center font-bold text-xs group-hover:bg-[#0b63c5] group-hover:text-white transition-colors">
                       0{idx + 1}
                     </div>
-                    <h4 className="text-base font-bold text-white group-hover:text-[#0b63c5] transition-colors">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+                    <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-blue-400 transition-colors">{item.title}</h4>
+                    <p className="text-xs text-slate-300 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -527,32 +582,32 @@ export default function IFMPage() {
       </section>
 
       {/* --- WHY EMRALD ACE --- */}
-      <section className="py-16 bg-slate-950 border-y border-slate-900">
+      <section className="py-12 sm:py-16 bg-slate-950/90 border-y border-slate-800/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <div className="lg:col-span-5 space-y-4 text-center lg:text-left">
-              <span className="text-xs font-bold text-[#0b63c5] uppercase tracking-wider">The Advantage</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-white">Why Emrald Ace</h2>
-              <p className="text-sm text-slate-400 leading-relaxed">
+            <div className="lg:col-span-5 space-y-3.5 text-center lg:text-left">
+              <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">The Advantage</span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-white">Why Emrald Ace</h2>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 By consolidating all building services under a single roof, we eliminate vendor friction, lower operating overheads, and guarantee single-point accountability.
               </p>
 
-              <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800/80 mt-6 bg-slate-900">
+              <div className="relative h-[220px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800 mt-4 bg-slate-900">
                 <Image
                   src="/integrated-facility-management.webp"
                   alt="Emrald Ace Engineering Team"
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover hover:scale-105 transition-transform duration-700 ease-out brightness-105"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
             </div>
 
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
               {whyChooseUs.map((reason, idx) => (
-                <div key={idx} className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 flex items-start gap-3 hover:border-[#0b63c5]/40 transition-colors">
-                  <CheckCircle2 className="w-5 h-5 text-[#0b63c5] shrink-0 mt-0.5" />
+                <div key={idx} className="p-3.5 sm:p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-3 hover:border-[#0b63c5]/50 transition-colors">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 shrink-0 mt-0.5" />
                   <span className="text-xs sm:text-sm text-slate-200 font-medium leading-snug">{reason}</span>
                 </div>
               ))}
@@ -563,22 +618,22 @@ export default function IFMPage() {
       </section>
 
       {/* --- HOW IT WORKS --- */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
           <div className="text-center max-w-xl mx-auto space-y-2">
-            <h2 className="text-2xl sm:text-4xl font-black text-white">How It Works</h2>
-            <p className="text-sm text-slate-400">Our structured 4-step deployment process</p>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white">How It Works</h2>
+            <p className="text-xs sm:text-sm text-slate-300">Our structured 4-step deployment process</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {steps.map((step, idx) => (
               <div 
                 key={idx} 
-                className="relative p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 space-y-3 hover:border-[#0b63c5]/40 transition-colors"
+                className="relative p-5 sm:p-6 rounded-2xl bg-slate-900/50 border border-slate-800 space-y-2.5 hover:border-[#0b63c5]/50 transition-colors"
               >
-                <span className="text-3xl font-black text-[#0b63c5]">{step.num}</span>
-                <h3 className="text-base font-bold text-white">{step.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{step.desc}</p>
+                <span className="text-2xl sm:text-3xl font-black text-blue-400">{step.num}</span>
+                <h3 className="text-sm sm:text-base font-bold text-white">{step.title}</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -586,16 +641,16 @@ export default function IFMPage() {
       </section>
 
       {/* --- INDUSTRIES WE SERVE --- */}
-      <section className="py-12 bg-slate-950/60 border-y border-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <section className="py-10 sm:py-12 bg-slate-950/80 border-y border-slate-800/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6">
           <div className="text-center sm:text-left">
-            <h2 className="text-xl sm:text-2xl font-black text-white">Industries We Serve</h2>
-            <p className="text-xs text-slate-400 mt-1">Tailored solutions for sectors across Abu Dhabi & UAE</p>
+            <h2 className="text-xl sm:text-2xl font-extrabold text-white">Industries We Serve</h2>
+            <p className="text-xs text-slate-300 mt-1">Tailored solutions for sectors across Abu Dhabi & UAE</p>
           </div>
 
-          <div className="flex flex-wrap justify-center sm:justify-start gap-2.5 sm:gap-3">
+          <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3">
             {industries.map((ind, idx) => (
-              <div key={idx} className="px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-semibold text-slate-300 hover:border-[#0b63c5] hover:text-white transition-all shadow-sm">
+              <div key={idx} className="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm font-semibold text-slate-200 hover:border-blue-400 hover:text-white transition-all shadow-sm">
                 {ind}
               </div>
             ))}
@@ -604,45 +659,45 @@ export default function IFMPage() {
       </section>
 
       {/* --- FEATURED PROJECTS --- */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
           <div className="text-center max-w-xl mx-auto space-y-2">
-            <h2 className="text-2xl sm:text-4xl font-black text-white">Featured Projects</h2>
-            <p className="text-sm text-slate-400">Demonstrated excellence across commercial, retail, and civil facilities</p>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white">Featured Projects</h2>
+            <p className="text-xs sm:text-sm text-slate-300">Demonstrated excellence across commercial, retail, and civil facilities</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-fr">
             {projects.map((proj, idx) => (
               <div 
                 key={idx} 
-                className="group p-6 rounded-2xl bg-gradient-to-b from-slate-900/80 to-slate-900/30 border border-slate-800 hover:border-[#0b63c5]/50 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-lg"
+                className="group p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-[#0b63c5]/50 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-md"
               >
-                <div className="space-y-4">
+                <div className="space-y-3.5">
                   <div className="flex items-center justify-between">
-                    <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5]">
-                      <FolderCheck className="w-5 h-5" />
+                    <div className="p-2 sm:p-2.5 rounded-xl bg-[#0b63c5]/20 text-blue-400">
+                      <FolderCheck className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0b63c5] bg-[#0b63c5]/10 px-2.5 py-1 rounded-md border border-[#0b63c5]/20">
-                      <MapPin className="w-3 h-3" />
+                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-400 bg-[#0b63c5]/15 px-2.5 py-1 rounded-md border border-[#0b63c5]/30">
+                      <MapPin className="w-3 h-3 shrink-0" />
                       {proj.location}
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#0b63c5] transition-colors leading-snug">
+                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-blue-400 transition-colors leading-snug">
                       {proj.title}
                     </h3>
-                    <p className="text-xs text-slate-400 mt-2">
-                      Client: <span className="text-slate-200 font-medium">{proj.client}</span>
+                    <p className="text-xs text-slate-300 mt-2">
+                      Client: <span className="text-slate-100 font-medium">{proj.client}</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-4 mt-6 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-400">
-                  <span className="flex items-center gap-1 text-slate-300">
-                    <Check className="w-3.5 h-3.5 text-[#0b63c5]" /> Verified Delivery
+                <div className="pt-3.5 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-300">
+                  <span className="flex items-center gap-1 text-slate-200">
+                    <Check className="w-3.5 h-3.5 text-blue-400 shrink-0" /> Verified Delivery
                   </span>
-                  <span className="font-mono text-[10px] text-slate-500">PROJ-0{idx + 1}</span>
+                  <span className="font-mono text-[10px] text-slate-400">PROJ-0{idx + 1}</span>
                 </div>
               </div>
             ))}
@@ -651,14 +706,14 @@ export default function IFMPage() {
       </section>
 
       {/* --- FAQ SECTION --- */}
-      <section className="py-16 bg-slate-950 border-t border-slate-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="py-12 sm:py-16 bg-slate-950/80 border-t border-slate-800/80">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
           <div className="text-center space-y-2">
-            <h2 className="text-2xl sm:text-4xl font-black text-white">FAQs</h2>
-            <p className="text-sm text-slate-400">Everything you need to know about Integrated Facility Management</p>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white">FAQs</h2>
+            <p className="text-xs sm:text-sm text-slate-300">Everything you need to know about Integrated Facility Management</p>
           </div>
 
-          <div className="divide-y divide-slate-800 rounded-2xl bg-slate-900/30 border border-slate-800 p-6 sm:p-8 backdrop-blur-sm">
+          <div className="rounded-2xl bg-slate-900/50 border border-slate-800 p-5 sm:p-8 backdrop-blur-sm">
             {faqs.map((faq, idx) => (
               <FAQAccordion key={idx} faq={faq} />
             ))}
@@ -667,34 +722,34 @@ export default function IFMPage() {
       </section>
 
       {/* --- CALL TO ACTION (CTA) --- */}
-      <section id="contact" className="py-16">
+      <section id="contact" className="py-12 sm:py-16 bg-[#030712]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-[#0b63c5]/30 border border-[#0b63c5]/30 p-8 sm:p-12 overflow-hidden shadow-2xl">
+          <div className="relative rounded-2xl sm:rounded-3xl bg-slate-900 border border-[#0b63c5]/40 p-6 sm:p-10 md:p-12 overflow-hidden shadow-2xl">
             
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-center lg:text-left">
-              <div className="lg:col-span-8 space-y-4">
-                <h2 className="text-2xl sm:text-4xl font-black text-white">
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center text-center lg:text-left">
+              <div className="lg:col-span-8 space-y-3">
+                <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
                   Let's Build Better Environments Together
                 </h2>
-                <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto lg:mx-0">
+                <p className="text-xs sm:text-base text-slate-200 max-w-2xl mx-auto lg:mx-0">
                   Schedule a consultation with our team and get a tailored Integrated Facility Management plan for your property.
                 </p>
               </div>
 
-              <div className="lg:col-span-4 flex flex-col space-y-3">
+              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
                 <a
                   href="mailto:sales1@emraldace.com"
-                  className="px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2 shadow-lg active:scale-95"
+                  className="w-full px-5 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-blue-600 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2 shadow-lg active:scale-98"
                 >
-                  <Mail className="w-4 h-4" />
+                  <Mail className="w-4 h-4 shrink-0" />
                   sales1@emraldace.com
                 </a>
                 <a
-                  href="tel:+971 52 897 6025"
-                  className="px-6 py-3.5 rounded-xl bg-slate-950/80 border border-slate-700 hover:border-slate-500 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2"
+                  href="tel:+971528976025"
+                  className="w-full px-5 py-3.5 rounded-xl bg-slate-950 border border-slate-700 hover:border-slate-500 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2 active:scale-98"
                 >
-                  <Phone className="w-4 h-4 text-[#0b63c5]" />
-                  Call: +971 52 897 6025
+                  <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                  +971 52 897 6025
                 </a>
               </div>
             </div>

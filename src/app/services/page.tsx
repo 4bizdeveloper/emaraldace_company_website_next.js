@@ -9,8 +9,7 @@ import {
   CheckCircle2,
   ShieldCheck,
   Zap,
-  Building2,
-  Layers
+  Building2
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -129,8 +128,8 @@ export default function ServicesPage() {
   };
 
   return (
-    <main className="relative bg-[#030712] text-slate-100 min-h-screen selection:bg-[#0b63c5] selection:text-white overflow-x-hidden antialiased scroll-smooth">
-      {/* Search Engine, AI Crawler & Server-Level Structured Data */}
+    <main className="relative bg-[#030712] text-slate-100 min-h-screen selection:bg-[#0b63c5] selection:text-white overflow-x-hidden antialiased scroll-smooth border-none outline-none">
+      {/* Search Engine, AI Crawler, Geo & Server-Level Structured Data */}
       <script 
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} 
@@ -140,7 +139,7 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceCatalogSchema) }} 
       />
 
-      {/* Hero Section - Optimized Mobile/Tablet/Desktop Ultra-Modern Dynamic Layout */}
+      {/* Hero Section - Preserved Hero Background & Fixed High Contrast Typography */}
       <section className="relative w-full min-h-[85vh] lg:min-h-screen pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0 select-none pointer-events-none overflow-hidden">
           <Image 
@@ -152,16 +151,16 @@ export default function ServicesPage() {
             sizes="100vw"
             className="object-cover object-center brightness-105 contrast-105 opacity-80 scale-[1.01] transform-gpu will-change-transform"
           />
-          {/* Subtle gradient overlay ensuring contrast, instant rendering, and zero layout shift */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/70 via-[#030712]/40 to-[#030712]" />
-          <div className="absolute inset-0 bg-radial from-transparent via-[#030712]/30 to-[#030712]/90" />
+          {/* Ambient Dark Overlay for High Legibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/80 via-[#030712]/50 to-[#030712]" />
+          <div className="absolute inset-0 bg-radial from-transparent via-[#030712]/40 to-[#030712]/95" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
           <header className="space-y-6 flex flex-col items-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-[#0b63c5]/40 backdrop-blur-xl shadow-lg shadow-[#0b63c5]/20">
-              <Sparkles className="w-4 h-4 text-blue-400 shrink-0" />
-              <span className="text-xs uppercase tracking-widest font-extrabold text-blue-300">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-sky-400/30 backdrop-blur-xl shadow-lg shadow-sky-500/10">
+              <Sparkles className="w-4 h-4 text-sky-300 shrink-0" />
+              <span className="text-xs uppercase tracking-widest font-extrabold text-sky-200">
                 Core Engineering & FM Capabilities
               </span>
             </div>
@@ -174,25 +173,25 @@ export default function ServicesPage() {
               Integrated FM, AMC, MEP Engineering, Interior Fit-Out, General Contracting, and Smart Specialized Services delivered with precision since 2014.
             </p>
 
-            <div className="pt-4 flex flex-wrap justify-center items-center gap-2.5 sm:gap-4 text-xs sm:text-sm font-medium text-slate-100">
-              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 backdrop-blur-md shadow-lg hover:border-[#0b63c5]/50 transition-colors">
-                <ShieldCheck className="w-4 h-4 text-blue-400 shrink-0" />
-                <span>ISO 45001:2018 Certified</span>
+            <div className="pt-4 flex flex-wrap justify-center items-center gap-2.5 sm:gap-4 text-xs sm:text-sm font-semibold text-slate-100">
+              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-700/80 backdrop-blur-md shadow-lg hover:border-sky-400/50 transition-colors">
+                <ShieldCheck className="w-4 h-4 text-sky-400 shrink-0" />
+                <span className="text-slate-100">ISO 45001:2018 Certified</span>
               </div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 backdrop-blur-md shadow-lg hover:border-amber-500/50 transition-colors">
-                <Zap className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>24/7 Rapid Response</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-700/80 backdrop-blur-md shadow-lg hover:border-amber-400/50 transition-colors">
+                <Zap className="w-4 h-4 text-amber-300 shrink-0" />
+                <span className="text-slate-100">24/7 Rapid Response</span>
               </div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 backdrop-blur-md shadow-lg hover:border-emerald-500/50 transition-colors">
-                <Building2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>UAE Trade Licensed</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-700/80 backdrop-blur-md shadow-lg hover:border-emerald-400/50 transition-colors">
+                <Building2 className="w-4 h-4 text-emerald-300 shrink-0" />
+                <span className="text-slate-100">UAE Trade Licensed</span>
               </div>
             </div>
           </header>
         </div>
       </section>
 
-      {/* Service Rows Section - Borderless Modern Layout with Hardware Acceleration */}
+      {/* Service Rows Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-16 lg:mt-24 pb-12 sm:pb-20 lg:pb-24 space-y-12 sm:space-y-20 lg:space-y-24">
         {serviceOverviewList.map((service, idx) => {
           const isEven = idx % 2 === 0;
@@ -223,8 +222,8 @@ export default function ServicesPage() {
 
                   {/* Glassmorphic Badge */}
                   <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 z-10 pointer-events-none">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-white bg-[#030712]/85 backdrop-blur-md rounded-xl border border-white/15 shadow-xl">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-slate-100 bg-[#030712]/90 backdrop-blur-md rounded-xl border border-white/20 shadow-xl">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0" />
                       {service.badge}
                     </span>
                   </div>
@@ -234,27 +233,27 @@ export default function ServicesPage() {
               {/* Content Column */}
               <div className="w-full lg:w-7/12 flex flex-col justify-center space-y-4 sm:space-y-5 py-2">
                 <div>
-                  <span className="inline-block text-xs font-black uppercase tracking-widest text-[#0b63c5] mb-1">
+                  <span className="inline-block text-xs font-black uppercase tracking-widest text-sky-300 mb-1.5">
                     {service.tagline}
                   </span>
                   
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight group-hover:text-blue-300 transition-colors">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight group-hover:text-sky-200 transition-colors">
                     {service.title}
                   </h2>
                 </div>
                 
-                <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-200 font-normal leading-relaxed">
                   {service.desc}
                 </p>
 
-                <div className="pt-2">
+                <div className="pt-2 w-full sm:w-auto">
                   <Link 
                     href={service.slug}
                     aria-label={`Read full details about ${service.title}`}
-                    className="inline-flex items-center gap-2.5 px-6 py-3 text-xs sm:text-sm font-bold text-white bg-[#0b63c5] hover:bg-[#084b96] active:bg-[#063870] rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 active:scale-[0.98] transform-gpu"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-3 text-xs sm:text-sm font-bold text-white bg-[#0b63c5] hover:bg-[#084b96] active:bg-[#063870] rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 active:scale-[0.98] transform-gpu"
                   >
                     <span>Read full details</span>
-                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 shrink-0" />
                   </Link>
                 </div>
               </div>
@@ -263,14 +262,14 @@ export default function ServicesPage() {
         })}
       </section>
 
-      {/* Call to Action Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
-        <div className="relative rounded-3xl overflow-hidden p-6 sm:p-10 lg:p-12 bg-gradient-to-r from-blue-950/90 via-slate-900/90 to-blue-950/90 backdrop-blur-2xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
+      {/* Call to Action Banner - Borderless Bottom Guarantee */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-20">
+        <div className="relative rounded-3xl overflow-hidden p-6 sm:p-10 lg:p-12 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 border border-slate-800 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
           <div className="space-y-2 text-center md:text-left max-w-xl">
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight">
               Need a Customized Technical Proposal?
             </h3>
-            <p className="text-xs sm:text-sm text-blue-100 font-normal">
+            <p className="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
               Consult directly with our Abu Dhabi engineering division to evaluate your facility requirements or request a free site assessment.
             </p>
           </div>
@@ -278,7 +277,7 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
             <a 
               href="tel:+971528976025" 
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-white hover:bg-blue-50 text-[#0b63c5] font-black rounded-xl transition-all duration-200 shrink-0 text-xs sm:text-sm shadow-xl hover:scale-[1.02] active:scale-[0.98] transform-gpu"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-white hover:bg-slate-100 text-[#0b63c5] font-extrabold rounded-xl transition-all duration-200 shrink-0 text-xs sm:text-sm shadow-xl hover:scale-[1.02] active:scale-[0.98] transform-gpu"
             >
               <PhoneCall className="w-4 h-4 text-[#0b63c5] shrink-0" /> 
               <span>Connect with us</span>
