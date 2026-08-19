@@ -412,7 +412,7 @@ export default async function Home() {
             <div className="lg:col-span-5 relative space-y-4">
               <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
                 <Image 
-                  src="/mep-1.webp" 
+                  src="/mep-engineer.jpg" 
                   alt="Emrald Ace Engineering Team Operations UAE" 
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
