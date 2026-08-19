@@ -14,10 +14,7 @@ import {
   ArrowRight, 
   Phone, 
   Mail, 
-  Building2,
-  FolderCheck,
-  MapPin,
-  Check
+  Building2
 } from 'lucide-react';
 
 // --- FAQ Accordion Component ---
@@ -253,39 +250,6 @@ export default function IFMPage() {
     "Commercial Offices", "Residential Communities", "Healthcare", 
     "Hotels", "Retail", "Industrial", 
     "Government", "Warehouse", "Education"
-  ];
-
-  const projects = [
-    {
-      title: "Renovation, Extension & Fit-Out",
-      location: "Shakhbout City, Abu Dhabi",
-      client: "Al Maharat Private School / GEMS Education"
-    },
-    {
-      title: "Outlet Renovation (MEP, Fit-Out, HVAC)",
-      location: "Marina Mall, Abu Dhabi",
-      client: "National Investment Corporation"
-    },
-    {
-      title: "Civil, MEP & Fit-Out Works",
-      location: "Khalifa City, Abu Dhabi",
-      client: "Abu Dhabi Cricket & Sports Club"
-    },
-    {
-      title: "Restaurant & Pool Deck Renovation",
-      location: "Mubadala Tower, Abu Dhabi",
-      client: "Solution Plus Mubadala"
-    },
-    {
-      title: "MEP, HVAC & Civil Works (Private Villa)",
-      location: "Al Manhal, Abu Dhabi",
-      client: "Al Nasser Properties"
-    },
-    {
-      title: "Boiler Installation, HVAC & Civil",
-      location: "Dubai Investment Park",
-      client: "Fedorowicz Laundry"
-    }
   ];
 
   const faqs = [
@@ -652,53 +616,6 @@ export default function IFMPage() {
             {industries.map((ind, idx) => (
               <div key={idx} className="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm font-semibold text-slate-200 hover:border-blue-400 hover:text-white transition-all shadow-sm">
                 {ind}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* --- FEATURED PROJECTS --- */}
-      <section className="py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
-          <div className="text-center max-w-xl mx-auto space-y-2">
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white">Featured Projects</h2>
-            <p className="text-xs sm:text-sm text-slate-300">Demonstrated excellence across commercial, retail, and civil facilities</p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-fr">
-            {projects.map((proj, idx) => (
-              <div 
-                key={idx} 
-                className="group p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-[#0b63c5]/50 transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-md"
-              >
-                <div className="space-y-3.5">
-                  <div className="flex items-center justify-between">
-                    <div className="p-2 sm:p-2.5 rounded-xl bg-[#0b63c5]/20 text-blue-400">
-                      <FolderCheck className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </div>
-                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-400 bg-[#0b63c5]/15 px-2.5 py-1 rounded-md border border-[#0b63c5]/30">
-                      <MapPin className="w-3 h-3 shrink-0" />
-                      {proj.location}
-                    </span>
-                  </div>
-
-                  <div>
-                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-blue-400 transition-colors leading-snug">
-                      {proj.title}
-                    </h3>
-                    <p className="text-xs text-slate-300 mt-2">
-                      Client: <span className="text-slate-100 font-medium">{proj.client}</span>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="pt-3.5 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-300">
-                  <span className="flex items-center gap-1 text-slate-200">
-                    <Check className="w-3.5 h-3.5 text-blue-400 shrink-0" /> Verified Delivery
-                  </span>
-                  <span className="font-mono text-[10px] text-slate-400">PROJ-0{idx + 1}</span>
-                </div>
               </div>
             ))}
           </div>

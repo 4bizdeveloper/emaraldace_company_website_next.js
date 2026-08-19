@@ -12,9 +12,6 @@ import {
   Phone, 
   Mail, 
   Building2,
-  FolderCheck,
-  MapPin,
-  Check,
   Layers,
   LayoutGrid,
   Paintbrush,
@@ -169,39 +166,6 @@ export default function InteriorFitOutPage() {
     "Commercial Offices", "Retail Stores & Boutiques", "Residential Villas & Apartments",
     "Restaurants & Cafes", "Hotels & Hospitality", "Educational Facilities",
     "Healthcare Clinics", "Corporate Showrooms"
-  ];
-
-  const projects = [
-    {
-      title: "Renovation, Extension & Fit-Out",
-      location: "Shakhbout City, Abu Dhabi",
-      client: "Al Maharat Private School / GEMS Education"
-    },
-    {
-      title: "Outlet Renovation (MEP, Fit-Out, HVAC)",
-      location: "Marina Mall, Abu Dhabi",
-      client: "National Investment Corporation"
-    },
-    {
-      title: "Civil, MEP & Fit-Out Works",
-      location: "Khalifa City, Abu Dhabi",
-      client: "Abu Dhabi Cricket & Sports Club"
-    },
-    {
-      title: "Restaurant & Pool Deck Renovation",
-      location: "Mubadala Tower, Abu Dhabi",
-      client: "Solution Plus Mubadala"
-    },
-    {
-      title: "MEP, HVAC & Civil Works (Private Villa)",
-      location: "Al Manhal, Abu Dhabi",
-      client: "Al Nasser Properties"
-    },
-    {
-      title: "Boiler Installation, HVAC & Civil",
-      location: "Dubai Investment Park",
-      client: "Fedorowicz Laundry"
-    }
   ];
 
   const faqs = [
@@ -457,53 +421,6 @@ export default function InteriorFitOutPage() {
             {industries.map((ind, idx) => (
               <div key={idx} className="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-xs sm:text-sm font-semibold text-slate-100 hover:border-[#0b63c5] transition-all shadow-sm">
                 {ind}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* --- FEATURED PROJECTS --- */}
-      <section className="py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
-          <div className="text-center max-w-xl mx-auto space-y-2">
-            <h2 className="text-2xl sm:text-4xl font-black text-white">Featured Projects</h2>
-            <p className="text-xs sm:text-sm text-slate-300">Demonstrated excellence across commercial, retail, and residential fit-out projects</p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 auto-rows-fr">
-            {projects.map((proj, idx) => (
-              <div 
-                key={idx} 
-                className="group p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-900/50 border border-slate-800 hover:border-[#0b63c5] transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-lg"
-              >
-                <div className="space-y-3.5">
-                  <div className="flex items-center justify-between gap-2">
-                    <div className="p-2.5 rounded-xl bg-[#0b63c5]/10 text-[#0b63c5]">
-                      <FolderCheck className="w-5 h-5" />
-                    </div>
-                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-sky-300 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
-                      <MapPin className="w-3 h-3 text-[#0b63c5]" />
-                      {proj.location}
-                    </span>
-                  </div>
-
-                  <div>
-                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-sky-300 transition-colors leading-snug">
-                      {proj.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-300 mt-2">
-                      Client: <span className="text-white font-semibold">{proj.client}</span>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="pt-3.5 mt-5 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300">
-                  <span className="flex items-center gap-1.5 text-slate-200 font-medium">
-                    <Check className="w-3.5 h-3.5 text-[#0b63c5]" /> Verified Delivery
-                  </span>
-                  <span className="font-mono text-[11px] text-slate-400">PROJ-0{idx + 1}</span>
-                </div>
               </div>
             ))}
           </div>
