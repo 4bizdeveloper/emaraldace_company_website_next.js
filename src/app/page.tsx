@@ -263,7 +263,7 @@ export default async function Home() {
       `}</style>
 
       {/* 1. ULTRA MODERN HERO SECTION (Full Screen with Seamless Bottom Merged Blur) */}
-<section className="relative h-dvh min-h-dvh w-full flex flex-col justify-center items-center bg-slate-950 text-white overflow-hidden py-14 sm:py-20">
+<section className="relative min-h-svh w-full flex flex-col justify-center items-center bg-slate-950 text-white overflow-hidden py-20 sm:py-24">
   {/* Background Video */}
   <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
     <video
@@ -285,27 +285,27 @@ export default async function Home() {
   <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/90 z-10 pointer-events-none" />
 
   {/* Hero Interactive Content */}
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full space-y-4 sm:space-y-6 my-auto pt-10 sm:pt-14">
-    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-400/30 backdrop-blur-md text-blue-300 text-xs sm:text-sm font-semibold tracking-wide">
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full space-y-4 sm:space-y-6 my-auto pt-16 sm:pt-20">
+    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 backdrop-blur-md text-blue-300 text-xs sm:text-sm font-semibold tracking-wide">
       <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
       Premier MEP & Facility Engineering in UAE
     </div>
     
-    <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.2] text-white max-w-4xl mx-auto drop-shadow-2xl">
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.25] text-white max-w-4xl mx-auto drop-shadow-2xl">
       Integrated Facility Management <br className="hidden sm:inline" />
       <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent">
         & MEP Services in UAE
       </span>
     </h1>
 
-    <p className="text-xs sm:text-base md:text-lg text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow-md px-2">
+    <p className="text-sm sm:text-base md:text-lg text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow-md px-2">
       Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across Abu Dhabi & the UAE.
     </p>
 
-    <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-3">
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-3">
       <Link 
         href="/contact" 
-        className="w-auto max-w-xs px-6 py-2.5 sm:px-8 sm:py-3.5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-semibold rounded-2xl shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 text-xs sm:text-base flex items-center justify-center gap-2 group"
+        className="w-full sm:w-auto max-w-xs px-6 py-3 sm:px-8 sm:py-3.5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-semibold rounded-2xl shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base flex items-center justify-center gap-2 group"
       >
         <span>Get In Touch</span>
         <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
@@ -313,7 +313,7 @@ export default async function Home() {
 
       <Link 
         href="/about" 
-        className="w-auto max-w-xs px-6 py-2.5 sm:px-8 sm:py-3.5 bg-slate-900/80 hover:bg-slate-900 text-slate-100 font-semibold rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all text-center text-xs sm:text-base flex items-center justify-center gap-2"
+        className="w-full sm:w-auto max-w-xs px-6 py-3 sm:px-8 sm:py-3.5 bg-slate-900/80 hover:bg-slate-900 text-slate-100 font-semibold rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all text-center text-sm sm:text-base flex items-center justify-center gap-2"
       >
         <span>About Us</span>
         <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
@@ -324,7 +324,6 @@ export default async function Home() {
   {/* Border Blend Component at Junction Only */}
   <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10 pointer-events-none" />
 </section>
-
 
       {/* 3. ABOUT SECTION & OPERATIONAL FLOW */}
       <section className="bg-slate-950 text-white py-12 relative z-20">
