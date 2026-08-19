@@ -3,8 +3,10 @@
 import React from 'react';
 
 const QuickContactButtons = () => {
-  const phoneNumber = "+971588600578";
-  const formattedCallNumber = `+${phoneNumber}`;
+  // Updated Phone & WhatsApp numbers
+  const phoneNumber = "+97126751747";
+  const whatsappNumber = "971554044826";
+  const formattedCallNumber = phoneNumber;
   const whatsappMessage = encodeURIComponent("Hello! I am contacting from your website and would like to inquire about your IT services.");
 
   return (
@@ -83,7 +85,7 @@ const QuickContactButtons = () => {
             ========================================================================= */}
         <div className="flex flex-row-reverse items-center pointer-events-none group transform-gpu">
           <a
-            href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`}
+            href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
             target="_blank"
             rel="noopener noreferrer"
             className="wa-modern-orb pointer-events-auto will-change-transform relative flex items-center justify-center w-[52px] h-[52px] md:w-[52px] md:h-[52px]"

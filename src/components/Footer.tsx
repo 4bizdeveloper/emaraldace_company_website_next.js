@@ -98,20 +98,20 @@ export default function Footer() {
           <address className="not-italic space-y-3 text-sm font-medium text-slate-200">
             <div className="flex items-center space-x-3 group">
               <Phone className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
-              <a href="tel:+971528976025" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
-                +971 52 897 6025
+              <a href="tel:+97126751747" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                +971 2 675 1747
               </a>
             </div>
             <div className="flex items-center space-x-3 group">
               <Mail className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
-              <a href="mailto:sales1@emraldace.com" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
-                sales1@emraldace.com
+              <a href="mailto:sales@emraldace.ae" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                sales@emraldace.ae
               </a>
             </div>
             <div className="flex items-center space-x-3 group">
               <Globe className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
-              <a href="https://www.emraldace.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
-                www.emraldace.com
+              <a href="https://www.emraldace.ae" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                www.emraldace.ae
               </a>
             </div>
             <div className="flex items-start space-x-3 text-slate-200 group">
@@ -131,8 +131,8 @@ export default function Footer() {
         {/* Line 1: Corporate Entity Details */}
         <p className="leading-normal text-slate-300 w-full max-w-5xl">
           <strong className="text-white font-semibold">Emrald Ace Engineering & Facilities Management LLC</strong> — Musaffah M-14, Abu Dhabi, U.A.E |{' '}
-          <a href="https://www.emraldace.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
-            www.emraldace.com
+          <a href="https://www.emraldace.ae" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
+            www.emraldace.ae
           </a>{' '}
           · ISO 45001:2018 Certified · <span className="inline-block whitespace-nowrap">UAE Trade Licensed</span>
         </p>

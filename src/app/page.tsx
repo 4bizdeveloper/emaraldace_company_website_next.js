@@ -181,7 +181,7 @@ export default async function Home() {
         },
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+97126282868",
+          "telephone": "+97126751747",
           "contactType": "customer service",
           "areaServed": "AE"
         }
@@ -384,7 +384,7 @@ export default async function Home() {
                 <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   {[
                     { metric: "2014", label: "Established Market Footprint" },
-                    { metric: "22+", label: "Completed Major Infrastructures" },
+                    { metric: "150+", label: "Completed Major Infrastructures" },
                     { metric: "2023", label: "FM Division Expansion Year" },
                     { metric: "100%", label: "UAE Regional Fulfillment" }
                   ].map((stat, sIdx) => (
@@ -556,10 +556,10 @@ export default async function Home() {
 
             <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full lg:w-auto shrink-0">
               <a 
-                href="tel:+97126282868" 
+                href="tel:+97126751747" 
                 className="w-full sm:w-auto px-6 py-3.5 sm:py-4 bg-white hover:bg-slate-100 text-slate-950 font-bold rounded-xl shadow-xl transition-all flex items-center justify-center space-x-3 text-sm tracking-wide group"
               >
-                <span>Call +971 2 628 2868</span>
+                <span>Call +971 2 675 1747</span>
               </a>
 
               <Link 
