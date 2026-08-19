@@ -267,7 +267,7 @@ export default async function Home() {
         }
       `}</style>
 
-      {/* 1. HERO SECTION - Exact styling and background visibility preserved */}
+{/* 1. HERO SECTION - Moderately increased font size with clean weight */}
       <section className="relative h-screen w-full min-h-[100dvh] flex items-center justify-center bg-slate-950 text-white overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <video
@@ -284,18 +284,18 @@ export default async function Home() {
           </video>
         </div>
 
-        {/* Lightweight balanced overlay for optimal video visibility */}
-        <div className="absolute inset-0 bg-slate-950/20 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/10 to-slate-950 z-10" />
+        {/* Optimized dual overlay: clearer bottom video visibility with seamless bottom edge merge */}
+        <div className="absolute inset-0 bg-slate-950/15 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-transparent to-slate-950 z-10" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full my-auto space-y-6 sm:space-y-8 pt-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] text-white max-w-5xl mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.18] text-white max-w-5xl mx-auto drop-shadow-md">
             Engineering Value. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-300 to-indigo-300 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-300 to-indigo-300 drop-shadow-sm font-medium">
               Optimizing Assets.
             </span>
           </h1>
-          <p className="text-lg sm:text-xl text-slate-100 max-w-3xl mx-auto font-semibold leading-relaxed drop-shadow-[0_4px_12px_rgba(0,0,0,0.95)]">
+          <p className="text-base sm:text-lg text-slate-100 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-sm">
             Premier Integrated Facility Management, MEP Engineering, and Fit-Out Solutions in the UAE.
           </p>
         </div>
