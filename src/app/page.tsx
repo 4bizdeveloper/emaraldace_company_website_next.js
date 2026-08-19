@@ -6,7 +6,7 @@ import { headers } from 'next/headers';
 import { Poppins } from 'next/font/google';
 import DynamicHomeContent from '@/components/DynamicHomeContent';
 
-// GTmetrix Optimization: Load font via Next.js Font Optimization to eliminate render-blocking @import
+// GTmetrix Performance Optimization: Zero render-blocking CSS fonts via Next.js Google Font Engine
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],
@@ -14,11 +14,11 @@ const poppins = Poppins({
   display: 'swap',
 });
 
-// 1. Dynamic Technical SEO & Metadata Configuration
+// 1. Dynamic Technical SEO, AEO, & GEO Metadata Configuration
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
   const host = headersList.get('host') || 'emraldace.com';
-  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
+  const protocol = process.env.NODE_ENV === 'development' ? 'https' : 'https';
   const currentUrl = `${protocol}://${host.replace(/^https?:\/\//, '')}`;
 
   return {
@@ -67,7 +67,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
   const headersList = await headers();
   const host = headersList.get('host') || 'emraldace.com';
-  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
+  const protocol = process.env.NODE_ENV === 'development' ? 'https' : 'https';
   const baseUrl = `${protocol}://${host.replace(/^https?:\/\//, '')}`;
 
   const coreServices = [
@@ -147,7 +147,7 @@ export default async function Home() {
     }
   ];
 
-  // Schema Graph for Search Engines, Voice Assistants (AEO), and AI Search (GEO)
+  // Schema Graph for Search Engines, Voice Assistants (AEO), and AI Search Engine Optimization (GEO)
   const schemaGraph = {
     "@context": "https://schema.org",
     "@graph": [
@@ -249,18 +249,10 @@ export default async function Home() {
   };
 
   return (
-    <main className={`w-full text-slate-100 bg-slate-950 selection:bg-[#0b63c5] selection:text-white transform-gpu antialiased scroll-smooth ${poppins.className} overflow-x-hidden`}>
+    <main className={`w-full text-slate-100 bg-slate-950 selection:bg-blue-600 selection:text-white transform-gpu antialiased scroll-smooth ${poppins.className} overflow-x-hidden`}>
       
-      {/* Dynamic Style Injection for Lightweight Custom Utility Animations */}
+      {/* Utility Styles for Hardware Accelerated Smooth Performance */}
       <style>{`
-        @keyframes floatUpDown {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-float-reciprocate {
-          animation: floatUpDown 3.5s ease-in-out infinite;
-          will-change: transform;
-        }
         .no-scrollbar::-webkit-scrollbar {
           display: none;
         }
@@ -270,147 +262,130 @@ export default async function Home() {
         }
       `}</style>
 
-      {/* 1. HERO SECTION */}
-      <section className="relative h-[90vh] min-h-[550px] max-h-[900px] w-full flex items-center justify-center bg-slate-950 text-white overflow-hidden">
-        <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="/integrated-facility-management-2.webp"
-            className="w-full h-full object-cover object-center scale-[1.01] will-change-transform"
-          >
-            <source src="/bg-video-1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+      {/* 1. ULTRA MODERN HERO SECTION (Full Screen with Seamless Bottom Merged Blur) */}
+<section className="relative h-dvh min-h-dvh w-full flex flex-col justify-center items-center bg-slate-950 text-white overflow-hidden py-14 sm:py-20">
+  {/* Background Video */}
+  <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      poster="/integrated-facility-management-2.webp"
+      className="w-full h-full object-cover object-center scale-[1.02] will-change-transform"
+    >
+      <source src="/bg-video-2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-        <div className="absolute inset-0 bg-slate-950/20 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-transparent to-slate-950 z-10" />
+  {/* Multi-tier Gradient Overlay for High Contrast Text */}
+  <div className="absolute inset-0 bg-slate-950/40 z-10" />
+  <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/90 z-10 pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full my-auto space-y-4 sm:space-y-6 pt-12">
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.18] text-white max-w-5xl mx-auto drop-shadow-md">
-            Integrated Facility Management <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-300 to-indigo-300 drop-shadow-sm font-medium">
-              & MEP Services in UAE 
-            </span>
-          </h1>
-          <p className="text-sm sm:text-lg text-slate-100 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-sm">
-            Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across Abu Dhabi & the UAE.
-          </p>
-        </div>
-      </section>
+  {/* Hero Interactive Content */}
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full space-y-4 sm:space-y-6 my-auto pt-10 sm:pt-14">
+    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-400/30 backdrop-blur-md text-blue-300 text-xs sm:text-sm font-semibold tracking-wide">
+      <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+      Premier MEP & Facility Engineering in UAE
+    </div>
+    
+    <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.2] text-white max-w-4xl mx-auto drop-shadow-2xl">
+      Integrated Facility Management <br className="hidden sm:inline" />
+      <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent">
+        & MEP Services in UAE
+      </span>
+    </h1>
 
-      {/* 2. EXECUTIVE SUMMARY */}
-      <section className="bg-slate-950 py-8 sm:py-10 relative z-20">
+    <p className="text-xs sm:text-base md:text-lg text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow-md px-2">
+      Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across Abu Dhabi & the UAE.
+    </p>
+
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-3">
+      <Link 
+        href="/contact" 
+        className="w-auto max-w-xs px-6 py-2.5 sm:px-8 sm:py-3.5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-semibold rounded-2xl shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 text-xs sm:text-base flex items-center justify-center gap-2 group"
+      >
+        <span>Get In Touch</span>
+        <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+      </Link>
+
+      <Link 
+        href="/about" 
+        className="w-auto max-w-xs px-6 py-2.5 sm:px-8 sm:py-3.5 bg-slate-900/80 hover:bg-slate-900 text-slate-100 font-semibold rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all text-center text-xs sm:text-base flex items-center justify-center gap-2"
+      >
+        <span>About Us</span>
+        <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+      </Link>
+    </div>
+  </div>
+
+  {/* Border Blend Component at Junction Only */}
+  <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10 pointer-events-none" />
+</section>
+
+
+      {/* 3. ABOUT SECTION & OPERATIONAL FLOW */}
+      <section className="bg-slate-950 text-white py-12 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-950/40 via-slate-900/80 to-slate-900 border border-blue-500/20 p-6 sm:p-10 backdrop-blur-xl shadow-2xl">
-            <div className="absolute -top-24 -right-24 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-            
-            <div className="flex items-center gap-3 mb-3">
-              <span className="flex h-3 w-3 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
-              </span>
-              <span className="text-xs font-bold uppercase tracking-widest text-blue-400">Key Takeaway & Overview</span>
-            </div>
-
-            <h2 className="text-xl sm:text-3xl font-bold text-white mb-3">
-              Integrated Facility Management & MEP Engineering Services in UAE
-            </h2>
-
-            <p className="text-xs sm:text-base text-slate-200 leading-relaxed font-normal max-w-5xl mb-6">
-              <strong>Direct Answer:</strong> Integrated Facility Management (IFM) is an all-in-one approach that consolidates electromechanical maintenance, HVAC services, civil works, and day-to-day operations under a single contracted provider. Founded in 2014, <strong>Emrald Ace General Contracting & Electromechanical L.L.C</strong> delivers end-to-end IFM, 24/7 Annual Maintenance Contracts (AMC), specialized MEP engineering, and interior fit-out solutions tailored for asset managers across Abu Dhabi and all seven UAE Emirates.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-slate-800/80">
-              <div>
-                <span className="text-xs font-bold text-sky-400 uppercase tracking-widest block mb-1">Target Audience</span>
-                <p className="text-xs sm:text-sm text-slate-300">
-                  Commercial property owners, corporate facility heads, building operations directors, retail chains, and developers.
-                </p>
-              </div>
-              <div>
-                <span className="text-xs font-bold text-sky-400 uppercase tracking-widest block mb-1">Core Operational Context</span>
-                <p className="text-xs sm:text-sm text-slate-300">
-                  Ideal for assets requiring continuous cooling, zero unplanned electrical outages, rapid emergency repair, and ISO-compliant operations.
-                </p>
-              </div>
-              <div>
-                <span className="text-xs font-bold text-sky-400 uppercase tracking-widest block mb-1">Industry Compliance</span>
-                <p className="text-xs sm:text-sm text-slate-300">
-                  Built to align with international <a href="https://www.iso.org/standard/60270.html" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-300">ISO 41001 Facility Management Standards</a>.
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 3. ABOUT SECTION */}
-      <section className="bg-slate-950 text-white py-8 sm:py-10 relative z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             <div className="lg:col-span-7 space-y-6">
               <div>
-                <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block mb-1">About Emrald Ace</span>
+                <span className="text-xs font-extrabold text-blue-400 uppercase tracking-widest block mb-1">About Emrald Ace</span>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight leading-snug">
-                  What is MEP Engineering & Integrated Facility Management?
+                  How Does MEP Engineering Support Integrated Facility Management?
                 </h2>
               </div>
 
               {/* AEO Definition Block */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-slate-900/90 border-l-4 border-[#0b63c5] border-y border-r border-slate-800 shadow-xl">
+              <div className="p-5 rounded-2xl bg-slate-900/90 border-l-4 border-blue-500 border-y border-r border-slate-800 shadow-xl">
                 <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-                  <strong>Definition:</strong> Mechanical, Electrical, and Plumbing (MEP) engineering forms the core infrastructure of any modern building, encompassing HVAC cooling, high-voltage distribution, fire safety systems, and water management. Combined with Integrated Facility Management (IFM), it ensures optimal building performance, reduced power consumption, and zero workflow interruption.
+                  <strong>Definition:</strong> Mechanical, Electrical, and Plumbing (MEP) engineering forms the core physical infrastructure of modern real estate. When integrated with facility operations, it guarantees optimized energy consumption, continuous asset performance, and preventive risk management.
                 </p>
               </div>
 
               <p className="text-xs sm:text-base text-slate-300 font-normal leading-relaxed">
-                Since 2014, Emrald Ace General Contracting & Electromechanical L.L.C. has maintained an unbroken track record across Abu Dhabi and the wider UAE. We engineer, maintain, and upgrade physical spaces with total transparency.
+                Since 2014, Emrald Ace General Contracting & Electromechanical L.L.C. has maintained an unbroken track record across Abu Dhabi and the wider UAE. We engineer, maintain, and upgrade physical spaces with high precision and transparency.
               </p>
               
               {/* How We Work Timeline Flow */}
-              <div className="space-y-3">
-                <h3 className="text-xs font-bold text-blue-400 uppercase tracking-widest">Our Standard Operating Procedure</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 relative">
-                    <span className="text-xl font-extrabold text-blue-500/30 absolute top-2 right-3">01</span>
-                    <strong className="text-white text-xs block mb-1">On-Site Audit</strong>
-                    <span className="text-xs text-slate-400">Complete HVAC and electromechanical health check.</span>
-                  </div>
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 relative">
-                    <span className="text-xl font-extrabold text-blue-500/30 absolute top-2 right-3">02</span>
-                    <strong className="text-white text-xs block mb-1">Tailored AMC</strong>
-                    <span className="text-xs text-slate-400">Custom preventive schedules and 60-min emergency SLAs.</span>
-                  </div>
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 relative">
-                    <span className="text-xl font-extrabold text-blue-500/30 absolute top-2 right-3">03</span>
-                    <strong className="text-white text-xs block mb-1">Active Operations</strong>
-                    <span className="text-xs text-slate-400">Dedicated engineers managing day-to-day uptime.</span>
-                  </div>
-                </div>
+              <div className="space-y-3 pt-2">
+                <h3 className="text-xs font-bold text-blue-400 uppercase tracking-widest">How Our Operating Procedure Works:</h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <li className="p-4 rounded-2xl bg-slate-900 border border-slate-800 relative">
+                    <span className="text-2xl font-black text-blue-500/20 absolute top-2 right-3">01</span>
+                    <strong className="text-white text-xs sm:text-sm block mb-1">1. On-Site Audit</strong>
+                    <span className="text-xs text-slate-400">Comprehensive HVAC and electromechanical diagnostic check.</span>
+                  </li>
+                  <li className="p-4 rounded-2xl bg-slate-900 border border-slate-800 relative">
+                    <span className="text-2xl font-black text-blue-500/20 absolute top-2 right-3">02</span>
+                    <strong className="text-white text-xs sm:text-sm block mb-1">2. Tailored AMC</strong>
+                    <span className="text-xs text-slate-400">Custom preventive schedules and guaranteed 60-min emergency response SLAs.</span>
+                  </li>
+                  <li className="p-4 rounded-2xl bg-slate-900 border border-slate-800 relative">
+                    <span className="text-2xl font-black text-blue-500/20 absolute top-2 right-3">03</span>
+                    <strong className="text-white text-xs sm:text-sm block mb-1">3. Active Operations</strong>
+                    <span className="text-xs text-slate-400">In-house engineers managing day-to-day asset execution.</span>
+                  </li>
+                </ul>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Link href="/services" className="px-6 py-3.5 bg-[#0b63c5] hover:bg-blue-600 text-white font-bold rounded-xl shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center space-x-2 group text-sm">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link href="/services" className="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-600/20 transition-all flex items-center justify-center gap-2 group text-sm">
                   <span>Explore Our Solutions</span>
                   <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
                 </Link>
-                <Link href="/contact" className="px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl border border-slate-800 transition-all text-center text-sm">
+                <Link href="/contact" className="px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold rounded-xl border border-slate-800 transition-all text-center text-sm">
                   Speak with an Engineer
                 </Link>
               </div>
             </div>
 
-            {/* Media & Proof Column */}
+            {/* Visual Media & Verified Performance Column */}
             <div className="lg:col-span-5 relative space-y-4">
-              <div className="relative h-[240px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+              <div className="relative h-[260px] sm:h-[300px] w-full rounded-3xl overflow-hidden border border-slate-800 shadow-2xl">
                 <Image 
                   src="/mep-engineer.jpg" 
                   alt="Emrald Ace Engineering Team Operations UAE" 
@@ -419,35 +394,35 @@ export default async function Home() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3 text-xs font-medium text-slate-200">
+                <div className="absolute bottom-4 left-4 right-4 text-xs font-medium text-slate-200 bg-slate-950/80 p-3 rounded-xl border border-slate-800 backdrop-blur-md">
                   Real-World Execution: Commercial MEP Maintenance in Abu Dhabi
                 </div>
               </div>
 
               {/* Verified Performance Benchmarks Card */}
-              <div className="p-5 bg-slate-900/90 rounded-2xl border border-slate-800 shadow-xl">
-                <div className="flex justify-between items-center mb-3">
-                  <h3 className="font-bold text-blue-400 text-xs tracking-widest uppercase">Verified Benchmarks</h3>
-                  <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full">100% On-Time Execution</span>
+              <div className="p-5 bg-slate-900/90 rounded-3xl border border-slate-800 shadow-xl">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="font-extrabold text-blue-400 text-xs tracking-widest uppercase">Verified Benchmarks</h3>
+                  <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-3 py-1 rounded-full border border-emerald-500/20">100% On-Time Execution</span>
                 </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="p-3 bg-slate-950/80 rounded-xl">
-                    <span className="block text-xl font-bold text-white">2014</span>
-                    <span className="text-[10px] text-slate-400 uppercase font-semibold">Established</span>
-                  </div>
-                  <div className="p-3 bg-slate-950/80 rounded-xl">
-                    <span className="block text-xl font-bold text-white">150+</span>
+                <ul className="grid grid-cols-2 gap-3">
+                  <li className="p-3 bg-slate-950/80 rounded-2xl border border-slate-800/80">
+                    <span className="block text-xl sm:text-2xl font-extrabold text-white">2014</span>
+                    <span className="text-[10px] text-slate-400 uppercase font-semibold">Year Established</span>
+                  </li>
+                  <li className="p-3 bg-slate-950/80 rounded-2xl border border-slate-800/80">
+                    <span className="block text-xl sm:text-2xl font-extrabold text-white">150+</span>
                     <span className="text-[10px] text-slate-400 uppercase font-semibold">Major Projects</span>
-                  </div>
-                  <div className="p-3 bg-slate-950/80 rounded-xl">
-                    <span className="block text-xl font-bold text-white">150+</span>
-                    <span className="text-[10px] text-slate-400 uppercase font-semibold">Skilled Staff Members</span>
-                  </div>
-                  <div className="p-3 bg-slate-950/80 rounded-xl">
-                    <span className="block text-xl font-bold text-white">7/7</span>
-                    <span className="text-[10px] text-slate-400 uppercase font-semibold">UAE Emirates</span>
-                  </div>
-                </div>
+                  </li>
+                  <li className="p-3 bg-slate-950/80 rounded-2xl border border-slate-800/80">
+                    <span className="block text-xl sm:text-2xl font-extrabold text-white">150+</span>
+                    <span className="text-[10px] text-slate-400 uppercase font-semibold">Skilled Staff</span>
+                  </li>
+                  <li className="p-3 bg-slate-950/80 rounded-2xl border border-slate-800/80">
+                    <span className="block text-xl sm:text-2xl font-extrabold text-white">7/7</span>
+                    <span className="text-[10px] text-slate-400 uppercase font-semibold">UAE Emirates Covered</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -455,49 +430,12 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 4. COMPARISON TABLE */}
-      <section className="py-8 sm:py-10 bg-slate-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-8 space-y-1">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">How Does Integrated Management Compare?</h2>
-            <p className="text-slate-300 text-xs sm:text-sm">Why unified single-source accountability outperforms multi-vendor maintenance setups.</p>
-          </div>
 
-          <div className="overflow-x-auto no-scrollbar rounded-2xl border border-slate-800 bg-slate-900/40">
-            <table className="w-full text-left text-xs sm:text-sm text-slate-200 border-collapse min-w-[600px]">
-              <thead>
-                <tr className="bg-slate-900 border-b border-slate-800">
-                  <th className="p-4 font-bold text-blue-400 w-1/3">Evaluation Metric</th>
-                  <th className="p-4 font-bold text-white bg-blue-950/30 border-x border-slate-800/80 w-1/3">Emrald Ace Integrated Services</th>
-                  <th className="p-4 font-bold text-slate-400 w-1/3">Multiple Separate Vendors</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-800/60">
-                <tr>
-                  <td className="p-4 font-semibold text-white">Service Management</td>
-                  <td className="p-4 bg-blue-950/10 border-x border-slate-800/80 text-emerald-400 font-medium">Single point of contact for IFM, MEP & Fit-Outs</td>
-                  <td className="p-4 text-slate-400">Managing multiple uncoordinated contractors</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-semibold text-white">Emergency Response SLA</td>
-                  <td className="p-4 bg-blue-950/10 border-x border-slate-800/80 text-emerald-400 font-medium">24/7 Helpdesk with guaranteed &lt; 60-min dispatch</td>
-                  <td className="p-4 text-slate-400">Standard business-hours only; varying response times</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-semibold text-white">Accountability & Cost Control</td>
-                  <td className="p-4 bg-blue-950/10 border-x border-slate-800/80 text-emerald-400 font-medium">Unified SLA with fixed monthly pricing and operational audits</td>
-                  <td className="p-4 text-slate-400">Overlapping vendor fees and unclear dispute boundaries</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
 
-      {/* 5. CORPORATE STRATEGY SECTION */}
-      <section className="py-8 sm:py-10 bg-slate-950 relative">
+      {/* 5. STRATEGY SECTION */}
+      <section className="py-12 bg-slate-950 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             <div className="lg:col-span-5 relative">
               <div className="relative w-full aspect-square max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border border-slate-800">
@@ -509,38 +447,38 @@ export default async function Home() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-2 bg-gradient-to-r from-blue-600 to-sky-600 text-white p-4 rounded-2xl shadow-2xl max-w-[200px] hidden sm:block">
-                <p className="text-xs font-bold uppercase tracking-widest leading-tight">Reliable Operations Guaranteed</p>
+              <div className="absolute -bottom-4 -right-2 bg-gradient-to-r from-blue-600 to-sky-600 text-white p-4 rounded-2xl shadow-2xl max-w-[220px] hidden sm:block border border-blue-400/30">
+                <p className="text-xs font-extrabold uppercase tracking-widest leading-tight">Reliable Operations Guaranteed</p>
               </div>
             </div>
 
             <div className="lg:col-span-7 space-y-5">
-              <span className="text-xs font-bold text-sky-400 uppercase tracking-widest block">Our Operational Philosophy</span>
+              <span className="text-xs font-extrabold text-sky-400 uppercase tracking-widest block">Our Operational Philosophy</span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight">
-                Engineering Long-Term Asset Value Across the UAE
+                Why Choose Emrald Ace for Building Asset Protection in UAE?
               </h2>
-              <div className="w-12 h-1 bg-[#0b63c5] rounded-full"></div>
+              <div className="w-12 h-1 bg-blue-600 rounded-full"></div>
               
               <p className="text-slate-300 text-xs sm:text-base leading-relaxed">
-                Modern buildings require proactive maintenance rather than reactive patching. We integrate real-time scheduling, energy optimization, and dedicated mechanical teams so your facilities function seamlessly 365 days a year.
+                Modern buildings require proactive engineering upkeep rather than reactive patching. We integrate real-time scheduling, energy optimization, and dedicated mechanical teams so your facilities function seamlessly 365 days a year.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {[
                   "Predictive Maintenance Scheduling", 
                   "Long-Term Structural Asset Protection", 
                   "Transparent Monthly Audit Reports", 
                   "Single Point of Executive Contact"
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center space-x-3 p-3 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200">
+                  <li key={idx} className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-900 border border-slate-800 text-xs sm:text-sm font-semibold text-slate-200">
                     <span className="w-2 h-2 rounded-full bg-blue-400 shrink-0"></span>
                     <span>{item}</span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
 
               <div className="pt-2">
-                <Link href="/about" className="inline-flex items-center bg-[#0b63c5] hover:bg-blue-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all text-sm group">
+                <Link href="/about" className="inline-flex items-center bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all text-sm group">
                   <span>Learn More About Our Company</span>
                   <span className="ml-2 transition-transform group-hover:translate-x-1">&rarr;</span>
                 </Link>
@@ -551,12 +489,12 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 6. OPTIMIZED SERVICES SECTION */}
-      <section className="py-8 sm:py-10 bg-slate-950">
+      {/* 6. CORE SERVICES SECTION */}
+      <section className="py-12 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-2 mb-8">
-            <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">Core Solutions</span>
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-100 tracking-tight">Our Core Services</h2>
+          <div className="text-center max-w-3xl mx-auto space-y-2 mb-10">
+            <span className="text-xs font-extrabold text-blue-400 uppercase tracking-widest block">Core Solutions</span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">What Services Are Included in Our Facility Management Spectrum?</h2>
             <p className="text-slate-300 text-xs sm:text-sm font-normal">
               End-to-end engineering, preventive upkeep, and interior transformations delivered by experienced specialists.
             </p>
@@ -566,7 +504,7 @@ export default async function Home() {
             {coreServices.map((service, index) => (
               <div 
                 key={index} 
-                className="group relative bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 shadow-xl hover:border-blue-500/40 transition-all duration-300 flex flex-col"
+                className="group relative bg-slate-900/90 rounded-3xl overflow-hidden border border-slate-800 shadow-xl hover:border-blue-500/40 transition-all duration-300 flex flex-col"
               >
                 <div className="relative h-48 sm:h-52 w-full overflow-hidden">
                   <Image 
@@ -576,22 +514,22 @@ export default async function Home() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
                   
-                  <span className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-blue-400 text-[10px] font-bold px-2.5 py-1 rounded-full border border-slate-800">
+                  <span className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-blue-400 text-[10px] font-extrabold px-3 py-1 rounded-full border border-slate-800">
                     Service 0{index + 1}
                   </span>
                 </div>
 
-                <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-3">
                   <h3 className="text-base sm:text-lg font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-slate-300 text-xs leading-relaxed font-normal">
                     {service.desc}
                   </p>
-                  <div className="pt-1 text-xs font-semibold text-blue-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    <span>Learn detail</span>
+                  <div className="pt-2 text-xs font-bold text-blue-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    <span>Learn details</span>
                     <span>&rarr;</span>
                   </div>
                 </div>
@@ -599,42 +537,42 @@ export default async function Home() {
             ))}
           </div>
           
-          <div className="text-center mt-8">
-            <Link href="/services" className="inline-flex items-center justify-center bg-[#0b63c5] text-white font-bold px-7 py-3.5 rounded-xl hover:bg-blue-600 transition-all text-sm tracking-wide shadow-md shadow-blue-600/10">
-              View All Services
+          <div className="text-center mt-10">
+            <Link href="/services" className="inline-flex items-center justify-center bg-blue-600 text-white font-bold px-8 py-4 rounded-2xl hover:bg-blue-500 transition-all text-sm tracking-wide shadow-xl shadow-blue-600/20">
+              View All Facility Services
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 7. HIGH-CONVERTING CTA SECTION */}
-      <section className="py-8 sm:py-10 bg-slate-950 relative overflow-hidden">
+      {/* 7. HIGH-CONVERTING CALL TO ACTION */}
+      <section className="py-12 bg-slate-950 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-900/60 via-slate-900 to-slate-900 border border-blue-500/30 p-6 sm:p-10 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-950 via-slate-900 to-slate-900 border border-blue-500/30 p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
             
-            <div className="space-y-2 text-center lg:text-left max-w-2xl">
+            <div className="space-y-3 text-center lg:text-left max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold">
-                <span>⚡ 24/7 Technical Support Active</span>
+                <span>⚡ 24/7 Technical Response Active</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                Need Fast Support or a Custom Facility Plan?
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+                How Can You Book Immediate MEP Support or Get a Custom AMC Quote?
               </h2>
-              <p className="text-slate-300 text-xs sm:text-sm">
-                Get direct access to our UAE engineering teams for immediate site audits, emergency repairs, or AMC proposals.
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                Directly connect with our UAE engineering response team for immediate site audits, emergency dispatch, or annual contract pricing.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto shrink-0">
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto shrink-0">
               <a 
                 href="tel:+97126751747" 
-                className="w-full sm:w-auto px-6 py-3.5 bg-white hover:bg-slate-100 text-slate-950 font-bold rounded-xl shadow-xl transition-all flex items-center justify-center space-x-2 text-sm"
+                className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-100 text-slate-950 font-bold rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 text-sm"
               >
                 <span>Call +971 2 675 1747</span>
               </a>
 
               <Link 
                 href="/contact" 
-                className="w-full sm:w-auto px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl border border-slate-700 transition-all text-center text-sm"
+                className="w-full sm:w-auto px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-2xl border border-slate-700 transition-all text-center text-sm"
               >
                 Get a Free Quote
               </Link>
@@ -645,48 +583,48 @@ export default async function Home() {
       </section>
 
       {/* 8. SECTOR DIVERSIFICATION FOOTPRINT */}
-      <section className="py-8 sm:py-10 bg-slate-950">
+      <section className="py-12 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             <div className="lg:col-span-6 space-y-5">
-              <span className="text-xs font-bold text-sky-400 uppercase tracking-widest block">Industries We Serve</span>
+              <span className="text-xs font-extrabold text-sky-400 uppercase tracking-widest block">Industries We Serve</span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight">
-                Tailored Solutions for Key Business Sectors
+                Which Business Sectors Do We Support Across the UAE?
               </h2>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                 Our multi-disciplinary teams deliver tailored preventive maintenance, quick emergency dispatch, and complex engineering upgrades across diverse commercial environments:
               </p>
 
-              <div className="grid grid-cols-2 gap-2.5">
+              <ul className="grid grid-cols-2 gap-3">
                 {[
-                  "Commercial Offices", "Residential Communities", 
-                  "Healthcare Centers", "Luxury Hotels & Hospitality", 
-                  "Retail Outlets", "Industrial Complexes",
-                  "Shopping Malls", "Educational Facilities"
+                  "Commercial Office Towers", "Residential Communities", 
+                  "Healthcare & Medical Centers", "Hotels & Hospitality Venues", 
+                  "Retail Malls & Outlets", "Industrial Warehouses",
+                  "Shopping Centers", "Educational Hubs"
                 ].map((vertical, vIdx) => (
-                  <div key={vIdx} className="p-2.5 sm:p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-center space-x-2 text-xs font-semibold text-slate-200">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>
+                  <li key={vIdx} className="p-3 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-2.5 text-xs font-semibold text-slate-200">
+                    <span className="w-2 h-2 rounded-full bg-blue-400 shrink-0"></span>
                     <span>{vertical}</span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
             
-            <div className="lg:col-span-6 grid grid-cols-2 gap-3 sm:gap-4">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="relative h-40 sm:h-48 w-full rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+            <div className="lg:col-span-6 grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="relative h-40 sm:h-48 w-full rounded-3xl overflow-hidden border border-slate-800 shadow-xl">
                   <Image src="/sector-ecosystem-1.jpg" alt="Commercial Interiors UAE" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
                 </div>
-                <div className="relative h-28 sm:h-36 w-full rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+                <div className="relative h-28 sm:h-36 w-full rounded-3xl overflow-hidden border border-slate-800 shadow-xl">
                   <Image src="/sector-ecosystem-2.jpg" alt="MEP Plant Maintenance UAE" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
                 </div>
               </div>
-              <div className="space-y-3 sm:space-y-4 pt-4 sm:pt-6">
-                <div className="relative h-28 sm:h-36 w-full rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+              <div className="space-y-4 pt-6">
+                <div className="relative h-28 sm:h-36 w-full rounded-3xl overflow-hidden border border-slate-800 shadow-xl">
                   <Image src="/sector-ecosystem-3.jpg" alt="Corporate Facilities UAE" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
                 </div>
-                <div className="relative h-40 sm:h-48 w-full rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+                <div className="relative h-40 sm:h-48 w-full rounded-3xl overflow-hidden border border-slate-800 shadow-xl">
                   <Image src="/sector-ecosystem-4.jpg" alt="Civil Engineering Works UAE" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
                 </div>
               </div>
@@ -699,7 +637,7 @@ export default async function Home() {
       {/* 9. CLIENT CAROUSEL & INTERACTIVE FAQ SECTION */}
       <DynamicHomeContent clientLogos={clientLogos} faqs={faqs} />
 
-      {/* Structured AI & Search Engine JSON-LD Schema Script */}
+      {/* JSON-LD Schema Integration for AI Assistants & Search Engine Bots */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
