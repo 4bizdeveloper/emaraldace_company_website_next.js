@@ -288,7 +288,7 @@ export default function About() {
         </section>
 
         {/* Corporate Metrics Block */}
-        <section className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+        <section className="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-6">
           <div className="p-4 sm:p-6 text-center bg-slate-900/80 border border-slate-800/80 rounded-2xl shadow-sm hover:border-slate-700 transition-colors">
             <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">2014</div>
             <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">Established</div>
@@ -299,9 +299,13 @@ export default function About() {
           </div>
           <div className="p-4 sm:p-6 text-center bg-slate-900/80 border border-slate-800/80 rounded-2xl shadow-sm hover:border-slate-700 transition-colors">
             <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">150+</div>
-            <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">Projects Delivered</div>
+            <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">Skilled Staff Members</div>
           </div>
           <div className="p-4 sm:p-6 text-center bg-slate-900/80 border border-slate-800/80 rounded-2xl shadow-sm hover:border-slate-700 transition-colors">
+            <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">150+</div>
+            <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">Projects Delivered</div>
+          </div>
+          <div className="p-4 sm:p-6 text-center bg-slate-900/80 border border-slate-800/80 rounded-2xl shadow-sm hover:border-slate-700 transition-colors col-span-2 sm:col-span-1">
             <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">100%</div>
             <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">UAE Business Coverage</div>
           </div>
