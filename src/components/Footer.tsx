@@ -6,51 +6,23 @@ import { Phone, Mail, MapPin, Globe, ShieldCheck, FileCheck, Lock, Scale } from 
 export default function Footer() {
   const activeYear = new Date().getFullYear();
 
-  // Organization Schema for SEO / AEO / GEO Search Engine Crawlers
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Emrald Ace Engineering & Facilities Management LLC",
-    "url": "https://www.emraldace.ae",
-    "logo": "https://www.emraldace.ae/logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+971528976025",
-      "contactType": "customer service",
-      "areaServed": "AE",
-      "availableLanguage": ["English", "Arabic"]
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Musaffah M-14",
-      "addressLocality": "Abu Dhabi",
-      "addressCountry": "AE"
-    }
-  };
-
   return (
     <footer 
-      className="w-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100 text-sm pt-16 pb-36 sm:pb-28 lg:pb-24 px-6 sm:px-10 lg:px-12 border-t border-slate-800 relative overflow-hidden select-none transform-gpu"
+      className="w-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-200 text-sm pt-16 pb-36 sm:pb-28 lg:pb-24 px-6 sm:px-10 lg:px-12 border-t border-slate-800 relative overflow-hidden select-none transform-gpu"
       aria-labelledby="footer-heading"
     >
-      {/* Search Engine & AI Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-
       <h2 id="footer-heading" className="sr-only">
         Emrald Ace Engineering & Facilities Management LLC Footer
       </h2>
 
-      {/* Modern ambient glow background elements */}
+      {/* Modern ambient glow elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none transform-gpu" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none transform-gpu" />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 lg:gap-12 border-b border-slate-800/80 pb-12 mb-8 relative z-10">
         
         {/* Brand & Identity Column */}
-        <div className="col-span-1 sm:col-span-2 md:col-span-5 lg:col-span-5 space-y-6">
+        <div className="col-span-1 sm:col-span-2 md:col-span-5 lg:col-span-6 space-y-6">
           <div className="flex items-center space-x-4">
             <div className="relative w-16 h-16 bg-white rounded-xl p-1.5 flex items-center justify-center shadow-xl shadow-black/40 transform-gpu transition-all duration-300 hover:scale-105 hover:rotate-1">
               <Image 
@@ -66,13 +38,13 @@ export default function Footer() {
               <span className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight text-white block antialiased">
                 EMRALD <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">ACE</span>
               </span>
-              <p className="text-xs text-slate-300 font-medium tracking-wide mt-0.5">
+              <p className="text-xs text-slate-400 font-medium tracking-wide mt-0.5">
                 Engineering & Facilities Management LLC
               </p>
             </div>
           </div>
 
-          <p className="text-slate-200 leading-relaxed text-sm max-w-md antialiased font-normal">
+          <p className="text-slate-300 leading-relaxed text-sm max-w-md antialiased font-normal">
             Integrated engineering expertise, asset maintenance governance, and specialized electromechanical workflow optimization solutions executed across the UAE market scale since 2014.
           </p>
 
@@ -90,67 +62,40 @@ export default function Footer() {
         </div>
 
         {/* Corporate Navigation Column */}
-        <nav className="col-span-1 md:col-span-3 lg:col-span-2 space-y-4" aria-label="Footer Navigation">
+        <nav className="col-span-1 md:col-span-3 lg:col-span-3 space-y-4" aria-label="Footer Navigation">
           <span className="font-bold text-white uppercase text-xs tracking-wider block border-l-2 border-cyan-400 pl-2.5 antialiased">
-            Navigation
+            Corporate Navigation
           </span>
-          <ul className="space-y-2.5 text-sm font-medium">
+          <ul className="space-y-3 text-sm font-medium">
             <li>
-              <Link href="/" className="text-slate-200 hover:text-cyan-300 transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
+              <Link href="/" className="text-slate-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="text-slate-200 hover:text-cyan-300 transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
+              <Link href="/about" className="text-slate-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/services" className="text-slate-200 hover:text-cyan-300 transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
+              <Link href="/services" className="text-slate-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
                 Services
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="text-slate-200 hover:text-cyan-300 transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
+              <Link href="/contact" className="text-slate-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
                 Contact Us
               </Link>
             </li>
           </ul>
         </nav>
 
-        {/* Legal & Governance Column */}
-        <nav className="col-span-1 md:col-span-4 lg:col-span-2 space-y-4" aria-label="Legal & Governance Navigation">
-          <span className="font-bold text-white uppercase text-xs tracking-wider block border-l-2 border-cyan-400 pl-2.5 antialiased">
-            Legal Governance
-          </span>
-          <ul className="space-y-2.5 text-sm font-medium">
-            <li>
-              <Link 
-                href="/privacy-policy" 
-                className="text-slate-200 hover:text-cyan-300 transition-all duration-200 hover:translate-x-1 inline-flex items-center gap-1.5 transform-gpu"
-              >
-                <Lock className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                <span>Privacy Policy</span>
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="/terms-and-conditions" 
-                className="text-slate-200 hover:text-cyan-300 transition-all duration-200 hover:translate-x-1 inline-flex items-center gap-1.5 transform-gpu"
-              >
-                <Scale className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                <span>Terms & Conditions</span>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
         {/* Global Access Center Column */}
-        <div className="col-span-1 md:col-span-5 lg:col-span-3 space-y-4">
+        <div className="col-span-1 md:col-span-4 lg:col-span-3 space-y-4">
           <span className="font-bold text-white uppercase text-xs tracking-wider block border-l-2 border-cyan-400 pl-2.5 antialiased">
             Global Access Center
           </span>
-          <address className="not-italic space-y-3 text-sm font-medium text-slate-100">
+          <address className="not-italic space-y-3 text-sm font-medium text-slate-200">
             <div className="flex items-center space-x-3 group">
               <Phone className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
               <a href="tel:+971528976025" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
@@ -165,11 +110,11 @@ export default function Footer() {
             </div>
             <div className="flex items-center space-x-3 group">
               <Globe className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
-              <a href="https://www.emraldace.ae" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
-                www.emraldace.ae
+              <a href="https://www.emraldace.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                www.emraldace.com
               </a>
             </div>
-            <div className="flex items-start space-x-3 text-slate-100 group">
+            <div className="flex items-start space-x-3 text-slate-200 group">
               <MapPin className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
               <span className="leading-relaxed antialiased">
                 Musaffah M-14, Abu Dhabi,<br />U.A.E
@@ -180,30 +125,41 @@ export default function Footer() {
 
       </div>
 
-      {/* Stacked Clean Bottom Section with Legal Routing Links */}
-      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center space-y-3 text-xs text-slate-300 relative z-10 antialiased">
+      {/* Bottom Legal & Meta Bar */}
+      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center space-y-4 text-xs text-slate-400 relative z-10 antialiased">
+        
         {/* Line 1: Corporate Entity Details */}
-        <p className="leading-normal text-slate-200 w-full max-w-5xl">
+        <p className="leading-normal text-slate-300 w-full max-w-5xl">
           <strong className="text-white font-semibold">Emrald Ace Engineering & Facilities Management LLC</strong> — Musaffah M-14, Abu Dhabi, U.A.E |{' '}
-          <a href="https://www.emraldace.ae" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
-            www.emraldace.ae
+          <a href="https://www.emraldace.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
+            www.emraldace.com
           </a>{' '}
           · ISO 45001:2018 Certified · <span className="inline-block whitespace-nowrap">UAE Trade Licensed</span>
         </p>
 
-        {/* Line 2: Inline Legal Links */}
-        <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-300 pt-1">
-          <Link href="/privacy-policy" className="hover:text-cyan-300 transition-colors duration-200 underline underline-offset-4 decoration-slate-700 hover:decoration-cyan-400">
-            Privacy Policy
+        {/* Line 2: Legal Privacy Policy & Terms Links */}
+        <div className="flex items-center justify-center flex-wrap gap-x-4 gap-y-2 text-slate-300 font-medium pt-1">
+          <Link 
+            href="/privacy-policy" 
+            className="inline-flex items-center gap-1.5 hover:text-cyan-400 transition-colors duration-200 group"
+          >
+            <Lock className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
+            <span>Privacy Policy</span>
           </Link>
-          <span className="text-slate-600">•</span>
-          <Link href="/terms-and-conditions" className="hover:text-cyan-300 transition-colors duration-200 underline underline-offset-4 decoration-slate-700 hover:decoration-cyan-400">
-            Terms & Conditions
+
+          <span className="text-slate-600 select-none">•</span>
+
+          <Link 
+            href="/terms-and-conditions" 
+            className="inline-flex items-center gap-1.5 hover:text-cyan-400 transition-colors duration-200 group"
+          >
+            <Scale className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
+            <span>Terms & Conditions</span>
           </Link>
         </div>
 
         {/* Line 3: Copyright & Developer Credits */}
-        <p className="text-slate-300 font-medium pt-1">
+        <p className="text-slate-400 font-medium pt-1">
           &copy; {activeYear} All rights reserved for Emrald Ace | Developed by{' '}
           <a
             href="https://www.4bizinternational.com/"
@@ -214,6 +170,7 @@ export default function Footer() {
             4biz international LLC
           </a>
         </p>
+
       </div>
     </footer>
   );
