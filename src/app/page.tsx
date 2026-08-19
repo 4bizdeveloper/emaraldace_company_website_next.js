@@ -291,7 +291,7 @@ export default async function Home() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.18] text-white max-w-5xl mx-auto drop-shadow-md">
             Integrated Facility Management <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-300 to-indigo-300 drop-shadow-sm font-medium">
-              & MEP Services UAE 
+              & MEP Services in UAE 
             </span>
           </h1>
           <p className="text-base sm:text-lg text-slate-100 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-sm">
