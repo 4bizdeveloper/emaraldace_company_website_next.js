@@ -84,6 +84,7 @@ public/
   interior-fit-out-solutions-2.webp
   interior-fit-out-solutions.webp
   logo.png
+  mep-1.webp
   mep-engineering-services-2.webp
   mep-engineering-services.webp
   mep-general-contracting.jfif
@@ -110,6 +111,8 @@ src/
       page.tsx
     contact/
       page.tsx
+    privacy-policy/
+      page.tsx
     services/
       annual-maintenance-contracts/
         page.tsx
@@ -124,6 +127,9 @@ src/
       specialized-services/
         page.tsx
       page.tsx
+    terms-and-conditions/
+      page.tsx
+    DynamicHomeContent.tsx
     globals.css
     icon.png
     layout.tsx
@@ -145,6 +151,539 @@ tsconfig.json
 
 <files>
 This section contains the contents of the repository's files.
+
+<file path="src/app/privacy-policy/page.tsx">
+import React from "react";
+import { Metadata } from "next";
+import { ShieldCheck, Lock, Eye, Server, FileText, UserCheck, Bell, Mail, Phone, MapPin } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Emrald Ace General Contracting & Electromechanical UAE",
+  description: "Read the official Privacy Policy of Emrald Ace General Contracting & Electromechanical UAE. Learn how we collect, process, protect, and handle client data under UAE law.",
+  keywords: ["Emrald Ace Privacy Policy", "UAE Data Protection Law", "Data Privacy Abu Dhabi", "General Contracting Legal Terms"],
+  openGraph: {
+    title: "Privacy Policy | Emrald Ace General Contracting & Electromechanical UAE",
+    description: "Official Privacy Policy for Emrald Ace General Contracting & Electromechanical.",
+    url: "https://www.emraldace.ae/privacy-policy/",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.emraldace.ae/privacy-policy/",
+  },
+};
+
+export default function PrivacyPolicyPage() {
+  const lastUpdated = "August 19, 2026";
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Policy - Emrald Ace",
+    "url": "https://www.emraldace.ae/privacy-policy/",
+    "description": "Privacy Policy governing client and visitor data processing for Emrald Ace General Contracting & Electromechanical UAE.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Emrald Ace General Contracting & Electromechanical",
+      "url": "https://www.emraldace.ae",
+      "logo": "https://www.emraldace.ae/logo.png",
+      "telephone": "+971528976025",
+      "email": "sales1@emraldace.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Musaffah",
+        "addressRegion": "Abu Dhabi",
+        "addressCountry": "AE"
+      }
+    }
+  };
+
+  return (
+    <main className="min-h-screen bg-[#030712] text-slate-100 font-sans pt-28 sm:pt-36 pb-20 px-4 sm:px-6 lg:px-8 selection:bg-[#0b63c5] selection:text-white overflow-x-hidden">
+      {/* Schema Injection for Search Engines & AI Crawlers */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+
+      {/* Hero Header */}
+      <header className="max-w-4xl mx-auto text-center mb-12 sm:mb-16 relative">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-[#0b63c5]/20 rounded-full blur-3xl pointer-events-none -z-10" />
+        
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0b63c5]/20 border border-[#0b63c5]/40 text-cyan-300 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 backdrop-blur-md">
+          <ShieldCheck className="w-4 h-4 text-[#0b63c5]" />
+          Data Governance & Trust
+        </div>
+
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-4">
+          Privacy Policy
+        </h1>
+        
+        <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          At <strong className="text-white font-semibold">Emrald Ace General Contracting & Electromechanical</strong>, we treat your privacy and data security with absolute accountability under United Arab Emirates data protection laws.
+        </p>
+
+        <p className="text-xs text-cyan-400 font-mono mt-4">
+          Last Updated: {lastUpdated}
+        </p>
+      </header>
+
+      {/* Content Body Container */}
+      <article className="max-w-4xl mx-auto space-y-8 sm:space-y-12">
+        
+        {/* Section 1 */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl backdrop-blur-md">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-cyan-400 shrink-0">
+              <Eye className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">1. Information We Collect</h2>
+          </div>
+          <div className="text-slate-200 text-sm sm:text-base leading-relaxed space-y-4">
+            <p>
+              We collect personal data required to respond to enquiries, execute electromechanical, MEP, facility management, fit-out, and general contracting contracts across the United Arab Emirates.
+            </p>
+            <ul className="list-disc pl-5 space-y-2 text-slate-300">
+              <li><strong className="text-white">Contact Identity:</strong> Full name, professional designation, and corporate identity.</li>
+              <li><strong className="text-white">Communication Coordinates:</strong> Corporate email address, telephone contact numbers, and office locations.</li>
+              <li><strong className="text-white">Project Scope Specs:</strong> Architectural, civil engineering, or MEP scope requirements shared via web enquiry forms.</li>
+              <li><strong className="text-white">Technical Analytics:</strong> Anonymized server logs, browser types, and interaction telemetry to improve site performance.</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Section 2 */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl backdrop-blur-md">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-cyan-400 shrink-0">
+              <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">2. How We Use Your Data</h2>
+          </div>
+          <div className="text-slate-200 text-sm sm:text-base leading-relaxed space-y-3">
+            <p>Your submitted data is strictly processed for legitimate engineering business purposes:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs sm:text-sm text-slate-200">
+                <strong className="text-white block mb-1">Contract Bidding & Quotes</strong>
+                Evaluating project requirements and generating precise commercial proposals.
+              </div>
+              <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs sm:text-sm text-slate-200">
+                <strong className="text-white block mb-1">Regulatory Approvals</strong>
+                Coordinating permits with UAE regulatory and municipality entities when executing contracts.
+              </div>
+              <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs sm:text-sm text-slate-200">
+                <strong className="text-white block mb-1">Client Support & Communication</strong>
+                Direct communications concerning maintenance schedules or site updates.
+              </div>
+              <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs sm:text-sm text-slate-200">
+                <strong className="text-white block mb-1">Infrastructure Optimization</strong>
+                Improving page load speed, security routing, and user interface compatibility.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 3 */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl backdrop-blur-md">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-cyan-400 shrink-0">
+              <Lock className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">3. Protection, Security & Hosting</h2>
+          </div>
+          <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
+            Emrald Ace deploys robust encryption protocols across transport layers (SSL/TLS) and strict node-level firewall rules. We maintain zero tolerance for unauthorized data monetization. <strong className="text-white font-semibold">We never sell, rent, or trade client personal or corporate information</strong> to third-party marketing entities.
+          </p>
+        </section>
+
+        {/* Section 4 */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl backdrop-blur-md">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-cyan-400 shrink-0">
+              <Server className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">4. Legal Jurisdiction & UAE Law Compliance</h2>
+          </div>
+          <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
+            This Privacy Policy adheres strictly to Federal Decree-Law No. 45 of 2021 regarding the Protection of Personal Data (PDPL) in the United Arab Emirates. Any dispute concerning data handling shall fall under the jurisdiction of Abu Dhabi, UAE courts.
+          </p>
+        </section>
+
+        {/* Section 5 */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl backdrop-blur-md">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-cyan-400 shrink-0">
+              <UserCheck className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">5. Your Data Rights</h2>
+          </div>
+          <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-3">
+            Clients and website users reserve full legal authority to:
+          </p>
+          <ul className="list-disc pl-5 space-y-1.5 text-slate-300 text-sm sm:text-base">
+            <li>Request a copy of stored personal contact records.</li>
+            <li>Request immediate correction or updating of out-of-date information.</li>
+            <li>Request full erasure of contact data unless retention is mandated by UAE financial/contract law.</li>
+          </ul>
+        </section>
+
+        {/* Contact Block */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900 to-[#0b63c5]/30 border border-cyan-500/30 shadow-2xl">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2.5 rounded-xl bg-[#0b63c5] text-white shrink-0">
+              <Bell className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">Privacy Officer Contact</h2>
+          </div>
+          <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-6">
+            For data inquiries, access requests, or regulatory queries, reach out to our legal and governance desk directly:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm">
+            <a href="mailto:sales1@emraldace.com" className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 hover:border-[#0b63c5] transition-colors">
+              <Mail className="w-4 h-4 text-[#0b63c5] shrink-0" />
+              <span className="truncate">sales1@emraldace.com</span>
+            </a>
+            <a href="tel:+971528976025" className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 hover:border-[#0b63c5] transition-colors">
+              <Phone className="w-4 h-4 text-[#0b63c5] shrink-0" />
+              <span>+971 52 897 6025</span>
+            </a>
+            <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200">
+              <MapPin className="w-4 h-4 text-[#0b63c5] shrink-0" />
+              <span>Musaffah, Abu Dhabi, UAE</span>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </main>
+  );
+}
+</file>
+
+<file path="src/app/terms-and-conditions/page.tsx">
+import React from "react";
+import { Metadata } from "next";
+import { Scale, FileCheck, ShieldAlert, Cpu, Gavel, HelpCircle, Mail, Phone, MapPin } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions | Emrald Ace General Contracting UAE",
+  description: "Official Terms and Conditions governing website usage, engineering proposals, and service contracts for Emrald Ace General Contracting & Electromechanical UAE.",
+  keywords: ["Emrald Ace Terms and Conditions", "General Contracting Agreement UAE", "MEP Engineering Terms Abu Dhabi"],
+  openGraph: {
+    title: "Terms & Conditions | Emrald Ace General Contracting UAE",
+    description: "Legal terms governing website access and engineering contracts with Emrald Ace.",
+    url: "https://www.emraldace.ae/terms-and-conditions/",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.emraldace.ae/terms-and-conditions/",
+  },
+};
+
+export default function TermsAndConditionsPage() {
+  const effectiveDate = "August 19, 2026";
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Terms and Conditions - Emrald Ace",
+    "url": "https://www.emraldace.ae/terms-and-conditions/",
+    "description": "Legal terms governing website utilization and service interactions for Emrald Ace General Contracting & Electromechanical.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Emrald Ace General Contracting & Electromechanical",
+      "url": "https://www.emraldace.ae",
+      "logo": "https://www.emraldace.ae/logo.png",
+      "telephone": "+971528976025",
+      "email": "sales1@emraldace.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Musaffah",
+        "addressRegion": "Abu Dhabi",
+        "addressCountry": "AE"
+      }
+    }
+  };
+
+  return (
+    <main className="min-h-screen bg-[#030712] text-slate-100 font-sans pt-28 sm:pt-36 pb-20 px-4 sm:px-6 lg:px-8 selection:bg-[#0b63c5] selection:text-white overflow-x-hidden">
+      {/* Schema Injection for Search Engines & AI Crawlers */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+
+      {/* Hero Header */}
+      <header className="max-w-4xl mx-auto text-center mb-12 sm:mb-16 relative">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-[#0b63c5]/20 rounded-full blur-3xl pointer-events-none -z-10" />
+        
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0b63c5]/20 border border-[#0b63c5]/40 text-cyan-300 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 backdrop-blur-md">
+          <Scale className="w-4 h-4 text-[#0b63c5]" />
+          Legal Terms & Governance
+        </div>
+
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-4">
+          Terms & Conditions
+        </h1>
+        
+        <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Please read these terms carefully before utilizing our services or website. By accessing <strong className="text-white font-semibold">emraldace.ae</strong>, you accept full compliance with these conditions.
+        </p>
+
+        <p className="text-xs text-cyan-400 font-mono mt-4">
+          Effective Date: {effectiveDate}
+        </p>
+      </header>
+
+      {/* Content Body Container */}
+      <article className="max-w-4xl mx-auto space-y-8 sm:space-y-12">
+        
+        {/* Section 1 */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl backdrop-blur-md">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-cyan-400 shrink-0">
+              <FileCheck className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">1. Scope of Services & Binding Agreement</h2>
+          </div>
+          <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
+            Emrald Ace General Contracting & Electromechanical provides integrated facility management, MEP engineering, interior fit-out, annual maintenance contracts (AMC), and specialized contracting services. Information presented on this digital platform constitutes an invitation to treat and does not supersede formal physical contracts signed between clients and Emrald Ace.
+          </p>
+        </section>
+
+        {/* Section 2 */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl backdrop-blur-md">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-cyan-400 shrink-0">
+              <Cpu className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">2. Intellectual Property Rights</h2>
+          </div>
+          <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
+            All proprietary branding assets, client case studies, engineering graphics, source code, visual design elements, and technical documentation displayed on <strong className="text-white font-semibold">emraldace.ae</strong> remain the exclusive intellectual property of Emrald Ace General Contracting & Electromechanical. Reproduction, scrapers, or unauthorized republication without explicit written authorization is prohibited.
+          </p>
+        </section>
+
+        {/* Section 3 */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl backdrop-blur-md">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-cyan-400 shrink-0">
+              <ShieldAlert className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">3. Limitation of Liability</h2>
+          </div>
+          <div className="text-slate-200 text-sm sm:text-base leading-relaxed space-y-3">
+            <p>
+              While Emrald Ace exercises every effort to ensure instant loading speed, technical accuracy, and site uptime, we shall not be held liable for:
+            </p>
+            <ul className="list-disc pl-5 space-y-1.5 text-slate-300">
+              <li>Temporary site disruptions caused by third-party hosting networks or ISP routings.</li>
+              <li>Outdated information prior to manual website updates.</li>
+              <li>Unforeseen indirect loss resulting from site navigation or form transmission delays.</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Section 4 */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl backdrop-blur-md">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2.5 rounded-xl bg-[#0b63c5]/20 text-cyan-400 shrink-0">
+              <Gavel className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">4. Governing Law & Jurisdiction</h2>
+          </div>
+          <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
+            These Terms and Conditions shall be governed by and interpreted in accordance with the federal laws of the United Arab Emirates and the local regulations of the Emirate of Abu Dhabi. Courts situated in Abu Dhabi, UAE, hold sole jurisdiction over legal proceedings.
+          </p>
+        </section>
+
+        {/* Contact Block */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900 to-[#0b63c5]/30 border border-cyan-500/30 shadow-2xl">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2.5 rounded-xl bg-[#0b63c5] text-white shrink-0">
+              <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">Legal Inquiry Desk</h2>
+          </div>
+          <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-6">
+            If you have questions regarding these Terms or formal engineering service agreements, contact our legal team directly:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm">
+            <a href="mailto:sales1@emraldace.com" className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 hover:border-[#0b63c5] transition-colors">
+              <Mail className="w-4 h-4 text-[#0b63c5] shrink-0" />
+              <span className="truncate">sales1@emraldace.com</span>
+            </a>
+            <a href="tel:+971528976025" className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 hover:border-[#0b63c5] transition-colors">
+              <Phone className="w-4 h-4 text-[#0b63c5] shrink-0" />
+              <span>+971 52 897 6025</span>
+            </a>
+            <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200">
+              <MapPin className="w-4 h-4 text-[#0b63c5] shrink-0" />
+              <span>Musaffah, Abu Dhabi, UAE</span>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </main>
+  );
+}
+</file>
+
+<file path="src/app/DynamicHomeContent.tsx">
+'use client';
+
+import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { HelpCircle, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+
+interface DynamicHomeContentProps {
+  clientLogos: { name: string; url: string }[];
+  faqs: { q: string; a: string }[];
+}
+
+export default function DynamicHomeContent({ clientLogos, faqs }: DynamicHomeContentProps) {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === 'left' ? -280 : 280;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth - 5) {
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scrollRef.current.scrollBy({ left: 240, behavior: 'smooth' });
+        }
+      }
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <>
+      {/* TRUSTED BY INDUSTRY LEADERS */}
+      <section className="py-14 bg-slate-950 text-white overflow-hidden relative transform-gpu">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8">
+            <div>
+              <span className="text-xs uppercase font-bold text-blue-400 tracking-widest block">Trusted By Industry Leaders</span>
+              <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">Strategic Partners Across the Last 5 Years</h2>
+            </div>
+            
+            <div className="flex items-center space-x-3 shrink-0">
+              <button 
+                onClick={() => handleScroll('left')} 
+                aria-label="Previous Slide" 
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all hover:border-blue-400 active:scale-95 cursor-pointer"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button 
+                onClick={() => handleScroll('right')} 
+                aria-label="Next Slide" 
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all hover:border-blue-400 active:scale-95 cursor-pointer"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div 
+            ref={scrollRef} 
+            className="flex items-center space-x-6 overflow-x-auto py-4 no-scrollbar scroll-smooth snap-x snap-mandatory will-change-transform"
+          >
+            {clientLogos.concat(clientLogos).map((logo, lIdx) => (
+              <div 
+                key={lIdx} 
+                className="relative w-[180px] sm:w-[220px] h-28 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-2xl overflow-hidden snap-center transform-gpu transition-all duration-300 hover:scale-[1.03]"
+              >
+                <Image 
+                  src={logo.url} 
+                  alt={`${logo.name} Corporate Partnership Logo`} 
+                  fill 
+                  sizes="(max-width: 640px) 180px, 220px"
+                  priority={lIdx < 4}
+                  className="object-cover rounded-2xl" 
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/clients" className="inline-flex w-full sm:w-auto items-center justify-center bg-[#0b63c5] hover:bg-blue-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-blue-600/20 transition-all text-sm group tracking-wide">
+              <span>Our Clients</span>
+              <ChevronRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ SECTION WITH EXPLICIT AEO ANSWERS */}
+      <section className="py-14 bg-slate-950 scroll-mt-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-12">
+            <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">Knowledge Base</span>
+            <h2 className="text-3xl font-bold text-slate-100 tracking-tight">Frequently Asked Questions</h2>
+            <div className="w-12 h-1 bg-[#0b63c5] mx-auto rounded-full"></div>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, fIdx) => {
+              const isOpen = openFaq === fIdx;
+              return (
+                <div 
+                  key={fIdx} 
+                  className="bg-slate-900 rounded-xl overflow-hidden shadow-xl transition-all duration-300 border border-slate-800"
+                >
+                  <button
+                    onClick={() => toggleFaq(fIdx)}
+                    className="w-full text-left p-5 sm:p-7 flex items-center justify-between gap-4 focus:outline-none group hover:bg-slate-800/50 transition-colors cursor-pointer"
+                    aria-expanded={isOpen}
+                  >
+                    <h3 className="text-sm sm:text-base font-semibold text-slate-100 flex items-start gap-3.5 pr-2 leading-snug">
+                      <HelpCircle className="w-5 h-5 text-blue-400 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                      <span>{faq.q}</span>
+                    </h3>
+                    <div className={`w-8 h-8 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'rotate-180 bg-[#0b63c5] text-white' : ''}`}>
+                      <ChevronDown size={16} />
+                    </div>
+                  </button>
+
+                  <div 
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="p-5 sm:p-7 pl-12 sm:pl-14 text-xs sm:text-sm font-normal text-slate-200 leading-relaxed bg-slate-950/50">
+                        {faq.a}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+</file>
 
 <file path=".gitignore">
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
@@ -3487,14 +4026,116 @@ export default function InteriorFitOutPage() {
 }
 </file>
 
+<file path="package.json">
+{
+  "name": "my-next-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@imagekit/next": "^2.1.5",
+    "lucide-react": "^1.28.0",
+    "next": "16.2.12",
+    "nodemailer": "^9.0.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/nodemailer": "^8.0.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.12",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
+</file>
+
+<file path="src/app/globals.css">
+@import "tailwindcss";
+
+/* Enable text selection globally for all elements */
+*, *::before, *::after {
+  -webkit-user-select: text !important; /* Safari */
+  -moz-user-select: text !important;    /* Firefox */
+  -ms-user-select: text !important;     /* IE/Edge */
+  user-select: text !important;         /* Standard */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    /* Hardware acceleration & smooth touch scrolling engine hints */
+    -webkit-overflow-scrolling: touch;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  body {
+    position: relative;
+    overflow-x: hidden;
+    background-color: #ffffff;
+    color: #0f172a;
+    text-rendering: optimizeLegibility;
+    overscroll-behavior-y: none;
+    /* Prevents render pass drops during fast scroll flicks */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    touch-action: manipulation;
+  }
+
+  /* Structural touch scrolling optimization across touch hardware devices */
+  input, textarea, select, button {
+    touch-action: manipulation;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.smooth-scroll-section {
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Forces GPU compositing layer */
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Force modern layout compositor layer targeting main content */
+main {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+</file>
+
 <file path="src/components/FloatingActionButtons.tsx">
 "use client";
 
 import React from 'react';
 
 const QuickContactButtons = () => {
-  const phoneNumber = "+971588600578";
-  const formattedCallNumber = `+${phoneNumber}`;
+  // Updated Phone & WhatsApp numbers
+  const phoneNumber = "+97126751747";
+  const whatsappNumber = "971554044826";
+  const formattedCallNumber = phoneNumber;
   const whatsappMessage = encodeURIComponent("Hello! I am contacting from your website and would like to inquire about your IT services.");
 
   return (
@@ -3573,7 +4214,7 @@ const QuickContactButtons = () => {
             ========================================================================= */}
         <div className="flex flex-row-reverse items-center pointer-events-none group transform-gpu">
           <a
-            href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`}
+            href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
             target="_blank"
             rel="noopener noreferrer"
             className="wa-modern-orb pointer-events-auto will-change-transform relative flex items-center justify-center w-[52px] h-[52px] md:w-[52px] md:h-[52px]"
@@ -3775,106 +4416,6 @@ const QuickContactButtons = () => {
 };
 
 export default QuickContactButtons;
-</file>
-
-<file path="package.json">
-{
-  "name": "my-next-project",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "@imagekit/next": "^2.1.5",
-    "lucide-react": "^1.28.0",
-    "next": "16.2.12",
-    "nodemailer": "^9.0.3",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/nodemailer": "^8.0.1",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.12",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  }
-}
-</file>
-
-<file path="src/app/globals.css">
-@import "tailwindcss";
-
-/* Enable text selection globally for all elements */
-*, *::before, *::after {
-  -webkit-user-select: text !important; /* Safari */
-  -moz-user-select: text !important;    /* Firefox */
-  -ms-user-select: text !important;     /* IE/Edge */
-  user-select: text !important;         /* Standard */
-}
-
-@layer base {
-  html {
-    scroll-behavior: smooth;
-    -webkit-tap-highlight-color: transparent;
-    text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    /* Hardware acceleration & smooth touch scrolling engine hints */
-    -webkit-overflow-scrolling: touch;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-  body {
-    position: relative;
-    overflow-x: hidden;
-    background-color: #ffffff;
-    color: #0f172a;
-    text-rendering: optimizeLegibility;
-    overscroll-behavior-y: none;
-    /* Prevents render pass drops during fast scroll flicks */
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    touch-action: manipulation;
-  }
-
-  /* Structural touch scrolling optimization across touch hardware devices */
-  input, textarea, select, button {
-    touch-action: manipulation;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  will-change: transform, opacity;
-}
-
-.smooth-scroll-section {
-  will-change: transform, opacity;
-  transform: translateZ(0); /* Forces GPU compositing layer */
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-/* Force modern layout compositor layer targeting main content */
-main {
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-}
 </file>
 
 <file path="src/app/about/page.tsx">
@@ -4876,163 +5417,6 @@ export default function IFMPage() {
 }
 </file>
 
-<file path="src/components/Footer.tsx">
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Phone, Mail, MapPin, Globe, ShieldCheck, FileCheck } from 'lucide-react';
-
-export default function Footer() {
-  const activeYear = new Date().getFullYear();
-
-  return (
-    <footer 
-      className="w-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-200 text-sm pt-16 pb-32 sm:pb-24 lg:pb-20 px-6 sm:px-10 lg:px-12 border-t border-slate-800 relative overflow-hidden select-none transform-gpu"
-      aria-labelledby="footer-heading"
-    >
-      <h2 id="footer-heading" className="sr-only">
-        Emrald Ace Engineering & Facilities Management LLC Footer
-      </h2>
-
-      {/* Modern subtle ambient glow */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none transform-gpu" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none transform-gpu" />
-
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 lg:gap-12 border-b border-slate-800/80 pb-12 mb-8 relative z-10">
-        
-        {/* Brand & Identity Column */}
-        <div className="col-span-1 sm:col-span-2 md:col-span-5 lg:col-span-6 space-y-6">
-          <div className="flex items-center space-x-4">
-            <div className="relative w-16 h-16 bg-white rounded-xl p-1.5 flex items-center justify-center shadow-xl shadow-black/40 transform-gpu transition-all duration-300 hover:scale-105 hover:rotate-1">
-              <Image 
-                src="/logo.png" 
-                alt="Emrald Ace Corporate Logo" 
-                width={56} 
-                height={56} 
-                className="object-contain w-full h-full transform-gpu" 
-                priority
-              />
-            </div>
-            <div>
-              <span className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight text-white block antialiased">
-                EMRALD <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">ACE</span>
-              </span>
-              <p className="text-xs text-slate-400 font-medium tracking-wide mt-0.5">
-                Engineering & Facilities Management LLC
-              </p>
-            </div>
-          </div>
-
-          <p className="text-slate-300 leading-relaxed text-sm max-w-md antialiased font-normal">
-            Integrated engineering expertise, asset maintenance governance, and specialized electromechanical workflow optimization solutions executed across the UAE market scale since 2014.
-          </p>
-
-          {/* Business Credentials Badges */}
-          <div className="flex flex-wrap items-center gap-2.5 pt-1">
-            <div className="flex items-center space-x-1.5 bg-slate-800/90 border border-slate-700/70 px-3 py-1.5 rounded-full text-xs font-medium text-cyan-300 shadow-inner">
-              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-              <span>ISO 45001:2018 Certified</span>
-            </div>
-            <div className="flex items-center space-x-1.5 bg-slate-800/90 border border-slate-700/70 px-3 py-1.5 rounded-full text-xs font-medium text-blue-300 shadow-inner">
-              <FileCheck className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-              <span>UAE Trade Licensed</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Corporate Navigation Column */}
-        <nav className="col-span-1 md:col-span-3 lg:col-span-3 space-y-4" aria-label="Footer Navigation">
-          <span className="font-bold text-white uppercase text-xs tracking-wider block border-l-2 border-cyan-400 pl-2.5 antialiased">
-            Corporate Navigation
-          </span>
-          <ul className="space-y-3 text-sm font-medium">
-            <li>
-              <Link href="/" className="text-slate-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="text-slate-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="text-slate-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-slate-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
-                Contact Us
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* Global Access Center Column */}
-        <div className="col-span-1 md:col-span-4 lg:col-span-3 space-y-4">
-          <span className="font-bold text-white uppercase text-xs tracking-wider block border-l-2 border-cyan-400 pl-2.5 antialiased">
-            Global Access Center
-          </span>
-          <address className="not-italic space-y-3 text-sm font-medium text-slate-200">
-            <div className="flex items-center space-x-3 group">
-              <Phone className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
-              <a href="tel:+971528976025" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
-                +971 52 897 6025
-              </a>
-            </div>
-            <div className="flex items-center space-x-3 group">
-              <Mail className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
-              <a href="mailto:sales1@emraldace.com" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
-                sales1@emraldace.com
-              </a>
-            </div>
-            <div className="flex items-center space-x-3 group">
-              <Globe className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
-              <a href="https://www.emraldace.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
-                www.emraldace.com
-              </a>
-            </div>
-            <div className="flex items-start space-x-3 text-slate-200 group">
-              <MapPin className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
-              <span className="leading-relaxed antialiased">
-                Musaffah M-14, Abu Dhabi,<br />U.A.E
-              </span>
-            </div>
-          </address>
-        </div>
-
-      </div>
-
-      {/* Stacked Clean Bottom Section */}
-      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center space-y-3 text-xs text-slate-400 relative z-10 antialiased">
-        {/* Line 1: Corporate Entity Details */}
-        <p className="leading-normal text-slate-300 w-full max-w-5xl whitespace-nowrap overflow-hidden text-ellipsis">
-          <strong className="text-white font-semibold">Emrald Ace Engineering & Facilities Management LLC</strong> — Musaffah M-14, Abu Dhabi, U.A.E |{' '}
-          <a href="https://www.emraldace.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
-            www.emraldace.com
-          </a>{' '}
-          · ISO 45001:2018 Certified · <span className="inline-block whitespace-nowrap">UAE Trade Licensed</span>
-        </p>
-
-        {/* Line 2: Copyright & Developer Credits */}
-        <p className="text-slate-400 font-medium">
-          &copy; {activeYear} All rights reserved for Emrald Ace | Developed by{' '}
-          <a
-            href="https://www.4bizinternational.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-cyan-400 hover:text-cyan-300 font-semibold transition-colors duration-200"
-          >
-            4biz international LLC
-          </a>
-        </p>
-      </div>
-    </footer>
-  );
-}
-</file>
-
 <file path="src/components/Header.tsx">
 'use client';
 
@@ -5349,6 +5733,186 @@ export default function Header() {
       {/* Dynamic Spacer */}
       <div className={isTransparent ? 'h-0 hidden' : 'h-14 md:h-16 w-full'} aria-hidden="true" />
     </>
+  );
+}
+</file>
+
+<file path="src/components/Footer.tsx">
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Phone, Mail, MapPin, Globe, ShieldCheck, FileCheck, Lock, Scale } from 'lucide-react';
+
+export default function Footer() {
+  const activeYear = new Date().getFullYear();
+
+  return (
+    <footer 
+      className="w-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-200 text-sm pt-16 pb-36 sm:pb-28 lg:pb-24 px-6 sm:px-10 lg:px-12 border-t border-slate-800 relative overflow-hidden select-none transform-gpu"
+      aria-labelledby="footer-heading"
+    >
+      <h2 id="footer-heading" className="sr-only">
+        Emrald Ace Engineering & Facilities Management LLC Footer
+      </h2>
+
+      {/* Modern ambient glow elements */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none transform-gpu" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none transform-gpu" />
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 lg:gap-12 border-b border-slate-800/80 pb-12 mb-8 relative z-10">
+        
+        {/* Brand & Identity Column */}
+        <div className="col-span-1 sm:col-span-2 md:col-span-5 lg:col-span-6 space-y-6">
+          <div className="flex items-center space-x-4">
+            <div className="relative w-16 h-16 bg-white rounded-xl p-1.5 flex items-center justify-center shadow-xl shadow-black/40 transform-gpu transition-all duration-300 hover:scale-105 hover:rotate-1">
+              <Image 
+                src="/logo.png" 
+                alt="Emrald Ace Corporate Logo" 
+                width={56} 
+                height={56} 
+                className="object-contain w-full h-full transform-gpu" 
+                priority
+              />
+            </div>
+            <div>
+              <span className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight text-white block antialiased">
+                EMRALD <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">ACE</span>
+              </span>
+              <p className="text-xs text-slate-400 font-medium tracking-wide mt-0.5">
+                Engineering & Facilities Management LLC
+              </p>
+            </div>
+          </div>
+
+          <p className="text-slate-300 leading-relaxed text-sm max-w-md antialiased font-normal">
+            Integrated engineering expertise, asset maintenance governance, and specialized electromechanical workflow optimization solutions executed across the UAE market scale since 2014.
+          </p>
+
+          {/* Business Credentials Badges */}
+          <div className="flex flex-wrap items-center gap-2.5 pt-1">
+            <div className="flex items-center space-x-1.5 bg-slate-800/90 border border-slate-700/70 px-3 py-1.5 rounded-full text-xs font-medium text-cyan-300 shadow-inner">
+              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+              <span>ISO 45001:2018 Certified</span>
+            </div>
+            <div className="flex items-center space-x-1.5 bg-slate-800/90 border border-slate-700/70 px-3 py-1.5 rounded-full text-xs font-medium text-blue-300 shadow-inner">
+              <FileCheck className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+              <span>UAE Trade Licensed</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Corporate Navigation Column */}
+        <nav className="col-span-1 md:col-span-3 lg:col-span-3 space-y-4" aria-label="Footer Navigation">
+          <span className="font-bold text-white uppercase text-xs tracking-wider block border-l-2 border-cyan-400 pl-2.5 antialiased">
+            Corporate Navigation
+          </span>
+          <ul className="space-y-3 text-sm font-medium">
+            <li>
+              <Link href="/" className="text-slate-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="text-slate-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link href="/services" className="text-slate-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="text-slate-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block transform-gpu">
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Global Access Center Column */}
+        <div className="col-span-1 md:col-span-4 lg:col-span-3 space-y-4">
+          <span className="font-bold text-white uppercase text-xs tracking-wider block border-l-2 border-cyan-400 pl-2.5 antialiased">
+            Global Access Center
+          </span>
+          <address className="not-italic space-y-3 text-sm font-medium text-slate-200">
+            <div className="flex items-center space-x-3 group">
+              <Phone className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
+              <a href="tel:+97126751747" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                +971 2 675 1747
+              </a>
+            </div>
+            <div className="flex items-center space-x-3 group">
+              <Mail className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
+              <a href="mailto:sales@emraldace.ae" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                sales@emraldace.ae
+              </a>
+            </div>
+            <div className="flex items-center space-x-3 group">
+              <Globe className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
+              <a href="https://www.emraldace.ae" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                www.emraldace.ae
+              </a>
+            </div>
+            <div className="flex items-start space-x-3 text-slate-200 group">
+              <MapPin className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
+              <span className="leading-relaxed antialiased">
+                Musaffah M-14, Abu Dhabi,<br />U.A.E
+              </span>
+            </div>
+          </address>
+        </div>
+
+      </div>
+
+      {/* Bottom Legal & Meta Bar */}
+      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center space-y-4 text-xs text-slate-400 relative z-10 antialiased">
+        
+        {/* Line 1: Corporate Entity Details */}
+        <p className="leading-normal text-slate-300 w-full max-w-5xl">
+          <strong className="text-white font-semibold">Emrald Ace Engineering & Facilities Management LLC</strong> — Musaffah M-14, Abu Dhabi, U.A.E |{' '}
+          <a href="https://www.emraldace.ae" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
+            www.emraldace.ae
+          </a>{' '}
+          · ISO 45001:2018 Certified · <span className="inline-block whitespace-nowrap">UAE Trade Licensed</span>
+        </p>
+
+        {/* Line 2: Legal Privacy Policy & Terms Links */}
+        <div className="flex items-center justify-center flex-wrap gap-x-4 gap-y-2 text-slate-300 font-medium pt-1">
+          <Link 
+            href="/privacy-policy" 
+            className="inline-flex items-center gap-1.5 hover:text-cyan-400 transition-colors duration-200 group"
+          >
+            <Lock className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
+            <span>Privacy Policy</span>
+          </Link>
+
+          <span className="text-slate-600 select-none">•</span>
+
+          <Link 
+            href="/terms-and-conditions" 
+            className="inline-flex items-center gap-1.5 hover:text-cyan-400 transition-colors duration-200 group"
+          >
+            <Scale className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
+            <span>Terms & Conditions</span>
+          </Link>
+        </div>
+
+        {/* Line 3: Copyright & Developer Credits */}
+        <p className="text-slate-400 font-medium pt-1">
+          &copy; {activeYear} All rights reserved for Emrald Ace | Developed by{' '}
+          <a
+            href="https://www.4bizinternational.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cyan-400 hover:text-cyan-300 font-semibold transition-colors duration-200"
+          >
+            4biz international LLC
+          </a>
+        </p>
+
+      </div>
+    </footer>
   );
 }
 </file>
@@ -5978,24 +6542,68 @@ export default function ServicesPage() {
 </file>
 
 <file path="src/app/page.tsx">
-'use client';
-
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { 
-  ArrowRight, ShieldCheck, Wrench, Building2, HardHat, CheckCircle2, 
-  ChevronRight, Phone, Mail, Award, ThumbsUp, Sparkles, HelpCircle, ChevronDown,
-  ChevronLeft
-} from 'lucide-react';
+import type { Metadata } from 'next';
+import { headers } from 'next/headers';
+import DynamicHomeContent from '@/app/DynamicHomeContent';
 
-export default function Home() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
+// 1. Dynamic Technical SEO & Metadata Configuration
+export async function generateMetadata(): Promise<Metadata> {
+  const headersList = await headers();
+  const host = headersList.get('host') || 'localhost:3000';
+  const protocol = headersList.get('x-forwarded-proto') || 'https';
+  const currentUrl = `${protocol}://${host}`;
 
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
+  return {
+    title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
+    description: 'Emrald Ace delivers premium Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across Abu Dhabi and the UAE.',
+    metadataBase: new URL(currentUrl),
+    alternates: {
+      canonical: '/',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    openGraph: {
+      title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
+      description: 'Premier Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across Abu Dhabi & UAE.',
+      url: '/',
+      siteName: 'Emrald Ace General Contracting & Electromechanical L.L.C',
+      images: [
+        {
+          url: '/integrated-facility-management-2.webp',
+          width: 1200,
+          height: 630,
+          alt: 'Emrald Ace Facility Management Services UAE',
+        },
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
+      description: 'Premier Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across Abu Dhabi & UAE.',
+      images: ['/integrated-facility-management-2.webp'],
+    },
   };
+}
+
+export default async function Home() {
+  const headersList = await headers();
+  const host = headersList.get('host') || 'localhost:3000';
+  const protocol = headersList.get('x-forwarded-proto') || 'https';
+  const baseUrl = `${protocol}://${host}`;
 
   const coreServices = [
     { 
@@ -6056,44 +6664,142 @@ export default function Home() {
   ];
 
   const faqs = [
-    { q: "What sectors do your Integrated Facility Management solutions support inside the UAE?", a: "Emrald Ace services commercial enterprise office suites, extensive residential gated communities, healthcare hospital complexes, hospitality environments, high-capacity retail hubs, industrial manufacturing zones, corporate warehouses, and government department facilities across all Emirates." },
-    { q: "How are urgent engineering service requests handled under an Annual Maintenance Contract?", a: "We operate a comprehensive 24/7 technical emergency dispatch helpdesk. In the event of critical asset failures (such as main HVAC down or electrical system distribution trips), rapid-response units are deployed instantly to achieve baseline stabilization and prevent expensive operational downtime." },
-    { q: "What exact compliance certifications does Emrald Ace operate under within the UAE market?", a: "We maintain official certification under rigorous international ISO quality guidelines, operate with full ICV value-addition optimization validation matrices for strategic procurement pipelines, and carry active official UAE Corporate Contracting Licenses." },
-    { q: "Can you manage complex MEP installation frameworks along with custom interior fit-out deployments?", a: "Yes, our inter-disciplinary teams provide smooth, unified project delivery. We handle everything from standard mechanical installations and technical automation matrices to precision structural joinery works, partition frameworks, and false ceiling installations under one accountable point of contact." }
+    { 
+      q: "What is Integrated Facility Management and what sectors does Emrald Ace support in the UAE?", 
+      a: "Integrated Facility Management (IFM) consolidates all building maintenance, engineering operations, and space management under a single accountable provider. Emrald Ace serves commercial office buildings, residential developments, healthcare facilities, hospitality venues, retail hubs, and industrial sites across Abu Dhabi and all UAE Emirates." 
+    },
+    { 
+      q: "How to manage urgent engineering service requests under an Annual Maintenance Contract?", 
+      a: "Under an Emrald Ace Annual Maintenance Contract (AMC), urgent engineering issues are logged via a 24/7 technical dispatch helpdesk. Dispatch teams arrive on-site with emergency response SLAs to restore main HVAC, power distribution, or plumbing failures and prevent operational downtime." 
+    },
+    { 
+      q: "Who should use Emrald Ace facility management and MEP engineering services?", 
+      a: "Our services are designed for commercial real estate owners, asset managers, corporate facility heads, residential community developers, and retail operators looking for unified MEP, AMC, and interior fit-out execution through a single specialized partner." 
+    },
+    { 
+      q: "Can you manage complex MEP installation frameworks along with custom interior fit-out deployments?", 
+      a: "Yes, our inter-disciplinary engineering teams deliver end-to-end projects. We handle HVAC mechanical architectures, heavy electrical layouts, plumbing networks, glass partitions, structural joinery, and ceiling installations under unified project governance." 
+    }
   ];
 
-  const handleScroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === 'left' ? -280 : 280;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
+  // Schema Graph for Search Engines, Voice Assistants (AEO), and AI Search (GEO)
+  const schemaGraph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${baseUrl}/#webpage`,
+        "url": `${baseUrl}/`,
+        "name": "Integrated Facility Management & MEP Services UAE | Emrald Ace",
+        "description": "Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across Abu Dhabi & UAE.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": `${baseUrl}/#website`,
+          "url": `${baseUrl}/`,
+          "name": "Emrald Ace General Contracting & Electromechanical L.L.C"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": `${baseUrl}/#organization`,
+        "name": "Emrald Ace General Contracting & Electromechanical L.L.C",
+        "url": `${baseUrl}`,
+        "logo": `${baseUrl}/logo.png`,
+        "foundingDate": "2014",
+        "sameAs": [
+          "https://www.linkedin.com/company/emrald-ace",
+          "https://www.google.com/search?q=Emrald+Ace+General+Contracting"
+        ],
+        "knowsAbout": [
+          "Integrated Facility Management",
+          "MEP Engineering",
+          "Annual Maintenance Contracts",
+          "Interior Fit-Out",
+          "HVAC Systems"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Abu Dhabi",
+          "addressCountry": "AE"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+97126751747",
+          "contactType": "customer service",
+          "areaServed": "AE"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": `${baseUrl}/#service`,
+        "name": "Integrated Facility Management & MEP Engineering Services UAE",
+        "provider": {
+          "@id": `${baseUrl}/#organization`
+        },
+        "areaServed": "United Arab Emirates",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Commercial Property Managers, Building Owners, Industrial Asset Operators, Retail Heads"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Facility Engineering & Fit-Out Services",
+          "itemListElement": coreServices.map((service, index) => ({
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": service.title,
+              "description": service.desc
+            },
+            "position": index + 1
+          }))
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${baseUrl}/#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": `${baseUrl}/`
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${baseUrl}/#faq`,
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (scrollRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        if (scrollLeft + clientWidth >= scrollWidth - 5) {
-          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          scrollRef.current.scrollBy({ left: 240, behavior: 'smooth' });
-        }
-      }
-    }, 3500);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <main className="w-full text-slate-100 bg-slate-950 selection:bg-[#0b63c5] selection:text-white transform-gpu antialiased scroll-smooth" style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <main className="w-full text-slate-100 bg-slate-950 selection:bg-[#0b63c5] selection:text-white transform-gpu antialiased scroll-smooth font-poppins overflow-x-hidden">
       
-      {/* Inline Styles optimized for GPU-accelerated frame performance */}
+      {/* Dynamic Font Loading & Optimization Style Injection */}
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        body, main {
+          font-family: 'Poppins', sans-serif !important;
+        }
+
         @keyframes floatUpDown {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-12px); }
+          50% { transform: translateY(-10px); }
         }
         .animate-float-reciprocate {
-          animation: floatUpDown 3s ease-in-out infinite;
+          animation: floatUpDown 3.5s ease-in-out infinite;
           will-change: transform;
         }
         .no-scrollbar::-webkit-scrollbar {
@@ -6105,10 +6811,8 @@ export default function Home() {
         }
       `}</style>
 
-      {/* 1. FULL SCREEN HERO SECTION WITH ULTRA MODERN VIDEO BACKGROUND */}
+{/* 1. HERO SECTION - Moderately increased font size with clean weight */}
       <section className="relative h-screen w-full min-h-[100dvh] flex items-center justify-center bg-slate-950 text-white overflow-hidden">
-        
-        {/* Background Full-Screen Video */}
         <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <video
             autoPlay
@@ -6124,56 +6828,78 @@ export default function Home() {
           </video>
         </div>
 
-        {/* Dynamic Light Overlay Gradient for Maximum Clarity and Contrast */}
-        <div className="absolute inset-0 bg-slate-950/30 backdrop-blur-[1px] z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent z-10" />
+        {/* Optimized dual overlay: clearer bottom video visibility with seamless bottom edge merge */}
+        <div className="absolute inset-0 bg-slate-950/15 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-transparent to-slate-950 z-10" />
 
-        {/* Hero Central Overlay Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full my-auto space-y-6 sm:space-y-8 pt-16">
-          
-          {/* Main Hero Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.15] text-white max-w-4xl mx-auto drop-shadow-2xl">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.18] text-white max-w-5xl mx-auto drop-shadow-md">
             Engineering Value. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-400 to-indigo-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-300 to-indigo-300 drop-shadow-sm font-medium">
               Optimizing Assets.
             </span>
           </h1>
+          <p className="text-base sm:text-lg text-slate-100 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-sm">
+            Premier Integrated Facility Management, MEP Engineering, and Fit-Out Solutions in the UAE.
+          </p>
         </div>
       </section>
 
-      {/* 2. HERO SUB-CONTENTS SECTION */}
+      {/* 2. EXECUTIVE SUMMARY & TARGET AUDIENCE BLOCK (AEO & GEO High Extraction Node) */}
+      <section className="bg-slate-950 py-8 relative z-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-900/90 border border-slate-800 p-6 sm:p-8 rounded-2xl shadow-2xl backdrop-blur-md">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="w-3 h-3 rounded-full bg-[#0b63c5] animate-pulse"></span>
+              <h2 className="text-xs font-bold uppercase tracking-widest text-blue-400">Executive Overview & Direct Answer Summary</h2>
+            </div>
+            <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
+              <strong>What Emrald Ace Delivers:</strong> Established in 2014, Emrald Ace General Contracting & Electromechanical L.L.C is a full-service provider of 360-degree Integrated Facility Management (IFM), 24/7 Annual Maintenance Contracts (AMC), MEP engineering, and commercial interior fit-outs across Abu Dhabi and the wider UAE.
+            </p>
+            
+            <div className="mt-4 pt-4 border-t border-slate-800/80">
+              <h3 className="text-xs font-bold text-sky-400 uppercase tracking-widest mb-2">Target Audience & Industry Use Cases</h3>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Designed specifically for corporate facility managers, asset management firms, commercial developers, and property directors seeking guaranteed uptime, SLA compliance, and streamlined MEP engineering workflows across the UAE. Learn more about regional engineering standards via <a href="https://www.iso.org/standard/60270.html" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-300">ISO 41001 Facility Management Standards</a>.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 pt-6 border-t border-slate-800/80 text-xs sm:text-sm">
+              <div className="text-slate-300"><strong className="text-white block mb-1">Target Sectors:</strong> Commercial Offices, Healthcare, Hospitality, Retail & Industrial.</div>
+              <div className="text-slate-300"><strong className="text-white block mb-1">Service Execution:</strong> Turnkey MEP, AMC & Interior Fit-Out Solutions.</div>
+              <div className="text-slate-300"><strong className="text-white block mb-1">Emergency SLA:</strong> 24/7 Rapid Helpdesk & On-Site Technical Dispatch.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. ABOUT SECTION - Restructured layout to eliminate vertical gaps */}
       <section className="bg-slate-950 text-white py-12 lg:py-16 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Credentials Row */}
-          <div className="mb-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs font-semibold uppercase tracking-widest text-slate-200 pb-4">
-            <span className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#FF6A00] animate-pulse shadow-[0_0_8px_#FF6A00]"></span> 
-              ISO Certified
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#22d3ee]"></span> 
-              ICV Certified
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-indigo-400 animate-pulse shadow-[0_0_8px_#818cf8]"></span> 
-              UAE Licensed Contractor
-            </span>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            {/* Description & Call to Actions */}
             <div className="lg:col-span-7 space-y-6 text-left">
               <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">About Emrald Ace</span>
-              <p className="text-lg sm:text-xl md:text-2xl text-slate-100 font-normal leading-relaxed">
-                Welcome to Emrald Ace General Contracting & Electromechanical L.L.C. We deliver reliable facility management, maintenance, and robust engineering setups across the UAE footprint since 2014.
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight leading-snug">
+                Integrated Facility Management & Electromechanical Engineering Excellence
+              </h2>
+              <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed">
+                Welcome to Emrald Ace General Contracting & Electromechanical L.L.C. We deliver reliable facility management, preventive maintenance programs, and robust engineering setups across the UAE footprint since 2014.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 pt-4">
+              <div className="bg-slate-900/60 border border-slate-800 p-4 rounded-xl space-y-2">
+                <h3 className="text-xs font-bold text-blue-400 uppercase tracking-widest">How Our Process Works</h3>
+                <ul className="text-xs sm:text-sm text-slate-300 space-y-1.5 list-disc list-inside">
+                  <li><strong>Step 1: On-Site Audit</strong> – Thorough diagnostic audit of building MEP systems and structural assets.</li>
+                  <li><strong>Step 2: Custom Maintenance SLA</strong> – Tailored AMC contract establishing diagnostic intervals and 24/7 dispatch SLAs.</li>
+                  <li><strong>Step 3: Rapid Execution</strong> – Deployment of dedicated engineers for proactive maintenance and emergency support.</li>
+                </ul>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Link href="/services" className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-[#0b63c5] hover:bg-blue-600 text-white font-bold rounded-xl shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center space-x-2 transform hover:-translate-y-0.5 group text-sm sm:text-base">
                   <span>Explore Enterprise Solutions</span>
-                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                  <span className="ml-1 transition-transform group-hover:translate-x-1">&rarr;</span>
                 </Link>
                 <Link href="/contact" className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl backdrop-blur-md transition-all text-center text-sm sm:text-base">
                   Request Engineering Callback
@@ -6181,22 +6907,32 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Metrics Statistics Panel */}
             <div className="lg:col-span-5 relative">
               <div className="absolute inset-0 bg-[#0b63c5] rounded-3xl opacity-20 blur-3xl transform rotate-6 scale-95 pointer-events-none"></div>
-              <div className="w-full max-w-md mx-auto p-6 sm:p-8 bg-slate-900/90 rounded-2xl shadow-2xl backdrop-blur-xl space-y-6 relative">
+              
+              <div className="relative w-full h-[220px] rounded-2xl overflow-hidden mb-6 border border-slate-800 shadow-xl">
+                <Image 
+                  src="/mep-1.webp" 
+                  alt="Emrald Ace Engineering Team Operations UAE" 
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="w-full max-w-md mx-auto p-6 bg-slate-900/90 rounded-2xl shadow-2xl backdrop-blur-xl space-y-6 relative border border-slate-800">
                 <div className="flex justify-between items-center pb-2">
-                  <span className="font-bold text-blue-400 text-xs tracking-widest uppercase block">Operational Statistics</span>
+                  <h3 className="font-bold text-blue-400 text-xs tracking-widest uppercase block">Operational Statistics</h3>
                   <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full">Active Coverage</span>
                 </div>
                 <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   {[
                     { metric: "2014", label: "Established Market Footprint" },
-                    { metric: "22+", label: "Completed Major Infrastructures" },
+                    { metric: "150+", label: "Completed Major Infrastructures" },
                     { metric: "2023", label: "FM Division Expansion Year" },
                     { metric: "100%", label: "UAE Regional Fulfillment" }
                   ].map((stat, sIdx) => (
-                    <div key={sIdx} className="p-3.5 sm:p-4 bg-slate-950/60 rounded-xl transform hover:scale-[1.02] transition-transform">
+                    <div key={sIdx} className="p-3.5 sm:p-4 bg-slate-950/80 rounded-xl transform hover:scale-[1.02] transition-transform">
                       <span className="block text-2xl sm:text-3xl font-bold text-white tracking-tight">{stat.metric}</span>
                       <span className="text-[10px] sm:text-xs font-medium text-slate-300 uppercase tracking-tight mt-1 block leading-tight">{stat.label}</span>
                     </div>
@@ -6209,64 +6945,79 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. CORPORATE CORE COMPLIANCE BADGES SECTION */}
-      <section className="bg-slate-950 py-10">
+      {/* 4. COMPARISON TABLE (AEO & GEO Decision Support Node) */}
+      <section className="py-14 bg-slate-900/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch text-left">
-            <div className="p-6 sm:p-8 bg-slate-900/60 rounded-2xl shadow-xl flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:bg-slate-900">
-              <div className="w-12 h-12 bg-blue-950 text-blue-400 rounded-xl flex items-center justify-center shrink-0"><ShieldCheck className="w-6 h-6" /></div>
-              <div>
-                <h3 className="font-bold text-slate-100 text-sm uppercase tracking-wider">ISO Quality Management</h3>
-                <p className="text-slate-300 text-xs mt-1 font-normal leading-relaxed">Certified systems driving strict control parameters across technical engineering operations.</p>
-              </div>
-            </div>
-            <div className="p-6 sm:p-8 bg-slate-900/60 rounded-2xl shadow-xl flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:bg-slate-900">
-              <div className="w-12 h-12 bg-amber-950 text-amber-400 rounded-xl flex items-center justify-center shrink-0"><Award className="w-6 h-6" /></div>
-              <div>
-                <h3 className="font-bold text-slate-100 text-sm uppercase tracking-wider">ICV Value certified</h3>
-                <p className="text-slate-300 text-xs mt-1 font-normal leading-relaxed">Validating localized supply network execution loops for strategic corporate integration.</p>
-              </div>
-            </div>
-            <div className="p-6 sm:p-8 bg-slate-900/60 rounded-2xl shadow-xl flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all hover:bg-slate-900">
-              <div className="w-12 h-12 bg-slate-800 text-slate-100 rounded-xl flex items-center justify-center shrink-0"><HardHat className="w-6 h-6" /></div>
-              <div>
-                <h3 className="font-bold text-slate-100 text-sm uppercase tracking-wider">UAE Licensed Contractor</h3>
-                <p className="text-slate-300 text-xs mt-1 font-normal leading-relaxed">Fully credentialed and authorized to deploy large-scale civil and electromechanical contracts.</p>
-              </div>
-            </div>
+          <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">Why Choose Emrald Ace for UAE Facility Contracting?</h2>
+            <p className="text-slate-300 text-sm">Comparative breakdown of unified facility contracting versus standard ad-hoc vendors.</p>
+          </div>
+
+          <div className="overflow-x-auto no-scrollbar">
+            <table className="w-full text-left text-xs sm:text-sm text-slate-200 border-collapse min-w-[600px]">
+              <thead>
+                <tr className="bg-slate-900 border-b border-slate-800">
+                  <th className="p-4 font-bold text-blue-400 w-1/3">Feature / Capability</th>
+                  <th className="p-4 font-bold text-white bg-blue-950/40 border-x border-slate-800 w-1/3">Emrald Ace Integrated Services</th>
+                  <th className="p-4 font-bold text-slate-400 w-1/3">Conventional Ad-Hoc Vendors</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800/60 bg-slate-950/40">
+                <tr>
+                  <td className="p-4 font-semibold text-white">Service Delivery Model</td>
+                  <td className="p-4 bg-blue-950/20 border-x border-slate-800 text-emerald-400 font-medium">Single Accountable Turnkey Partner (IFM + MEP + Fit-Out)</td>
+                  <td className="p-4 text-slate-400">Fragmented multiple sub-contractors</td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-semibold text-white">Emergency Response SLA</td>
+                  <td className="p-4 bg-blue-950/20 border-x border-slate-800 text-emerald-400 font-medium">24/7 Dedicated Technical Helpdesk & Instant Dispatch</td>
+                  <td className="p-4 text-slate-400">Delayed business-hours only support</td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-semibold text-white">Contract Accountability</td>
+                  <td className="p-4 bg-blue-950/20 border-x border-slate-800 text-emerald-400 font-medium">Single SLA contact point with unified reporting</td>
+                  <td className="p-4 text-slate-400">Multiple vendors with overlapping scope gaps</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
-      {/* 4. EXECUTIVE INTRODUCTORY SECTION */}
+      {/* 5. CORPORATE STRATEGY SECTION */}
       <section className="py-14 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5 relative">
-              <div className="relative w-full aspect-square max-w-md mx-auto lg:max-w-none rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative w-full aspect-square max-w-md mx-auto lg:max-w-none rounded-3xl overflow-hidden shadow-2xl border border-slate-800">
                 <Image 
                   src="/integrated-engineering-aco-system-uae.webp" 
                   alt="Emrald Ace Executive Operations Meeting"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-[#0b63c5] text-white p-6 rounded-2xl shadow-xl hidden sm:block max-w-[220px] animate-float-reciprocate">
-                <ThumbsUp className="w-8 h-8 text-white mb-2" />
                 <p className="text-xs font-bold uppercase tracking-widest leading-tight">Operational Reliability Guaranteed</p>
               </div>
             </div>
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Corporate DNA</span>
+              <span className="text-xs font-bold text-sky-400 uppercase tracking-widest block">Corporate Framework</span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight">Delivering Integrated Engineering Ecosystems Across The UAE</h2>
               <div className="w-12 h-1 bg-[#0b63c5] rounded-full"></div>
               <p className="text-slate-300 text-sm sm:text-base font-normal leading-relaxed">
-                Emrald Ace has evolved into a trusted provider of Integrated Facility Management, Annual Maintenance Contracts, and Interior Fit-Out solutions, backed by absolute engineering proficiency. Modern physical plant infrastructures require proactive monitoring methodologies, specialized insight arrays, and direct professional governance metrics.
+                Emrald Ace delivers Integrated Facility Management, Annual Maintenance Contracts, and Interior Fit-Out solutions, backed by absolute engineering proficiency. Modern physical plant infrastructures require proactive monitoring methodologies, specialized insight arrays, and direct professional governance metrics.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-                {["Intelligent Operational Planning", "Rigorous Asset Lifetime Preservation", "Transparent SLA Reporting Structures", "Direct Accountability Frameworks"].map((item, idx) => (
+                {[
+                  "Intelligent Operational Planning", 
+                  "Rigorous Asset Lifetime Preservation", 
+                  "Transparent SLA Reporting Structures", 
+                  "Direct Accountability Frameworks"
+                ].map((item, idx) => (
                   <div key={idx} className="flex items-center space-x-2 text-xs sm:text-sm font-semibold text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-[#0b63c5] shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-[#0b63c5]"></span>
                     <span>{item}</span>
                   </div>
                 ))}
@@ -6274,7 +7025,7 @@ export default function Home() {
               <div className="pt-4">
                 <Link href="/about" className="inline-flex w-full sm:w-auto items-center justify-center bg-[#0b63c5] hover:bg-blue-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-blue-600/20 transition-all text-sm group">
                   <span>Read full corporate overview portfolio</span>
-                  <ChevronRight size={16} className="ml-2 transition-transform group-hover:translate-x-0.5" />
+                  <span className="ml-2 transition-transform group-hover:translate-x-1">&rarr;</span>
                 </Link>
               </div>
             </div>
@@ -6282,7 +7033,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. OPTIMIZED SERVICES SECTION */}
+      {/* 6. OPTIMIZED SERVICES SECTION */}
       <section className="py-14 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
@@ -6295,7 +7046,7 @@ export default function Home() {
             {coreServices.map((service, index) => (
               <div 
                 key={index} 
-                className="bg-slate-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col group transform hover:-translate-y-1"
+                className="bg-slate-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col group transform hover:-translate-y-1 border border-slate-800"
               >
                 <div className="relative h-[240px] w-full overflow-hidden">
                   <Image 
@@ -6331,13 +7082,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. HIGH-CONVERTING CTA SECTION */}
+      {/* 7. HIGH-CONVERTING CTA SECTION */}
       <section className="py-12 bg-slate-950 text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-6 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="bg-slate-900/90 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="space-y-4 text-center lg:text-left max-w-2xl">
               <span className="text-xs font-bold text-amber-400 uppercase tracking-widest inline-flex items-center gap-2">
-                <Sparkles className="w-4 h-4" /> 24/7 Rapid Emergency Response
+                24/7 Rapid Emergency Response
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
                 Ready to Upgrade Your Facility Management & MEP Operations?
@@ -6349,13 +7100,10 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full lg:w-auto shrink-0">
               <a 
-                href="tel:+97126282868" 
+                href="tel:+97126751747" 
                 className="w-full sm:w-auto px-6 py-3.5 sm:py-4 bg-white hover:bg-slate-100 text-slate-950 font-bold rounded-xl shadow-xl transition-all flex items-center justify-center space-x-3 text-sm tracking-wide group"
               >
-                <div className="w-8 h-8 rounded-full bg-[#0b63c5]/10 flex items-center justify-center text-[#0b63c5]">
-                  <Phone className="w-4 h-4 text-[#0b63c5] animate-bounce" />
-                </div>
-                <span>Call +971 2 628 2868</span>
+                <span>Call +971 2 675 1747</span>
               </a>
 
               <Link 
@@ -6369,19 +7117,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. SECTOR DIVERSIFICATION FOOTPRINT GRID */}
+      {/* 8. SECTOR DIVERSIFICATION FOOTPRINT GRID */}
       <section className="py-14 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Sector Ecosystems</span>
+              <span className="text-xs font-bold text-sky-400 uppercase tracking-widest block">Sector Ecosystems</span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight">Diversified Industry Frameworks We Systematically Serve</h2>
               <p className="text-slate-300 text-xs sm:text-sm font-normal leading-relaxed">
-                Our active engineering field deployment units are structurally configured to implement continuous preventative, reactive, and asset enhancement operations directly within specialized commercial business verticals throughout the UAE jurisdiction boundaries.
+                Our field deployment units are structurally configured to implement continuous preventative, reactive, and asset enhancement operations across specialized commercial business verticals throughout the UAE jurisdiction boundaries.
               </p>
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {["Commercial Offices", "Residential Units", "Healthcare Centers", "Luxury Hotels", "Retail Spaces", "Industrial Sites"].map((vertical, vIdx) => (
-                  <div key={vIdx} className="p-3.5 sm:p-4 bg-slate-900 rounded-xl flex items-center space-x-2 text-xs sm:text-sm font-semibold text-slate-200">
+                  <div key={vIdx} className="p-3.5 sm:p-4 bg-slate-900 rounded-xl flex items-center space-x-2 text-xs sm:text-sm font-semibold text-slate-200 border border-slate-800">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#0b63c5]"></span>
                     <span>{vertical}</span>
                   </div>
@@ -6391,19 +7139,19 @@ export default function Home() {
             
             <div className="lg:col-span-6 grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="relative h-[200px] sm:h-[240px] w-full rounded-2xl overflow-hidden shadow-xl">
-                  <Image src="/sector-ecosystem-1.jpg" alt="Commercial Interiors" fill className="object-cover" />
+                <div className="relative h-[200px] sm:h-[240px] w-full rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+                  <Image src="/sector-ecosystem-1.jpg" alt="Commercial Interiors" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
                 </div>
-                <div className="relative h-[140px] sm:h-[160px] w-full rounded-2xl overflow-hidden shadow-xl">
-                  <Image src="/sector-ecosystem-2.jpg" alt="MEP Plants" fill className="object-cover" />
+                <div className="relative h-[140px] sm:h-[160px] w-full rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+                  <Image src="/sector-ecosystem-2.jpg" alt="MEP Plants" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
                 </div>
               </div>
               <div className="space-y-4 pt-6 sm:pt-8">
-                <div className="relative h-[140px] sm:h-[160px] w-full rounded-2xl overflow-hidden shadow-xl">
-                  <Image src="/sector-ecosystem-3.jpg" alt="Corporate Facilities" fill className="object-cover" />
+                <div className="relative h-[140px] sm:h-[160px] w-full rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+                  <Image src="/sector-ecosystem-3.jpg" alt="Corporate Facilities" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
                 </div>
-                <div className="relative h-[200px] sm:h-[240px] w-full rounded-2xl overflow-hidden shadow-xl">
-                  <Image src="/sector-ecosystem-4.jpg" alt="Civil Development" fill className="object-cover" />
+                <div className="relative h-[200px] sm:h-[240px] w-full rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+                  <Image src="/sector-ecosystem-4.jpg" alt="Civil Development" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
                 </div>
               </div>
             </div>
@@ -6411,149 +7159,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. TRUSTED BY INDUSTRY LEADERS */}
-      <section className="py-14 bg-slate-950 text-white overflow-hidden relative transform-gpu">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8">
-            <div>
-              <span className="text-xs uppercase font-bold text-blue-400 tracking-widest block">Trusted By Industry Leaders</span>
-              <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1">Strategic Partners Across the Last 5 Years</h2>
-            </div>
-            
-            <div className="flex items-center space-x-3 shrink-0">
-              <button 
-                onClick={() => handleScroll('left')} 
-                aria-label="Previous Slide" 
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all hover:border-blue-400 active:scale-95 cursor-pointer"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <button 
-                onClick={() => handleScroll('right')} 
-                aria-label="Next Slide" 
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-[#0b63c5] text-white flex items-center justify-center transition-all hover:border-blue-400 active:scale-95 cursor-pointer"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
-          </div>
-        </div>
+      {/* 9. CLIENT CAROUSEL & INTERACTIVE FAQ */}
+      <DynamicHomeContent clientLogos={clientLogos} faqs={faqs} />
 
-        {/* Carousel Container Wrapper */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
-            ref={scrollRef} 
-            className="flex items-center space-x-6 overflow-x-auto py-4 no-scrollbar scroll-smooth snap-x snap-mandatory will-change-transform"
-          >
-            {clientLogos.concat(clientLogos).map((logo, lIdx) => (
-              <div 
-                key={lIdx} 
-                className="relative w-[180px] sm:w-[220px] h-28 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-2xl overflow-hidden snap-center transform-gpu transition-all duration-300 hover:scale-[1.03]"
-              >
-                <Image 
-                  src={logo.url} 
-                  alt={`${logo.name} Corporate Partnership Logo`} 
-                  fill 
-                  sizes="(max-width: 640px) 180px, 220px"
-                  priority={lIdx < 4}
-                  className="object-cover rounded-2xl" 
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Centered Our Clients Button */}
-          <div className="text-center mt-10">
-            <Link href="/clients" className="inline-flex w-full sm:w-auto items-center justify-center bg-[#0b63c5] hover:bg-blue-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-blue-600/20 transition-all text-sm group tracking-wide">
-              <span>Our Clients</span>
-              <ChevronRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 9. FAQ SECTION */}
-      <section className="py-14 bg-slate-950 scroll-mt-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-12">
-            <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">Knowledge Base</span>
-            <h2 className="text-3xl font-bold text-slate-100 tracking-tight">Frequently Asked Questions</h2>
-            <div className="w-12 h-1 bg-[#0b63c5] mx-auto rounded-full"></div>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, fIdx) => {
-              const isOpen = openFaq === fIdx;
-              return (
-                <div 
-                  key={fIdx} 
-                  className="bg-slate-900 rounded-xl overflow-hidden shadow-xl transition-all duration-300"
-                >
-                  <button
-                    onClick={() => toggleFaq(fIdx)}
-                    className="w-full text-left p-5 sm:p-7 flex items-center justify-between gap-4 focus:outline-none group hover:bg-slate-800/50 transition-colors cursor-pointer"
-                    aria-expanded={isOpen}
-                  >
-                    <h3 className="text-sm sm:text-base font-semibold text-slate-100 flex items-start gap-3.5 pr-2 leading-snug">
-                      <HelpCircle className="w-5 h-5 text-blue-400 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                      <span>{faq.q}</span>
-                    </h3>
-                    <div className={`w-8 h-8 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'rotate-180 bg-[#0b63c5] text-white' : ''}`}>
-                      <ChevronDown size={16} />
-                    </div>
-                  </button>
-
-                  <div 
-                    className={`grid transition-all duration-300 ease-in-out ${
-                      isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
-                    }`}
-                  >
-                    <div className="overflow-hidden">
-                      <div className="p-5 sm:p-7 pl-12 sm:pl-14 text-xs sm:text-sm font-normal text-slate-200 leading-relaxed bg-slate-950/50">
-                        {faq.a}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Structural Artificial Intelligence & Search Engine Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "Emrald Ace General Contracting & Electromechanical L.L.C",
-                "url": "https://emraldace.com",
-                "logo": "https://emraldace.com/logo.png",
-                "contactPoint": {
-                  "@type": "ContactPoint",
-                  "telephone": "+97126282868",
-                  "contactType": "customer service",
-                  "areaServed": "AE"
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": faqs.map(faq => ({
-                  "@type": "Question",
-                  "name": faq.q,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": faq.a
-                  }
-                }))
-              }
-            ])
-          }}
-        />
-      </section>
+      {/* Structured AI & Search Engine JSON-LD Schema Script */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaGraph)
+        }}
+      />
     </main>
   );
 }

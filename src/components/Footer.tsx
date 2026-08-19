@@ -117,7 +117,7 @@ export default function Footer() {
             <div className="flex items-start space-x-3 text-slate-200 group">
               <MapPin className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
               <span className="leading-relaxed antialiased">
-                Musaffah M-14, Abu Dhabi,<br />U.A.E
+                Musaffah M-14, Abu Dhabi,<br />U.A.E — P.O. Box 91201
               </span>
             </div>
           </address>
@@ -130,7 +130,7 @@ export default function Footer() {
         
         {/* Line 1: Corporate Entity Details */}
         <p className="leading-normal text-slate-300 w-full max-w-5xl">
-          <strong className="text-white font-semibold">Emrald Ace Engineering & Facilities Management LLC</strong> — Musaffah M-14, Abu Dhabi, U.A.E |{' '}
+          <strong className="text-white font-semibold">Emrald Ace Engineering & Facilities Management LLC</strong> — Musaffah M-14, Abu Dhabi, U.A.E — P.O. Box 91201 |{' '}
           <a href="https://www.emraldace.ae" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
             www.emraldace.ae
           </a>{' '}

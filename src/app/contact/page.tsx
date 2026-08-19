@@ -69,12 +69,13 @@ export default function ContactPage() {
             "mainEntity": {
               "@type": "Organization",
               "name": "Emrald Ace General Contracting & Electromechanical",
-              "telephone": "+971528976025",
-              "email": "sales1@emraldace.com",
+              "telephone": "+97126751747",
+              "email": "sales@emraldace.ae",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Musaffah M-14",
                 "addressLocality": "Abu Dhabi",
+                "postalCode": "91201",
                 "addressCountry": "AE"
               },
               "geo": {
@@ -195,8 +196,8 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-1 pt-0.5">
                     <span className="block text-[11px] uppercase font-bold text-slate-300 tracking-[0.15em] leading-none">Call Regional Office</span>
-                    <a href="tel:+971528976025" className="block text-base font-normal text-slate-100 hover:text-blue-300 transition-colors duration-200 tracking-wide">
-                      +971 52 897 6025
+                    <a href="tel:+97126751747" className="block text-base font-normal text-slate-100 hover:text-blue-300 transition-colors duration-200 tracking-wide">
+                      +971 2 675 1747
                     </a>
                   </div>
                 </div>
@@ -208,8 +209,8 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-1 pt-0.5">
                     <span className="block text-[11px] uppercase font-bold text-slate-300 tracking-[0.15em] leading-none">Email Global Sales</span>
-                    <a href="mailto:sales1@emraldace.com" className="block text-base font-normal text-slate-100 hover:text-blue-300 transition-colors duration-200 tracking-wide break-all sm:break-normal">
-                      sales1@emraldace.com
+                    <a href="mailto:sales@emraldace.ae" className="block text-base font-normal text-slate-100 hover:text-blue-300 transition-colors duration-200 tracking-wide break-all sm:break-normal">
+                      sales@emraldace.ae
                     </a>
                   </div>
                 </div>
@@ -222,7 +223,7 @@ export default function ContactPage() {
                   <div className="space-y-1 pt-0.5">
                     <span className="block text-[11px] uppercase font-bold text-slate-300 tracking-[0.15em] leading-none">Headquarters Coordinates</span>
                     <p className="text-sm font-normal text-slate-200 leading-relaxed max-w-xs">
-                      Musaffah M-14, Abu Dhabi, United Arab Emirates
+                      Musaffah M-14, Abu Dhabi,<br></br> U.A.E — P.O. Box 91201
                     </p>
                   </div>
                 </div>
@@ -255,7 +256,7 @@ export default function ContactPage() {
                     <input 
                       id="phone" type="tel" required name="phone" value={formData.phone} onChange={handleInputChange}
                       className="w-full bg-slate-50 border-2 border-slate-300 hover:border-slate-400 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3 sm:p-3.5 font-medium text-slate-900 placeholder:text-slate-500 transition-all outline-hidden duration-200"
-                      placeholder="+971 52 897 6025"
+                      placeholder="+971 2 675 1747"
                     />
                   </div>
                 </div>
