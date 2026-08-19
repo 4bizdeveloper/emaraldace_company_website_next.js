@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import DynamicHomeContent from '@/app/DynamicHomeContent';
+import DynamicHomeContent from '@/components/DynamicHomeContent';
 
 // 1. Dynamic Technical SEO & Metadata Configuration
 export async function generateMetadata(): Promise<Metadata> {
