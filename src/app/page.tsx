@@ -263,7 +263,7 @@ export default async function Home() {
       `}</style>
 
       {/* 1. ULTRA MODERN HERO SECTION (Full Screen with Seamless Bottom Merged Blur) */}
-<section className="relative min-h-svh w-full flex flex-col justify-center items-center bg-slate-950 text-white overflow-hidden py-20 sm:py-24">
+<section className="relative min-h-dvh w-full flex flex-col justify-center items-center bg-slate-950 text-white overflow-hidden py-16 sm:py-20">
   {/* Background Video */}
   <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
     <video
@@ -285,7 +285,7 @@ export default async function Home() {
   <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/90 z-10 pointer-events-none" />
 
   {/* Hero Interactive Content */}
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full space-y-4 sm:space-y-6 my-auto pt-16 sm:pt-20">
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full space-y-5 sm:space-y-6 my-auto pt-16 sm:pt-12">
     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 backdrop-blur-md text-blue-300 text-xs sm:text-sm font-semibold tracking-wide">
       <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
       Premier MEP & Facility Engineering in UAE
@@ -305,7 +305,7 @@ export default async function Home() {
     <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-3">
       <Link 
         href="/contact" 
-        className="w-full sm:w-auto max-w-xs px-6 py-3 sm:px-8 sm:py-3.5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-semibold rounded-2xl shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base flex items-center justify-center gap-2 group"
+        className="w-full sm:w-auto min-w-[160px] max-w-[220px] px-6 py-3 sm:px-8 sm:py-3.5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-semibold rounded-2xl shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base flex items-center justify-center gap-2 group"
       >
         <span>Get In Touch</span>
         <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
@@ -313,7 +313,7 @@ export default async function Home() {
 
       <Link 
         href="/about" 
-        className="w-full sm:w-auto max-w-xs px-6 py-3 sm:px-8 sm:py-3.5 bg-slate-900/80 hover:bg-slate-900 text-slate-100 font-semibold rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all text-center text-sm sm:text-base flex items-center justify-center gap-2"
+        className="w-full sm:w-auto min-w-[160px] max-w-[220px] px-6 py-3 sm:px-8 sm:py-3.5 bg-slate-900/80 hover:bg-slate-900 text-slate-100 font-semibold rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all text-center text-sm sm:text-base flex items-center justify-center gap-2"
       >
         <span>About Us</span>
         <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
