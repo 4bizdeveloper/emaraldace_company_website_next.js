@@ -342,7 +342,7 @@ export default async function Home() {
               {/* AEO Definition Block */}
               <div className="p-5 rounded-2xl bg-slate-900/90 border-l-4 border-blue-500 border-y border-r border-slate-800 shadow-xl">
                 <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-                  <strong>Definition:</strong> Mechanical, Electrical, and Plumbing (MEP) engineering forms the core physical infrastructure of modern real estate. When integrated with facility operations, it guarantees optimized energy consumption, continuous asset performance, and preventive risk management.
+                  Mechanical, Electrical, and Plumbing (MEP) engineering forms the core physical infrastructure of modern real estate. When integrated with facility operations, it guarantees optimized energy consumption, continuous asset performance, and preventive risk management.
                 </p>
               </div>
 
