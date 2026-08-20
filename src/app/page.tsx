@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { Poppins } from 'next/font/google';
-import DynamicHomeContent from '@/components/DynamicHomeContent';
+import DynamicHomeContent from '@/components/Home-Clients';
 
 // GTmetrix Performance Optimization: Zero render-blocking CSS fonts via Next.js Google Font Engine
 const poppins = Poppins({
