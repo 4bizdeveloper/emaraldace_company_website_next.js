@@ -95,7 +95,7 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-2 md:space-x-3 group focus:outline-none">
             <div className="relative w-8 h-8 md:w-9 md:h-9 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 will-change-transform">
               <Image 
-                src="/logo.png" 
+                src="/logo.svg" 
                 alt="Emrald Ace Logo" 
                 width={36} 
                 height={36} 

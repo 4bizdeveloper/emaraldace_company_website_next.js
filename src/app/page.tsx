@@ -292,7 +292,7 @@ export default async function Home() {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow-md px-2">
-            Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across all over the UAE.
+            Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across all over UAE.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-3">
