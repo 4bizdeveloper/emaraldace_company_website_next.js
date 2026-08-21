@@ -25,7 +25,6 @@ const clients = [
   { name: "Design Infinity", url: "/client-logos/design-ifinity.webp" },
   { name: "EGA", url: "/client-logos/ega.webp" },
   { name: "Emichem", url: "/client-logos/emichem.webp" },
-  { name: "ENOC", url: "/client-logos/enoc.webp" },
   { name: "Envirocon", url: "/client-logos/envirocon.webp" },
   { name: "GEMS Education", url: "/client-logos/gems-education.webp" },
   { name: "Gulf Rock", url: "/client-logos/gulf-rock.webp" },
