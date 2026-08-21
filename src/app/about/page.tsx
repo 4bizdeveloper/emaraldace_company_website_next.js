@@ -220,7 +220,7 @@ export default function About() {
             <div className="relative w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[400px] aspect-square flex items-center justify-center p-6 bg-slate-900/70 border border-slate-800/80 rounded-3xl shadow-2xl transition-all duration-300 hover:scale-[1.01] hover:border-[#0B63C5]/30">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#0B63C5]/10 via-transparent to-[#FF6A00]/10 rounded-3xl pointer-events-none" />
               <Image 
-                src="/logo.png" 
+                src="/logo-1.png" 
                 alt="Emrald Ace General Contracting & Electromechanical Logo"
                 width={360}
                 height={360}
