@@ -460,18 +460,18 @@ export default function AMCPage() {
               {/* Mobile-optimized CTAs */}
               <div className="lg:col-span-4 flex flex-col gap-2.5 sm:gap-3 w-full">
                 <a
-                  href="mailto:sales1@emraldace.com"
+                  href="mailto:sales@emraldace.com"
                   className="w-full px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-2 shadow-lg active:scale-95"
                 >
                   <Mail className="w-4 h-4 shrink-0" />
-                  <span>sales1@emraldace.com</span>
+                  <span>sales@emraldace.com</span>
                 </a>
                 <a
-                  href="tel:+971528976025"
+                  href="tel:+97126751747"
                   className="w-full px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-slate-950 border border-slate-700 hover:border-slate-500 text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-2"
                 >
                   <Phone className="w-4 h-4 text-[#0b63c5] shrink-0" />
-                  <span>Call: +971 52 897 6025</span>
+                  <span>Call: +971 2 675 1747</span>
                 </a>
               </div>
             </div>

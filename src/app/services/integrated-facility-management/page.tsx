@@ -655,18 +655,18 @@ export default function IFMPage() {
 
               <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
                 <a
-                  href="mailto:sales1@emraldace.com"
+                  href="mailto:sales@emraldace.com"
                   className="w-full px-5 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-blue-600 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2 shadow-lg active:scale-98"
                 >
                   <Mail className="w-4 h-4 shrink-0" />
-                  sales1@emraldace.com
+                  sales@emraldace.com
                 </a>
                 <a
-                  href="tel:+971528976025"
+                  href="tel:+97126751747"
                   className="w-full px-5 py-3.5 rounded-xl bg-slate-950 border border-slate-700 hover:border-slate-500 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2 active:scale-98"
                 >
                   <Phone className="w-4 h-4 text-blue-400 shrink-0" />
-                  +971 52 897 6025
+                  +971 2 675 1747
                 </a>
               </div>
             </div>

@@ -1,26 +1,22 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import { 
-  ArrowRight, 
   Sparkles,
-  PhoneCall,
   CheckCircle2,
   ShieldCheck,
-  Zap,
-  Building2
+  Zap
 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "Engineering & Facility Management Services | Emrald Ace UAE",
-  description: "Explore core electromechanical, facility management, AMC, MEP, interior fit-out, civil contracting, and specialized automation solutions across Abu Dhabi and the UAE.",
+  description: "Explore core electromechanical, facility management, AMC, MEP, interior fit-out, civil contracting, and specialized automation solutions across the UAE.",
   alternates: {
     canonical: "https://www.emraldace.com/services/",
   },
   openGraph: {
     title: "Engineering & Facility Management Services | Emrald Ace UAE",
-    description: "Explore core electromechanical, facility management, AMC, MEP, interior fit-out, civil contracting, and specialized automation solutions across Abu Dhabi and the UAE.",
+    description: "Explore core electromechanical, facility management, AMC, MEP, interior fit-out, civil contracting, and specialized automation solutions across the UAE.",
     url: "https://www.emraldace.com/services/",
     siteName: "Emrald Ace",
     locale: "en_US",
@@ -73,7 +69,7 @@ export default function ServicesPage() {
       tagline: "Comprehensive Civil Construction & Structural Excellence.",
       badge: "Structural Solutions",
       image: "/general-contracting-and-specialized-civil.webp",
-      desc: "End-to-end civil construction, complete building renovations, structural repairs, space extensions, and pre-construction planning delivered with precision across Abu Dhabi and the UAE."
+      desc: "End-to-end civil construction, complete building renovations, structural repairs, space extensions, and pre-construction planning delivered with precision across the UAE."
     },
     {
       id: "specialized",
@@ -139,7 +135,7 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceCatalogSchema) }} 
       />
 
-      {/* Hero Section - Preserved Hero Background & Fixed High Contrast Typography */}
+      {/* Hero Section */}
       <section className="relative w-full min-h-[85vh] lg:min-h-screen pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0 select-none pointer-events-none overflow-hidden">
           <Image 
@@ -166,7 +162,7 @@ export default function ServicesPage() {
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white drop-shadow-2xl max-w-4xl">
-              Engineering & Facility Solutions in Abu Dhabi & Across the UAE
+              Engineering & Facility Solutions Across the UAE
             </h1>
 
             <p className="text-sm sm:text-base lg:text-lg text-slate-100 font-medium leading-relaxed max-w-2xl drop-shadow-md">
@@ -181,10 +177,6 @@ export default function ServicesPage() {
               <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-700/80 backdrop-blur-md shadow-lg hover:border-amber-400/50 transition-colors">
                 <Zap className="w-4 h-4 text-amber-300 shrink-0" />
                 <span className="text-slate-100">24/7 Rapid Response</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-700/80 backdrop-blur-md shadow-lg hover:border-emerald-400/50 transition-colors">
-                <Building2 className="w-4 h-4 text-emerald-300 shrink-0" />
-                <span className="text-slate-100">UAE Trade Licensed</span>
               </div>
             </div>
           </header>
@@ -245,45 +237,10 @@ export default function ServicesPage() {
                 <p className="text-sm sm:text-base text-slate-200 font-normal leading-relaxed">
                   {service.desc}
                 </p>
-
-                <div className="pt-2 w-full sm:w-auto">
-                  <Link 
-                    href={service.slug}
-                    aria-label={`Read full details about ${service.title}`}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-3 text-xs sm:text-sm font-bold text-white bg-[#0b63c5] hover:bg-[#084b96] active:bg-[#063870] rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 active:scale-[0.98] transform-gpu"
-                  >
-                    <span>Read full details</span>
-                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 shrink-0" />
-                  </Link>
-                </div>
               </div>
             </article>
           );
         })}
-      </section>
-
-      {/* Call to Action Banner - Borderless Bottom Guarantee */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-20">
-        <div className="relative rounded-3xl overflow-hidden p-6 sm:p-10 lg:p-12 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 border border-slate-800 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
-          <div className="space-y-2 text-center md:text-left max-w-xl">
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight">
-              Need a Customized Technical Proposal?
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
-              Consult directly with our Abu Dhabi engineering division to evaluate your facility requirements or request a free site assessment.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
-            <a 
-              href="tel:+971528976025" 
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-white hover:bg-slate-100 text-[#0b63c5] font-extrabold rounded-xl transition-all duration-200 shrink-0 text-xs sm:text-sm shadow-xl hover:scale-[1.02] active:scale-[0.98] transform-gpu"
-            >
-              <PhoneCall className="w-4 h-4 text-[#0b63c5] shrink-0" /> 
-              <span>Connect with us</span>
-            </a>
-          </div>
-        </div>
       </section>
     </main>
   );

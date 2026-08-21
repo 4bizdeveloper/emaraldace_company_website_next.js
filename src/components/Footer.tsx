@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Globe, ShieldCheck, FileCheck, Lock, Scale } from 'lucide-react';
+import { Phone, Mail, MapPin, Globe, ShieldCheck, Lock, Scale } from 'lucide-react';
 
 export default function Footer() {
   const activeYear = new Date().getFullYear();
@@ -53,10 +53,6 @@ export default function Footer() {
             <div className="flex items-center space-x-1.5 bg-slate-800/90 border border-slate-700/70 px-3 py-1.5 rounded-full text-xs font-medium text-cyan-300 shadow-inner">
               <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
               <span>ISO 45001:2018 Certified</span>
-            </div>
-            <div className="flex items-center space-x-1.5 bg-slate-800/90 border border-slate-700/70 px-3 py-1.5 rounded-full text-xs font-medium text-blue-300 shadow-inner">
-              <FileCheck className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-              <span>UAE Trade Licensed</span>
             </div>
           </div>
         </div>
@@ -128,16 +124,7 @@ export default function Footer() {
       {/* Bottom Legal & Meta Bar */}
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center space-y-4 text-xs text-slate-400 relative z-10 antialiased">
         
-        {/* Line 1: Corporate Entity Details */}
-        <p className="leading-normal text-slate-300 w-full max-w-5xl">
-          <strong className="text-white font-semibold">Emrald Ace Engineering & Facilities Management LLC</strong> — Musaffah M-14, Abu Dhabi, U.A.E — P.O. Box 91201 |{' '}
-          <a href="https://www.emraldace.ae" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
-            www.emraldace.ae
-          </a>{' '}
-          · ISO 45001:2018 Certified · <span className="inline-block whitespace-nowrap">UAE Trade Licensed</span>
-        </p>
-
-        {/* Line 2: Legal Privacy Policy & Terms Links */}
+        {/* Legal Privacy Policy & Terms Links */}
         <div className="flex items-center justify-center flex-wrap gap-x-4 gap-y-2 text-slate-300 font-medium pt-1">
           <Link 
             href="/privacy-policy" 
@@ -158,7 +145,7 @@ export default function Footer() {
           </Link>
         </div>
 
-        {/* Line 3: Copyright & Developer Credits */}
+        {/* Copyright & Developer Credits */}
         <p className="text-slate-400 font-medium pt-1">
           &copy; {activeYear} All rights reserved for Emrald Ace | Developed by{' '}
           <a
