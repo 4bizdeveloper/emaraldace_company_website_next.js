@@ -1,9 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Orbitron, Rajdhani } from 'next/font/google';
 import { 
-  PhoneCall, 
+  Phone, 
   Smartphone, 
   Mail, 
   MapPin, 
@@ -13,25 +12,12 @@ import {
   Scale 
 } from 'lucide-react';
 
-// Google fonts configured to match logo branding
-const logoTitleFont = Orbitron({
-  subsets: ['latin'],
-  weight: ['800', '900'],
-  variable: '--font-logo-title',
-});
-
-const logoSubFont = Rajdhani({
-  subsets: ['latin'],
-  weight: ['600', '700'],
-  variable: '--font-logo-sub',
-});
-
 export default function Footer() {
   const activeYear = new Date().getFullYear();
 
   return (
     <footer 
-      className={`w-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-200 text-sm pt-16 pb-36 sm:pb-28 lg:pb-24 px-6 sm:px-10 lg:px-12 border-t border-slate-800 relative overflow-hidden select-none transform-gpu ${logoTitleFont.variable} ${logoSubFont.variable}`}
+      className="w-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-200 text-sm pt-16 pb-36 sm:pb-28 lg:pb-24 px-6 sm:px-10 lg:px-12 border-t border-slate-800 relative overflow-hidden select-none transform-gpu"
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
@@ -46,25 +32,14 @@ export default function Footer() {
         
         {/* Brand & Identity Column */}
         <div className="col-span-1 sm:col-span-2 md:col-span-5 lg:col-span-6 space-y-6">
-          <div className="flex items-center space-x-4">
-            <div className="relative w-16 h-16 bg-white rounded-xl p-1.5 flex items-center justify-center shadow-xl shadow-black/40 transform-gpu transition-all duration-300 hover:scale-105 hover:rotate-1 shrink-0">
-              <Image 
-                src="/logo.png" 
-                alt="Emrald Ace Corporate Logo" 
-                width={56} 
-                height={56} 
-                className="object-contain w-full h-full transform-gpu" 
-                priority
-              />
-            </div>
-            <div>
-              <span className="font-[family-name:var(--font-logo-title)] text-xl sm:text-2xl lg:text-3xl font-black tracking-wider text-white block antialiased uppercase">
-                EMRALD <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">ACE</span>
-              </span>
-              <p className="font-[family-name:var(--font-logo-sub)] text-xs text-slate-300 font-bold uppercase tracking-widest mt-0.5 antialiased">
-                General Contracting and Electromechanical-LLC-S.P.C
-              </p>
-            </div>
+          <div className="relative w-full max-w-[280px] sm:max-w-[320px] h-16 sm:h-20">
+            <Image 
+              src="/logo.svg" 
+              alt="Emrald Ace Corporate Logo" 
+              fill
+              className="object-contain object-left transform-gpu" 
+              priority
+            />
           </div>
 
           <p className="text-slate-300 leading-relaxed text-sm max-w-md antialiased font-normal">
@@ -117,7 +92,7 @@ export default function Footer() {
           <address className="not-italic space-y-3 text-sm font-medium text-slate-200">
             {/* Landline */}
             <div className="flex items-center space-x-3 group">
-              <PhoneCall className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
+              <Phone className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
               <a href="tel:+97126751747" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
                 +971 2 675 1747
               </a>
