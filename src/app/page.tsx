@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
-    description: 'Emrald Ace delivers reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across Abu Dhabi and the UAE.',
+    description: 'Emrald Ace delivers reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across all over the UAE.',
     metadataBase: new URL(currentUrl),
     alternates: {
       canonical: './',
@@ -41,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
-      description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across Abu Dhabi & UAE.',
+      description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across all over the UAE.',
       url: './',
       siteName: 'Emrald Ace General Contracting & Electromechanical L.L.C',
       images: [
@@ -58,7 +58,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
-      description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across Abu Dhabi & UAE.',
+      description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across all over the UAE.',
       images: ['https://www.emraldace.ae/integrated-engineering-aco-system-uae.webp'],
     },
   };
@@ -135,7 +135,7 @@ export default async function Home() {
     },
     { 
       q: "How are urgent engineering requests handled under an Annual Maintenance Contract?", 
-      a: "Emergency requests follow a strict 4-step SLA response workflow: 1. Instant Logging: Request received at our 24/7 central helpdesk. 2. Rapid Dispatch: Emergency engineering team dispatched within 15 minutes. 3. Guaranteed On-Site Arrival: Technicians on-site within 60 minutes across Abu Dhabi & major UAE nodes. 4. Containment & Resolution: Immediate physical isolation of fault followed by structural repair." 
+      a: "Emergency requests follow a strict 4-step SLA response workflow: 1. Instant Logging: Received at our 24/7 central helpdesk. 2. Rapid Dispatch: Emergency engineering team dispatched within 15 minutes. 3. Guaranteed On-Site Arrival: Technicians on-site within 60 minutes across all over the UAE. 4. Containment & Resolution: Immediate physical isolation of fault followed by structural repair." 
     },
     { 
       q: "Who can benefit from Emrald Ace facility management and MEP services?", 
@@ -156,7 +156,7 @@ export default async function Home() {
         "@id": `${baseUrl}/#webpage`,
         "url": `${baseUrl}/`,
         "name": "Integrated Facility Management & MEP Services UAE | Emrald Ace",
-        "description": "Emrald Ace delivers reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across Abu Dhabi & UAE.",
+        "description": "Emrald Ace delivers reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across all over the UAE.",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "WebSite",
@@ -182,7 +182,11 @@ export default async function Home() {
           "Annual Maintenance Contracts",
           "Interior Fit-Out",
           "HVAC Systems"
-        ]
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "AE"
+        }
       },
       {
         "@type": "Service",
@@ -288,7 +292,7 @@ export default async function Home() {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow-md px-2">
-            Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across Abu Dhabi & the UAE.
+            Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across all over the UAE.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-3">
@@ -310,7 +314,7 @@ export default async function Home() {
           </div>
         </div>
 
-        {/* Border Blend Component */}
+        {/* Border Blend Component at Junction Only */}
         <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10 pointer-events-none" />
       </section>
 
@@ -327,7 +331,7 @@ export default async function Home() {
                 </h2>
               </div>
 
-              {/* AEO Definition Block */}
+              {/* Definition Block */}
               <div className="p-5 rounded-2xl bg-slate-900/90 border-l-4 border-blue-500 border-y border-r border-slate-800 shadow-xl">
                 <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
                   Mechanical, Electrical, and Plumbing (MEP) engineering forms the core physical infrastructure of modern real estate. When integrated with facility operations, it guarantees optimized energy consumption, continuous asset performance, and preventive risk management.
@@ -335,7 +339,7 @@ export default async function Home() {
               </div>
 
               <p className="text-xs sm:text-base text-slate-300 font-normal leading-relaxed">
-                Since 2014, Emrald Ace General Contracting & Electromechanical L.L.C. has maintained an unbroken track record across Abu Dhabi and the wider UAE. We engineer, maintain, and upgrade physical spaces with high precision and transparency.
+                Since 2014, Emrald Ace General Contracting & Electromechanical L.L.C. has maintained an unbroken track record across all over the UAE. We engineer, maintain, and upgrade physical spaces with high precision and transparency.
               </p>
               
               {/* How We Work Timeline Flow */}
@@ -383,7 +387,7 @@ export default async function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 text-xs font-medium text-slate-200 bg-slate-950/80 p-3 rounded-xl border border-slate-800 backdrop-blur-md">
-                  Real-World Execution: Commercial MEP Maintenance in Abu Dhabi
+                  Real-World Execution: Commercial MEP Maintenance in the UAE
                 </div>
               </div>
 
@@ -408,7 +412,7 @@ export default async function Home() {
                   </li>
                   <li className="p-3 bg-slate-950/80 rounded-2xl border border-slate-800/80">
                     <span className="block text-xl sm:text-2xl font-extrabold text-white">7/7</span>
-                    <span className="text-[10px] text-slate-400 uppercase font-semibold">UAE Emirates Covered</span>
+                    <span className="text-[10px] text-slate-400 uppercase font-semibold">Emirates Covered</span>
                   </li>
                 </ul>
               </div>
@@ -531,7 +535,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 5. CALL TO ACTION SECTION */}
+      {/* 5. CALL TO ACTION */}
       <section className="py-12 bg-slate-950 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-950 via-slate-900 to-slate-900 border border-blue-500/30 p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -551,7 +555,7 @@ export default async function Home() {
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto shrink-0 justify-center">
               <Link 
                 href="/contact" 
-                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-bold rounded-2xl border border-blue-400/30 transition-all text-center text-sm shadow-xl shadow-blue-600/20"
+                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-bold rounded-2xl shadow-xl transition-all text-center text-sm"
               >
                 Get a Free Quote
               </Link>
@@ -579,8 +583,8 @@ export default async function Home() {
                 {[
                   "Commercial Office Towers", "Residential Communities", 
                   "Healthcare & Medical Centers", "Hotels & Hospitality Venues", 
-                  "Retail Malls & Outlets", "Industrial Warehouses",
-                  "Shopping Centers", "Educational Hubs"
+                  "Retail Outlets & Malls", "Industrial Warehouses",
+                  "Corporate Facilities", "Educational Hubs"
                 ].map((vertical, vIdx) => (
                   <li key={vIdx} className="p-3 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-2.5 text-xs font-semibold text-slate-200">
                     <span className="w-2 h-2 rounded-full bg-blue-400 shrink-0"></span>
@@ -616,7 +620,7 @@ export default async function Home() {
       {/* 7. CLIENT CAROUSEL & INTERACTIVE FAQ SECTION */}
       <DynamicHomeContent clientLogos={clientLogos} faqs={faqs} />
 
-      {/* JSON-LD Schema Integration */}
+      {/* JSON-LD Schema Integration for AI Assistants & Search Engine Bots */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
