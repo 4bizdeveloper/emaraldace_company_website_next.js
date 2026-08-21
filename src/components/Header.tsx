@@ -94,7 +94,7 @@ export default function Header() {
                 EMRALD ACE
               </span>
               <span className="text-[6.5px] md:text-[7.5px] uppercase tracking-widest font-semibold mt-0.5 md:mt-1 block max-w-[190px] sm:max-w-none transition-colors duration-300 text-slate-400">
-                General Contracting and Electromechanical LLC
+                General Contracting and Electromechanical-LLC-S.P.C
               </span>
             </div>
           </Link>

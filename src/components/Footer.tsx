@@ -12,7 +12,7 @@ export default function Footer() {
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
-        Emrald Ace Engineering & Facilities Management LLC Footer
+        Emrald Ace General Contracting and Electromechanical-LLC-S.P.C Footer
       </h2>
 
       {/* Modern ambient glow elements */}
@@ -39,7 +39,7 @@ export default function Footer() {
                 EMRALD <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">ACE</span>
               </span>
               <p className="text-xs text-slate-400 font-medium tracking-wide mt-0.5">
-                Engineering & Facilities Management LLC
+                General Contracting and Electromechanical-LLC-S.P.C
               </p>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function Footer() {
         {/* Global Access Center Column */}
         <div className="col-span-1 md:col-span-4 lg:col-span-3 space-y-4">
           <span className="font-bold text-white uppercase text-xs tracking-wider block border-l-2 border-cyan-400 pl-2.5 antialiased">
-            Global Access Center
+            Get In Touch
           </span>
           <address className="not-italic space-y-3 text-sm font-medium text-slate-200">
             <div className="flex items-start space-x-3 group">
