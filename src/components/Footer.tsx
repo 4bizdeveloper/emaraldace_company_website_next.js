@@ -1,14 +1,37 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Globe, ShieldCheck, Lock, Scale } from 'lucide-react';
+import { Orbitron, Rajdhani } from 'next/font/google';
+import { 
+  PhoneCall, 
+  Smartphone, 
+  Mail, 
+  MapPin, 
+  Globe, 
+  ShieldCheck, 
+  Lock, 
+  Scale 
+} from 'lucide-react';
+
+// Google fonts configured to match logo branding
+const logoTitleFont = Orbitron({
+  subsets: ['latin'],
+  weight: ['800', '900'],
+  variable: '--font-logo-title',
+});
+
+const logoSubFont = Rajdhani({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  variable: '--font-logo-sub',
+});
 
 export default function Footer() {
   const activeYear = new Date().getFullYear();
 
   return (
     <footer 
-      className="w-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-200 text-sm pt-16 pb-36 sm:pb-28 lg:pb-24 px-6 sm:px-10 lg:px-12 border-t border-slate-800 relative overflow-hidden select-none transform-gpu"
+      className={`w-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-200 text-sm pt-16 pb-36 sm:pb-28 lg:pb-24 px-6 sm:px-10 lg:px-12 border-t border-slate-800 relative overflow-hidden select-none transform-gpu ${logoTitleFont.variable} ${logoSubFont.variable}`}
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
@@ -24,7 +47,7 @@ export default function Footer() {
         {/* Brand & Identity Column */}
         <div className="col-span-1 sm:col-span-2 md:col-span-5 lg:col-span-6 space-y-6">
           <div className="flex items-center space-x-4">
-            <div className="relative w-16 h-16 bg-white rounded-xl p-1.5 flex items-center justify-center shadow-xl shadow-black/40 transform-gpu transition-all duration-300 hover:scale-105 hover:rotate-1">
+            <div className="relative w-16 h-16 bg-white rounded-xl p-1.5 flex items-center justify-center shadow-xl shadow-black/40 transform-gpu transition-all duration-300 hover:scale-105 hover:rotate-1 shrink-0">
               <Image 
                 src="/logo.png" 
                 alt="Emrald Ace Corporate Logo" 
@@ -35,10 +58,10 @@ export default function Footer() {
               />
             </div>
             <div>
-              <span className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight text-white block antialiased">
+              <span className="font-[family-name:var(--font-logo-title)] text-xl sm:text-2xl lg:text-3xl font-black tracking-wider text-white block antialiased uppercase">
                 EMRALD <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">ACE</span>
               </span>
-              <p className="text-xs text-slate-400 font-medium tracking-wide mt-0.5">
+              <p className="font-[family-name:var(--font-logo-sub)] text-xs text-slate-300 font-bold uppercase tracking-widest mt-0.5 antialiased">
                 General Contracting and Electromechanical-LLC-S.P.C
               </p>
             </div>
@@ -92,32 +115,46 @@ export default function Footer() {
             Get In Touch
           </span>
           <address className="not-italic space-y-3 text-sm font-medium text-slate-200">
-            <div className="flex items-start space-x-3 group">
-              <Phone className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
-              <div className="flex flex-col space-y-1">
-                <a href="tel:+97126751747" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
-                  +971 2 675 1747 <span className="text-xs text-slate-400 font-normal">(Landline)</span>
-                </a>
-                <a href="tel:+971559915213" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
-                  +971 55 991 5213 <span className="text-xs text-slate-400 font-normal">(Mobile)</span>
-                </a>
-                <a href="tel:+971554044826" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
-                  +971 55 404 4826 <span className="text-xs text-slate-400 font-normal">(Mobile)</span>
-                </a>
-              </div>
+            {/* Landline */}
+            <div className="flex items-center space-x-3 group">
+              <PhoneCall className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
+              <a href="tel:+97126751747" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                +971 2 675 1747
+              </a>
             </div>
+
+            {/* Mobile Numbers */}
+            <div className="flex items-center space-x-3 group">
+              <Smartphone className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
+              <a href="tel:+971559915213" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                +971 55 991 5213
+              </a>
+            </div>
+
+            <div className="flex items-center space-x-3 group">
+              <Smartphone className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
+              <a href="tel:+971554044826" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                +971 55 404 4826
+              </a>
+            </div>
+
+            {/* Email */}
             <div className="flex items-center space-x-3 group">
               <Mail className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
               <a href="mailto:sales@emraldace.ae" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
                 sales@emraldace.ae
               </a>
             </div>
+
+            {/* Website */}
             <div className="flex items-center space-x-3 group">
               <Globe className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
               <a href="https://www.emraldace.ae" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
                 www.emraldace.ae
               </a>
             </div>
+
+            {/* Address */}
             <div className="flex items-start space-x-3 text-slate-200 group">
               <MapPin className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
               <span className="leading-relaxed antialiased">
