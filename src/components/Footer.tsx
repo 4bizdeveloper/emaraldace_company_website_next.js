@@ -92,7 +92,13 @@ export default function Footer() {
           <address className="not-italic space-y-3 text-sm font-medium text-slate-200">
             {/* Landline */}
             <div className="flex items-center space-x-3 group">
-              <Phone className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
+<svg 
+  className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" 
+  viewBox="0 0 24 24" 
+  fill="currentColor"
+>
+  <path d="M6.62 10.79c1.44-2.83 3.76-2.83 5.38 0 1.62-2.83 3.94-2.83 5.38 0C18.8 9.87 20 8.35 20 6.5 20 4.01 16.42 2 12 2S4 4.01 4 6.5c0 1.85 1.2 3.37 2.62 4.29zM19 13h-2.12c-.28-.62-.73-1.16-1.3-1.57C14.43 10.68 13.25 10 12 10s-2.43.68-3.58 1.43c-.57.41-1.02.95-1.3 1.57H5c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2zm-7 6c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm0-4c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
+</svg>
               <a href="tel:+97126751747" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
                 +971 2 675 1747
               </a>
