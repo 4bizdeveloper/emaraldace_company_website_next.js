@@ -46,7 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: 'Emrald Ace General Contracting & Electromechanical L.L.C',
       images: [
         {
-          url: '/integrated-facility-management-2.webp',
+          url: 'https://www.emraldace.ae/integrated-engineering-aco-system-uae.webp',
           width: 1200,
           height: 630,
           alt: 'Emrald Ace Facility Management Services UAE',
@@ -59,7 +59,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
       description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across Abu Dhabi & UAE.',
-      images: ['/integrated-facility-management-2.webp'],
+      images: ['https://www.emraldace.ae/integrated-engineering-aco-system-uae.webp'],
     },
   };
 }
