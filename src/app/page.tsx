@@ -135,7 +135,7 @@ export default async function Home() {
     },
     { 
       q: "How are urgent engineering requests handled under an Annual Maintenance Contract?", 
-      a: "Emergency requests follow a strict 4-step SLA response workflow: 1. Instant Logging: Call or ticket received at our 24/7 central helpdesk. 2. Rapid Dispatch: Emergency engineering team dispatched within 15 minutes. 3. Guaranteed On-Site Arrival: Technicians on-site within 60 minutes across Abu Dhabi & major UAE nodes. 4. Containment & Resolution: Immediate physical isolation of fault followed by structural repair." 
+      a: "Emergency requests follow a strict 4-step SLA response workflow: 1. Instant Logging: Request received at our 24/7 central helpdesk. 2. Rapid Dispatch: Emergency engineering team dispatched within 15 minutes. 3. Guaranteed On-Site Arrival: Technicians on-site within 60 minutes across Abu Dhabi & major UAE nodes. 4. Containment & Resolution: Immediate physical isolation of fault followed by structural repair." 
     },
     { 
       q: "Who can benefit from Emrald Ace facility management and MEP services?", 
@@ -182,18 +182,7 @@ export default async function Home() {
           "Annual Maintenance Contracts",
           "Interior Fit-Out",
           "HVAC Systems"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Abu Dhabi",
-          "addressCountry": "AE"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+97126751747",
-          "contactType": "customer service",
-          "areaServed": "AE"
-        }
+        ]
       },
       {
         "@type": "Service",
@@ -262,70 +251,70 @@ export default async function Home() {
         }
       `}</style>
 
-      {/* 1. ULTRA MODERN HERO SECTION (Full Screen with Seamless Bottom Merged Blur) */}
-<section className="relative min-h-dvh w-full flex flex-col justify-center items-center bg-slate-950 text-white overflow-hidden py-16 sm:py-20">
-  {/* Background Video */}
-  <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-    <video
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      poster="/integrated-facility-management-2.webp"
-      className="w-full h-full object-cover object-center scale-[1.02] will-change-transform"
-    >
-      <source src="/bg-video-2.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
+      {/* 1. ULTRA MODERN HERO SECTION */}
+      <section className="relative min-h-dvh w-full flex flex-col justify-center items-center bg-slate-950 text-white overflow-hidden py-16 sm:py-20">
+        {/* Background Video */}
+        <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/integrated-facility-management-2.webp"
+            className="w-full h-full object-cover object-center scale-[1.02] will-change-transform"
+          >
+            <source src="/bg-video-2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
-  {/* Multi-tier Gradient Overlay for High Contrast Text */}
-  <div className="absolute inset-0 bg-slate-950/40 z-10" />
-  <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/90 z-10 pointer-events-none" />
+        {/* Multi-tier Gradient Overlay for High Contrast Text */}
+        <div className="absolute inset-0 bg-slate-950/40 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/90 z-10 pointer-events-none" />
 
-  {/* Hero Interactive Content */}
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full space-y-5 sm:space-y-6 my-auto pt-16 sm:pt-12">
-    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 backdrop-blur-md text-blue-300 text-xs sm:text-sm font-semibold tracking-wide">
-      <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-      Premier MEP & Facility Engineering in UAE
-    </div>
-    
-    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.25] text-white max-w-4xl mx-auto drop-shadow-2xl">
-      Integrated Facility Management <br className="hidden sm:inline" />
-      <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent">
-        & MEP Services in UAE
-      </span>
-    </h1>
+        {/* Hero Interactive Content */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full space-y-5 sm:space-y-6 my-auto pt-16 sm:pt-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 backdrop-blur-md text-blue-300 text-xs sm:text-sm font-semibold tracking-wide">
+            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+            Premier MEP & Facility Engineering in UAE
+          </div>
+          
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.25] text-white max-w-4xl mx-auto drop-shadow-2xl">
+            Integrated Facility Management <br className="hidden sm:inline" />
+            <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent">
+              & MEP Services in UAE
+            </span>
+          </h1>
 
-    <p className="text-sm sm:text-base md:text-lg text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow-md px-2">
-      Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across Abu Dhabi & the UAE.
-    </p>
+          <p className="text-sm sm:text-base md:text-lg text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow-md px-2">
+            Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across Abu Dhabi & the UAE.
+          </p>
 
-    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-3">
-      <Link 
-        href="/contact" 
-        className="w-full sm:w-auto min-w-[160px] max-w-[220px] px-6 py-3 sm:px-8 sm:py-3.5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-semibold rounded-2xl shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base flex items-center justify-center gap-2 group"
-      >
-        <span>Get In Touch</span>
-        <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
-      </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-3">
+            <Link 
+              href="/contact" 
+              className="w-full sm:w-auto min-w-[160px] max-w-[220px] px-6 py-3 sm:px-8 sm:py-3.5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-semibold rounded-2xl shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base flex items-center justify-center gap-2 group"
+            >
+              <span>Get In Touch</span>
+              <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+            </Link>
 
-      <Link 
-        href="/about" 
-        className="w-full sm:w-auto min-w-[160px] max-w-[220px] px-6 py-3 sm:px-8 sm:py-3.5 bg-slate-900/80 hover:bg-slate-900 text-slate-100 font-semibold rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all text-center text-sm sm:text-base flex items-center justify-center gap-2"
-      >
-        <span>About Us</span>
-        <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
-      </Link>
-    </div>
-  </div>
+            <Link 
+              href="/about" 
+              className="w-full sm:w-auto min-w-[160px] max-w-[220px] px-6 py-3 sm:px-8 sm:py-3.5 bg-slate-900/80 hover:bg-slate-900 text-slate-100 font-semibold rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all text-center text-sm sm:text-base flex items-center justify-center gap-2"
+            >
+              <span>About Us</span>
+              <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+            </Link>
+          </div>
+        </div>
 
-  {/* Border Blend Component at Junction Only */}
-  <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10 pointer-events-none" />
-</section>
+        {/* Border Blend Component */}
+        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10 pointer-events-none" />
+      </section>
 
-      {/* 3. ABOUT SECTION & OPERATIONAL FLOW */}
+      {/* 2. ABOUT SECTION & OPERATIONAL FLOW */}
       <section className="bg-slate-950 text-white py-12 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -429,9 +418,7 @@ export default async function Home() {
         </div>
       </section>
 
-
-
-      {/* 5. STRATEGY SECTION */}
+      {/* 3. STRATEGY SECTION */}
       <section className="py-12 bg-slate-950 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -488,7 +475,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 6. CORE SERVICES SECTION */}
+      {/* 4. CORE SERVICES SECTION */}
       <section className="py-12 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-2 mb-10">
@@ -544,7 +531,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 7. HIGH-CONVERTING CALL TO ACTION */}
+      {/* 5. CALL TO ACTION SECTION */}
       <section className="py-12 bg-slate-950 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-950 via-slate-900 to-slate-900 border border-blue-500/30 p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -557,21 +544,14 @@ export default async function Home() {
                 How Can You Book Immediate MEP Support or Get a Custom AMC Quote?
               </h2>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                Directly connect with our UAE engineering response team for immediate site audits, emergency dispatch, or annual contract pricing.
+                Connect with our UAE engineering response team for site audits, emergency dispatch, or annual contract pricing.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto shrink-0">
-              <a 
-                href="tel:+97126751747" 
-                className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-100 text-slate-950 font-bold rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 text-sm"
-              >
-                <span>Call +971 2 675 1747</span>
-              </a>
-
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto shrink-0 justify-center">
               <Link 
                 href="/contact" 
-                className="w-full sm:w-auto px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-2xl border border-slate-700 transition-all text-center text-sm"
+                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-bold rounded-2xl border border-blue-400/30 transition-all text-center text-sm shadow-xl shadow-blue-600/20"
               >
                 Get a Free Quote
               </Link>
@@ -581,7 +561,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 8. SECTOR DIVERSIFICATION FOOTPRINT */}
+      {/* 6. SECTOR DIVERSIFICATION FOOTPRINT */}
       <section className="py-12 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -633,10 +613,10 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 9. CLIENT CAROUSEL & INTERACTIVE FAQ SECTION */}
+      {/* 7. CLIENT CAROUSEL & INTERACTIVE FAQ SECTION */}
       <DynamicHomeContent clientLogos={clientLogos} faqs={faqs} />
 
-      {/* JSON-LD Schema Integration for AI Assistants & Search Engine Bots */}
+      {/* JSON-LD Schema Integration */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
