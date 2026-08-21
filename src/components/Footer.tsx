@@ -92,11 +92,19 @@ export default function Footer() {
             Global Access Center
           </span>
           <address className="not-italic space-y-3 text-sm font-medium text-slate-200">
-            <div className="flex items-center space-x-3 group">
-              <Phone className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
-              <a href="tel:+97126751747" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
-                +971 2 675 1747
-              </a>
+            <div className="flex items-start space-x-3 group">
+              <Phone className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
+              <div className="flex flex-col space-y-1">
+                <a href="tel:+97126751747" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                  +971 2 675 1747 <span className="text-xs text-slate-400 font-normal">(Landline)</span>
+                </a>
+                <a href="tel:+971559915213" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                  +971 55 991 5213 <span className="text-xs text-slate-400 font-normal">(Mobile)</span>
+                </a>
+                <a href="tel:+971554044826" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                  +971 55 404 4826 <span className="text-xs text-slate-400 font-normal">(Mobile)</span>
+                </a>
+              </div>
             </div>
             <div className="flex items-center space-x-3 group">
               <Mail className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />

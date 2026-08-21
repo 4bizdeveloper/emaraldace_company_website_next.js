@@ -19,14 +19,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Emrald Ace | ISO 45001 & UAE Licensed FM Contractor',
-  description: 'Emrald Ace is an ISO 45001:2018 and UAE Trade License certified electromechanical and facility management contractor operating across Abu Dhabi and the UAE.',
+  title: 'About Emrald Ace | ISO 45001 Certified FM Contractor',
+  description: 'Emrald Ace is an ISO 45001:2018 certified electromechanical and facility management contractor operating across Abu Dhabi and the UAE.',
   alternates: {
     canonical: '/about',
   },
   openGraph: {
-    title: 'About Emrald Ace | ISO 45001 & UAE Licensed FM Contractor',
-    description: 'Emrald Ace is an ISO 45001:2018 and UAE Trade License certified electromechanical and facility management contractor operating across Abu Dhabi and the UAE.',
+    title: 'About Emrald Ace | ISO 45001 Certified FM Contractor',
+    description: 'Emrald Ace is an ISO 45001:2018 certified electromechanical and facility management contractor operating across Abu Dhabi and the UAE.',
     url: '/about',
     siteName: 'Emrald Ace',
     images: [
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Emrald Ace | ISO 45001 & UAE Licensed FM Contractor',
-    description: 'Emrald Ace is an ISO 45001:2018 and UAE Trade License certified electromechanical and facility management contractor operating across Abu Dhabi and the UAE.',
+    title: 'About Emrald Ace | ISO 45001 Certified FM Contractor',
+    description: 'Emrald Ace is an ISO 45001:2018 certified electromechanical and facility management contractor operating across Abu Dhabi and the UAE.',
     images: ['/og-about.jpg'],
   },
 };
@@ -64,25 +64,14 @@ export default function About() {
           'caption': 'Emrald Ace Logo'
         },
         'foundingDate': '2014',
-        'address': {
-          '@type': 'PostalAddress',
-          'addressLocality': 'Abu Dhabi',
-          'addressRegion': 'Abu Dhabi',
-          'addressCountry': 'AE'
-        },
         'hasCredential': [
           {
             '@type': 'EducationalOccupationalCredential',
             'credentialCategory': 'ISO Certification',
             'name': 'ISO 45001:2018 Occupational Health and Safety Management Systems'
-          },
-          {
-            '@type': 'EducationalOccupationalCredential',
-            'credentialCategory': 'Trade License',
-            'name': 'UAE Commercial Trade License'
           }
         ],
-        'description': 'ISO 45001:2018 certified and UAE Trade License accredited engineering and integrated facilities management contractor.',
+        'description': 'ISO 45001:2018 certified engineering and integrated facilities management contractor.',
         'knowsAbout': [
           'Integrated Facility Management',
           'Electromechanical Contracting',
@@ -113,8 +102,8 @@ export default function About() {
         '@type': 'WebPage',
         '@id': '/about/#webpage',
         'url': '/about',
-        'name': 'About Emrald Ace | ISO 45001 & UAE Licensed FM Contractor',
-        'description': 'Discover Emrald Ace, an ISO 45001:2018 certified facility management contractor in Abu Dhabi delivering MEP engineering, HVAC maintenance, and commercial contracting.',
+        'name': 'About Emrald Ace | ISO 45001 Certified FM Contractor',
+        'description': 'Discover Emrald Ace, an ISO 45001:2018 certified facility management contractor delivering MEP engineering, HVAC maintenance, and commercial contracting.',
         'inLanguage': 'en-US',
         'publisher': {
           '@id': '/#organization'
@@ -147,10 +136,10 @@ export default function About() {
         'mainEntity': [
           {
             '@type': 'Question',
-            'name': 'What is Emrald Ace and what certifications does it hold in the UAE?',
+            'name': 'What is Emrald Ace and what certifications does it hold?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Emrald Ace is an Abu Dhabi-based electromechanical and facilities management contractor holding official ISO 45001:2018 Occupational Health & Safety certification and an active UAE Commercial Trade License.'
+              'text': 'Emrald Ace is an electromechanical and facilities management contractor holding official ISO 45001:2018 Occupational Health & Safety certification.'
             }
           },
           {
@@ -163,7 +152,7 @@ export default function About() {
           },
           {
             '@type': 'Question',
-            'name': 'Why choose an ISO 45001 certified contractor in Abu Dhabi and the UAE?',
+            'name': 'Why choose an ISO 45001 certified contractor?',
             'acceptedAnswer': {
               '@type': 'Answer',
               'text': 'An ISO 45001:2018 certified contractor guarantees adherence to international safety standards, full OSHAD regulatory compliance, and reduced operational risk across commercial properties.'
@@ -174,7 +163,7 @@ export default function About() {
             'name': 'What response times does Emrald Ace guarantee under Annual Maintenance Contracts (AMC)?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Emrald Ace offers defined Service Level Agreements (SLAs) with rapid 24/7 emergency response teams available across Abu Dhabi and all UAE emirates.'
+              'text': 'Emrald Ace offers defined Service Level Agreements (SLAs) with rapid 24/7 emergency response teams available across all UAE emirates.'
             }
           },
           {
@@ -224,17 +213,13 @@ export default function About() {
               itemProp="description"
               className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl"
             >
-              ISO 45001:2018 certified and UAE Trade License approved engineering and integrated facilities management contractor delivering electromechanical, maintenance, and facility solutions across Abu Dhabi and the UAE.
+              ISO 45001:2018 certified engineering and integrated facilities management contractor delivering electromechanical, maintenance, and facility solutions.
             </p>
             
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-2 sm:pt-4 sm:grid-cols-2">
-              <div className="flex items-center gap-2.5 bg-slate-900/60 border border-slate-800/80 p-3 rounded-xl sm:bg-transparent sm:border-0 sm:p-0">
+            <div className="pt-2 sm:pt-4">
+              <div className="inline-flex items-center gap-2.5 bg-slate-900/60 border border-slate-800/80 p-3 rounded-xl sm:bg-transparent sm:border-0 sm:p-0">
                 <CheckCircle2 className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
                 <span className="text-xs sm:text-sm font-semibold text-slate-100">ISO 45001:2018 Certified</span>
-              </div>
-              <div className="flex items-center gap-2.5 bg-slate-900/60 border border-slate-800/80 p-3 rounded-xl sm:bg-transparent sm:border-0 sm:p-0">
-                <CheckCircle2 className="w-5 h-5 text-[#FF6A00] flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-semibold text-slate-100">UAE Trade Licensed</span>
               </div>
             </div>
           </article>
@@ -270,15 +255,15 @@ export default function About() {
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs sm:text-sm text-slate-200 font-medium pt-2">
             <li className="flex items-start gap-2 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800">
               <Check className="w-4 h-4 text-[#FF6A00] flex-shrink-0 mt-0.5" />
-              <span><strong>Who We Are:</strong> Leading UAE contractor providing Integrated Facilities Management (IFM) & MEP Contracting since 2014.</span>
+              <span><strong>Who We Are:</strong> Leading contractor providing Integrated Facilities Management (IFM) & MEP Contracting since 2014.</span>
             </li>
             <li className="flex items-start gap-2 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800">
               <Check className="w-4 h-4 text-[#FF6A00] flex-shrink-0 mt-0.5" />
-              <span><strong>Accreditations:</strong> Fully ISO 45001:2018 certified for Occupational Health & Safety with an active UAE Commercial Trade License.</span>
+              <span><strong>Accreditations:</strong> Fully ISO 45001:2018 certified for Occupational Health & Safety.</span>
             </li>
             <li className="flex items-start gap-2 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800">
               <Check className="w-4 h-4 text-[#FF6A00] flex-shrink-0 mt-0.5" />
-              <span><strong>Core Audience:</strong> Commercial property managers, real estate developers, and UAE public sector infrastructure.</span>
+              <span><strong>Core Audience:</strong> Commercial property managers, real estate developers, and public sector infrastructure.</span>
             </li>
           </ul>
 
@@ -288,14 +273,10 @@ export default function About() {
         </section>
 
         {/* Corporate Metrics Block */}
-        <section className="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-6">
+        <section className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           <div className="p-4 sm:p-6 text-center bg-slate-900/80 border border-slate-800/80 rounded-2xl shadow-sm hover:border-slate-700 transition-colors">
             <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">2014</div>
             <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">Established</div>
-          </div>
-          <div className="p-4 sm:p-6 text-center bg-slate-900/80 border border-slate-800/80 rounded-2xl shadow-sm hover:border-slate-700 transition-colors">
-            <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">Abu Dhabi</div>
-            <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">Headquarters</div>
           </div>
           <div className="p-4 sm:p-6 text-center bg-slate-900/80 border border-slate-800/80 rounded-2xl shadow-sm hover:border-slate-700 transition-colors">
             <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">150+</div>
@@ -437,10 +418,10 @@ export default function About() {
         <section className="bg-slate-900/50 border border-slate-800 p-6 sm:p-10 rounded-3xl space-y-6">
           <div className="space-y-2">
             <span className="text-xs uppercase tracking-widest font-extrabold text-[#38bdf8]">Verified Proof & Standards</span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white">ISO 45001 Certification & UAE Regulatory Standards</h2>
+            <h2 className="text-2xl sm:text-3xl font-black text-white">ISO 45001 Certification & Regulatory Standards</h2>
           </div>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            ISO 45001:2018 sets international benchmarks for occupational health and safety. For clients operating in Abu Dhabi and across the UAE, working with an ISO certified contractor offers distinct regulatory and operational benefits:
+            ISO 45001:2018 sets international benchmarks for occupational health and safety. Working with an ISO certified contractor offers distinct regulatory and operational benefits:
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-200">
             <li className="flex items-start gap-2.5 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800">
@@ -449,7 +430,7 @@ export default function About() {
             </li>
             <li className="flex items-start gap-2.5 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800">
               <TrendingUp className="w-5 h-5 text-[#38bdf8] flex-shrink-0 mt-0.5" />
-              <span><strong>Regulatory Alignment:</strong> Fully compliant with Abu Dhabi OSHAD and UAE Ministry of Human Resources regulations.</span>
+              <span><strong>Regulatory Alignment:</strong> Fully compliant with OSHAD and Ministry of Human Resources regulations.</span>
             </li>
           </ul>
         </section>
@@ -462,7 +443,7 @@ export default function About() {
             </div>
             <h3 className="text-xl font-bold text-white">Our Vision</h3>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-              To become one of the UAE's most trusted providers of integrated facility management solutions by delivering excellence, innovation, sustainability, and customer satisfaction metrics.
+              To become one of the most trusted providers of integrated facility management solutions by delivering excellence, innovation, sustainability, and customer satisfaction metrics.
             </p>
           </div>
 
@@ -533,11 +514,11 @@ export default function About() {
           <div className="space-y-4">
             <details className="group bg-slate-950 border border-slate-800 p-4 sm:p-5 rounded-2xl [&_summary::-webkit-details-marker]:none">
               <summary className="flex items-center justify-between cursor-pointer font-bold text-white text-sm sm:text-base">
-                What is Emrald Ace and what certifications does it hold in the UAE?
+                What is Emrald Ace and what certifications does it hold?
                 <ChevronDown className="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform" />
               </summary>
               <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Emrald Ace is an Abu Dhabi-headquartered facilities management and electromechanical contractor holding certified ISO 45001:2018 compliance and an active UAE Commercial Trade License.
+                Emrald Ace is a facilities management and electromechanical contractor holding certified ISO 45001:2018 compliance.
               </p>
             </details>
 
@@ -553,11 +534,11 @@ export default function About() {
 
             <details className="group bg-slate-950 border border-slate-800 p-4 sm:p-5 rounded-2xl [&_summary::-webkit-details-marker]:none">
               <summary className="flex items-center justify-between cursor-pointer font-bold text-white text-sm sm:text-base">
-                Why choose an ISO 45001 certified contractor in Abu Dhabi and the UAE?
+                Why choose an ISO 45001 certified contractor?
                 <ChevronDown className="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform" />
               </summary>
               <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                An ISO 45001:2018 certified contractor guarantees compliance with international occupational safety protocols, reduces project liability, aligns with Abu Dhabi OSHAD directives, and safeguards commercial operations.
+                An ISO 45001:2018 certified contractor guarantees compliance with international occupational safety protocols, reduces project liability, aligns with OSHAD directives, and safeguards commercial operations.
               </p>
             </details>
 
@@ -567,7 +548,7 @@ export default function About() {
                 <ChevronDown className="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform" />
               </summary>
               <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Emrald Ace offers defined Service Level Agreements (SLAs) with rapid 24/7 emergency response teams available across Abu Dhabi and all UAE emirates to minimize equipment downtime.
+                Emrald Ace offers defined Service Level Agreements (SLAs) with rapid 24/7 emergency response teams available across all UAE emirates to minimize equipment downtime.
               </p>
             </details>
 
