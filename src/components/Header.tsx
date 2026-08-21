@@ -81,12 +81,19 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-2 md:space-x-3 group focus:outline-none py-1">
             {/* Enlarged dimensions to render English & Arabic subtexts cleanly */}
             <div className="relative w-52 h-12 sm:w-64 sm:h-14 md:w-72 md:h-16 flex items-center justify-start transition-transform duration-300 group-hover:scale-[1.02] will-change-transform">
+              
+              {/* Soft White Radial Light Glow behind logo text */}
+              <div 
+                className="absolute inset-0 -z-10 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/35 via-white/10 to-transparent blur-md pointer-events-none transform scale-110" 
+                aria-hidden="true" 
+              />
+
               <Image 
                 src="/logo.svg" 
                 alt="Emrald Ace Logo" 
                 width={400} 
                 height={100} 
-                className="object-contain object-left w-full h-full transform-gpu"
+                className="object-contain object-left w-full h-full transform-gpu relative z-10"
                 priority
                 unoptimized
               />
@@ -216,12 +223,16 @@ export default function Header() {
           <div>
             <div className="flex items-center justify-between px-5 pt-4 pb-4 border-b border-white/5">
               <div className="relative w-52 h-12 flex items-center justify-start">
+                <div 
+                  className="absolute inset-0 -z-10 rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/30 via-white/5 to-transparent blur-md pointer-events-none" 
+                  aria-hidden="true" 
+                />
                 <Image 
                   src="/logo.png" 
                   alt="Emrald Ace Logo" 
                   width={300} 
                   height={80} 
-                  className="object-contain object-left w-full h-full transform-gpu"
+                  className="object-contain object-left w-full h-full transform-gpu relative z-10"
                   priority
                   unoptimized
                 />

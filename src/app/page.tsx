@@ -73,7 +73,7 @@ export default async function Home() {
   const coreServices = [
     { 
       title: "Integrated Facility Management", 
-      image: "/integrated-facility-management.webp",
+      image: "/inegrated-facility-management-cleaning.webp",
       desc: "Bringing engineering maintenance, daily workplace operations, and technical management together under one reliable team." 
     },
     { 
@@ -98,7 +98,7 @@ export default async function Home() {
     },
     { 
       title: "Specialized Infrastructure Services", 
-      image: "/specialized-infrastructure.webp",
+      image: "/specialized-service-cctv.webp",
       desc: "Smart parking barriers, CCTV security networks, durable epoxy floor coatings, and professional commercial waterproofing." 
     }
   ];
@@ -273,25 +273,25 @@ export default async function Home() {
           </video>
         </div>
 
-        {/* Multi-tier Gradient Overlay for High Contrast Text */}
-        <div className="absolute inset-0 bg-slate-950/40 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/90 z-10 pointer-events-none" />
+        {/* Adjusted Multi-tier Gradient Overlay for Higher Video Brightness and Whitened Top Bar Area */}
+        <div className="absolute inset-0 bg-slate-950/20 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/30 via-transparent to-slate-950/80 z-10 pointer-events-none" />
 
         {/* Hero Interactive Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full space-y-5 sm:space-y-6 my-auto pt-16 sm:pt-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 backdrop-blur-md text-blue-300 text-xs sm:text-sm font-semibold tracking-wide">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-300/40 backdrop-blur-md text-blue-200 text-xs sm:text-sm font-semibold tracking-wide drop-shadow-md">
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
             Premier MEP & Facility Engineering in UAE
           </div>
           
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.25] text-white max-w-4xl mx-auto drop-shadow-2xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.25] text-white max-w-4xl mx-auto drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
             Integrated Facility Management <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-200 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               & MEP Services in UAE
             </span>
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow-md px-2">
+          <p className="text-sm sm:text-base md:text-lg text-slate-100 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] px-2">
             Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across all over UAE.
           </p>
 
@@ -326,9 +326,14 @@ export default async function Home() {
             <div className="lg:col-span-7 space-y-6">
               <div>
                 <span className="text-xs font-extrabold text-blue-400 uppercase tracking-widest block mb-1">About Emrald Ace</span>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight leading-snug">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight leading-snug mb-3">
                   How Does MEP Engineering Support Integrated Facility Management?
                 </h2>
+                
+                {/* Repositioned Paragraph Directly Below About Emrald Ace Title */}
+                <p className="text-xs sm:text-base text-slate-300 font-normal leading-relaxed mt-2">
+                  Since 2014, Emrald Ace General Contracting & Electromechanical L.L.C. has maintained an unbroken track record across all over the UAE. We engineer, maintain, and upgrade physical spaces with high precision and transparency.
+                </p>
               </div>
 
               {/* Definition Block */}
@@ -337,10 +342,6 @@ export default async function Home() {
                   Mechanical, Electrical, and Plumbing (MEP) engineering forms the core physical infrastructure of modern real estate. When integrated with facility operations, it guarantees optimized energy consumption, continuous asset performance, and preventive risk management.
                 </p>
               </div>
-
-              <p className="text-xs sm:text-base text-slate-300 font-normal leading-relaxed">
-                Since 2014, Emrald Ace General Contracting & Electromechanical L.L.C. has maintained an unbroken track record across all over the UAE. We engineer, maintain, and upgrade physical spaces with high precision and transparency.
-              </p>
               
               {/* How We Work Timeline Flow */}
               <div className="space-y-3 pt-2">
