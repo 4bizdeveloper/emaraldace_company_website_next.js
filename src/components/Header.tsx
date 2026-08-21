@@ -228,7 +228,7 @@ export default function Header() {
                   aria-hidden="true" 
                 />
                 <Image 
-                  src="/logo.png" 
+                  src="/logo.svg" 
                   alt="Emrald Ace Logo" 
                   width={300} 
                   height={80} 
