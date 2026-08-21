@@ -5,6 +5,20 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowUpRight, ChevronDown } from 'lucide-react';
+import { Orbitron, Oswald } from 'next/font/google';
+
+// Load custom Google Fonts matching logo typography
+const logoPrimaryFont = Orbitron({
+  subsets: ['latin'],
+  weight: ['800', '900'],
+  display: 'swap',
+});
+
+const logoTaglineFont = Oswald({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  display: 'swap',
+});
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,21 +91,25 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
           
-          {/* Company Identity */}
+          {/* Company Identity with Font Matching Logo */}
           <Link href="/" className="flex items-center space-x-2 md:space-x-3 group focus:outline-none">
-            {/* Expanded width to w-36/w-44 and height to h-10/h-12 for larger display without increasing header height */}
-            <div className="relative w-36 h-10 sm:w-40 sm:h-11 md:w-48 md:h-12 flex items-center justify-start transition-transform duration-300 group-hover:scale-105 will-change-transform">
+            <div className="relative w-8 h-8 md:w-9 md:h-9 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 will-change-transform">
               <Image 
                 src="/logo.svg" 
                 alt="Emrald Ace Logo" 
-                width={200} 
-                height={50} 
-                className="object-contain object-left w-full h-full"
+                width={36} 
+                height={36} 
+                className="object-contain w-full h-full"
                 priority
               />
             </div>
             <div className="flex flex-col">
-
+              <span className={`${logoPrimaryFont.className} text-sm md:text-base font-black tracking-wider leading-none transition-colors duration-300 text-white uppercase`}>
+                EMRALD ACE
+              </span>
+              <span className={`${logoTaglineFont.className} text-[7px] md:text-[8.5px] uppercase tracking-widest font-bold mt-0.5 md:mt-1 block max-w-[210px] sm:max-w-none transition-colors duration-300 text-slate-300 leading-none`}>
+                GENERAL CONTRACTING AND ELECTROMECHANICAL<span className="text-[6.5px] md:text-[7.5px] font-semibold tracking-normal">-LLC-S.P.C</span>
+              </span>
             </div>
           </Link>
 
@@ -217,13 +235,13 @@ export default function Header() {
         >
           <div>
             <div className="flex items-center justify-between px-5 pt-4 pb-4 border-b border-white/5">
-              <div className="relative w-36 h-9 flex items-center justify-start">
+              <div className="relative w-8 h-8 flex items-center justify-center">
                 <Image 
                   src="/logo.png" 
                   alt="Emrald Ace Logo" 
-                  width={160} 
-                  height={40} 
-                  className="object-contain object-left w-full h-full"
+                  width={32} 
+                  height={32} 
+                  className="object-contain w-full h-full"
                   priority
                 />
               </div>
