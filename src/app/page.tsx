@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
-    description: 'Emrald Ace delivers reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across all over the UAE.',
+    description: 'Emrald Ace delivers reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across the UAE.',
     metadataBase: new URL(currentUrl),
     alternates: {
       canonical: './',
@@ -41,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
-      description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across all over the UAE.',
+      description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across the UAE.',
       url: './',
       siteName: 'Emrald Ace General Contracting & Electromechanical L.L.C',
       images: [
@@ -58,7 +58,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
-      description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across all over the UAE.',
+      description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across the UAE.',
       images: ['https://www.emraldace.ae/integrated-engineering-aco-system-uae.webp'],
     },
   };
@@ -135,7 +135,7 @@ export default async function Home() {
     },
     { 
       q: "How are urgent engineering requests handled under an Annual Maintenance Contract?", 
-      a: "Emergency requests follow a strict 4-step SLA response workflow: 1. Instant Logging: Received at our 24/7 central helpdesk. 2. Rapid Dispatch: Emergency engineering team dispatched within 15 minutes. 3. Guaranteed On-Site Arrival: Technicians on-site within 60 minutes across all over the UAE. 4. Containment & Resolution: Immediate physical isolation of fault followed by structural repair." 
+      a: "Emergency requests follow a strict 4-step SLA response workflow: 1. Instant Logging: Received at our 24/7 central helpdesk. 2. Rapid Dispatch: Emergency engineering team dispatched within 15 minutes. 3. Guaranteed On-Site Arrival: Technicians on-site within 60 minutes across the UAE. 4. Containment & Resolution: Immediate physical isolation of fault followed by structural repair." 
     },
     { 
       q: "Who can benefit from Emrald Ace facility management and MEP services?", 
@@ -156,7 +156,7 @@ export default async function Home() {
         "@id": `${baseUrl}/#webpage`,
         "url": `${baseUrl}/`,
         "name": "Integrated Facility Management & MEP Services UAE | Emrald Ace",
-        "description": "Emrald Ace delivers reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across all over the UAE.",
+        "description": "Emrald Ace delivers reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across the UAE.",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "WebSite",
@@ -292,7 +292,7 @@ export default async function Home() {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-slate-100 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] px-2">
-            Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across all over UAE.
+            Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across the UAE.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-3">
@@ -326,14 +326,15 @@ export default async function Home() {
             <div className="lg:col-span-7 space-y-6">
               <div>
                 <span className="text-xs font-extrabold text-blue-400 uppercase tracking-widest block mb-1">About Emrald Ace</span>
+                
+                {/* Placed Text Directly Above Title */}
+                <p className="text-xs sm:text-base text-slate-300 font-normal leading-relaxed mb-3">
+                  Since 2014, Emrald Ace General Contracting & Electromechanical L.L.C. has maintained an unbroken track record across the UAE. We engineer, maintain, and upgrade physical spaces with high precision and transparency.
+                </p>
+
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight leading-snug mb-3">
                   How Does MEP Engineering Support Integrated Facility Management?
                 </h2>
-                
-                {/* Repositioned Paragraph Directly Below About Emrald Ace Title */}
-                <p className="text-xs sm:text-base text-slate-300 font-normal leading-relaxed mt-2">
-                  Since 2014, Emrald Ace General Contracting & Electromechanical L.L.C. has maintained an unbroken track record across all over the UAE. We engineer, maintain, and upgrade physical spaces with high precision and transparency.
-                </p>
               </div>
 
               {/* Definition Block */}
