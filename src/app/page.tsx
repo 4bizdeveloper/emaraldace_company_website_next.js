@@ -278,11 +278,10 @@ export default async function Home() {
 
         {/* Hero Interactive Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full space-y-5 sm:space-y-6 my-auto pt-16 sm:pt-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-300/40 backdrop-blur-md text-blue-200 text-xs sm:text-sm font-semibold tracking-wide drop-shadow-md">
-            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-            Premier MEP & Facility Engineering in UAE
-          </div>
-          
+<div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-900/10 border border-white/20 backdrop-blur-md text-white font-bold text-xs sm:text-sm tracking-wide shadow-lg">
+  <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+  Premier MEP & Facility Engineering in UAE
+</div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.25] text-white max-w-4xl mx-auto drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
             Integrated Facility Management <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-200 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
