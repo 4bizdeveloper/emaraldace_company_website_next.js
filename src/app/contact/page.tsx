@@ -6,7 +6,7 @@ import { Send, CheckCircle2, AlertTriangle, Loader2, ChevronDown } from 'lucide-
 
 export const pageMetadata = {
   title: 'Contact Our Technical Experts | Communications Gateway',
-  description: 'Connect via our secure technical dispatch engine loops. Reach our regional offices, global sales desks or base coordinates in Abu Dhabi.',
+  description: 'Connect via our secure technical dispatch engine loops. Reach our sales desks or engineering coordinates across the UAE.',
   alternates: {
     canonical: '/contact',
   },
@@ -65,17 +65,12 @@ export default function ContactPage() {
             "@context": "https://schema.org",
             "@type": "ContactPage",
             "name": "Contact Emrald Ace",
-            "description": "Connect with our technical electromechanical and contracting experts.",
+            "description": "Connect with our technical electromechanical and contracting experts across the UAE.",
             "mainEntity": {
               "@type": "Organization",
               "name": "Emrald Ace General Contracting & Electromechanical",
-              "telephone": "+97126751747",
-              "email": "sales@emraldace.ae",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Musaffah M-14",
-                "addressLocality": "Abu Dhabi",
-                "postalCode": "91201",
                 "addressCountry": "AE"
               },
               "geo": {
@@ -87,11 +82,14 @@ export default function ContactPage() {
         }}
       />
 
-      {/* Hero Section */}
+      {/* ==========================================
+          ULTRA-MODERN SEO & AI OPTIMIZED HERO SECTION
+         ========================================== */}
       <section 
         className="relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24 md:pt-40 md:pb-28 lg:pt-48 lg:pb-36 bg-slate-950 isolate min-h-[75vh] flex flex-col justify-center items-center border-b-0"
         aria-labelledby="contact-hero-heading"
       >
+        {/* Seamless Masked & Multi-Gradients Image Container - High Visibility Overlay */}
         <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)]">
           <Image
             src="/integrated-facility-management-2.webp"
@@ -103,18 +101,23 @@ export default function ContactPage() {
             aria-hidden="true"
             className="object-cover object-center filter brightness-105 contrast-[1.1] opacity-90 transform scale-105 transition-all duration-1000 ease-out"
           />
+          {/* Subtle Balanced Vignette & Overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950" />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-transparent to-slate-950/85" />
           <div className="absolute inset-0 bg-blue-950/15 mix-blend-overlay" />
         </div>
 
+        {/* Decorative Grid Pattern */}
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#334155_1px,transparent_1px),linear-gradient(to_bottom,#334155_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] opacity-25" />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-12 text-center relative z-10 my-auto">
+          
+          {/* AI Scraper & SEO Optimized Context Tag */}
           <span className="inline-flex items-center rounded-full bg-blue-900/80 backdrop-blur-md px-3.5 py-1.5 sm:px-4 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-blue-200 ring-1 ring-inset ring-blue-400/40 mb-5 sm:mb-6 shadow-lg shadow-black/50">
-            Global Engineering Hub
+            UAE Engineering Hub
           </span>
 
+          {/* H1 Main Heading */}
           <h1 
             id="contact-hero-heading"
             className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-snug sm:leading-tight md:leading-tight lg:leading-tight drop-shadow-xl"
@@ -125,15 +128,18 @@ export default function ContactPage() {
             </span>
           </h1>
 
+          {/* Subtitle/Description - High Contrast Readable Text */}
           <p className="mx-auto mt-5 sm:mt-6 max-w-2xl text-sm sm:text-base md:text-lg text-slate-100 leading-relaxed font-medium drop-shadow-md px-2">
-            Partner with our premier electromechanical and contracting divisions to bring scale, precision, and world-class engineering execution to your upcoming complex developments.
+            Partner with our premier electromechanical and contracting divisions across the UAE to bring scale, precision, and world-class engineering execution to your upcoming complex developments.
           </p>
+
         </div>
 
+        {/* Scroll Down Indicator Component */}
         <div className="relative z-10 pt-6 sm:pt-10 flex flex-col items-center justify-center">
           <button
             onClick={scrollToContent}
-            aria-label="Scroll to contact form"
+            aria-label="Scroll to contact form section"
             className="group flex flex-col items-center space-y-2 text-slate-200 hover:text-white transition-colors duration-300 focus:outline-hidden cursor-pointer"
           >
             <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-slate-200 group-hover:text-blue-300 transition-colors duration-300">
@@ -146,13 +152,15 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
+      {/* ==========================================
+          CONTACT INTERFACE SECTION
+         ========================================== */}
       <section 
         id="contact-interface-section"
         aria-labelledby="contact-heading" 
         className="py-10 sm:py-14 md:py-16 bg-slate-950 font-normal relative z-10 border-none outline-none"
       >
-        <div className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 lg:px-12">
           
           <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-12 text-center">
             <span className="text-xs uppercase tracking-[0.2em] font-bold text-blue-400 block">
@@ -166,7 +174,8 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="bg-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl transition-all duration-300">
+          {/* Premium Light Form Block */}
+          <div className="bg-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl transition-all duration-300 max-w-3xl mx-auto">
             <h3 className="text-xl font-bold tracking-tight text-[#0b63c5] mb-6 sm:mb-8">
               Submit Request 
             </h3>
@@ -190,7 +199,7 @@ export default function ContactPage() {
                   <input 
                     id="phone" type="tel" required name="phone" value={formData.phone} onChange={handleInputChange}
                     className="w-full bg-slate-50 border-2 border-slate-300 hover:border-slate-400 focus:border-[#0b63c5] focus:bg-white rounded-xl p-3 sm:p-3.5 font-medium text-slate-900 placeholder:text-slate-500 transition-all outline-hidden duration-200"
-                    placeholder="+971 2 675 1747"
+                    placeholder="+971 50 000 0000"
                   />
                 </div>
               </div>
@@ -231,6 +240,7 @@ export default function ContactPage() {
                 </div>
               )}
 
+              {/* Symmetrical Action Button */}
               <div className="pt-2 flex justify-start">
                 <button
                   type="submit"
