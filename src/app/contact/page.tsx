@@ -130,7 +130,7 @@ export default function ContactPage() {
 
           {/* Subtitle/Description - High Contrast Readable Text */}
           <p className="mx-auto mt-5 sm:mt-6 max-w-2xl text-sm sm:text-base md:text-lg text-slate-100 leading-relaxed font-medium drop-shadow-md px-2">
-            Partner with our premier electromechanical and contracting divisions across the UAE to bring scale, precision, and world-class engineering execution to your upcoming complex developments.
+            Partner with our premier facility management,electromechanical and contracting divisions across the UAE to bring scale, precision, and world-class engineering execution to your upcoming complex developments.
           </p>
 
         </div>
