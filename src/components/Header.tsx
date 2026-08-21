@@ -69,7 +69,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 w-full h-14 md:h-16 transition-all duration-300 ease-in-out antialiased ${
+        className={`fixed top-0 left-0 right-0 z-50 w-full h-16 md:h-20 transition-all duration-300 ease-in-out antialiased ${
           isTransparent
             ? 'bg-transparent border-b border-transparent shadow-none'
             : 'bg-slate-950/70 backdrop-blur-md border-b border-white/20 shadow-xs'
@@ -78,20 +78,18 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
           
           {/* Company Identity */}
-          <Link href="/" className="flex items-center space-x-2 md:space-x-3 group focus:outline-none">
-            {/* Expanded width to w-36/w-44 and height to h-10/h-12 for larger display without increasing header height */}
-            <div className="relative w-36 h-10 sm:w-40 sm:h-11 md:w-48 md:h-12 flex items-center justify-start transition-transform duration-300 group-hover:scale-105 will-change-transform">
+          <Link href="/" className="flex items-center space-x-2 md:space-x-3 group focus:outline-none py-1">
+            {/* Enlarged dimensions to render English & Arabic subtexts cleanly */}
+            <div className="relative w-52 h-12 sm:w-64 sm:h-14 md:w-72 md:h-16 flex items-center justify-start transition-transform duration-300 group-hover:scale-[1.02] will-change-transform">
               <Image 
                 src="/logo.svg" 
                 alt="Emrald Ace Logo" 
-                width={200} 
-                height={50} 
-                className="object-contain object-left w-full h-full"
+                width={400} 
+                height={100} 
+                className="object-contain object-left w-full h-full transform-gpu"
                 priority
+                unoptimized
               />
-            </div>
-            <div className="flex flex-col">
-
             </div>
           </Link>
 
@@ -217,14 +215,15 @@ export default function Header() {
         >
           <div>
             <div className="flex items-center justify-between px-5 pt-4 pb-4 border-b border-white/5">
-              <div className="relative w-36 h-9 flex items-center justify-start">
+              <div className="relative w-52 h-12 flex items-center justify-start">
                 <Image 
                   src="/logo.png" 
                   alt="Emrald Ace Logo" 
-                  width={160} 
-                  height={40} 
-                  className="object-contain object-left w-full h-full"
+                  width={300} 
+                  height={80} 
+                  className="object-contain object-left w-full h-full transform-gpu"
                   priority
+                  unoptimized
                 />
               </div>
 
@@ -307,7 +306,7 @@ export default function Header() {
       </div>
 
       {/* Dynamic Spacer */}
-      <div className={isTransparent ? 'h-0 hidden' : 'h-14 md:h-16 w-full'} aria-hidden="true" />
+      <div className={isTransparent ? 'h-0 hidden' : 'h-16 md:h-20 w-full'} aria-hidden="true" />
     </>
   );
 }
