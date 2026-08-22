@@ -200,7 +200,7 @@ export default function InteriorFitOutPage() {
             {/* Title & Actions */}
             <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] text-white">
-                Interior Fit-Out Solutions Across the <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-400">UAE</span>
+                Interior Fit-Out Solutions Across<span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-400">UAE</span>
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
                 Functional, modern, and aesthetically pleasing interior environments — expertly designed and delivered for commercial and residential spaces.

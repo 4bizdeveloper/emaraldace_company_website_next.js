@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { 
   ShieldCheck, 
   Award, 
@@ -14,7 +15,8 @@ import {
   Zap,
   Flame,
   Droplet,
-  Activity
+  Activity,
+  ArrowRight
 } from 'lucide-react';
 
 // --- FAQ Accordion Component ---
@@ -191,10 +193,6 @@ export default function MEPPage() {
               ISO 45001 Certified
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 sm:py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-700/80 text-cyan-300 shadow-sm backdrop-blur-md">
-              <Award className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-              UAE Code Compliant
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 sm:py-1.5 rounded-full text-xs font-semibold bg-slate-900/90 border border-slate-700/80 text-cyan-300 shadow-sm backdrop-blur-md">
               <Calendar className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
               Operating Since 2014
             </span>
@@ -206,8 +204,20 @@ export default function MEPPage() {
                 MEP Engineering Contractor in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-cyan-400">the UAE</span>
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-                Integrated Mechanical, Electrical & Plumbing solutions — from site execution to testing and handover across the UAE.
+                Integrated Mechanical, Electrical & Plumbing solutions — from site execution to testing and handover across UAE.
               </p>
+              
+              {/* CTA Button */}
+
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+                <a
+                  href="#contact"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-blue-600 text-white font-semibold text-sm transition-all shadow-lg shadow-[#0b63c5]/30 hover:shadow-[#0b63c5]/50 active:scale-98 flex items-center justify-center gap-2"
+                >
+                  Schedule Consultation
+                  <ArrowRight className="w-4 h-4 shrink-0" />
+                </a>
+              </div>
             </div>
 
             {/* Brightened & High Visibility Hero Image */}
