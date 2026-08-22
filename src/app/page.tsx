@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
-    description: 'Emrald Ace delivers reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across the UAE.',
+    description: 'Emrald Ace delivers reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions all over UAE.',
     metadataBase: new URL(currentUrl),
     alternates: {
       canonical: './',
@@ -41,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
-      description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across the UAE.',
+      description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions all over UAE.',
       url: './',
       siteName: 'Emrald Ace General Contracting & Electromechanical L.L.C',
       images: [
@@ -58,7 +58,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: 'Integrated Facility Management & MEP Services UAE | Emrald Ace',
-      description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across the UAE.',
+      description: 'Reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions all over UAE.',
       images: ['https://www.emraldace.ae/integrated-engineering-aco-system-uae.webp'],
     },
   };
@@ -129,12 +129,12 @@ export default async function Home() {
 
   const faqs = [
     { 
-      q: "What is Integrated Facility Management and what sectors does Emrald Ace support in the UAE?", 
+      q: "What is Integrated Facility Management and what sectors does Emrald Ace support in UAE?", 
       a: "Integrated Facility Management (IFM) is the unified management of building engineering, electromechanical upkeep, and daily facility operations under a single team. Key sectors supported include: Commercial offices and towers, Residential communities, Healthcare facilities and medical centers, Hotels and hospitality venues, Retail hubs and shopping malls, Industrial warehouses and plants." 
     },
     { 
       q: "How are urgent engineering requests handled under an Annual Maintenance Contract?", 
-      a: "Emergency requests follow a strict SLA response workflow: 1. Instant Logging: Received at our 24/7 central helpdesk. 2. Rapid Dispatch: Emergency engineering team dispatched within 15 minutes. 3. Guaranteed On-Site Arrival: Technicians on-site within 60 minutes across the UAE. 4. Containment & Resolution: Immediate physical isolation of fault followed by structural repair." 
+      a: "Emergency requests follow a strict SLA response workflow: 1. Instant Logging: Received at our 24/7 central helpdesk. 2. Rapid Dispatch: Emergency engineering team dispatched within 15 minutes. 3. Guaranteed On-Site Arrival: Technicians on-site within 60 minutes all over UAE. 4. Containment & Resolution: Immediate physical isolation of fault followed by structural repair." 
     },
     { 
       q: "Who can benefit from Emrald Ace facility management and MEP services?", 
@@ -155,7 +155,7 @@ export default async function Home() {
         "@id": `${baseUrl}/#webpage`,
         "url": `${baseUrl}/`,
         "name": "Integrated Facility Management & MEP Services UAE | Emrald Ace",
-        "description": "Emrald Ace delivers reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions across the UAE.",
+        "description": "Emrald Ace delivers reliable Integrated Facility Management, MEP Engineering, and Interior Fit-Out solutions all over UAE.",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "WebSite",
@@ -290,7 +290,7 @@ export default async function Home() {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-slate-100 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] px-2">
-            Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions across the UAE.
+            Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions all over UAE.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-3">
@@ -304,7 +304,7 @@ export default async function Home() {
 
             <Link 
               href="/about" 
-              className="w-full sm:w-auto min-w-[160px] max-w-[220px] px-6 py-3 sm:px-8 sm:py-3.5 bg-slate-900/80 hover:bg-slate-900 text-slate-100 font-semibold rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all text-center text-sm sm:text-base flex items-center justify-center gap-2"
+              className="w-full sm:w-auto min-w-[160px] max-w-[220px] px-6 py-3 sm:px-8 sm:py-3.5 bg-slate-900/80 hover:bg-slate-900 text-slate-100 font-semibold rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all text-center text-sm sm:text-base flex items-center justify-center gap-2 group"
             >
               <span>About Us</span>
               <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
@@ -326,7 +326,7 @@ export default async function Home() {
                 <span className="text-xs font-extrabold text-blue-400 uppercase tracking-widest block mb-1">About Emrald Ace</span>
                 
                 <p className="text-xs sm:text-base text-slate-300 font-normal leading-relaxed mb-3">
-                  Since 2014, Emrald Ace General Contracting & Electromechanical L.L.C. has maintained an unbroken track record across the UAE. We engineer, maintain, and upgrade physical spaces with high precision and transparency.
+                  Since 2014, Emrald Ace General Contracting & Electromechanical L.L.C. has maintained an unbroken track record all over UAE. We engineer, maintain, and upgrade physical spaces with high precision and transparency.
                 </p>
 
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight leading-snug mb-3">
@@ -386,7 +386,7 @@ export default async function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 text-xs font-medium text-slate-200 bg-slate-950/80 p-3 rounded-xl border border-slate-800 backdrop-blur-md">
-                  Real-World Execution: Commercial MEP Maintenance in the UAE
+                  Real-World Execution: Commercial MEP Maintenance in UAE
                 </div>
               </div>
 
@@ -407,7 +407,7 @@ export default async function Home() {
                   </li>
                   <li className="p-3 bg-slate-950/80 rounded-2xl border border-slate-800/80">
                     <span className="block text-xl sm:text-2xl font-extrabold text-white">150+</span>
-                    <span className="text-[10px] text-slate-400 uppercase font-semibold">Major Skilled Staff</span>
+                    <span className="text-[10px] text-slate-400 uppercase font-semibold">Skilled Staff</span>
                   </li>
                   <li className="p-3 bg-slate-950/80 rounded-2xl border border-slate-800/80">
                     <span className="block text-xl sm:text-2xl font-extrabold text-white">7/7</span>
@@ -572,7 +572,7 @@ export default async function Home() {
             <div className="lg:col-span-6 space-y-5">
               <span className="text-xs font-extrabold text-sky-400 uppercase tracking-widest block">Industries We Serve</span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight">
-                Which Business Sectors Do We Support Across the UAE?
+                Which Business Sectors Do We Support All Over UAE?
               </h2>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                 Our multi-disciplinary teams deliver tailored preventive maintenance, quick emergency dispatch, and complex engineering upgrades across diverse commercial environments:

@@ -19,13 +19,13 @@ import {
 
 export const metadata: Metadata = {
   title: 'About Emrald Ace | ISO 45001 Certified FM Contractor',
-  description: 'Emrald Ace is an ISO 45001:2018 certified electromechanical and facility management contractor operating across the UAE.',
+  description: 'Emrald Ace is an ISO 45001:2018 certified electromechanical and facility management contractor operating across UAE.',
   alternates: {
     canonical: '/about',
   },
   openGraph: {
     title: 'About Emrald Ace | ISO 45001 Certified FM Contractor',
-    description: 'Emrald Ace is an ISO 45001:2018 certified electromechanical and facility management contractor operating across the UAE.',
+    description: 'Emrald Ace is an ISO 45001:2018 certified electromechanical and facility management contractor operating across UAE.',
     url: '/about',
     siteName: 'Emrald Ace',
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'About Emrald Ace | ISO 45001 Certified FM Contractor',
-    description: 'Emrald Ace is an ISO 45001:2018 certified electromechanical and facility management contractor operating across the UAE.',
+    description: 'Emrald Ace is an ISO 45001:2018 certified electromechanical and facility management contractor operating across UAE.',
     images: ['/og-about.jpg'],
   },
 };
@@ -70,7 +70,7 @@ export default function About() {
             'name': 'ISO 45001:2018 Occupational Health and Safety Management Systems'
           }
         ],
-        'description': 'ISO 45001:2018 certified engineering and integrated facilities management contractor operating across the UAE.',
+        'description': 'ISO 45001:2018 certified engineering and integrated facilities management contractor operating across UAE.',
         'knowsAbout': [
           'Integrated Facility Management',
           'Electromechanical Contracting',
@@ -102,7 +102,7 @@ export default function About() {
         '@id': '/about/#webpage',
         'url': '/about',
         'name': 'About Emrald Ace | ISO 45001 Certified FM Contractor',
-        'description': 'Discover Emrald Ace, an ISO 45001:2018 certified facility management contractor in the UAE delivering MEP engineering, HVAC maintenance, and commercial contracting.',
+        'description': 'Discover Emrald Ace, an ISO 45001:2018 certified facility management contractor in UAE delivering MEP engineering, HVAC maintenance, and commercial contracting.',
         'inLanguage': 'en-US',
         'publisher': {
           '@id': '/#organization'
@@ -135,7 +135,7 @@ export default function About() {
         'mainEntity': [
           {
             '@type': 'Question',
-            'name': 'What is Emrald Ace and what certifications does it hold in the UAE?',
+            'name': 'What is Emrald Ace and what certifications does it hold in UAE?',
             'acceptedAnswer': {
               '@type': 'Answer',
               'text': 'Emrald Ace is a UAE-based electromechanical and facilities management contractor holding official ISO 45001:2018 Occupational Health & Safety certification.'
@@ -151,7 +151,7 @@ export default function About() {
           },
           {
             '@type': 'Question',
-            'name': 'Why choose an ISO 45001 certified contractor in the UAE?',
+            'name': 'Why choose an ISO 45001 certified contractor in UAE?',
             'acceptedAnswer': {
               '@type': 'Answer',
               'text': 'An ISO 45001:2018 certified contractor guarantees adherence to international safety standards, regulatory compliance, and reduced operational risk across commercial properties.'
@@ -162,7 +162,7 @@ export default function About() {
             'name': 'What response times does Emrald Ace guarantee under Annual Maintenance Contracts (AMC)?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Emrald Ace offers defined Service Level Agreements (SLAs) with rapid 24/7 emergency response teams available across all UAE emirates.'
+              'text': 'Emrald Ace offers defined Service Level Agreements (SLAs) with rapid 24/7 emergency response teams available across UAE.'
             }
           },
           {
@@ -212,7 +212,7 @@ export default function About() {
               itemProp="description"
               className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl"
             >
-              ISO 45001:2018 certified engineering and integrated facilities management contractor delivering electromechanical, maintenance, and facility solutions across the entire UAE.
+              ISO 45001:2018 certified engineering and integrated facilities management contractor delivering electromechanical, maintenance, and facility solutions all over UAE.
             </p>
           </article>
 
@@ -247,7 +247,7 @@ export default function About() {
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs sm:text-sm text-slate-200 font-medium pt-2">
             <li className="flex items-start gap-2 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800">
               <Check className="w-4 h-4 text-[#FF6A00] flex-shrink-0 mt-0.5" />
-              <span><strong>Who We Are:</strong> Leading UAE contractor providing Integrated Facilities Management (IFM) & MEP Contracting since 2014.</span>
+              <span><strong>Who We Are:</strong> Premier UAE contractor providing Integrated Facilities Management (IFM) & MEP Contracting since 2014.</span>
             </li>
             <li className="flex items-start gap-2 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800">
               <Check className="w-4 h-4 text-[#FF6A00] flex-shrink-0 mt-0.5" />
@@ -260,7 +260,7 @@ export default function About() {
           </ul>
 
           <p className="text-sm sm:text-base text-slate-200 leading-relaxed pt-2">
-            Established in 2014, <strong>Emrald Ace General Contracting & Electromechanical L.L.C.</strong> delivers commercial and industrial facility management across all seven Emirates in the United Arab Emirates. The company serves property managers, commercial developers, and public sector clients by providing turn-key MEP engineering, preventative HVAC maintenance, annual maintenance contracts (AMCs), and interior fit-outs under strict ISO 45001 safety guidelines.
+            Established in 2014, <strong>Emrald Ace General Contracting & Electromechanical L.L.C.</strong> delivers commercial and industrial facility management all over UAE. The company serves property managers, commercial developers, and public sector clients by providing turn-key MEP engineering, preventative HVAC maintenance, annual maintenance contracts (AMCs), and interior fit-outs under strict ISO 45001 safety guidelines.
           </p>
         </section>
 
@@ -272,11 +272,11 @@ export default function About() {
           </div>
           <div className="p-4 sm:p-6 text-center bg-slate-900/80 border border-slate-800/80 rounded-2xl shadow-sm hover:border-slate-700 transition-colors">
             <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">150+</div>
-            <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">Skilled Staff Members</div>
+            <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">Skilled Staff</div>
           </div>
           <div className="p-4 sm:p-6 text-center bg-slate-900/80 border border-slate-800/80 rounded-2xl shadow-sm hover:border-slate-700 transition-colors">
-            <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">150+</div>
-            <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">Projects Delivered</div>
+            <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">160+</div>
+            <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">Major Projects</div>
           </div>
           <div className="p-4 sm:p-6 text-center bg-slate-900/80 border border-slate-800/80 rounded-2xl shadow-sm hover:border-slate-700 transition-colors col-span-2 sm:col-span-1">
             <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">100%</div>
@@ -304,14 +304,83 @@ export default function About() {
           
           <div className="lg:col-span-8 space-y-3 sm:space-y-4">
             <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              Chairman's Message: Building Lasting Partnerships Through Excellence
+              Chairman's Message: Building Lasting Partnerships Through Service Excellence, Across UAE
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-              Welcome to Emrald Ace General Contracting & Electromechanical L.L.C., where engineering expertise meets operational excellence. Since our establishment, we have built our reputation by delivering reliable facility management, maintenance, and engineering solutions that create long-term value for our clients. Today, our organization has evolved into a trusted provider of Integrated Facility Management, Annual Maintenance Contracts, and Interior Fit-Out, supported by strong MEP Engineering and General Contracting capabilities across the UAE.
+              Welcome to Emrald Ace General Contracting & Electromechanical L.L.C., where engineering expertise meets operational excellence. Since our establishment, we have built our reputation by delivering reliable facility management, maintenance, and engineering solutions that create long-term value for our clients. Today, our organization has evolved into a trusted provider of Integrated Facility Management, Annual Maintenance Contracts, and Interior Fit-Out, supported by strong MEP Engineering and General Contracting capabilities across UAE.
             </p>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
               We understand that modern facilities demand more than routine maintenance—they require intelligent planning, technical expertise, proactive management, and a commitment to continuous improvement. Our experienced team works closely with clients to provide customized solutions that improve operational efficiency, extend asset life, and create safe, productive environments.
             </p>
+          </div>
+        </section>
+
+        {/* Vision and Mission Section */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+          <div className="p-6 sm:p-8 bg-slate-900/60 border border-[#0B63C5]/20 rounded-3xl space-y-4 hover:border-[#0B63C5]/40 transition-colors">
+            <div className="w-12 h-12 bg-[#0B63C5] rounded-2xl flex items-center justify-center text-white shadow-lg shadow-[#0B63C5]/20">
+              <Compass className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold text-white">Our Vision</h3>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              To become one of UAE's most trusted providers of integrated facility management solutions by delivering excellence, innovation, sustainability, and customer satisfaction metrics.
+            </p>
+          </div>
+
+          <div className="p-6 sm:p-8 bg-slate-900/60 border border-[#FF6A00]/20 rounded-3xl space-y-4 hover:border-[#FF6A00]/40 transition-colors">
+            <div className="w-12 h-12 bg-[#FF6A00] rounded-2xl flex items-center justify-center text-white shadow-lg shadow-[#FF6A00]/20">
+              <Layers className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold text-white">Our Mission</h3>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              To provide reliable, cost-effective, and innovative facility management solutions that maximize asset performance while creating safe, productive, and sustainable environments through engineering excellence and continuous improvement.
+            </p>
+          </div>
+        </section>
+
+        {/* Core Corporate Values Section */}
+        <section className="pt-2">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-2">
+            <span className="text-xs uppercase tracking-widest font-extrabold text-[#FF6A00]">Foundational Standards</span>
+            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">Our Corporate Values</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="p-5 sm:p-6 bg-slate-900/80 border border-slate-800/80 rounded-2xl flex gap-4 items-start hover:border-slate-700 transition-colors">
+              <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 text-[#38bdf8] flex-shrink-0">
+                <Award className="w-5 h-5" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-bold text-white text-base">Excellence</h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                  Delivering unmatched quality without technical or operational compromises.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-5 sm:p-6 bg-slate-900/80 border border-slate-800/80 rounded-2xl flex gap-4 items-start hover:border-slate-700 transition-colors">
+              <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 text-[#38bdf8] flex-shrink-0">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-bold text-white text-base">Safety First</h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                  Proactively protecting personnel, physical properties, and the environment under ISO 45001:2018 guidelines.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-5 sm:p-6 bg-slate-900/80 border border-slate-800/80 rounded-2xl flex gap-4 items-start hover:border-slate-700 transition-colors sm:col-span-2 lg:col-span-1">
+              <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 text-[#38bdf8] flex-shrink-0">
+                <Building className="w-5 h-5" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-bold text-white text-base">Sustainability</h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                  Creating enduring structural value through smart resource operations.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -413,7 +482,7 @@ export default function About() {
             <h2 className="text-2xl sm:text-3xl font-black text-white">ISO 45001 Certification & UAE Regulatory Standards</h2>
           </div>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            ISO 45001:2018 sets international benchmarks for occupational health and safety. For clients operating across the UAE, working with an ISO certified contractor offers distinct regulatory and operational benefits:
+            ISO 45001:2018 sets international benchmarks for occupational health and safety. For clients operating across UAE, working with an ISO certified contractor offers distinct regulatory and operational benefits:
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-200">
             <li className="flex items-start gap-2.5 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800">
@@ -422,78 +491,9 @@ export default function About() {
             </li>
             <li className="flex items-start gap-2.5 bg-slate-950/60 p-3.5 rounded-xl border border-slate-800">
               <TrendingUp className="w-5 h-5 text-[#38bdf8] flex-shrink-0 mt-0.5" />
-              <span><strong>Regulatory Alignment:</strong> Fully compliant with local health and safety authority regulations across the UAE.</span>
+              <span><strong>Regulatory Alignment:</strong> Fully compliant with local health and safety authority regulations across UAE.</span>
             </li>
           </ul>
-        </section>
-
-        {/* Vision and Mission Grid */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
-          <div className="p-6 sm:p-8 bg-slate-900/60 border border-[#0B63C5]/20 rounded-3xl space-y-4 hover:border-[#0B63C5]/40 transition-colors">
-            <div className="w-12 h-12 bg-[#0B63C5] rounded-2xl flex items-center justify-center text-white shadow-lg shadow-[#0B63C5]/20">
-              <Compass className="w-6 h-6" />
-            </div>
-            <h3 className="text-xl font-bold text-white">Our Vision</h3>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-              To become one of the UAE's most trusted providers of integrated facility management solutions by delivering excellence, innovation, sustainability, and customer satisfaction metrics.
-            </p>
-          </div>
-
-          <div className="p-6 sm:p-8 bg-slate-900/60 border border-[#FF6A00]/20 rounded-3xl space-y-4 hover:border-[#FF6A00]/40 transition-colors">
-            <div className="w-12 h-12 bg-[#FF6A00] rounded-2xl flex items-center justify-center text-white shadow-lg shadow-[#FF6A00]/20">
-              <Layers className="w-6 h-6" />
-            </div>
-            <h3 className="text-xl font-bold text-white">Our Mission</h3>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-              To provide reliable, cost-effective, and innovative facility management solutions that maximize asset performance while creating safe, productive, and sustainable environments through engineering excellence and continuous improvement.
-            </p>
-          </div>
-        </section>
-
-        {/* Core Values Section */}
-        <section className="pt-4">
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-2">
-            <span className="text-xs uppercase tracking-widest font-extrabold text-[#FF6A00]">Foundational Standards</span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">Our Core Corporate Values</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            <div className="p-5 sm:p-6 bg-slate-900/80 border border-slate-800/80 rounded-2xl flex gap-4 items-start hover:border-slate-700 transition-colors">
-              <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 text-[#38bdf8] flex-shrink-0">
-                <Award className="w-5 h-5" />
-              </div>
-              <div className="space-y-1">
-                <h3 className="font-bold text-white text-base">Excellence</h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                  Delivering unmatched quality without technical or operational compromises.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-5 sm:p-6 bg-slate-900/80 border border-slate-800/80 rounded-2xl flex gap-4 items-start hover:border-slate-700 transition-colors">
-              <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 text-[#38bdf8] flex-shrink-0">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div className="space-y-1">
-                <h3 className="font-bold text-white text-base">Safety First</h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                  Proactively protecting personnel, physical properties, and the environment under ISO 45001:2018 guidelines.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-5 sm:p-6 bg-slate-900/80 border border-slate-800/80 rounded-2xl flex gap-4 items-start hover:border-slate-700 transition-colors sm:col-span-2 lg:col-span-1">
-              <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 text-[#38bdf8] flex-shrink-0">
-                <Building className="w-5 h-5" />
-              </div>
-              <div className="space-y-1">
-                <h3 className="font-bold text-white text-base">Sustainability</h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                  Creating enduring structural value through smart resource operations.
-                </p>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* FAQ Section */}
@@ -506,11 +506,11 @@ export default function About() {
           <div className="space-y-4">
             <details className="group bg-slate-950 border border-slate-800 p-4 sm:p-5 rounded-2xl [&_summary::-webkit-details-marker]:none">
               <summary className="flex items-center justify-between cursor-pointer font-bold text-white text-sm sm:text-base">
-                What is Emrald Ace and what certifications does it hold in the UAE?
+                What is Emrald Ace and what certifications does it hold in UAE?
                 <ChevronDown className="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform" />
               </summary>
               <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Emrald Ace is a facilities management and electromechanical contractor holding certified ISO 45001:2018 compliance operating across the United Arab Emirates.
+                Emrald Ace is a facilities management and electromechanical contractor holding certified ISO 45001:2018 compliance operating across UAE.
               </p>
             </details>
 
@@ -526,7 +526,7 @@ export default function About() {
 
             <details className="group bg-slate-950 border border-slate-800 p-4 sm:p-5 rounded-2xl [&_summary::-webkit-details-marker]:none">
               <summary className="flex items-center justify-between cursor-pointer font-bold text-white text-sm sm:text-base">
-                Why choose an ISO 45001 certified contractor in the UAE?
+                Why choose an ISO 45001 certified contractor in UAE?
                 <ChevronDown className="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform" />
               </summary>
               <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
@@ -540,7 +540,7 @@ export default function About() {
                 <ChevronDown className="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform" />
               </summary>
               <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Emrald Ace offers defined Service Level Agreements (SLAs) with rapid 24/7 emergency response teams available across all UAE emirates to minimize equipment downtime.
+                Emrald Ace offers defined Service Level Agreements (SLAs) with rapid 24/7 emergency response teams available across UAE to minimize equipment downtime.
               </p>
             </details>
 
