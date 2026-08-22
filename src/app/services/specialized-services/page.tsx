@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { 
   ShieldCheck, 
-  Award, 
   Calendar, 
   Building2,
   Lock,
@@ -12,9 +11,7 @@ import {
   Sparkles,
   CheckCircle2,
   ChevronDown,
-  ArrowRight,
-  Phone,
-  Mail
+  ArrowRight
 } from 'lucide-react';
 
 // --- FAQ Accordion Component ---
@@ -85,94 +82,91 @@ export default function SpecializedServicesPage() {
       "@type": "Organization",
       "name": "Emrald Ace General Contracting & Electromechanical",
       "url": "https://www.emraldace.com",
-      "telephone": "+971528976025",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Musaffah",
-        "addressRegion": "Abu Dhabi",
         "addressCountry": "UAE"
       }
     },
-    "areaServed": ["Abu Dhabi", "Dubai", "United Arab Emirates"],
-    "description": "Specialized facility services in Abu Dhabi, UAE — CCTV, parking access control, automatic gates, waterproofing, epoxy flooring, artificial turf, landscaping, and exterior structural maintenance."
+    "areaServed": ["United Arab Emirates", "Abu Dhabi", "Dubai", "Sharjah"],
+    "description": "Specialized facility services across the UAE — CCTV, parking access control, automatic gates, waterproofing, epoxy flooring, artificial turf, landscaping, and exterior structural maintenance."
   };
 
   const smartAccessItems = [
     {
       title: "Parking Access Control",
-      desc: "Automated systems (barriers, ticketing, license plate recognition) that manage vehicle entry and exit in parking facilities, improving security and traffic flow."
+      desc: "Automated systems including barriers, ticketing, and license plate recognition to efficiently manage vehicle entry and exit while strengthening security."
     },
     {
       title: "Automatic & Remote Control Gates",
-      desc: "Installation of motorized gates operated via remote control or automated triggers, for both vehicular and pedestrian access points, improving convenience and site security."
+      desc: "Motorized gates operated via remote control or automated triggers for vehicular and pedestrian access points, enhancing access control and safety."
     },
     {
       title: "CCTV Systems",
-      desc: "Design and installation of surveillance camera networks covering entry points, common areas, and perimeters, with recording and monitoring setup tailored to the facility's security needs."
+      desc: "Comprehensive surveillance camera networks covering entry points, perimeters, and common areas, equipped with customized monitoring solutions."
     }
   ];
 
   const outdoorSurfaceItems = [
     {
       title: "Waterproofing",
-      desc: "Application of waterproofing membranes and treatments to roofs, terraces, basements, and other exposed structures to prevent water ingress and long-term structural damage."
+      desc: "Advanced waterproofing membranes and protective coatings for roofs, basements, and exposed structures to prevent moisture infiltration."
     },
     {
       title: "Epoxy Flooring",
-      desc: "Installation of durable, chemical-resistant epoxy flooring suited to industrial facilities, warehouses, and commercial spaces requiring high-traffic, easy-to-clean surfaces."
+      desc: "High-durability, chemical-resistant epoxy floor coatings engineered for industrial facilities, commercial spaces, and high-traffic areas."
     },
     {
       title: "Artificial Turf & Landscaping",
-      desc: "Installation of artificial turf for outdoor and recreational areas, combined with landscaping services covering planting, irrigation, and grounds maintenance for a finished exterior look."
+      desc: "Premium artificial turf installations alongside full-scope softscaping and grounds maintenance for long-lasting outdoor aesthetic appeal."
     },
     {
       title: "Exterior Structural Repairs & Coatings",
-      desc: "Comprehensive facade preservation, anti-carbonation coatings, concrete restoration, and protective sealant applications engineered to extend building lifespan under harsh UAE climates."
+      desc: "Facade restoration, concrete repair, anti-carbonation treatments, and protective sealants designed to endure harsh regional climates."
     }
   ];
 
   const whyChooseUs = [
-    "Smart Access & Outdoor expertise under one team",
-    "Experienced engineering and security professionals",
-    "Customized service plans per project",
-    "Preventive, planned approach to every job",
-    "Advanced automation technologies",
-    "Fast emergency response",
-    "Transparent reporting & client communication",
-    "Safety-driven, ISO 45001-certified operations",
-    "Sustainable, quality-assured practices",
-    "Single point of accountability, start to finish"
+    "Smart Access & Outdoor expertise consolidated under one team",
+    "Highly qualified engineering and technical specialists",
+    "Customized service execution plans for every site",
+    "Preventive, planned approach ensuring long-term asset value",
+    "Integration of modern automation technologies",
+    "Rapid response for critical operations and support",
+    "Transparent reporting and clear client communication",
+    "Safety-driven, ISO 45001-certified operational standards",
+    "Sustainable and quality-assured service delivery",
+    "Single point of accountability from consultation to completion"
   ];
 
   const steps = [
-    { num: "01", title: "Site Assessment", desc: "We evaluate scope, condition and requirements on site" },
-    { num: "02", title: "Proposal & Plan", desc: "A tailored scope, schedule and cost estimate" },
-    { num: "03", title: "Mobilization", desc: "Dedicated team, materials and permits arranged" },
-    { num: "04", title: "Delivery & Handover", desc: "Work executed, quality-checked and signed off" }
+    { num: "01", title: "Site Assessment", desc: "We evaluate structural conditions, site requirements, and project scope on location." },
+    { num: "02", title: "Proposal & Plan", desc: "A detailed operational scope, implementation schedule, and transparent estimate are structured." },
+    { num: "03", title: "Mobilization", desc: "Dedicated personnel, heavy equipment, and material resources are deployed." },
+    { num: "04", title: "Delivery & Handover", desc: "Execution is completed to strict quality standards and handed over following full inspection." }
   ];
 
   const industries = [
-    "Commercial Offices", "Residential Communities", "Healthcare", 
-    "Hotels", "Retail", "Industrial", 
-    "Government", "Warehouse", "Education"
+    "Commercial Offices", "Residential Communities", "Healthcare Facilities", 
+    "Hospitality & Hotels", "Retail Centers", "Industrial Sites", 
+    "Government Entities", "Warehouses & Logistics", "Educational Institutions"
   ];
 
   const faqs = [
     {
       q: "What specialized services does Emrald Ace offer?",
-      a: "Parking access control, automatic gates, remote control gates, CCTV systems, artificial turf installation, waterproofing, epoxy flooring, exterior structural repairs, smart building solutions, and landscaping."
+      a: "Emrald Ace provides parking access control, automated gates, CCTV surveillance networks, waterproofing, epoxy flooring, exterior structural repairs, smart building systems, and professional landscaping."
     },
     {
-      q: "Does Emrald Ace install CCTV and access control systems?",
-      a: "Yes, CCTV systems and parking access control are part of Emrald Ace's Specialized Services."
+      q: "Does Emrald Ace deliver services across all emirates in the UAE?",
+      a: "Yes, our specialized engineering and technical teams deliver turnkey services to commercial, industrial, and residential facilities across the entire UAE."
     },
     {
-      q: "Does Emrald Ace provide waterproofing, epoxy flooring, and exterior repairs?",
-      a: "Yes — waterproofing, epoxy flooring, and exterior structural treatments are fully included in the Specialized Services scope."
+      q: "Are these services available as standalone projects?",
+      a: "Yes, our specialized solutions can be executed as standalone turnkey projects or integrated within broader Annual Maintenance Contracts (AMC)."
     },
     {
-      q: "Are these services available as standalone projects or only with facility management contracts?",
-      a: "Specialized Services can be delivered as standalone projects or combined with Emrald Ace's Integrated Facility Management and Annual Maintenance Contracts."
+      q: "How do outdoor coating and waterproofing systems withstand UAE weather?",
+      a: "We utilize industrial-grade, weather-resilient membranes, anti-carbonation coatings, and UV-stabilized materials engineered specifically for harsh environmental conditions."
     }
   ];
 
@@ -196,10 +190,6 @@ export default function SpecializedServicesPage() {
               ISO 45001:2018 Certified
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-900/90 border border-slate-700 text-slate-200 shadow-sm backdrop-blur-md">
-              <Award className="w-3.5 h-3.5 text-cyan-400" />
-              UAE Trade Licensed
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-900/90 border border-slate-700 text-slate-200 shadow-sm backdrop-blur-md">
               <Calendar className="w-3.5 h-3.5 text-cyan-400" />
               Operating Since 2014
             </span>
@@ -211,23 +201,16 @@ export default function SpecializedServicesPage() {
                 Specialized Services — Smart Access, Automation & Outdoor Solutions
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-                Parking access control, automatic gates, CCTV, waterproofing, epoxy flooring, landscaping, and exterior protective solutions — for every facility across the UAE.
+                Parking access control, automatic gates, CCTV networks, waterproofing, epoxy flooring, landscaping, and exterior structural treatments for properties across the UAE.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2.5 sm:gap-4 pt-2">
                 <a
                   href="#contact"
-                  className="w-full sm:w-auto px-5 py-3 sm:py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0950a0] text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-[#0b63c5]/30 active:scale-95 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0950a0] text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-[#0b63c5]/30 active:scale-95 flex items-center justify-center gap-2"
                 >
-                  Get a Tailored Plan
+                  Explore Solutions
                   <ArrowRight className="w-4 h-4" />
-                </a>
-                <a
-                  href="tel:+971528976025"
-                  className="w-full sm:w-auto px-5 py-3 sm:py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-cyan-400 text-slate-100 font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  +971 52 897 6025
                 </a>
               </div>
             </div>
@@ -236,7 +219,7 @@ export default function SpecializedServicesPage() {
               <div className="relative h-[260px] sm:h-[340px] md:h-[380px] w-full rounded-3xl overflow-hidden border border-slate-700 shadow-2xl group bg-slate-900">
                 <Image
                   src="/specialized-service-1.webp"
-                  alt="Smart Access, Automation & Outdoor Solutions Abu Dhabi"
+                  alt="Smart Access, Automation & Outdoor Solutions UAE"
                   fill
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-95 brightness-105"
@@ -251,8 +234,8 @@ export default function SpecializedServicesPage() {
                     <Building2 className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-300 font-medium">Headquartered in</p>
-                    <p className="text-xs sm:text-sm font-bold text-white">Musaffah, Abu Dhabi, UAE</p>
+                    <p className="text-xs text-slate-300 font-medium">Coverage Area</p>
+                    <p className="text-xs sm:text-sm font-bold text-white">Serving Facilities All Over UAE</p>
                   </div>
                 </div>
               </div>
@@ -262,11 +245,11 @@ export default function SpecializedServicesPage() {
           <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border-y border-slate-800 py-6 sm:py-8 text-center">
             <div>
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">150+</p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Engineering & FM Staff</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Major Skilled Staff</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">150+</p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Projects Delivered</p>
+              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">160+</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Major Projects Delivered</p>
             </div>
             <div>
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">2014</p>
@@ -289,7 +272,7 @@ export default function SpecializedServicesPage() {
               <div className="space-y-2">
                 <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Quick Answer</span>
                 <p className="text-xs sm:text-sm md:text-base text-slate-100 leading-relaxed max-w-5xl">
-                  Emrald Ace's Specialized Services cover <strong className="text-white font-semibold">smart access and automation</strong> (parking access control, automatic and remote gates, CCTV, smart building solutions) and <strong className="text-white font-semibold">outdoor and surface solutions</strong> (waterproofing, epoxy flooring, artificial turf, landscaping, exterior coatings) for facilities across the UAE.
+                  Emrald Ace provides specialized technical solutions across two core pillars: <strong className="text-white font-semibold">Smart Access & Automation</strong> (parking access control, barrier systems, automated gates, and CCTV surveillance) and <strong className="text-white font-semibold">Outdoor & Surface Solutions</strong> (waterproofing, chemical-resistant epoxy flooring, landscaping, artificial turf, and structural protective coatings) throughout the United Arab Emirates.
                 </p>
               </div>
             </div>
@@ -302,8 +285,8 @@ export default function SpecializedServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
           
           <div className="text-center max-w-2xl mx-auto space-y-2.5">
-            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">What's Included in Our Specialized Scope</h2>
-            <p className="text-xs sm:text-sm text-slate-300">Targeted security, automation, and surface treatments engineered for property preservation.</p>
+            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">What's Included in Our Scope</h2>
+            <p className="text-xs sm:text-sm text-slate-300">Targeted security, automation, and surface engineering engineered for asset protection.</p>
           </div>
 
           {/* Smart Access & Automation Block */}
@@ -344,16 +327,16 @@ export default function SpecializedServicesPage() {
               </div>
               <div>
                 <h3 className="text-lg sm:text-2xl font-extrabold text-white">Outdoor & Surface Solutions</h3>
-                <p className="text-xs sm:text-sm text-slate-300">Protective coatings, specialized flooring, outdoor landscaping, and structural sealing</p>
+                <p className="text-xs sm:text-sm text-slate-300">Protective coatings, specialized flooring, grounds landscaping, and structural sealing</p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center my-6 p-5 sm:p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
               <div className="lg:col-span-7 space-y-3 text-center lg:text-left">
-                <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">High-Performance Exterior & Surface Crafting</span>
-                <h4 className="text-base sm:text-xl font-bold text-white">Durable Industrial Coatings & Smart Turf Integration</h4>
+                <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">High-Performance Exterior & Surface Engineering</span>
+                <h4 className="text-base sm:text-xl font-bold text-white">Durable Industrial Coatings & Landscape Enhancement</h4>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  From heavy-duty chemical-resistant epoxy floors in industrial centers to weather-resilient waterproofing systems, protective exterior coatings, and premium artificial turf, our field teams deliver durable transformations tailored to UAE climates.
+                  From heavy-duty chemical-resistant epoxy floors in industrial hubs to weather-resilient waterproofing systems, protective exterior coatings, and artificial turf, our field teams deliver durable transformations tailored to UAE climate conditions.
                 </p>
               </div>
               <div className="lg:col-span-5 space-y-2">
@@ -368,7 +351,7 @@ export default function SpecializedServicesPage() {
                 </div>
                 <div className="text-[11px] sm:text-xs font-semibold text-slate-100 bg-slate-950/90 backdrop-blur-md p-2.5 rounded-lg border border-slate-800 flex items-center justify-center gap-2">
                   <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-                  Weather-Resistant & Heavy-Duty Certified Treatments
+                  Weather-Resilient & Industrial Grade Treatments
                 </div>
               </div>
             </div>
@@ -405,7 +388,7 @@ export default function SpecializedServicesPage() {
               <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">The Advantage</span>
               <h2 className="text-2xl sm:text-4xl font-black text-white">Why Emrald Ace</h2>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Whether deployed as standalone specialty works or incorporated into full Facility Management contracts, our engineering team ensures flawless quality and long-term accountability.
+                Whether executed as standalone projects or integrated into complete Facility Management contracts, our engineering team guarantees reliable standards and single-source accountability.
               </p>
 
               <div className="relative h-[220px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-700 mt-4 sm:mt-6 bg-slate-900">
@@ -437,7 +420,7 @@ export default function SpecializedServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-white">How It Works</h2>
-            <p className="text-xs sm:text-sm text-slate-300">Our structured 4-step deployment process</p>
+            <p className="text-xs sm:text-sm text-slate-300">Our structured 4-step execution framework</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -460,7 +443,7 @@ export default function SpecializedServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="text-center sm:text-left">
             <h2 className="text-xl sm:text-2xl font-black text-white">Industries We Serve</h2>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1">Tailored solutions for sectors across Abu Dhabi & UAE</p>
+            <p className="text-xs sm:text-sm text-slate-300 mt-1">Tailored solutions for sectors across the entire UAE</p>
           </div>
 
           <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3">
@@ -477,8 +460,8 @@ export default function SpecializedServicesPage() {
       <section className="py-12 sm:py-16 bg-slate-950/80 border-t border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
           <div className="text-center space-y-2">
-            <h2 className="text-2xl sm:text-4xl font-black text-white">FAQs</h2>
-            <p className="text-xs sm:text-sm text-slate-300">Everything you need to know about our Specialized Services</p>
+            <h2 className="text-2xl sm:text-4xl font-black text-white">Frequently Asked Questions</h2>
+            <p className="text-xs sm:text-sm text-slate-300">Key details regarding our Specialized Services</p>
           </div>
 
           <div className="divide-y divide-slate-800 rounded-2xl bg-slate-900/60 border border-slate-800 p-4 sm:p-8 backdrop-blur-sm">
@@ -494,31 +477,14 @@ export default function SpecializedServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-[#0b63c5]/30 border border-slate-700 p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
             
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center text-center lg:text-left">
-              <div className="lg:col-span-8 space-y-3 sm:space-y-4">
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+              <div className="space-y-3 sm:space-y-4 max-w-3xl">
                 <h2 className="text-xl sm:text-3xl lg:text-4xl font-black text-white">
                   Get a tailored Specialized Services plan for your property.
                 </h2>
-                <p className="text-xs sm:text-base text-slate-200 max-w-2xl mx-auto lg:mx-0">
-                  Connect with our technical team today to discuss parking automation, security CCTV, surface coatings, or exterior landscaping.
+                <p className="text-xs sm:text-base text-slate-200">
+                  Connect with our technical specialists to organize parking access, security systems, waterproof coatings, or exterior landscaping.
                 </p>
-              </div>
-
-              <div className="lg:col-span-4 flex flex-col space-y-2.5 sm:space-y-3">
-                <a
-                  href="mailto:sales1@emraldace.com"
-                  className="w-full px-5 py-3 sm:py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0950a0] text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-2 shadow-lg active:scale-95"
-                >
-                  <Mail className="w-4 h-4" />
-                  sales1@emraldace.com
-                </a>
-                <a
-                  href="tel:+971528976025"
-                  className="w-full px-5 py-3 sm:py-3.5 rounded-xl bg-slate-950/90 border border-slate-700 hover:border-cyan-400 text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  Call: +971 52 897 6025
-                </a>
               </div>
             </div>
 

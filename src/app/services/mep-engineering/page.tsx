@@ -7,17 +7,10 @@ import {
   Award, 
   Calendar, 
   Wrench, 
-  Sparkles, 
   Cpu, 
   ChevronDown, 
   CheckCircle2, 
-  ArrowRight, 
-  Phone, 
-  Mail, 
   Building2,
-  FolderCheck,
-  MapPin,
-  Check,
   Zap,
   Flame,
   Droplet,
@@ -92,16 +85,13 @@ export default function MEPPage() {
       "@type": "Organization",
       "name": "Emrald Ace General Contracting & Electromechanical",
       "url": "https://www.emraldace.com",
-      "telephone": "+971528976025",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Musaffah",
-        "addressRegion": "Abu Dhabi",
         "addressCountry": "UAE"
       }
     },
-    "areaServed": ["Abu Dhabi", "Dubai", "United Arab Emirates"],
-    "description": "MEP engineering contractor in Abu Dhabi, UAE — electrical, mechanical, HVAC, plumbing, fire fighting & building automation. ISO 45001 certified."
+    "areaServed": "United Arab Emirates",
+    "description": "MEP engineering contractor across the UAE — delivering electrical, mechanical, HVAC, plumbing, fire fighting, and building automation solutions."
   };
 
   const mepIncludedItems = [
@@ -112,12 +102,12 @@ export default function MEPPage() {
     },
     {
       title: "Mechanical Works",
-      desc: "Installation and upkeep of core mechanical infrastructure supporting operational systems, coordinated alongside HVAC and plumbing works.",
+      desc: "Installation and upkeep of core mechanical infrastructure supporting operational systems, fully coordinated alongside HVAC and plumbing works.",
       icon: Wrench
     },
     {
-      title: "HVAC System",
-      desc: "Full-cycle HVAC delivery: design, equipment selection, installation, and commissioning, sized for building occupancy and Gulf climate demands.",
+      title: "HVAC Systems",
+      desc: "Full-cycle HVAC delivery: design, equipment selection, installation, and commissioning, engineered specifically for building occupancy and Gulf climate demands.",
       icon: Cpu
     },
     {
@@ -138,20 +128,20 @@ export default function MEPPage() {
   ];
 
   const whyChooseUs = [
-    "Integrated Mechanical, Electrical & Plumbing expertise",
-    "ISO 45001 certified & safety-first engineering team",
-    "Full UAE Civil Defense compliance for life safety",
-    "Seamless integration with fit-out & general contracting",
+    "Integrated Mechanical, Electrical, and Plumbing expertise",
+    "ISO 45001 certified and safety-first engineering team",
+    "Full UAE Civil Defense compliance for life safety systems",
+    "Seamless integration with fit-out and general contracting",
     "Energy-efficient HVAC design tailored to Gulf climate",
     "Rigorous testing and commissioning prior to handover",
-    "Operating across Abu Dhabi, Dubai, and the broader UAE",
+    "End-to-end service coverage across all seven Emirates",
     "Single point of accountability from design to execution"
   ];
 
   const steps = [
     { num: "01", title: "Site Assessment & Design", desc: "We evaluate load demands, site parameters, and project compliance requirements." },
     { num: "02", title: "Engineering & Procurement", desc: "Detailed system modeling, material selection, and code-aligned design approval." },
-    { num: "03", title: "Installation & Integration", desc: "Execution of electrical, HVAC, plumbing, and fire safety systems on site." },
+    { num: "03", title: "Installation & Integration", desc: "Precision execution of electrical, HVAC, plumbing, and fire safety systems on site." },
     { num: "04", title: "Testing & Handover", desc: "Formal validation, Civil Defense compliance testing, and seamless client sign-off." }
   ];
 
@@ -164,19 +154,19 @@ export default function MEPPage() {
   const faqs = [
     {
       q: "What does MEP stand for and what does Emrald Ace's MEP service include?",
-      a: "MEP stands for Mechanical, Electrical, and Plumbing. Our services cover electrical installation, mechanical works, HVAC systems, plumbing, drainage, fire fighting, fire alarm systems, ELV systems, building automation, and final testing and commissioning."
+      a: "MEP stands for Mechanical, Electrical, and Plumbing. Our services cover electrical installations, mechanical works, HVAC systems, plumbing, drainage, fire fighting, fire alarm systems, ELV systems, building automation, and final testing and commissioning."
     },
     {
       q: "Does Emrald Ace handle fire fighting and fire alarm installation?",
-      a: "Yes, complete life-safety system engineering, including fire fighting sprinklers and civil defense-compliant fire alarms, is core to our MEP scope."
+      a: "Yes. Complete life-safety system engineering, including fire fighting sprinklers and Civil Defense-compliant fire alarms, is core to our MEP scope."
     },
     {
       q: "Does Emrald Ace provide testing and commissioning for MEP systems?",
-      a: "Yes, comprehensive testing, balancing, and commissioning are standard stages before project sign-off and handover."
+      a: "Yes. Comprehensive testing, balancing, and commissioning are standard procedures prior to final project handover."
     },
     {
       q: "Can MEP Engineering be combined with fit-out or general contracting?",
-      a: "Absolutely. We routinely manage turnkey solutions combining structural civil works, interior fit-out, and complete MEP integration."
+      a: "Yes. We routinely manage turnkey solutions combining structural civil works, interior fit-outs, and complete MEP integration."
     }
   ];
 
@@ -213,29 +203,11 @@ export default function MEPPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
-                MEP Engineering Contractor in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-cyan-400">Abu Dhabi & UAE</span>
+                MEP Engineering Contractor in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-cyan-400">the UAE</span>
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-                Integrated Mechanical, Electrical & Plumbing solutions — from site execution to testing and handover.
+                Integrated Mechanical, Electrical & Plumbing solutions — from site execution to testing and handover across the UAE.
               </p>
-
-              {/* Mobile Concise CTA Buttons */}
-              <div className="flex flex-row flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-4 pt-2">
-                <a
-                  href="#contact"
-                  className="flex-1 sm:flex-none px-4 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-[#0b63c5] hover:bg-blue-600 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-[#0b63c5]/30 hover:shadow-[#0b63c5]/50 active:scale-95 flex items-center justify-center gap-1.5 sm:gap-2 text-center"
-                >
-                  <span>Get MEP Plan</span>
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
-                </a>
-                <a
-                  href="tel:+971528976025"
-                  className="flex-1 sm:flex-none px-4 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-cyan-400 text-slate-100 font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-center"
-                >
-                  <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 shrink-0" />
-                  <span>+971 52 897 6025</span>
-                </a>
-              </div>
             </div>
 
             {/* Brightened & High Visibility Hero Image */}
@@ -243,7 +215,7 @@ export default function MEPPage() {
               <div className="relative h-[260px] sm:h-[340px] lg:h-[380px] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl group bg-slate-900">
                 <Image
                   src="/mep-engineering-services.webp"
-                  alt="MEP Engineering Contractor Abu Dhabi UAE"
+                  alt="MEP Engineering Contractor UAE"
                   fill
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out brightness-110 contrast-105"
@@ -258,8 +230,8 @@ export default function MEPPage() {
                     <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Headquartered in</p>
-                    <p className="text-xs sm:text-sm font-bold text-white">Musaffah, Abu Dhabi, UAE</p>
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Service Coverage</p>
+                    <p className="text-xs sm:text-sm font-bold text-white">Across All United Arab Emirates</p>
                   </div>
                 </div>
               </div>
@@ -273,12 +245,12 @@ export default function MEPPage() {
               <p className="text-xs sm:text-sm text-slate-300 font-medium mt-0.5 sm:mt-1">Civil Defense Compliant</p>
             </div>
             <div>
-              <p className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">22+</p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-0.5 sm:mt-1">Projects Delivered</p>
+              <p className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">160+</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-0.5 sm:mt-1">Major Projects</p>
             </div>
             <div>
-              <p className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">2014</p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-0.5 sm:mt-1">Established in UAE</p>
+              <p className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">150+</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-0.5 sm:mt-1">Major Skilled Staff</p>
             </div>
             <div>
               <p className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">Full</p>
@@ -349,7 +321,7 @@ export default function MEPPage() {
               <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">The Engineering Advantage</span>
               <h2 className="text-2xl sm:text-4xl font-black text-white">Why Emrald Ace for MEP?</h2>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                We combine precise electromechanical design with flawless site execution. Delivering safer, high-performance infrastructure built to withstand regional climate conditions.
+                We combine precise electromechanical design with flawless site execution to deliver safe, high-performance infrastructure built to withstand regional climate conditions.
               </p>
 
               <div className="relative h-[200px] sm:h-[280px] w-full rounded-2xl overflow-hidden border border-slate-700/80 mt-4 sm:mt-6 bg-slate-900">
@@ -437,36 +409,14 @@ export default function MEPPage() {
       <section id="contact" className="py-12 sm:py-16 bg-[#030712]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-[#0b63c5]/30 border border-cyan-500/30 p-6 sm:p-12 overflow-hidden shadow-2xl">
-            
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center text-center lg:text-left">
-              <div className="lg:col-span-8 space-y-3 sm:space-y-4">
-                <h2 className="text-2xl sm:text-4xl font-black text-white">
-                  Get a Tailored MEP Engineering Plan for Your Property
-                </h2>
-                <p className="text-xs sm:text-base text-slate-200 max-w-2xl mx-auto lg:mx-0">
-                  Connect with our electromechanical specialists to discuss design, installation, or testing requirements across Abu Dhabi and the UAE.
-                </p>
-              </div>
-
-              {/* Mobile Concise CTA Action Buttons */}
-              <div className="lg:col-span-4 flex flex-row flex-wrap sm:flex-col gap-2.5 sm:gap-3">
-                <a
-                  href="mailto:sales1@emraldace.com"
-                  className="flex-1 sm:flex-none px-4 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-[#0b63c5] hover:bg-blue-600 text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-1.5 sm:gap-2 shadow-lg active:scale-95"
-                >
-                  <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
-                  <span>Email Us</span>
-                </a>
-                <a
-                  href="tel:+971528976025"
-                  className="flex-1 sm:flex-none px-4 py-3 sm:px-6 sm:py-3.5 rounded-xl bg-slate-950/90 border border-slate-700 hover:border-cyan-400 text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-1.5 sm:gap-2"
-                >
-                  <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 shrink-0" />
-                  <span>Call Us</span>
-                </a>
-              </div>
+            <div className="relative z-10 text-center space-y-3 sm:space-y-4 max-w-3xl mx-auto">
+              <h2 className="text-2xl sm:text-4xl font-black text-white">
+                Get a Tailored MEP Engineering Plan for Your Property
+              </h2>
+              <p className="text-xs sm:text-base text-slate-200">
+                Connect with our electromechanical specialists to discuss your design, installation, or testing requirements across the United Arab Emirates.
+              </p>
             </div>
-
           </div>
         </div>
       </section>

@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { 
   ShieldCheck, 
-  Award, 
   Calendar, 
   Wrench, 
   Sparkles, 
@@ -12,8 +11,6 @@ import {
   ChevronDown, 
   CheckCircle2, 
   ArrowRight, 
-  Phone, 
-  Mail, 
   Building2
 } from 'lucide-react';
 
@@ -95,11 +92,9 @@ export default function IFMPage() {
       }
     },
     "areaServed": [
-      { "@type": "City", "name": "Abu Dhabi" },
-      { "@type": "City", "name": "Dubai" },
       { "@type": "Country", "name": "United Arab Emirates" }
     ],
-    "description": "ISO 45001-certified Integrated Facility Management in Abu Dhabi & across the UAE. Hard FM, Soft FM & Specialized FM under one accountable team."
+    "description": "ISO 45001-certified Integrated Facility Management across the UAE. Hard FM, Soft FM & Specialized FM under one accountable team."
   };
 
   // FAQ Schema for Search Engines & AI Search
@@ -112,7 +107,7 @@ export default function IFMPage() {
         "name": "What is Integrated Facility Management (IFM)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "IFM is a single-provider model combining Hard FM, Soft FM and Specialized FM under one accountable team, instead of managing separate vendors for each service."
+          "text": "IFM is a single-provider model combining Hard FM, Soft FM, and Specialized FM under one accountable team, eliminating the need to manage separate vendors for each service."
         }
       },
       {
@@ -120,7 +115,7 @@ export default function IFMPage() {
         "name": "What does Emrald Ace's IFM service include?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Hard FM (mechanical, electrical, HVAC, civil, fire safety, BMS, plumbing), Soft FM (cleaning, pest control, waste management, concierge, landscaping) and Specialized FM (asset management, energy management, smart FM, 24/7 helpdesk)."
+          "text": "Hard FM (mechanical, electrical, HVAC, civil, fire safety, BMS, plumbing), Soft FM (cleaning, pest control, waste management, concierge, landscaping), and Specialized FM (asset management, energy management, smart FM, 24/7 helpdesk)."
         }
       },
       {
@@ -128,7 +123,7 @@ export default function IFMPage() {
         "name": "Which areas does Emrald Ace serve?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Emrald Ace is headquartered in Musaffah, Abu Dhabi, and serves clients across the UAE, including Abu Dhabi and Dubai."
+          "text": "Emrald Ace serves clients across all Emirates in the UAE."
         }
       },
       {
@@ -136,7 +131,7 @@ export default function IFMPage() {
         "name": "Is Emrald Ace certified for facility management?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — ISO 45001:2018 certified with a UAE Trade License, operating since 2014."
+          "text": "Yes — ISO 45001:2018 certified, operating since 2014."
         }
       },
       {
@@ -144,7 +139,7 @@ export default function IFMPage() {
         "name": "How is IFM different from an Annual Maintenance Contract?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "An AMC covers scheduled maintenance for specific systems. IFM is broader, bundling Hard FM, Soft FM and Specialized FM under one provider."
+          "text": "An AMC covers scheduled maintenance for specific systems. IFM is broader, bundling Hard FM, Soft FM, and Specialized FM under a single accountable provider."
         }
       }
     ]
@@ -209,11 +204,11 @@ export default function IFMPage() {
 
   const specializedFmItems = [
     {
-      title: "Smart FM & Asset Management",
-      desc: "Technology-driven facility oversight using CAFM (Computer-Aided Facility Management) software and IoT sensors to track asset condition, monitor energy consumption, and flag maintenance needs before they become failures."
+      title: "Smart FM & Asset Monitoring",
+      desc: "Technology-driven facility oversight using CAFM (Computer-Aided Facility Management) software and IoT sensors to track equipment health, monitor energy consumption, and identify maintenance needs before failures occur."
     },
     {
-      title: "Asset Management",
+      title: "Asset Lifecycle Management",
       desc: "Structured tracking of facility assets across their lifecycle — condition, maintenance history, and replacement planning — supporting better budgeting decisions and reducing unplanned equipment failure."
     },
     {
@@ -240,10 +235,10 @@ export default function IFMPage() {
   ];
 
   const steps = [
-    { num: "01", title: "Site Assessment", desc: "We evaluate scope, condition and requirements on site" },
-    { num: "02", title: "Proposal & Plan", desc: "A tailored scope, schedule and cost estimate" },
-    { num: "03", title: "Mobilization", desc: "Dedicated team, materials and permits arranged" },
-    { num: "04", title: "Delivery & Handover", desc: "Work executed, quality-checked and signed off" }
+    { num: "01", title: "Site Assessment", desc: "We evaluate scope, condition, and requirements on site" },
+    { num: "02", title: "Proposal & Plan", desc: "A tailored scope, schedule, and cost estimate" },
+    { num: "03", title: "Mobilization", desc: "Dedicated team, materials, and permits arranged" },
+    { num: "04", title: "Delivery & Handover", desc: "Work executed, quality-checked, and signed off" }
   ];
 
   const industries = [
@@ -255,23 +250,23 @@ export default function IFMPage() {
   const faqs = [
     {
       q: "What is Integrated Facility Management (IFM)?",
-      a: "IFM is a single-provider model combining Hard FM, Soft FM and Specialized FM under one accountable team, instead of managing separate vendors for each service."
+      a: "IFM is a single-provider model combining Hard FM, Soft FM, and Specialized FM under one accountable team, eliminating the need to manage separate vendors for each service."
     },
     {
       q: "What does Emrald Ace's IFM service include?",
-      a: "Hard FM (mechanical, electrical, HVAC, civil, fire safety, BMS, plumbing), Soft FM (cleaning, pest control, waste management, concierge, landscaping) and Specialized FM (asset management, energy management, smart FM, 24/7 helpdesk)."
+      a: "Hard FM (mechanical, electrical, HVAC, civil, fire safety, BMS, plumbing), Soft FM (cleaning, pest control, waste management, concierge, landscaping), and Specialized FM (asset management, energy management, smart FM, 24/7 helpdesk)."
     },
     {
       q: "Which areas does Emrald Ace serve?",
-      a: "Emrald Ace is headquartered in Musaffah, Abu Dhabi, and serves clients across the UAE, including Abu Dhabi and Dubai."
+      a: "Emrald Ace serves clients across all Emirates in the UAE."
     },
     {
       q: "Is Emrald Ace certified for facility management?",
-      a: "Yes — ISO 45001:2018 certified with a UAE Trade License, operating since 2014."
+      a: "Yes — ISO 45001:2018 certified, operating since 2014."
     },
     {
       q: "How is IFM different from an Annual Maintenance Contract?",
-      a: "An AMC covers scheduled maintenance for specific systems. IFM is broader, bundling Hard FM, Soft FM and Specialized FM under one provider."
+      a: "An AMC covers scheduled maintenance for specific systems. IFM is broader, bundling Hard FM, Soft FM, and Specialized FM under a single accountable provider."
     }
   ];
 
@@ -295,10 +290,6 @@ export default function IFMPage() {
               ISO 45001:2018 Certified
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-slate-900/90 border border-slate-800 text-slate-200 shadow-sm backdrop-blur-md">
-              <Award className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-              UAE Trade Licensed
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-slate-900/90 border border-slate-800 text-slate-200 shadow-sm backdrop-blur-md">
               <Calendar className="w-3.5 h-3.5 text-blue-400 shrink-0" />
               Operating Since 2014
             </span>
@@ -307,10 +298,10 @@ export default function IFMPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.18] text-white">
-                Integrated Facility Management in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-blue-400">Abu Dhabi</span> & Across the UAE
+                Integrated Facility Management Across the <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-blue-400">UAE</span>
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-                One accountable team for Hard FM, Soft FM and Specialized FM — so your buildings run safely, efficiently and predictably, without juggling multiple contractors.
+                One accountable team for Hard FM, Soft FM, and Specialized FM — so your buildings run safely, efficiently, and predictably, without juggling multiple contractors.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
@@ -321,13 +312,6 @@ export default function IFMPage() {
                   Schedule Consultation
                   <ArrowRight className="w-4 h-4 shrink-0" />
                 </a>
-                <a
-                  href="tel:+971528976025"
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900/90 border border-slate-700 hover:border-blue-400 text-slate-100 font-semibold text-sm transition-all flex items-center justify-center gap-2 active:scale-98"
-                >
-                  <Phone className="w-4 h-4 text-blue-400 shrink-0" />
-                  +971 52 897 6025
-                </a>
               </div>
             </div>
 
@@ -335,7 +319,7 @@ export default function IFMPage() {
               <div className="relative h-[260px] sm:h-[340px] lg:h-[380px] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-800 shadow-2xl group bg-slate-900">
                 <Image
                   src="/integrated-facility-management-1.webp"
-                  alt="Integrated Facility Management Abu Dhabi"
+                  alt="Integrated Facility Management UAE"
                   fill
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out brightness-105 contrast-105"
@@ -351,7 +335,7 @@ export default function IFMPage() {
                   </div>
                   <div>
                     <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Headquartered in</p>
-                    <p className="text-xs sm:text-sm font-bold text-white">Musaffah, Abu Dhabi, UAE</p>
+                    <p className="text-xs sm:text-sm font-bold text-white">UAE</p>
                   </div>
                 </div>
               </div>
@@ -360,12 +344,12 @@ export default function IFMPage() {
 
           <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border-y border-slate-800/80 py-6 sm:py-8 text-center">
             <div>
-              <p className="text-2xl sm:text-4xl font-black text-white tracking-tight">35+</p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Engineering & FM Staff</p>
+              <p className="text-2xl sm:text-4xl font-black text-white tracking-tight">150+</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Major Skilled Staff</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-4xl font-black text-white tracking-tight">22+</p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Projects Delivered</p>
+              <p className="text-2xl sm:text-4xl font-black text-white tracking-tight">160+</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Major Projects Delivered</p>
             </div>
             <div>
               <p className="text-2xl sm:text-4xl font-black text-white tracking-tight">2014</p>
@@ -388,7 +372,7 @@ export default function IFMPage() {
               <div className="space-y-1.5">
                 <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">Quick Answer</span>
                 <p className="text-xs sm:text-base text-slate-200 leading-relaxed max-w-5xl">
-                  Integrated Facility Management (IFM) combines <strong className="text-white font-semibold">Hard FM</strong> (mechanical, electrical, HVAC, civil, fire safety, BMS), <strong className="text-white font-semibold">Soft FM</strong> (cleaning, pest control, waste, concierge, landscaping) and <strong className="text-white font-semibold">Specialized FM</strong> (asset & energy management, smart building systems) under one accountable team.
+                  Integrated Facility Management (IFM) combines <strong className="text-white font-semibold">Hard FM</strong> (mechanical, electrical, HVAC, civil, fire safety, BMS), <strong className="text-white font-semibold">Soft FM</strong> (cleaning, pest control, waste, concierge, landscaping), and <strong className="text-white font-semibold">Specialized FM</strong> (asset & energy management, smart building systems) under one accountable team.
                 </p>
               </div>
             </div>
@@ -413,7 +397,7 @@ export default function IFMPage() {
               </div>
               <div>
                 <h3 className="text-lg sm:text-2xl font-bold text-white">Hard Facility Management</h3>
-                <p className="text-xs text-slate-300">Core electro-mechanical, HVAC, structural and life safety maintenance</p>
+                <p className="text-xs text-slate-300">Core electro-mechanical, HVAC, structural, and life safety maintenance</p>
               </div>
             </div>
 
@@ -445,7 +429,7 @@ export default function IFMPage() {
               </div>
               <div>
                 <h3 className="text-lg sm:text-2xl font-bold text-white">Soft Facility Management</h3>
-                <p className="text-xs text-slate-300">Environmental, hygiene, front-of-house and grounds upkeep</p>
+                <p className="text-xs text-slate-300">Environmental, hygiene, front-of-house, and grounds upkeep</p>
               </div>
             </div>
 
@@ -520,7 +504,7 @@ export default function IFMPage() {
               </div>
               <div>
                 <h3 className="text-lg sm:text-2xl font-bold text-white">Specialized Facility Management</h3>
-                <p className="text-xs text-slate-300">Advanced IoT monitoring, asset lifecycle intelligence and 24/7 helpdesk</p>
+                <p className="text-xs text-slate-300">Advanced IoT monitoring, asset lifecycle intelligence, and 24/7 helpdesk</p>
               </div>
             </div>
 
@@ -609,7 +593,7 @@ export default function IFMPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6">
           <div className="text-center sm:text-left">
             <h2 className="text-xl sm:text-2xl font-extrabold text-white">Industries We Serve</h2>
-            <p className="text-xs text-slate-300 mt-1">Tailored solutions for sectors across Abu Dhabi & UAE</p>
+            <p className="text-xs text-slate-300 mt-1">Tailored solutions for sectors across the UAE</p>
           </div>
 
           <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3">
@@ -643,31 +627,14 @@ export default function IFMPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-2xl sm:rounded-3xl bg-slate-900 border border-[#0b63c5]/40 p-6 sm:p-10 md:p-12 overflow-hidden shadow-2xl">
             
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center text-center lg:text-left">
-              <div className="lg:col-span-8 space-y-3">
+            <div className="relative z-10 grid grid-cols-1 items-center text-center">
+              <div className="space-y-3">
                 <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
                   Let's Build Better Environments Together
                 </h2>
-                <p className="text-xs sm:text-base text-slate-200 max-w-2xl mx-auto lg:mx-0">
+                <p className="text-xs sm:text-base text-slate-200 max-w-2xl mx-auto">
                   Schedule a consultation with our team and get a tailored Integrated Facility Management plan for your property.
                 </p>
-              </div>
-
-              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
-                <a
-                  href="mailto:sales@emraldace.com"
-                  className="w-full px-5 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-blue-600 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2 shadow-lg active:scale-98"
-                >
-                  <Mail className="w-4 h-4 shrink-0" />
-                  sales@emraldace.com
-                </a>
-                <a
-                  href="tel:+97126751747"
-                  className="w-full px-5 py-3.5 rounded-xl bg-slate-950 border border-slate-700 hover:border-slate-500 text-white font-semibold text-sm transition-all text-center flex items-center justify-center gap-2 active:scale-98"
-                >
-                  <Phone className="w-4 h-4 text-blue-400 shrink-0" />
-                  +971 2 675 1747
-                </a>
               </div>
             </div>
 
