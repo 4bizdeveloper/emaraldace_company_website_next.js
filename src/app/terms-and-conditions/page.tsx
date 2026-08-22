@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import { Scale, FileCheck, ShieldAlert, Cpu, Gavel, HelpCircle, Mail, Phone, MapPin } from "lucide-react";
+import { Scale, FileCheck, ShieldAlert, Cpu, Gavel, HelpCircle, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | Emrald Ace General Contracting UAE",
@@ -145,19 +145,9 @@ export default function TermsAndConditionsPage() {
           <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-6">
             If you have questions regarding these Terms or formal engineering service agreements, contact our legal team directly:
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm">
-            <a href="mailto:sales1@emraldace.com" className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 hover:border-[#0b63c5] transition-colors">
-              <Mail className="w-4 h-4 text-[#0b63c5] shrink-0" />
-              <span className="truncate">sales1@emraldace.com</span>
-            </a>
-            <a href="tel:+971528976025" className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 hover:border-[#0b63c5] transition-colors">
-              <Phone className="w-4 h-4 text-[#0b63c5] shrink-0" />
-              <span>+971 52 897 6025</span>
-            </a>
-            <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200">
-              <MapPin className="w-4 h-4 text-[#0b63c5] shrink-0" />
-              <span>Musaffah, Abu Dhabi, UAE</span>
-            </div>
+          <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 text-xs sm:text-sm max-w-xs">
+            <MapPin className="w-4 h-4 text-[#0b63c5] shrink-0" />
+            <span>Musaffah, Abu Dhabi, all over UAE</span>
           </div>
         </section>
 

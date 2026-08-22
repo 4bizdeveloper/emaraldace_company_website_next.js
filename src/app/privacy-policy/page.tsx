@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import { ShieldCheck, Lock, Eye, Server, FileText, UserCheck, Bell, Mail, Phone, MapPin } from "lucide-react";
+import { ShieldCheck, Lock, Eye, Server, FileText, UserCheck, Bell, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Emrald Ace General Contracting & Electromechanical UAE",
@@ -85,7 +85,7 @@ export default function PrivacyPolicyPage() {
           </div>
           <div className="text-slate-200 text-sm sm:text-base leading-relaxed space-y-4">
             <p>
-              We collect personal data required to respond to enquiries, execute electromechanical, MEP, facility management, fit-out, and general contracting contracts across the United Arab Emirates.
+              We collect personal data required to respond to enquiries, execute electromechanical, MEP, facility management, fit-out, and general contracting contracts all over UAE.
             </p>
             <ul className="list-disc pl-5 space-y-2 text-slate-300">
               <li><strong className="text-white">Contact Identity:</strong> Full name, professional designation, and corporate identity.</li>
@@ -182,16 +182,8 @@ export default function PrivacyPolicyPage() {
           <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-6">
             For data inquiries, access requests, or regulatory queries, reach out to our legal and governance desk directly:
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm">
-            <a href="mailto:sales1@emraldace.com" className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 hover:border-[#0b63c5] transition-colors">
-              <Mail className="w-4 h-4 text-[#0b63c5] shrink-0" />
-              <span className="truncate">sales1@emraldace.com</span>
-            </a>
-            <a href="tel:+971528976025" className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 hover:border-[#0b63c5] transition-colors">
-              <Phone className="w-4 h-4 text-[#0b63c5] shrink-0" />
-              <span>+971 52 897 6025</span>
-            </a>
-            <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200">
+          <div className="flex flex-col sm:flex-row gap-4 text-xs sm:text-sm">
+            <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-200 w-full">
               <MapPin className="w-4 h-4 text-[#0b63c5] shrink-0" />
               <span>Musaffah, Abu Dhabi, UAE</span>
             </div>

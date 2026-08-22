@@ -304,13 +304,13 @@ export default function About() {
           
           <div className="lg:col-span-8 space-y-3 sm:space-y-4">
             <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              Chairman's Message: Building Lasting Partnerships Through Service Excellence, Across UAE
+              Chairman's Message: Building Lasting Partnerships Through Service Excellence
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
               Welcome to Emrald Ace General Contracting & Electromechanical L.L.C., where engineering expertise meets operational excellence. Since our establishment, we have built our reputation by delivering reliable facility management, maintenance, and engineering solutions that create long-term value for our clients. Today, our organization has evolved into a trusted provider of Integrated Facility Management, Annual Maintenance Contracts, and Interior Fit-Out, supported by strong MEP Engineering and General Contracting capabilities across UAE.
             </p>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-              We understand that modern facilities demand more than routine maintenance—they require intelligent planning, technical expertise, proactive management, and a commitment to continuous improvement. Our experienced team works closely with clients to provide customized solutions that improve operational efficiency, extend asset life, and create safe, productive environments.
+              We understood that modern facilities demand more than routine maintenance—they require intelligent planning, technical expertise, proactive management, and a commitment to continuous improvement. Our experienced team works closely with clients to provide customized solutions that improve operational efficiency, extend asset life, and create safe, productive environments.
             </p>
           </div>
         </section>
