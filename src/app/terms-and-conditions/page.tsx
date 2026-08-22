@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default function TermsAndConditionsPage() {
-  const effectiveDate = "August 19, 2026";
+  const effectiveDate = "August 24, 2026";
 
   const webPageSchema = {
     "@context": "https://schema.org",

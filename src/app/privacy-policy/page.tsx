@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = "August 19, 2026";
+  const lastUpdated = "August 24, 2026";
 
   const webPageSchema = {
     "@context": "https://schema.org",
