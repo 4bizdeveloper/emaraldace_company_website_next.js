@@ -42,7 +42,8 @@ const clients = [
   { name: "Trojan", url: "/client-logos/trojan.webp" },
   { name: "Winner Holistic Consultant", url: "/client-logos/winner-holistic-consultant.webp" },
   { name: "Infinity Drinks", url: "/client-logos/infinity-drinks-logo.png" },
-  { name: "Abrar", url: "/client-logos/abrar-logo.png" }
+  { name: "Abrar", url: "/client-logos/abrar-logo.png" },
+  { name: "Geco", url: "/client-logos/geco.webp" }
 ];
 export default function ClientsPage() {
   return (
