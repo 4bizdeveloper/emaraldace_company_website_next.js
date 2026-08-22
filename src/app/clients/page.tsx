@@ -19,18 +19,22 @@ const clients = [
   { name: "Abu Dhabi Global Market", url: "/client-logos/abhudhabi-global-market.webp" },
   { name: "Almaharat", url: "/client-logos/almaharat.webp" },
   { name: "Al Nasser", url: "/client-logos/alnasser.webp" },
+  { name: "Al Wathba", url: "/client-logos/alwathba.jpeg" },
   { name: "Baker Hughes", url: "/client-logos/baker-hughes.webp" },
   { name: "Capital Engineering Consultancy", url: "/client-logos/Capital-Engineering-Consultancy.webp" },
   { name: "Capital Motion", url: "/client-logos/capital-motion.webp" },
   { name: "Design Infinity", url: "/client-logos/design-ifinity.webp" },
+  { name: "EFS Facilities Services", url: "/client-logos/efs.jpeg" },
   { name: "EGA", url: "/client-logos/ega.webp" },
   { name: "Emichem", url: "/client-logos/emichem.webp" },
   { name: "Envirocon", url: "/client-logos/envirocon.webp" },
   { name: "GEMS Education", url: "/client-logos/gems-education.webp" },
+  { name: "GHD", url: "/client-logos/ghd.jpeg" },
   { name: "Gulf Rock", url: "/client-logos/gulf-rock.webp" },
   { name: "Hilton Hotels", url: "/client-logos/hilton-hotels.webp" },
   { name: "KEZAD Group", url: "/client-logos/kezad-group.webp" },
   { name: "Mubadala", url: "/client-logos/mubadala.webp" },
+  { name: "NYU Abu Dhabi", url: "/client-logos/nyu-abu-dhabi.jpeg" },
   { name: "Rotana Hotels", url: "/client-logos/rotana-hotels.webp" },
   { name: "RTA", url: "/client-logos/rta.webp" },
   { name: "SEHA", url: "/client-logos/seha.webp" },
@@ -38,7 +42,6 @@ const clients = [
   { name: "Trojan", url: "/client-logos/trojan.webp" },
   { name: "Winner Holistic Consultant", url: "/client-logos/winner-holistic-consultant.webp" }
 ];
-
 export default function ClientsPage() {
   return (
     <main className="min-h-screen bg-[#030712] bg-gradient-to-b from-[#030712] via-[#071330] to-[#030712] text-white pt-44 md:pt-52 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden select-none">
