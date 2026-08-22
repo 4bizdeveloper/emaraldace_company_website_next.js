@@ -43,7 +43,9 @@ const clients = [
   { name: "Winner Holistic Consultant", url: "/client-logos/winner-holistic-consultant.webp" },
   { name: "Infinity Drinks", url: "/client-logos/infinity-drinks-logo.png" },
   { name: "Abrar", url: "/client-logos/abrar-logo.png" },
-  { name: "Geco", url: "/client-logos/geco.webp" }
+  { name: "Geco", url: "/client-logos/geco.webp" },
+  { name: "ALS Hafar Mall", url: "/client-logos/als-hafar-mall.png" },
+  { name: "Marina Mall", url: "/client-logos/marina-mall.png" }
 ];
 export default function ClientsPage() {
   return (
