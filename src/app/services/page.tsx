@@ -32,7 +32,7 @@ export default function ServicesPage() {
       title: "Integrated Facility Management",
       tagline: "Smarter Facilities. Better Performance.",
       badge: "ISO 45001 Certified",
-      image: "/integrated-facility-management-2.webp",
+      image: "/inegrated-facility-management-cleaning.webp",
       desc: "One accountable team for Hard FM, Soft FM, and Specialized FM (CAFM, Energy & Asset Management) so your buildings run safely, efficiently, and predictably without juggling multiple contractors."
     },
     {
@@ -77,7 +77,7 @@ export default function ServicesPage() {
       title: "Specialized Services",
       tagline: "Smart Access, Automation & Outdoor Solutions.",
       badge: "Smart Automation",
-      image: "/specialized-service-4.webp",
+      image: "/specialized-service-cctv.webp",
       desc: "High-performance facility enhancements including parking access control, automatic gates, CCTV networks, structural waterproofing, industrial epoxy flooring, artificial turf, and landscaping."
     }
   ];
@@ -139,7 +139,7 @@ export default function ServicesPage() {
       <section className="relative w-full min-h-[85vh] lg:min-h-screen pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0 select-none pointer-events-none overflow-hidden">
           <Image 
-            src={serviceOverviewList[0].image}
+            src="/integrated-facility-management-2.webp"
             alt="Emrald Ace Engineering Hero Background"
             fill
             priority
@@ -162,7 +162,7 @@ export default function ServicesPage() {
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white drop-shadow-2xl max-w-4xl">
-              Engineering & Facility Solutions Across the UAE
+              Engineering & Facility Solutions All Over UAE
             </h1>
 
             <p className="text-sm sm:text-base lg:text-lg text-slate-100 font-medium leading-relaxed max-w-2xl drop-shadow-md">
