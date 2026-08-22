@@ -264,66 +264,67 @@ const clientLogos = [
       `}</style>
 
       {/* 1. ULTRA MODERN HERO SECTION */}
-      <section className="relative min-h-dvh w-full flex flex-col justify-center items-center bg-slate-950 text-white overflow-hidden py-16 sm:py-20">
-        {/* Background Video */}
-        <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="/integrated-facility-management-2.webp"
-            className="w-full h-full object-cover object-center scale-[1.02] will-change-transform"
-          >
-            <source src="/bg-video-2.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+<section className="relative min-h-dvh w-full flex flex-col justify-center items-center bg-slate-950 text-white overflow-hidden py-16 sm:py-20">
+  {/* Background Video */}
+  <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      poster="/integrated-facility-management-2.webp"
+      className="w-full h-full object-cover object-center scale-[1.02] will-change-transform"
+    >
+      <source src="/bg-video-2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-        {/* Adjusted Multi-tier Gradient Overlay for Higher Video Brightness and Whitened Top Bar Area */}
-        <div className="absolute inset-0 bg-slate-950/20 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/30 via-transparent to-slate-950/80 z-10 pointer-events-none" />
+  {/* Adjusted Multi-tier Gradient Overlay for Higher Video Brightness and Whitened Top Bar Area */}
+  <div className="absolute inset-0 bg-slate-950/20 z-10" />
+  <div className="absolute inset-0 bg-gradient-to-b from-slate-950/30 via-transparent to-slate-950/80 z-10 pointer-events-none" />
 
-        {/* Hero Interactive Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full space-y-5 sm:space-y-6 my-auto pt-16 sm:pt-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-900/10 border border-white/20 backdrop-blur-md text-white font-bold text-xs sm:text-sm tracking-wide shadow-lg">
-            <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
-            Premier MEP & Facility Engineering in UAE
-          </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.25] text-white max-w-4xl mx-auto drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
-            Integrated Facility Management <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-200 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-              & MEP Services in UAE
-            </span>
-          </h1>
+  {/* Hero Interactive Content */}
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 text-center w-full space-y-5 sm:space-y-6 my-auto pt-16 sm:pt-12">
+    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-900/10 border border-white/20 backdrop-blur-md text-white font-bold text-xs sm:text-sm tracking-wide shadow-lg">
+      <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+      Premier MEP & Facility Engineering in UAE
+    </div>
+    
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold lg:font-semibold tracking-tight leading-[1.25] text-white max-w-4xl mx-auto drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
+      Integrated Facility Management <br className="hidden sm:inline" />
+      <span className="bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-200 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+        & MEP Services in UAE
+      </span>
+    </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-slate-100 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] px-2">
-            Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions all over UAE.
-          </p>
+    <p className="text-sm sm:text-base md:text-lg text-slate-100 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] px-2">
+      Trusted Integrated Facility Management, MEP Engineering, and Fit-Out Solutions all over UAE.
+    </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-3">
-            <Link 
-              href="/contact" 
-              className="w-full sm:w-auto min-w-[160px] max-w-[220px] px-6 py-3 sm:px-8 sm:py-3.5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-semibold rounded-2xl shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base flex items-center justify-center gap-2 group"
-            >
-              <span>Get In Touch</span>
-              <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
-            </Link>
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-3">
+      <Link 
+        href="/contact" 
+        className="w-full sm:w-auto min-w-[160px] max-w-[220px] px-6 py-3 sm:px-8 sm:py-3.5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-semibold rounded-2xl shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base flex items-center justify-center gap-2 group"
+      >
+        <span>Get In Touch</span>
+        <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+      </Link>
 
-            <Link 
-              href="/about" 
-              className="w-full sm:w-auto min-w-[160px] max-w-[220px] px-6 py-3 sm:px-8 sm:py-3.5 bg-slate-900/80 hover:bg-slate-900 text-slate-100 font-semibold rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all text-center text-sm sm:text-base flex items-center justify-center gap-2 group"
-            >
-              <span>About Us</span>
-              <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
-            </Link>
-          </div>
-        </div>
+      <Link 
+        href="/about" 
+        className="w-full sm:w-auto min-w-[160px] max-w-[220px] px-6 py-3 sm:px-8 sm:py-3.5 bg-slate-900/80 hover:bg-slate-900 text-slate-100 font-semibold rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all text-center text-sm sm:text-base flex items-center justify-center gap-2 group"
+      >
+        <span>About Us</span>
+        <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+      </Link>
+    </div>
+  </div>
 
-        {/* Border Blend Component at Junction Only */}
-        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10 pointer-events-none" />
-      </section>
+  {/* Border Blend Component at Junction Only */}
+  <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10 pointer-events-none" />
+</section>
 
       {/* 2. ABOUT SECTION & OPERATIONAL FLOW */}
       <section className="bg-slate-950 text-white py-12 relative z-20">
