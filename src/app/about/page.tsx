@@ -272,7 +272,7 @@ export default function About() {
           </div>
           <div className="p-4 sm:p-6 text-center bg-slate-900/80 border border-slate-800/80 rounded-2xl shadow-sm hover:border-slate-700 transition-colors">
             <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">150+</div>
-            <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">Skilled Staff</div>
+            <div className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold text-slate-300">Skilled Staffs</div>
           </div>
           <div className="p-4 sm:p-6 text-center bg-slate-900/80 border border-slate-800/80 rounded-2xl shadow-sm hover:border-slate-700 transition-colors">
             <div className="text-2xl sm:text-3xl font-black text-[#38bdf8] mb-1">160+</div>

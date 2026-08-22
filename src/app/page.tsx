@@ -407,7 +407,7 @@ export default async function Home() {
                   </li>
                   <li className="p-3 bg-slate-950/80 rounded-2xl border border-slate-800/80">
                     <span className="block text-xl sm:text-2xl font-extrabold text-white">150+</span>
-                    <span className="text-[10px] text-slate-400 uppercase font-semibold">Skilled Staff</span>
+                    <span className="text-[10px] text-slate-400 uppercase font-semibold">Skilled Staffs</span>
                   </li>
                   <li className="p-3 bg-slate-950/80 rounded-2xl border border-slate-800/80">
                     <span className="block text-xl sm:text-2xl font-extrabold text-white">7/7</span>
