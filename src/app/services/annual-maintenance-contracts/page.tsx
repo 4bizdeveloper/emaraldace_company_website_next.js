@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { 
   ShieldCheck, 
-  Award, 
   Calendar, 
   Clock, 
   Search, 
@@ -13,8 +12,6 @@ import {
   CheckCircle2, 
   ChevronDown, 
   ArrowRight, 
-  Phone, 
-  Mail, 
   Building2, 
   Zap, 
   PackageCheck, 
@@ -74,7 +71,7 @@ export default function AMCPage() {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Annual Maintenance Contracts (AMC) in Abu Dhabi, UAE",
+        "name": "Annual Maintenance Contracts (AMC) in UAE",
         "item": "https://www.emraldace.com/services/annual-maintenance-contracts"
       }
     ]
@@ -84,105 +81,101 @@ export default function AMCPage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Annual Maintenance Contracts (AMC) in Abu Dhabi, UAE",
+    "name": "Annual Maintenance Contracts (AMC) in UAE",
     "provider": {
       "@type": "Organization",
       "name": "Emrald Ace General Contracting & Electromechanical",
       "url": "https://www.emraldace.com",
-      "telephone": "+971528976025",
-      "email": "sales1@emraldace.com",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Musaffah",
-        "addressRegion": "Abu Dhabi",
         "addressCountry": "UAE"
       }
     },
-    "areaServed": ["Abu Dhabi", "Dubai", "United Arab Emirates"],
-    "description": "Customized Annual Maintenance Contracts in Abu Dhabi & UAE — preventive maintenance, 24/7 emergency support & monthly reporting. ISO 45001 certified."
+    "areaServed": ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Ras Al Khaimah", "Fujairah", "Umm Al Quwain", "United Arab Emirates"],
+    "description": "Customized Annual Maintenance Contracts across the UAE — preventive maintenance, 24/7 emergency support, and monthly performance reporting. ISO 45001 certified."
   };
 
   const whatsIncludedItems = [
     {
       icon: Calendar,
       title: "Scheduled Preventive Maintenance",
-      desc: "Planned, calendar-based servicing of equipment and systems, carried out before problems occur, to reduce unexpected breakdowns and keep warranties and compliance requirements intact."
+      desc: "Planned, calendar-based servicing of equipment and systems carried out before problems occur to reduce unexpected breakdowns and preserve warranties."
     },
     {
       icon: Zap,
       title: "Corrective & Emergency Maintenance",
-      desc: "Rapid repair response when equipment fails or underperforms outside the scheduled maintenance cycle, minimizing downtime and preventing small faults from escalating into costly failures."
+      desc: "Rapid repair response when equipment fails or underperforms outside scheduled cycles, minimizing downtime and avoiding costly failures."
     },
     {
       icon: Search,
       title: "Routine Equipment Inspections",
-      desc: "Regular physical checks of mechanical, electrical, and building systems to catch early signs of wear, corrosion, or malfunction, documented for compliance and performance tracking."
+      desc: "Regular physical checks of mechanical, electrical, and building systems to catch early signs of wear or malfunction and track performance."
     },
     {
       icon: Clock,
       title: "24/7 Emergency Support",
-      desc: "Round-the-clock availability for urgent facility issues, so clients aren't left waiting until business hours for critical repairs affecting safety or operations."
+      desc: "Round-the-clock availability for urgent facility issues so operations remain safe and uninterrupted without delay."
     },
     {
       icon: PackageCheck,
       title: "Spare Parts Coordination",
-      desc: "Proactive sourcing and stocking of commonly needed spare parts, reducing repair turnaround time by avoiding delays caused by part procurement."
+      desc: "Proactive sourcing and stocking of essential spare parts to drastically cut down repair turnaround times."
     },
     {
       icon: FileText,
       title: "Monthly Performance Reporting",
-      desc: "Regular reports covering completed maintenance activities, equipment condition, and recommendations, giving clients visibility into facility health without needing to chase updates."
+      desc: "Comprehensive monthly updates detailing maintenance activities, asset health, and proactive recommendations."
     },
     {
       icon: Users,
       title: "Dedicated Service Team",
-      desc: "A consistent, assigned team familiar with the client's facility, equipment history, and specific requirements, rather than rotating technicians unfamiliar with the site."
+      desc: "An assigned technical team familiar with your specific facility requirements, assets, and operational history."
     },
     {
       icon: ShieldCheck,
       title: "Compliance & Safety Checks",
-      desc: "Scheduled checks to confirm systems meet UAE safety and regulatory standards, reducing liability risk and supporting insurance and audit requirements."
+      desc: "Structured safety reviews ensuring your building systems continually comply with official UAE safety and regulatory standards."
     }
   ];
 
   const benefits = [
-    "Reduced downtime",
+    "Reduced operational downtime",
     "Lower long-term maintenance costs",
-    "Extended equipment life",
+    "Extended machinery & equipment lifespan",
     "Predictable annual budgeting",
-    "Faster response times",
+    "Rapid emergency response times",
     "Single point of accountability"
   ];
 
   const steps = [
-    { num: "01", title: "Site Survey", desc: "We assess assets, systems and maintenance history" },
-    { num: "02", title: "Custom AMC Scope", desc: "A contract tailored to residential, commercial or industrial needs" },
-    { num: "03", title: "Scheduled Servicing", desc: "Planned preventive visits begin on schedule" },
-    { num: "04", title: "Reporting & Support", desc: "Monthly reports plus 24/7 emergency response" }
+    { num: "01", title: "Site Survey", desc: "We thoroughly evaluate your facility assets, existing systems, and service history." },
+    { num: "02", title: "Custom AMC Scope", desc: "A tailored contract structured specifically around residential, commercial, or industrial requirements." },
+    { num: "03", title: "Scheduled Servicing", desc: "Timely preventive maintenance visits begin according to an agreed calendar." },
+    { num: "04", title: "Reporting & Support", desc: "Transparent monthly performance insights backed by 24/7 emergency availability." }
   ];
 
   const industries = [
     "Commercial Offices", "Residential Communities", "Healthcare", 
     "Hotels", "Retail", "Industrial", 
-    "Government", "Warehouse", "Education"
+    "Government", "Warehouses", "Education"
   ];
 
   const faqs = [
     {
       q: "What is included in Emrald Ace's Annual Maintenance Contract?",
-      a: "Scheduled preventive maintenance, corrective and emergency maintenance, routine equipment inspections, 24/7 emergency support, spare parts coordination, monthly performance reporting, a dedicated service team, and compliance and safety checks."
+      a: "Our AMC packages include scheduled preventive servicing, rapid corrective maintenance, routine system inspections, 24/7 emergency response, spare parts coordination, monthly reporting, dedicated technical support, and strict safety compliance audits."
     },
     {
-      q: "What are the benefits of an AMC?",
-      a: "Reduced downtime, lower long-term maintenance costs, extended equipment life, predictable annual budgeting, faster response times, and a single point of accountability."
+      q: "What are the primary benefits of securing an AMC?",
+      a: "Key advantages include minimized facility downtime, lower long-term repair expenses, prolonged equipment life, transparent operational budgeting, fast response rates, and a single point of accountability."
     },
     {
-      q: "Does Emrald Ace offer AMCs for residential, commercial and industrial properties?",
-      a: "Yes — every AMC is tailored to the specific needs of the facility, whether residential, commercial, or industrial."
+      q: "Do you offer AMCs across all property types in the UAE?",
+      a: "Yes. We design and execute tailored Annual Maintenance Contracts for residential, commercial, and industrial facilities across the UAE."
     },
     {
-      q: "Is emergency support available under an AMC?",
-      a: "Yes, Emrald Ace provides 24/7 emergency support as part of its Annual Maintenance Contracts."
+      q: "Is emergency support included within the AMC?",
+      a: "Yes, Emrald Ace provides round-the-clock 24/7 emergency support as part of every AMC agreement."
     }
   ];
 
@@ -207,10 +200,6 @@ export default function AMCPage() {
               ISO 45001 Certified
             </span>
             <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-slate-900/90 border border-slate-700/80 text-slate-200 shadow-sm backdrop-blur-md">
-              <Award className="w-3.5 h-3.5 text-[#0b63c5]" />
-              UAE Trade Licensed
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-slate-900/90 border border-slate-700/80 text-slate-200 shadow-sm backdrop-blur-md">
               <Calendar className="w-3.5 h-3.5 text-[#0b63c5]" />
               Operating Since 2014
             </span>
@@ -219,13 +208,12 @@ export default function AMCPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
-                Annual Maintenance Contracts (AMC) in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#0b63c5]">Abu Dhabi & UAE</span>
+                Annual Maintenance Contracts (AMC) in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#0b63c5]">UAE</span>
               </h1>
               <p className="text-sm sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-                Scheduled inspections, preventive maintenance, emergency response and continuous performance monitoring — so small issues never become costly failures.
+                Scheduled inspections, preventive maintenance, emergency response, and continuous performance monitoring — ensuring small operational issues never become costly system failures.
               </p>
 
-              {/* Mobile-optimized action buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2 w-full sm:w-auto">
                 <a
                   href="#contact"
@@ -234,22 +222,15 @@ export default function AMCPage() {
                   <span>Get a Tailored AMC Plan</span>
                   <ArrowRight className="w-4 h-4 shrink-0" />
                 </a>
-                <a
-                  href="tel:+971528976025"
-                  className="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-slate-900/90 border border-slate-700 hover:border-[#0b63c5] text-slate-100 hover:text-white font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-4 h-4 text-[#0b63c5] shrink-0" />
-                  <span>+971 52 897 6025</span>
-                </a>
               </div>
             </div>
 
-            {/* Improved Hero Image Visibility */}
+            {/* Hero Image Block */}
             <div className="lg:col-span-5 space-y-3">
               <div className="relative h-[260px] sm:h-[360px] lg:h-[380px] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl group bg-slate-900">
                 <Image
                   src="/annual-maintenance-contract.webp"
-                  alt="Annual Maintenance Contracts AMC Abu Dhabi UAE"
+                  alt="Annual Maintenance Contracts AMC UAE"
                   fill
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-95 group-hover:opacity-100"
@@ -264,8 +245,8 @@ export default function AMCPage() {
                     <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Headquartered in</p>
-                    <p className="text-xs sm:text-sm font-bold text-white">Musaffah, Abu Dhabi, UAE</p>
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Serving All Industries Across</p>
+                    <p className="text-xs sm:text-sm font-bold text-white">United Arab Emirates (UAE)</p>
                   </div>
                 </div>
               </div>
@@ -274,12 +255,12 @@ export default function AMCPage() {
 
           <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 border-t border-slate-800/80 pt-8 text-center">
             <div className="p-2">
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">35+</p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Engineering & Support Staff</p>
+              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">150+</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Major Skilled Staff</p>
             </div>
             <div className="p-2">
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">22+</p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Projects Delivered</p>
+              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">160+</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Major Projects Delivered</p>
             </div>
             <div className="p-2">
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">2014</p>
@@ -302,7 +283,7 @@ export default function AMCPage() {
               <div className="space-y-1.5 sm:space-y-2">
                 <span className="text-[11px] sm:text-xs font-bold text-white uppercase tracking-wider bg-[#0b63c5]/30 px-2.5 py-0.5 rounded-md border border-[#0b63c5]/40 inline-block">Quick Answer</span>
                 <p className="text-xs sm:text-base text-slate-100 leading-relaxed max-w-5xl">
-                  An <strong className="text-white font-bold">Annual Maintenance Contract (AMC)</strong> is a yearly service agreement that covers scheduled preventive maintenance, emergency repairs and routine inspections for a facility's equipment and systems, giving clients predictable costs and reduced downtime.
+                  An <strong className="text-white font-bold">Annual Maintenance Contract (AMC)</strong> is a comprehensive yearly agreement covering regular preventive servicing, rapid emergency repairs, and routine system audits—ensuring predictable maintenance budgets and minimal operational downtime.
                 </p>
               </div>
             </div>
@@ -413,7 +394,7 @@ export default function AMCPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6">
           <div className="text-center sm:text-left">
             <h2 className="text-xl sm:text-2xl font-black text-white">Industries We Serve</h2>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1">Tailored AMC solutions for sectors across Abu Dhabi & UAE</p>
+            <p className="text-xs sm:text-sm text-slate-300 mt-1">Tailored AMC solutions for sectors across the UAE</p>
           </div>
 
           <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3">
@@ -442,36 +423,28 @@ export default function AMCPage() {
         </div>
       </section>
 
-      {/* --- CALL TO ACTION (CTA) WITHOUT BOTTOM BORDER --- */}
+      {/* --- CALL TO ACTION (CTA) SECTION --- */}
       <section id="contact" className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900/90 to-[#0b63c5]/30 border border-[#0b63c5]/40 p-6 sm:p-12 overflow-hidden shadow-2xl">
             
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center text-center lg:text-left">
-              <div className="lg:col-span-8 space-y-3 sm:space-y-4">
+            <div className="relative z-10 flex flex-col md:flex-row gap-6 items-center justify-between text-center md:text-left">
+              <div className="space-y-3 sm:space-y-4">
                 <h2 className="text-2xl sm:text-4xl font-black text-white">
-                  Get a Tailored Annual Maintenance Contracts Plan for Your Property
+                  Get a Tailored Annual Maintenance Contract Plan for Your Property
                 </h2>
-                <p className="text-xs sm:text-base text-slate-200 max-w-2xl mx-auto lg:mx-0">
+                <p className="text-xs sm:text-base text-slate-200 max-w-2xl">
                   Protect your assets with proactive maintenance, 24/7 emergency response, and customized contract scopes.
                 </p>
               </div>
 
-              {/* Mobile-optimized CTAs */}
-              <div className="lg:col-span-4 flex flex-col gap-2.5 sm:gap-3 w-full">
+              <div className="w-full md:w-auto shrink-0">
                 <a
-                  href="mailto:sales@emraldace.com"
-                  className="w-full px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-2 shadow-lg active:scale-95"
+                  href="#contact"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0b63c5] hover:bg-[#0b63c5]/90 text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-2 shadow-lg active:scale-95"
                 >
-                  <Mail className="w-4 h-4 shrink-0" />
-                  <span>sales@emraldace.com</span>
-                </a>
-                <a
-                  href="tel:+97126751747"
-                  className="w-full px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-slate-950 border border-slate-700 hover:border-slate-500 text-white font-semibold text-xs sm:text-sm transition-all text-center flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-4 h-4 text-[#0b63c5] shrink-0" />
-                  <span>Call: +971 2 675 1747</span>
+                  <span>Request Custom AMC Proposal</span>
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </a>
               </div>
             </div>

@@ -122,8 +122,8 @@ export default function Footer() {
             {/* Email */}
             <div className="flex items-center space-x-3 group">
               <Mail className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] shrink-0 transition-transform duration-200 group-hover:scale-110 transform-gpu" />
-              <a href="mailto:sales@emraldace.ae" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
-                sales@emraldace.ae
+              <a href="mailto:info@emraldace.ae" className="hover:text-cyan-300 transition-colors duration-200 tracking-wide antialiased">
+                info@emraldace.ae
               </a>
             </div>
 
