@@ -250,7 +250,7 @@ export default function InteriorFitOutPage() {
           <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border-y border-slate-800/80 py-6 sm:py-8 text-center">
             <div>
               <p className="text-xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">150+</p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Major Skilled Staffs</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Skilled Staffs</p>
             </div>
             <div>
               <p className="text-xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">160+</p>

@@ -256,7 +256,7 @@ export default function AMCPage() {
           <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 border-t border-slate-800/80 pt-8 text-center">
             <div className="p-2">
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">150+</p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Major Skilled Staff</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Skilled Staffs</p>
             </div>
             <div className="p-2">
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">160+</p>

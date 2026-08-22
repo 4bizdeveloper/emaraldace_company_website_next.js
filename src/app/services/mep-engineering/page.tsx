@@ -260,7 +260,7 @@ export default function MEPPage() {
             </div>
             <div>
               <p className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">150+</p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-0.5 sm:mt-1">Major Skilled Staff</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-0.5 sm:mt-1">Skilled Staffs</p>
             </div>
             <div>
               <p className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">Full</p>

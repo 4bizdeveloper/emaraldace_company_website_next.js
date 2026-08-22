@@ -241,8 +241,8 @@ export default function GeneralContractingPage() {
 
           <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border-y border-slate-800/80 py-8 text-center">
             <div>
-              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">10+ Years</p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Excellence in UAE</p>
+              <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">2014</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Established in UAE</p>
             </div>
             <div>
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center justify-center gap-1">
@@ -254,7 +254,7 @@ export default function GeneralContractingPage() {
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center justify-center gap-1">
                 <Users className="w-6 h-6 text-cyan-400 hidden sm:inline" /> 150+
               </p>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Major Skilled Staff</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">Skilled Staffs</p>
             </div>
             <div>
               <p className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">ISO 45001</p>
