@@ -234,8 +234,8 @@ export default function SpecializedServicesPage() {
                     <Building2 className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-300 font-medium">Coverage Area</p>
-                    <p className="text-xs sm:text-sm font-bold text-white">Serving Facilities All Over UAE</p>
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Serving Industries Across</p>
+                    <p className="text-xs sm:text-sm font-bold text-white">UAE</p>
                   </div>
                 </div>
               </div>

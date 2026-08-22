@@ -334,7 +334,7 @@ export default function IFMPage() {
                     <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Headquartered in</p>
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Serving Industries Across</p>
                     <p className="text-xs sm:text-sm font-bold text-white">UAE</p>
                   </div>
                 </div>
@@ -591,10 +591,10 @@ export default function IFMPage() {
       {/* --- INDUSTRIES WE SERVE --- */}
       <section className="py-10 sm:py-12 bg-slate-950/80 border-y border-slate-800/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6">
-          <div className="text-center sm:text-left">
-            <h2 className="text-xl sm:text-2xl font-extrabold text-white">Industries We Serve</h2>
-            <p className="text-xs text-slate-300 mt-1">Tailored solutions for sectors across the UAE</p>
-          </div>
+                  <div>
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Serving Industries Across</p>
+                    <p className="text-xs sm:text-sm font-bold text-white">UAE</p>
+                  </div>
 
           <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3">
             {industries.map((ind, idx) => (

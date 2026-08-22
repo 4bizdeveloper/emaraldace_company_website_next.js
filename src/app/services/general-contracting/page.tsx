@@ -231,8 +231,8 @@ export default function GeneralContractingPage() {
                     <Building2 className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-300 font-medium">Serving Projects Across</p>
-                    <p className="text-sm font-bold text-white">United Arab Emirates (UAE)</p>
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Serving Industries Across</p>
+                    <p className="text-xs sm:text-sm font-bold text-white">UAE</p>
                   </div>
                 </div>
               </div>

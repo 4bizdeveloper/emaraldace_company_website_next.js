@@ -245,8 +245,8 @@ export default function AMCPage() {
                     <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Serving All Industries Across</p>
-                    <p className="text-xs sm:text-sm font-bold text-white">United Arab Emirates (UAE)</p>
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium">Serving Industries Across</p>
+                    <p className="text-xs sm:text-sm font-bold text-white">UAE</p>
                   </div>
                 </div>
               </div>
